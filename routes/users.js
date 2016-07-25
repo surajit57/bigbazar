@@ -22,6 +22,8 @@ router.post('/login', passport.authenticate('local', {failureRedirect: '/users/l
 	console.log('user detail: - ', req);
 });
 
-router.get('/signup' , UserController.postSignup);
+
+router.get('/signup' , UserController.getSignupPage)
+router.post('/signup' , UserController.postSignup)
 
 module.exports = router;
