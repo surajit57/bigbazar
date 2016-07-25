@@ -1,13 +1,11 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var image = sequelize.define('image', {
-    blog_id: DataTypes.INTEGER,
+  var Image = sequelize.define('image', {
     image: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
-        image.belongsTo(models.blog);
+        Image.belongsTo(models.blog);
       }
     }
   });

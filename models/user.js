@@ -3,24 +3,24 @@ module.exports = function(sequelize, DataTypes) {
   var User = sequelize.define('user', {
     name: DataTypes.STRING,
     email:{
-      type:Sequelize.STRING,
+      type:DataTypes.STRING,
       unique: true,
       allowNull: false,
     },
     gender:{
-      type:Sequelize.STRING,
+      type:DataTypes.STRING,
       allowNull: false,
     },
     password:{
-      type:Sequelize.STRING,
+      type:DataTypes.STRING,
       allowNull:false
     },
     isBlogAdded:{
-      type: Sequelize.BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: false
     },
     isAdmin:{
-      type: Sequelize.BOOLEAN,
+      type: DataTypes.BOOLEAN,
       defaultValue: false
     }
   }, {
