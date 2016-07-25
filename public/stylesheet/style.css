@@ -1,0 +1,15 @@
+/* LOGIN PAGES CSS START */
+.title_txt{text-transform: uppercase; font-weight: normal;font-size: 20px;margin-left: 5px;color:#000;font-weight:bold;}
+.login-wrapper {float: left;width: 100%;height:auto;}
+.loginform {float: left;width: 100%;height:auto;}
+.loginsection {float: left;width: 100%;height: auto;margin: 50px 0px;}
+form {float: left;width: 100%;height: auto;margin: 50px 0px;padding: 50px 0px;}
+.form-body {width: 340px;margin: 0px auto;display: block;}
+.group-form{background: #fff;padding: 30px 25px;border: 1px solid #fff;}
+.login-title {color: #fff;text-align: center;margin: 0px auto; display: block;}
+.sign_in{display: block !important;margin: 0px auto;padding: 7px 30px !important;background-color: #28156e;color: #fff;text-transform: uppercase;}
+.logoinimg {background: #28156e;  padding: 20px 0px;}
+.login-title img{width: 170px;height: 49px;}
+.input-group-addon{background: #bed4dd !important;color: #000;}
+.logintext{text-align: center;display: block;  color: #000;font-weight:700; font-size: 15px;  padding-top: 5px;}
+/* LOGIN PAGES CSS END */
