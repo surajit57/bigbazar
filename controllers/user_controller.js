@@ -1,4 +1,5 @@
-var models = require
+var models = require('../models');
+var User = models.User; 
 
 var UserController = {};
 
@@ -18,7 +19,7 @@ Home.postSignup = (req, res, next) => {
   })
   .then( function( existingUser ){
     if (existingUser) {
-      return Promise.reject( ApiError.create('User already exists...' ));
+      return Promise.reject( req.redirect('/user/signup'));
     }
   })
   .then( function(){
@@ -31,7 +32,7 @@ Home.postSignup = (req, res, next) => {
     });
   })
   .then(function(user){
-    return res.apiSuccess({user:user}, 'Registration completed.');
+    return res.render('user/login');
   })
   .catch(next);
 };
