@@ -3,6 +3,10 @@ var User = models.User;
 
 var UserController = {};
 
+UserController.getSignupPage = function(req, res){
+	res.render('signup.html');
+}
+
 Home.postSignup = (req, res, next) => {
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('password', 'Password must be at least 4 characters long').len(4);
