@@ -1,7 +1,6 @@
 var express = require('express');
 var passport = require('passport');
 var _ = require('lodash');
-var bcrypt = require('bcrypt');
 
 
 var router = express.Router();
@@ -11,7 +10,9 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-
+router.get('/login', fucntion(req, res){
+  res.render('signup')
+})
 router.post('/login', passport.authenticate('local', {failureRedirect: '/login'}, function(req, res){
 	console.log('user detail: - ', req);
 })

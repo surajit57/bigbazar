@@ -18,48 +18,50 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <link rel="shortcut icon" href="../images/favicon.ico.png" />
 </head>
-<body  class="hold-transition skin-blue sidebar-mini" style="background: url(images/background.jpg);background-size: 100% 100%;background-repeat: no-repeat;">
+<body  class="hold-transition skin-blue sidebar-mini" style="background: url(../images/background.jpg);background-size: 100% 100%;background-repeat: no-repeat;">
       <div class="login-wrapper">
           <div class="loginform">
               <div class="loginsection">
                   <form role="form">
                       <div class="form-body">
                           <div class="logoinimg">
-                              <a class="login-title"><img src="images/logo.jpg"></a>
+                              <a class="login-title"><img src="../images/logo.jpg"></a>
                           </div>
                           <div class="group-form">
-                              <form class="form-horizontal margin-bottom-40" role="form">
-                                        <div class="form-group form-md-line-input">
-                                                <div class="input-icon">
-                                                    <input type="email" class="form-control" placeholder="Email">
-                                                    <div class="form-control-focus"> </div>
-                                                    <i class="fa fa-envelope-o"></i>
-                                                </div>
-                                        </div>
-                                        <div class="form-group form-md-line-input">
-                                                <div class="input-icon">
-                                                    <input type="password" class="form-control" placeholder="Password">
-                                                    <div class="form-control-focus"> </div>
-                                                    <i class="fa fa-key"></i>
-                                                </div>
-                                        </div>
-                                        <div class="form-group form-md-line-input">
-                                                <div class="md-checkbox-list">
-                                                    <div class="md-checkbox">
-                                                        <input type="checkbox" id="checkbox11111" class="md-check">
-                                                        <label for="checkbox11111">
-                                                            <span></span>
-                                                            <span class="check"></span>
-                                                            <span class="box"></span> Remember me </label>
-                                                    </div>
-                                                </div>
-                                        </div>
-                                        <div class="form-group" style="margin-bottom: 0px;">
-                                                <button type="button" class="sign_in btn">Sign In</button>
-                                                <p style="margin-bottom:0px;margin-top:5px;text-align: center;">Not a member? <a href="signup.html" style="color: #e57716;font-size: 15px;">Sign up now <i class="fa fa-arrow-right"></i></a></p>
-                                        </div>
-                                    </form>
-                               </div>
+                              <div class="form-group">
+                                  <div class="input-group">
+                                      <span class="input-group-addon" style="border-radius: 0;"><i class="fa fa-envelope-o"></i></span>
+                                      <input type="text" class="form-control" placeholder="Email Address" style="border-radius: 0;">
+
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="input-group">
+                                      <span class="input-group-addon" style="border-radius: 0;"><i class="fa fa-lock"></i></span>
+                                      <input type="password" ng-model="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="border-radius: 0;">
+
+                                  </div>
+                              </div>
+                              <div class="form-group" style="margin-left: 20px;">
+                                  <div class="">
+                                      <div class="checkbox">
+                                        <label style="color: #607d8b;"><div class="checker"><span class="">
+                                            <input type="checkbox" style="margin-left: -18px;" ng-model="rememberMe"></span></div> Remember me</label>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="form-group" style="text-align:center;">
+                                  <div class="">
+                                      <a type="button" id="login-button" class="sign_in">SIGN IN</a>
+                                  </div>
+                              </div>
+                              <div class="form-group" style="margin: 0px;; text-align:center;color: #607d8b;">
+                                  <div class="">
+                                      <p style="margin-bottom:0px;">Not a member? <a href="signup.html" style="color:#e57716;font-size: 15px;">Sign up now <i class="fa fa-arrow-right"></i></a></p>
+                                  </div>
+                              </div>
+                          </div>
+                          </div>
                          </form>
                  </div>
              </div>

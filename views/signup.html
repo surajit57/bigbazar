@@ -18,57 +18,43 @@
     <!-- END GLOBAL MANDATORY STYLES -->
     <link rel="shortcut icon" href="../images/favicon.ico.png" />
 </head>
-<body  class="hold-transition skin-blue sidebar-mini" style="background: url(images/background.jpg);background-size: 100% 100%;background-repeat: no-repeat;">
+<body  class="hold-transition skin-blue sidebar-mini" style="background: url(../images/background.jpg);background-size: 100% 100%;background-repeat: no-repeat;">
       <div class="login-wrapper">
           <div class="loginform">
               <div class="loginsection">
                   <form role="form">
                       <div class="form-body">
                           <div class="logoinimg">
-                              <a class="login-title"><img src="images/logo.jpg"></a>
+                              <a class="login-title"><img src="../images/logo.jpg"></a>
                           </div>
                           <div class="group-form">
-                              <form class="form-horizontal margin-bottom-40" role="form">
-                                        <div class="form-group form-md-line-input">
-                                                <div class="input-icon">
-                                                    <input type="text" class="form-control" placeholder="Enter your name">
-                                                    <div class="form-control-focus"> </div>
-                                                    <i class="fa fa-user"></i>
-                                                </div>
-                                        </div>
-                                        <div class="form-group form-md-line-input">
-                                                <div class="input-icon">
-                                                    <input type="email" class="form-control" placeholder="Email">
-                                                    <div class="form-control-focus"> </div>
-                                                    <i class="fa fa-envelope-o"></i>
-                                                </div>
-                                        </div>
-                                        <div class="form-group form-md-line-input">
-                                            <div class="form-group form-md-checkboxes">
-                                            <label style="float: left;padding-right: 17px;">Gender</label>
-                                            <div class="md-radio-inline">
-                                                <div class="md-radio">
-                                                    <input type="radio" id="radio6" name="radio2" class="md-radiobtn">
-                                                    <label for="radio6">
-                                                        <span class="inc"></span>
-                                                        <span class="check"></span>
-                                                        <span class="box"></span> Female </label>
-                                                </div>
-                                                <div class="md-radio">
-                                                    <input type="radio" id="radio7" name="radio2" class="md-radiobtn">
-                                                    <label for="radio7">
-                                                        <span class="inc"></span>
-                                                        <span class="check"></span>
-                                                        <span class="box"></span> Male </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        </div>
-                                        <div class="form-group">
-                                                <button type="button" class="sign_in btn">Sign Up</button>
-                                        </div>
-                                    </form>
-                               </div>
+                               <div class="form-group">
+                                  <div class="input-group">
+                                      <span class="input-group-addon" style="border-radius: 0;"><i class="fa fa-user"></i></span>
+                                      <input type="password" class="form-control" placeholder="User Name" style="border-radius: 0;">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="input-group">
+                                      <span class="input-group-addon" style="border-radius: 0;"><i class="fa fa-envelope-o"></i></span>
+                                      <input type="text" class="form-control" placeholder="Email Address" style="border-radius: 0;">
+
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                    <label class="control-label" style="padding-right: 30px;">Gender</label>
+                                        <span class="radio-list" style="position: relative;bottom: 4px;">
+                                            <label class="radio-inline">
+                                            <div class="radio" id="uniform-optionsRadios25"><span><input type="radio" name="optionsRadios" id="optionsRadios25" value="option1" ></span></div>Female</label>
+                                            <label class="radio-inline">
+                                                <div class="radio" id="uniform-optionsRadios26"><span class="checked"><input type="radio" name="optionsRadios" id="optionsRadios26" value="option2"></span></div> Male </label>
+                                        </span>
+                            </div>
+                              <div class="form-group" style="text-align: center;">
+                                      <a type="button" class="sign_in">SIGN IN</a>
+                              </div>
+                          </div>
+                          </div>
                          </form>
                  </div>
              </div>
