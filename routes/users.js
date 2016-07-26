@@ -14,13 +14,20 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', function(req, res ){
-	res.render('signin.html');
+	res.render('index.html');
 });
 
 router.post('/login', passport.authenticate('local', {failureRedirect: '/users/login'}), function(req, res){
 	console.log('user detail: - ', req);
 });
 
+router.get('/home', function(req, res){
+	res.render('submit-blog.html');
+})
+
+router.post('/home', function(req, res){
+	console.log('url:- ', req.body.blog_url);
+})
 
 router.get('/signup' , UserController.getSignupPage)
 router.post('/signup' , UserController.postSignup)
