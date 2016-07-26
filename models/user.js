@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
       defaultValue: false
     },
     phone:{
-      type: DataTypes.INTEGER
+      type: DataTypes.STRING
     }
   }, {
     classMethods: {
