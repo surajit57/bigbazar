@@ -1,5 +1,6 @@
 var models = require('../models');
 var User = models.user; 
+var Blog = models.blog;
 
 var UserController = {};
 
@@ -76,6 +77,38 @@ UserController.postSignup = function(req,res){
     
   // }
 };
+
+// UserController.postBlog = function(req,res){
+
+//   var blog = req.body.blog_url;
+ 
+//   console.log(req.body);
+//   //form validation
+//   // req.checkBody('name' , 'Name field is required').notEmpty();
+//   // req.checkBody('email' , 'Email field is required').notEmpty();
+//   // req.checkBody('email' , 'email field is required').isEmail();
+//   // req.checkBody('password' , 'password field is required').notEmpty();
+//   // req.checkBody('password2' , 'password do not match').equals(req.body.password);
+
+//   // //check error
+//   // var errors = req.validationErrors();
+
+//   // if(errors){
+//   //   res.render('register' , {errors:errors})
+//   // }else{
+//     var blog = Blog.build({
+//       blog_url: req.body.blog_url,
+//       email: req.user.id,
+//       password: User.generateHash(req.body.password),
+//       // phone: req.body.phone
+//     });
+//     user.save().then(function(user){
+//       if(!user) throw Error('user has not created'); 
+//       return res.redirect('/users/home')   
+//     });
+    
+//   // }
+// };
 
 
 module.exports = UserController;
