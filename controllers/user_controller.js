@@ -67,11 +67,11 @@ UserController.postSignup = function(req,res){
       name: req.body.name,
       email: req.body.email,
       password: User.generateHash(req.body.password),
-      phone: req.body.phone
+      // phone: req.body.phone
     });
     user.save().then(function(user){
       if(!user) throw Error('user has not created'); 
-      return res.redirect('/')   
+      return res.redirect('/users/home')   
     });
     
   // }
