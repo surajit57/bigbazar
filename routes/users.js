@@ -23,7 +23,7 @@ router.get('/login', function(req, res){
 
 
 router.post('/login', passport.authenticate('local', {failureRedirect: '/users/login'}), function(req, res){
-	console.log('user detail: - ', req.user);
+	res.render("blog.html")
 });
 
 router.get('/home', function(req, res){
