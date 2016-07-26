@@ -7,11 +7,10 @@ UserController.getSignupPage = function(req, res){
 	res.render('signup.html');
 }
 
-Home.postSignup = (req, res, next) => {
+UserController.postSignup = (req, res, next) => {
   req.assert('email', 'Email is not valid').isEmail();
   req.assert('password', 'Password must be at least 4 characters long').len(4);
-  // req.assert('phone', 'invalid phone number').isMobilePhone('en-IN');
-  var password = 
+  req.assert('phone', 'invalid phone number').isMobilePhone('en-IN');
   const errors = req.validationErrors() ;
 
   if (errors) {

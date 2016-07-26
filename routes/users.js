@@ -3,7 +3,6 @@ var router = express.Router();
 
 var passport = require('passport');
 var _ = require('lodash');
-var bcrypt = require('bcrypt');
 var  UserController = require('../controllers/user_controller');
 
 var router = express.Router();
