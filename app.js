@@ -34,13 +34,31 @@ app.use(cookieParser());
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// app.use(session({
+//   key: config.cookieName,
+//   secret: config.cookieSecret,
+//   store: sessionStore,
+//   resave: true,
+//   saveUninitialized: true
+// }));
+
+// console.log(config.cookieName , "------------------");
 app.use(session({
-  key: config.cookieName,
-  secret: config.cookieSecret,
-  store: sessionStore,
-  resave: true,
-  saveUninitialized: true
+    resave: true,
+    saveUninitialized: true,
+    key: config.cookieName,
+    secret: config.cookieSecret,
+    store: new MySQLStore({
+      host: config.db.host,
+      user: config.db.username,
+      password: config.db.password,
+      database: config.db.database,
+      useConnectionPooling: true,
+      autoReconnect: true,
+      reconnectDelay: 500,
+    })
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 

@@ -23,10 +23,10 @@ router.get('/login', function(req, res){
 
 
 router.post('/login', passport.authenticate('local', {failureRedirect: '/users/login'}), function(req, res){
-	res.redirect('/users/home');
+	return res.redirect('/users/home');
 });
 
-router.get('/home', auth.isLoggedIn, function(req, res){
+router.get('/home', auth.isLoggedIn , function(req, res){
 	res.render('blog.html');
 })
 
