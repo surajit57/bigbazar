@@ -4,7 +4,7 @@ var User = models.User;
 var UserController = {};
 
 UserController.getSignupPage = function(req, res){
-	res.render('index.html');
+	res.render('test.html');
 }
 
 // UserController.postSignup = (req, res, next) => {
@@ -51,24 +51,23 @@ UserController.postSignup = function(req,res){
 
   console.log(req.body);
   //form validation
-  req.checkBody('name' , 'Name field is required').notEmpty();
-  req.checkBody('email' , 'Email field is required').notEmpty();
-  req.checkBody('email' , 'email field is required').isEmail();
-  req.checkBody('password' , 'password field is required').notEmpty();
-  req.checkBody('password2' , 'password do not match').equals(req.body.password);
+  // req.checkBody('name' , 'Name field is required').notEmpty();
+  // req.checkBody('email' , 'Email field is required').notEmpty();
+  // req.checkBody('email' , 'email field is required').isEmail();
+  // req.checkBody('password' , 'password field is required').notEmpty();
+  // req.checkBody('password2' , 'password do not match').equals(req.body.password);
 
-  //check error
-  var errors = req.validationErrors();
+  // //check error
+  // var errors = req.validationErrors();
 
-  if(errors){
-    res.render('register' , {errors:errors})
-  }else{
+  // if(errors){
+  //   res.render('register' , {errors:errors})
+  // }else{
     return User.create({
       name: req.body.name,
       email: req.body.email,
       password: User.generateHash(req.body.password),
-      phone: req.body.phone,
-      gender: req.body.gender
+      phone: req.body.phone
     })
     .then(function(user){
       if(!user) throw Error('user has not created');    
@@ -76,7 +75,7 @@ UserController.postSignup = function(req,res){
     req.flash('success', 'you are now registered')
     res.location('/');
     return res.redirect('/')
-  }
+  // }
 };
 
 
