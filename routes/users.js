@@ -8,6 +8,7 @@ var  UserController = require('../controllers/user_controller');
 var auth = require('../lib/auth');
 
 
+
 var router = express.Router();
 require('../lib/passport.js')(passport);
 
@@ -16,6 +17,9 @@ router.get('/', auth.isLoggedIn, function(req, res, next) {
   res.send('respond with a resource');
 });
 
+router.get('/login', function(req, res){
+	res.render('signin.html');
+})
 
 router.get('/login', function(req, res ){
 	res.render('index.html');
