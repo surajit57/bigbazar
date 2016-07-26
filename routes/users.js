@@ -5,7 +5,6 @@ var passport = require('passport');
 var _ = require('lodash');
 var  UserController = require('../controllers/user_controller');
 
-var bcrypt = require('bcrypt');
 var auth = require('../lib/auth');
 
 
@@ -21,8 +20,6 @@ router.get('/', auth.isLoggedIn, function(req, res, next) {
 router.get('/login', function(req, res ){
 	res.render('index.html');
 });
-
-
 router.post('/login', passport.authenticate('local', {failureRedirect: '/users/login'}), function(req, res){
 	console.log('user detail: - ', req);
 });
@@ -30,12 +27,12 @@ router.post('/login', passport.authenticate('local', {failureRedirect: '/users/l
 router.get('/home', function(req, res){
 	res.render('submit-blog.html');
 })
-
 router.post('/home', function(req, res){
 	console.log('url:- ', req.body.blog_url);
 })
 
+
 router.get('/signup' , UserController.getSignupPage)
-router.post('/signup' , UserController.postSignup)
+router.post('/signup', UserController.postSignup);
 
 module.exports = router;
