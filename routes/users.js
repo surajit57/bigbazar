@@ -14,7 +14,8 @@ require('../lib/passport.js')(passport);
 
 /* GET users listing. */
 router.get('/', auth.isLoggedIn, function(req, res, next) {
-  res.send('respond with a resource');
+  // res.send('respond with a resource');
+  	res.redirect('/users/home');
 });
 
 router.get('/login', function(req, res){
@@ -23,7 +24,9 @@ router.get('/login', function(req, res){
 
 
 router.post('/login', passport.authenticate('local', {failureRedirect: '/users/login'}), function(req, res){
-	return res.redirect('/users/home');
+	console.log('Login succesful');
+	console.log('req.session: ', req.session);
+	res.redirect('/users/home');
 });
 
 router.get('/home', auth.isLoggedIn , function(req, res){
@@ -32,10 +35,12 @@ router.get('/home', auth.isLoggedIn , function(req, res){
 
 router.post('/home', function(req, res){
 	console.log('url:- ', req.body.blog_url);
+	// res.redirect('/users/home');
 })
 
 
 router.get('/signup' , UserController.getSignupPage)
 router.post('/signup', UserController.postSignup);
+router.post('/blogPost', auth.isLoggedIn, UserController.postBlog);
 
 module.exports = router;

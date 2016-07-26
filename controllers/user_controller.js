@@ -78,37 +78,45 @@ UserController.postSignup = function(req,res){
   // }
 };
 
-// UserController.postBlog = function(req,res){
+UserController.postBlog = function(req,res){
+  console.log("hello this is blog post>.....................");
+  console.log('user:-- ',req.user);
+  console.log('::::::::::::::::::;;session:-- ', req.session, '..................................');
+  console.log(req.body);
+  var url = req.body.blog_url;
+  console.log('url:- ',url);
+  // var userId = req.session.id;
 
-//   var blog = req.body.blog_url;
- 
-//   console.log(req.body);
-//   //form validation
-//   // req.checkBody('name' , 'Name field is required').notEmpty();
-//   // req.checkBody('email' , 'Email field is required').notEmpty();
-//   // req.checkBody('email' , 'email field is required').isEmail();
-//   // req.checkBody('password' , 'password field is required').notEmpty();
-//   // req.checkBody('password2' , 'password do not match').equals(req.body.password);
+  //form validation
+  // req.checkBody('name' , 'Name field is required').notEmpty();
+  // req.checkBody('email' , 'Email field is required').notEmpty();
+  // req.checkBody('email' , 'email field is required').isEmail();
+  // req.checkBody('password' , 'password field is required').notEmpty();
+  // req.checkBody('password2' , 'password do not match').equals(req.body.password);
 
-//   // //check error
-//   // var errors = req.validationErrors();
+  // //check error
+  // var errors = req.validationErrors();
 
-//   // if(errors){
-//   //   res.render('register' , {errors:errors})
-//   // }else{
-//     var blog = Blog.build({
-//       blog_url: req.body.blog_url,
-//       email: req.user.id,
-//       password: User.generateHash(req.body.password),
-//       // phone: req.body.phone
-//     });
-//     user.save().then(function(user){
-//       if(!user) throw Error('user has not created'); 
-//       return res.redirect('/users/home')   
-//     });
+  // if(errors){
+  //   res.render('register' , {errors:errors})
+  // }else{
+
+    // var blog = Blog.build({
+    //   url: req.body.name
+    //   // userId: req.session.id,
+    //   // password: User.generateHash(req.body.password),
+    //   // phone: req.body.phone
+    // });
+    // blog.save().then(function(blog){
+    //   if(!blog) throw Error('blog has not created'); 
+    //   console.log('created')
+    //   return res.redirect('/users/home')   
+    // });
     
-//   // }
-// };
+
+  // }
+};
+
 
 
 module.exports = UserController;
