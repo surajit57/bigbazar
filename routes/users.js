@@ -5,17 +5,23 @@ var passport = require('passport');
 var _ = require('lodash');
 var  UserController = require('../controllers/user_controller');
 
+var bcrypt = require('bcrypt');
+var auth = require('../lib/auth');
+
+
 var router = express.Router();
 require('../lib/passport.js')(passport);
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/', auth.isLoggedIn, function(req, res, next) {
   res.send('respond with a resource');
 });
+
 
 router.get('/login', function(req, res ){
 	res.render('index.html');
 });
+
 
 router.post('/login', passport.authenticate('local', {failureRedirect: '/users/login'}), function(req, res){
 	console.log('user detail: - ', req);
