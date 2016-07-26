@@ -1,5 +1,5 @@
 var models = require('../models');
-var User = models.User; 
+var User = models.user; 
 
 var UserController = {};
 
@@ -63,18 +63,17 @@ UserController.postSignup = function(req,res){
   // if(errors){
   //   res.render('register' , {errors:errors})
   // }else{
-    return User.create({
+    var user = User.build({
       name: req.body.name,
       email: req.body.email,
       password: User.generateHash(req.body.password),
       phone: req.body.phone
-    })
-    .then(function(user){
-      if(!user) throw Error('user has not created');    
     });
-    req.flash('success', 'you are now registered')
-    res.location('/');
-    return res.redirect('/')
+    user.save().then(function(user){
+      if(!user) throw Error('user has not created'); 
+      return res.redirect('/')   
+    });
+    
   // }
 };
 

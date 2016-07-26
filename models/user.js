@@ -9,10 +9,6 @@ module.exports = function(sequelize, DataTypes) {
       unique: true,
       allowNull: false,
     },
-    gender:{
-      type:DataTypes.STRING,
-      allowNull: false,
-    },
     password:{
       type:DataTypes.STRING,
       allowNull:false
