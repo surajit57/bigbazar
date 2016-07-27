@@ -101,7 +101,7 @@ UserController.postAdminSignupPage = function(req,res){
   var email = req.body.email;
   // var password = randomstring.generate(7);
   var password = req.body.password;
- 
+ console.log('body:-- ', req.body);
     var adminuser = User.build({
       name: req.body.name,
       email: req.body.email,
@@ -111,6 +111,7 @@ UserController.postAdminSignupPage = function(req,res){
     });
     adminuser.save().then(function(adminuser){
       if(!adminuser) throw Error('user has not created'); 
+      console.log('user created');
       return res.redirect('/admin/home')   
     });
 };

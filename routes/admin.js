@@ -15,6 +15,7 @@ require('../lib/passport.js')(passport);
 
 router.get('/home', Auth.isAdminLogin, function(req, res){
 	// res.render('adminPanel1/index.html');
+	console.log('coming here');
 	res.redirect('/admin/allBlogs');
 });
 
