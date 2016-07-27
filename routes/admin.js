@@ -15,7 +15,7 @@ require('../lib/passport.js')(passport);
 
 router.get('/home', Auth.isAdminLogin, function(req, res){
 	// res.render('adminPanel1/index.html');
-	res.redirect('/admin/allUsers');
+	res.redirect('/admin/allBlogs');
 });
 
 router.get('/login', function(req, res){
@@ -25,6 +25,6 @@ router.get('/login', function(req, res){
 router.get('/signup' , UserController.getAdminSignupPage)
 router.post('/signup', passport.authenticate('local-admin-signup', {failureRedirect: '/admin/signup' , successRedirect:'/admin/home'}));
 
-router.get('/allUsers', Auth.isAdminLogin, UserController.getAllUsers);
+router.get('/allBlogs', Auth.isAdminLogin, UserController.getAllBlogs);
 
 module.exports = router;

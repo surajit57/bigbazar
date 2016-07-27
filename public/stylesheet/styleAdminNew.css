@@ -27,5 +27,7 @@ form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;
 .nextright{background: #00427e;border: none;color: #fff;padding: 5px 10px;}
 .prevleft{margin-right: 10px;background: #00427e;border: none;color: #fff;padding: 5px 10px;}
 .selectcheckbox {float: left;width: 100%;}
+.nextLevel{ float: right;margin: 0px 10px;width: auto;}
 .selectcheckbox .checker {float: left;padding-right: 6px;}
+.next_button{padding: 7px 15px;background: #405764;color: #fff;border: none;}
 /* BLOGGER PAGES CSS END */

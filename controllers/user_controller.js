@@ -112,11 +112,11 @@ UserController.postAdminSignupPage = function(req,res){
     });
 };
 
-UserController.getAllUsers = function(req, res){
+UserController.getAllBlogs = function(req, res){
   console.log('getAllUsers called');
   Blog.findAll({include:[{ model: models.user }]}).then(function(allblogs) {
-  console.log('allblogs:-- ', allblogs[0].toJSON());
-  res.render('adminPanel1/index.html');
+  console.log('allblogs:-- ', allblogs);
+  res.render('adminPanel1/index.html', {blogs: allblogs});
 })
 
   // 
