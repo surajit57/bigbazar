@@ -23,6 +23,15 @@ module.exports = function(sequelize, DataTypes) {
     },
     phone:{
       type: DataTypes.STRING
+    },
+    isUnder100:{
+      type: DataTypes.BOOLEAN
+    },
+    isUnder15: {
+      type: DataTypes.BOOLEAN
+    },
+    isUnder3: {
+      type: DataTypes.BOOLEAN
     }
   }, {
     classMethods: {

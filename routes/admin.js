@@ -27,4 +27,6 @@ router.post('/signup', passport.authenticate('local-admin-signup', {failureRedir
 
 router.get('/allBlogs', Auth.isAdminLogin, UserController.getAllBlogs);
 
+router.get('/select-for-100', Auth.isAdminLogin, UserController.selectFor100);
+
 module.exports = router;
