@@ -5,7 +5,7 @@
 .loginsection {float: left;width: 100%;height: auto;margin: 50px 0px;}
 form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;*/}
 .form-body {width: 340px;margin: 0px auto;display: block;}
-.group-form{background: #fff;padding: 40px 30px;border: 1px solid #fff;}
+.group-form{background: #fff;padding: 30px 30px;border: 1px solid #fff;}
 .login-title {color: #fff;text-align: center;margin: 0px auto; display: block;}
 .sign_in{display: block !important;margin: 0px auto;padding: 7px 30px !important;
         background-color: #28156e;color: #fff;text-transform: uppercase; border-radius: 0px !important;}
