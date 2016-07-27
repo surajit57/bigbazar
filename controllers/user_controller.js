@@ -1,6 +1,7 @@
 var models = require('../models');
 var User = models.user; 
 var Blog = models.blog;
+var randomstring = require('randomstring');
 
 var UserController = {};
 
@@ -122,4 +123,25 @@ UserController.getAdminSignupPage = function(req, res){
   res.render('adminPanel/signup.html');
 }
 
+UserController.postAdminSignupPage = function(req,res){
+  console.log("Admin Admin");
+  var name = req.body.name;
+  var email = req.body.email;
+  // var password = randomstring.generate(7);
+  var password = "admin";
+ 
+ 
+    var adminuser = User.build({
+      name: req.body.name,
+      email: req.body.email,
+      password: User.generateHash(password),
+      isAdmin: 1
+      // phone: req.body.phone
+    });
+    adminuser.save().then(function(adminuser){
+      if(!adminuser) throw Error('user has not created'); 
+      return res.redirect('/users/admin/home')   
+    });
+
+};
 module.exports = UserController;

@@ -11,6 +11,7 @@ var MySQLStore = require('express-mysql-session')(session);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var admin = require('./routes/admin');
 
 var config = require( './config' );
 config.db.user = config.db.username;
@@ -44,6 +45,7 @@ app.use(passport.session());
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/admin', admin);
 
 
 // catch 404 and forward to error handler
