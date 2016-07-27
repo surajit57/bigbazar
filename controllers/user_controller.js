@@ -84,6 +84,7 @@ UserController.postBlog = function(req,res){
               id: req.user.id
             }
           }).then(function(userData) {
+            req.flash('info', 'Blog sucessfully posted');
             return res.redirect('/users/home') 
           });
 
