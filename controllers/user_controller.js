@@ -118,5 +118,8 @@ UserController.postBlog = function(req,res){
 };
 
 
+UserController.getAdminSignupPage = function(req, res){
+  res.render('adminPanel/signup.html');
+}
 
 module.exports = UserController;

@@ -1,0 +1,29 @@
+/* LOGIN PAGES CSS START */
+.title_txt{text-transform: uppercase; font-weight: normal;font-size: 20px;margin-left: 5px;color:#000;font-weight:bold;}
+.login-wrapper {float: left;width: 100%;height:auto;}
+.loginform {float: left;width: 100%;height:auto;}
+.loginsection {float: left;width: 100%;height: auto;margin: 50px 0px;}
+form {float: left;width: 100%;height: auto;margin: 50px 0px;padding: 50px 0px;}
+.form-body {width: 340px;margin: 0px auto;display: block;}
+.group-form{background: #fff;padding: 30px 25px;border: 1px solid #fff;}
+.login-title {color: #fff;text-align: center;margin: 0px auto; display: block;}
+.sign_in{display: block !important;margin: 0px auto;padding: 7px 30px !important;background-color: #28156e;color: #fff;text-transform: uppercase;}
+.logoinimg {background: #28156e;  padding: 20px 0px;}
+.login-title img{width: 170px;height: 49px;}
+.input-group-addon{background: #bed4dd !important;color: #000;}
+.logintext{text-align: center;display: block;  color: #000;font-weight:700; font-size: 15px;  padding-top: 5px;}
+/* LOGIN PAGES CSS END */
+/* BLOGGER PAGES CSS END */
+.tab-content {background: #fff;padding: 20px 20px;border-bottom-left-radius: 3px;border-bottom-right-radius: 3px;}
+.nav>li>a:hover, .nav>li>a:active, .nav>li>a:focus {color: #fff !important;background: #000;border: none !important;line-height: 22px !important;}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {color: #f6f6f6 !important;cursor: default;background-color:#000 !important;border:transparent;border-bottom-color: transparent; cursor: pointer;}
+.nav-tabs {border-bottom:transparent;background: #405764 !important;width: 100%;border-top-right-radius: 5px;border-top-left-radius: 5px;height: 36px;}
+.nav>li>a{color: #fff;margin-right: 0px; line-height: 22px !important;}
+.nav-tabs>li{margin-bottom: 0px !important;width:25%;text-align: center;height: 36px; cursor: pointer;}
+.nav>li>a{padding: 7px 15px !important;}
+.previewnext{text-align: center;  width: 100%;padding: 10px 0px;}
+.nextright{background: #00427e;border: none;color: #fff;padding: 5px 10px;}
+.prevleft{margin-right: 10px;background: #00427e;border: none;color: #fff;padding: 5px 10px;}
+.selectcheckbox {float: left;width: 100%;}
+.selectcheckbox .checker {float: left;padding-right: 6px;}
+/* BLOGGER PAGES CSS END */
