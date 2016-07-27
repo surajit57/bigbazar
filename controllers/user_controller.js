@@ -50,21 +50,7 @@ UserController.postSignup = function(req,res){
   var email = req.body.email;
   var password = req.body.password;
   var confirmPassword = req.body.confirmPassword;
-
-  console.log(req.body);
-  //form validation
-  // req.checkBody('name' , 'Name field is required').notEmpty();
-  // req.checkBody('email' , 'Email field is required').notEmpty();
-  // req.checkBody('email' , 'email field is required').isEmail();
-  // req.checkBody('password' , 'password field is required').notEmpty();
-  // req.checkBody('password2' , 'password do not match').equals(req.body.password);
-
-  // //check error
-  // var errors = req.validationErrors();
-
-  // if(errors){
-  //   res.render('register' , {errors:errors})
-  // }else{
+  
     var user = User.build({
       name: req.body.name,
       email: req.body.email,
@@ -75,61 +61,47 @@ UserController.postSignup = function(req,res){
       if(!user) throw Error('user has not created'); 
       return res.redirect('/users/home')   
     });
-    
-  // }
 };
 
 UserController.postBlog = function(req,res){
-  console.log("hello this is blog post>.....................");
-  console.log('user:-- ',req.user);
-  console.log('::::::::::::::::::;;session:-- ', req.session, '..................................');
-  console.log(req.body);
+
   var url = req.body.blog_url;
-  console.log('url:- ',url);
-  // var userId = req.session.id;
+  var UserId = req.user.id;
+ 
+    var blog = Blog.build({
+      url: req.body.blog_url,
+      userId: req.user.id
+    });
+    blog.save().then(function(blog){
+      if(!blog) return res.redirect('/users/home');
+          console.log('blog created');
 
-  //form validation
-  // req.checkBody('name' , 'Name field is required').notEmpty();
-  // req.checkBody('email' , 'Email field is required').notEmpty();
-  // req.checkBody('email' , 'email field is required').isEmail();
-  // req.checkBody('password' , 'password field is required').notEmpty();
-  // req.checkBody('password2' , 'password do not match').equals(req.body.password);
+          // var user = User
+          User.update({
+            isBlogAdded: 1
+          },{
+            where: {
+              id: req.user.id
+            }
+          }).then(function(userData) {
+            return res.redirect('/users/home') 
+          });
 
-  // //check error
-  // var errors = req.validationErrors();
-
-  // if(errors){
-  //   res.render('register' , {errors:errors})
-  // }else{
-
-    // var blog = Blog.build({
-    //   url: req.body.name
-    //   // userId: req.session.id,
-    //   // password: User.generateHash(req.body.password),
-    //   // phone: req.body.phone
-    // });
-    // blog.save().then(function(blog){
-    //   if(!blog) throw Error('blog has not created'); 
-    //   console.log('created')
-    //   return res.redirect('/users/home')   
-    // });
-    
-
-  // }
+       
+          
+    });
 };
 
 
 UserController.getAdminSignupPage = function(req, res){
-  res.render('adminPanel/signup.html');
+  res.render('adminPanel1/signup.html');
 }
-
 UserController.postAdminSignupPage = function(req,res){
   console.log("Admin Admin");
   var name = req.body.name;
   var email = req.body.email;
   // var password = randomstring.generate(7);
-  var password = "admin";
- 
+  var password = req.body.password;
  
     var adminuser = User.build({
       name: req.body.name,
@@ -140,8 +112,13 @@ UserController.postAdminSignupPage = function(req,res){
     });
     adminuser.save().then(function(adminuser){
       if(!adminuser) throw Error('user has not created'); 
-      return res.redirect('/users/admin/home')   
+      return res.redirect('/admin/home')   
     });
-
 };
+
+UserController.getAllUsers = function(req, res){
+  console.log('getAllUsers called');
+  res.render('adminPanel1/index.html');
+  // res.render('adminPanel1/signup.html');
+}
 module.exports = UserController;

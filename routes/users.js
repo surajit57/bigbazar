@@ -20,6 +20,9 @@ router.get('/login', function(req, res){
 	res.render('userLogin.html');
 });
 
+router.get('/blogPost', Auth.isLoggedIn, function(req, res){
+	res.render('blog.html');
+});
 router.post('/blogPost', Auth.isLoggedIn, UserController.postBlog);
 
 module.exports = router;

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>BIG BAZAAR</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <link href="../../stylesheet/styleAdminNew.css" rel="stylesheet" type="text/css" />
+        <link href="../../stylesheet/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../../stylesheet/AdminLTE.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="../../images/favicon.ico.png" />
+    </head>
+<body  class="hold-transition skin-blue sidebar-mini" style="background: url(../../images/background.jpg);background-size: 100% 100%;background-repeat: no-repeat;">
+      <div class="login-wrapper">
+          <div class="loginform">
+              <div class="loginsection">
+                      <div class="form-body">
+                          <div class="logoinimg">
+                              <a class="login-title"><img src="../../images/logo.jpg"></a>
+                          </div><!--logoinimg-->
+                          <form method="post" action="/admin/signup">
+                               <div class="group-form">
+                                    <div class="form-group">
+                                         <div class="input-group">
+                                              <span class="input-group-addon" style="border-radius: 0;"><i class="fa fa-user"></i></span>
+                                            <input type="text" name="name" class="form-control" placeholder="User Name" style="border-radius: 0;">
+                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon" style="border-radius: 0;"><i class="fa fa-envelope-o"></i></span>
+                                            <input type="text" name="email" class="form-control" placeholder="Email Address" style="border-radius: 0;">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                         <div class="input-group">
+                                              <span class="input-group-addon" style="border-radius: 0;"><i class="fa fa-user"></i></span>
+                                            <input type="password" name="password" class="form-control" placeholder="Password" style="border-radius: 0;">
+                                         </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" style="float: left;width: auto;font-size: 18px;font-weight: normal;padding-right: 15px;">Gender</label>
+                                            <div style="position: relative;z-index: 0;bottom: 6px;">
+                                                <div class="radio-list">
+                                                        <label class="radio-inline">
+                                                            <div class="radio">
+                                                                <span class="checked"><input type="radio" name="gender" value="female"></span>
+                                                            </div>Female
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <div class="radio disabled" >
+                                                                <span><input type="radio" name="gender" value="male"></span>
+                                                                </div>Male
+                                                        </label>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="sign_in btn ">Sign Up</button>
+                                    </div>
+                            </div>
+                       </form><!--form-->
+                    </div><!--form-body-->
+                </div><!--loginsection-->
+            </div><!--loginform-->
+        </div><!--login-wrapper-->
+    </body>
+</html>

@@ -12,6 +12,11 @@ router.get('/', function(req, res, next) {
 	res.redirect('/users/home');
 });
 
-router.post('/login', passport.authenticate('local-login', {failureRedirect: '/users/login' , successRedirect:'/users/home'}));
+router.post('/login', passport.authenticate('local-login', {failureRedirect: '/users/login'}),function(req, res){
+	if(req.user.isAdmin){
+		return res.redirect('/admin/home');
+	}
+	return res.redirect('/user/home')
+});
 
 module.exports = router;

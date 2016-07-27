@@ -13,16 +13,18 @@ var router = express.Router();
 require('../lib/passport.js')(passport);
 
 
-router.get('/home', function(req, res){
-	res.render('adminPanel/index.html');
+router.get('/home', Auth.isAdminLogin, function(req, res){
+	// res.render('adminPanel1/index.html');
+	res.redirect('/admin/allUsers');
 });
 
 router.get('/login', function(req, res){
-	res.render('adminPanel/signin.html');
+	res.render('adminPanel1/signin.html');
 });
 
 router.get('/signup' , UserController.getAdminSignupPage)
-router.post('/signup' , UserController.postAdminSignupPage);
+router.post('/signup', passport.authenticate('local-admin-signup', {failureRedirect: '/admin/signup' , successRedirect:'/admin/home'}));
 
+router.get('/allUsers', Auth.isAdminLogin, UserController.getAllUsers);
 
 module.exports = router;
