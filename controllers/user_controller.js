@@ -75,8 +75,6 @@ UserController.postBlog = function(req,res){
     blog.save().then(function(blog){
       if(!blog) return res.redirect('/users/home');
           console.log('blog created');
-
-          // var user = User
           User.update({
             isBlogAdded: 1
           },{
@@ -87,9 +85,6 @@ UserController.postBlog = function(req,res){
             req.flash('info', 'Blog sucessfully posted');
             return res.redirect('/users/home') 
           });
-
-       
-          
     });
 };
 
@@ -119,7 +114,11 @@ UserController.postAdminSignupPage = function(req,res){
 
 UserController.getAllUsers = function(req, res){
   console.log('getAllUsers called');
-  res.render('adminPanel1/index.html');
+  Blog.findAll({include:[{ model: models.user }]}).then(function(allblogs) {
+  console.log('allblogs:-- ', allblogs[0].toJSON());
+})
+
+  // res.render('adminPanel1/index.html');
   // res.render('adminPanel1/signup.html');
 }
 module.exports = UserController;
