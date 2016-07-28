@@ -13,7 +13,9 @@
     <link href="../../stylesheet/layout.min.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
     <link href="../../stylesheet/custom.min.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="images/favicon.ico.png" /> </head>
+    <link rel="shortcut icon" href="images/favicon.ico.png" /> 
+    <script src="../../js/jquery.min.js" type="text/javascript"></script>
+    </head>
     <!-- END HEAD -->
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
         <div class="page-header navbar navbar-fixed-top">
@@ -94,14 +96,27 @@
                                                     <th>Author Name</th>
                                                     <th>Email Id</th>
                                                     <th>Blog Url</th>
+                                                    <th>Top 100</th>
+                                                    <th>Top 15</th>
+                                                    <th>Top 3</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="top100">
                                                <% for(var i=0; i<blogs.length; i++) {%>
                                                 <tr>
-                                                   <td><input type="checkbox" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                   <td><input type="checkbox" class="top100" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                    <td><%= blogs[i].user.email %></td>
                                                    <td><%= blogs[i].url %></td>
+                                                   <td>
+                                                        <% if (blogs[i].user.isUnder100) { %><p>Selected</p>
+                                                        <% } else { %> <p>Not Selected</p> <% } %>
+                                                    </td>
+                                                    <td>
+                                                        <% if (blogs[i].user.isUnder15) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
+                                                    </td>
+                                                    <td>
+                                                        <% if (blogs[i].user.isUnder3) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
+                                                    </td>
                                                 </tr>
                                                  <% } %>
                                                   
@@ -109,7 +124,7 @@
                                         </table>
                                         <div class="nextLevel">
                                             <for
-                                            <button class="next_button" onclick="SelectFor100()">Select For Next Round <i class="fa fa-chevron-right"></i></button>
+                                            <button class="next_button" onclick="postSelectFor100()">Select For Next Round <i class="fa fa-chevron-right"></i></button>
                                         </div>
                                     </div><!-- box-body -->
                                     <div class="previewnext">
@@ -143,18 +158,36 @@
                                                     <th>Author Name</th>
                                                     <th>Email Id</th>
                                                     <th>Blog Url</th>
+                                                    <th>Top 100</th>
+                                                    <th>Top 15</th>
+                                                    <th>Top 3</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
+                                                <% for(var i=0; i<blogs.length; i++) {%>
+                                                <% if (blogs[i].user.isUnder100) { %>
+                                                 <tr>
+                                                        <td><input type="checkbox" class="top15" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                        <td><%= blogs[i].user.email %></td>
+                                                        <td><%= blogs[i].url %></td>
+                                                        <td>
+                                                            <% if (blogs[i].user.isUnder100) { %><p>Selected</p>
+                                                            <% } else { %> <p>Not Selected</p> <% } %>
+                                                        </td>
+                                                        <td>
+                                                            <% if (blogs[i].user.isUnder15) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
+                                                        </td>
+                                                        <td>
+                                                            <% if (blogs[i].user.isUnder3) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
+                                                        </td>
+                                                    </tr>
+                                                     <% } else { %>  <% } %>
+                                                   
+                                                 <% } %>
                                             </tbody>
                                         </table>
                                         <div class="nextLevel">
-                                            <button class="next_button">Select For Next Round <i class="fa fa-chevron-right"></i></button>
+                                            <button class="next_button" onclick="postSelectFor15()">Select For Next Round <i class="fa fa-chevron-right"></i></button>
                                         </div>
                                     </div><!-- box-body -->
                                     <div class="previewnext">
@@ -189,18 +222,36 @@
                                                     <th>Author Name</th>
                                                     <th>Email Id</th>
                                                     <th>Blog Url</th>
+                                                    <th>Top 100</th>
+                                                    <th>Top 15</th>
+                                                    <th>Top 3</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
+                                                <% for(var i=0; i<blogs.length; i++) {%>
+                                                <% if (blogs[i].user.isUnder15) { %>
+                                                 <tr>
+                                                        <td><input type="checkbox" class="top3" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                        <td><%= blogs[i].user.email %></td>
+                                                        <td><%= blogs[i].url %></td>
+                                                        <td>
+                                                            <% if (blogs[i].user.isUnder100) { %><p>Selected</p>
+                                                            <% } else { %> <p>Not Selected</p> <% } %>
+                                                        </td>
+                                                        <td>
+                                                            <% if (blogs[i].user.isUnder15) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
+                                                        </td>
+                                                        <td>
+                                                            <% if (blogs[i].user.isUnder3) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
+                                                        </td>
+                                                    </tr>
+                                                     <% } else { %>  <% } %>
+                                                   
+                                                 <% } %>
                                             </tbody>
                                         </table>
                                         <div class="nextLevel">
-                                            <button class="next_button">Select For Next Round <i class="fa fa-chevron-right"></i></button>
+                                            <button class="next_button" onclick="postSelectFor3()">Select For Next Round <i class="fa fa-chevron-right"></i></button>
                                         </div>
                                     </div><!-- box-body -->
                                     <div class="previewnext">
@@ -235,14 +286,32 @@
                                                     <th>Author Name</th>
                                                     <th>Email Id</th>
                                                     <th>Blog Url</th>
+                                                    <th>Top 100</th>
+                                                    <th>Top 15</th>
+                                                    <th>Top 3</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td><input type="checkbox"></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
+                                                 <% for(var i=0; i<blogs.length; i++) {%>
+                                                <% if (blogs[i].user.isUnder3) { %>
+                                                 <tr>
+                                                        <td><input type="checkbox" class="winners" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                        <td><%= blogs[i].user.email %></td>
+                                                        <td><%= blogs[i].url %></td>
+                                                        <td>
+                                                            <% if (blogs[i].user.isUnder100) { %><p>Selected</p>
+                                                            <% } else { %> <p>Not Selected</p> <% } %>
+                                                        </td>
+                                                        <td>
+                                                            <% if (blogs[i].user.isUnder15) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
+                                                        </td>
+                                                        <td>
+                                                            <% if (blogs[i].user.isUnder3) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
+                                                        </td>
+                                                    </tr>
+                                                     <% } else { %>  <% } %>
+                                                   
+                                                 <% } %>
                                             </tbody>
                                         </table>
                                     </div><!-- box-body -->
@@ -277,7 +346,7 @@
                 <i class="icon-arrow-up"></i>
             </div>
         </div>
-    <script src="../../js/jquery.min.js" type="text/javascript"></script>
+    
     <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../../js/app.min.js" type="text/javascript"></script>
     <script src="../../js/layout.min.js" type="text/javascript"></script>
@@ -286,6 +355,64 @@
        $("#checkAll").change(function () {
            $("input:checkbox").prop('checked', $(this).prop("checked"));
         });
+
+       function postSelectFor100(){
+            var values = $('input:checkbox:checked.top100').map(function () {
+              return this.value;
+            }).get();
+            if(values.length){
+                $.post( "/admin/select-for-100", {"userIds": JSON.stringify(values)})
+                  .done(function( data ) {
+                    if(data.code == 200){
+                        alert('Selected Users are sucessfully moved to next round.');
+                    }
+                    else{
+                        alert('Technical Error Please try after some time.');
+                    }
+                  });
+            }else{
+                alert('Please select users');
+            }
+       }
+
+       function postSelectFor15(){
+            var values = $('input:checkbox:checked.top15').map(function () {
+              return this.value;
+            }).get();
+            if(values.length){
+                console.log('values:- ',values);
+                $.post( "/admin/select-for-15", {"userIds": JSON.stringify(values)})
+                  .done(function( data ) {
+                    if(data.code == 200){
+                        alert('Selected Users are sucessfully moved to next round.');
+                    }
+                    else{
+                        alert('Technical Error Please try after some time.');
+                    }
+                  });
+            }else{
+                alert('Please select users');
+            }
+       }
+
+       function postSelectFor3(){
+            var values = $('input:checkbox:checked.top3').map(function () {
+              return this.value;
+            }).get();
+            if(values.length){
+                $.post( "/admin/select-for-3", {"userIds": JSON.stringify(values)})
+                  .done(function( data ) {
+                    if(data.code == 200){
+                        alert('Selected Users are sucessfully moved to next round.');
+                    }
+                    else{
+                        alert('Technical Error Please try after some time.');
+                    }
+                  });
+            }else{
+                alert('Please select users');
+            }
+       }
 
    </script>
     <!-- END THEME LAYOUT SCRIPTS -->

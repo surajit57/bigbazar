@@ -28,6 +28,13 @@ router.post('/signup', passport.authenticate('local-admin-signup', {failureRedir
 
 router.get('/allBlogs', Auth.isAdminLogin, UserController.getAllBlogs);
 
-router.get('/select-for-100', Auth.isAdminLogin, UserController.selectFor100);
+router.post('/select-for-100', Auth.isAdminLogin, UserController.postSelectFor100);
+// router.get('/unselect-for-100', Auth.isAdminLogin, UserController.unselectFor100);
+
+router.post('/select-for-15', Auth.isAdminLogin, UserController.postSelectFor15);
+// router.get('/unselect-for-100', Auth.isAdminLogin, UserController.unselectFor100);
+
+router.post('/select-for-3', Auth.isAdminLogin, UserController.postSelectFor3);
+
 
 module.exports = router;
