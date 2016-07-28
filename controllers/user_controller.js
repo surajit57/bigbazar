@@ -15,7 +15,7 @@ function send_mail(email){
   transporter.sendMail({
       from: 'bigbajar88@gmail.com',
       to: email,
-      cc: 'shashidhar@teampumpkin.com',
+      bcc: 'shashidhar@teampumpkin.com',
       text: 'Authenticated with OAuth2',
       subject: '🐴BigBazar',
       html: html_text
