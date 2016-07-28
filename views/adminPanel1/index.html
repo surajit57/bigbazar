@@ -104,7 +104,7 @@
                                             <tbody id="top100">
                                                <% for(var i=0; i<blogs.length; i++) {%>
                                                 <tr>
-                                                   <td><input type="checkbox" id="checkTab" class="top100" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                   <td><input type="checkbox" class="top100 checkTab" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                    <td><%= blogs[i].user.email %></td>
                                                    <td><%= blogs[i].url %></td>
                                                    <td>
@@ -167,7 +167,7 @@
                                                 <% for(var i=0; i<blogs.length; i++) {%>
                                                 <% if (blogs[i].user.isUnder100) { %>
                                                  <tr>
-                                                        <td><input type="checkbox" id="checksecond" class="top15" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                        <td><input type="checkbox" class="top15 checksecond" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
                                                         <td><%= blogs[i].url %></td>
                                                         <td>
@@ -234,7 +234,7 @@
                                                 <% for(var i=0; i<blogs.length; i++) {%>
                                                 <% if (blogs[i].user.isUnder15) { %>
                                                  <tr>
-                                                        <td><input type="checkbox" id="checkthird" class="top3" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                        <td><input type="checkbox" class="top3 checkthird" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
                                                         <td><%= blogs[i].url %></td>
                                                         <td>
@@ -301,7 +301,7 @@
                                                  <% for(var i=0; i<blogs.length; i++) {%>
                                                 <% if (blogs[i].user.isUnder3) { %>
                                                  <tr>
-                                                        <td><input type="checkbox" id="checkfourth" class="winners" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                        <td><input type="checkbox" class="winners checkfourth" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
                                                         <td><%= blogs[i].url %></td>
                                                         <td>
@@ -362,16 +362,16 @@
     <script src="../../js/demo.min.js" type="text/javascript"></script>
    <script type="text/javascript">
        $("#checkAll").change(function () {
-           $("#checkTab").prop('checked', $(this).prop("checked"));
+           $(":checkbox.checkTab").prop('checked', $(this).prop("checked"));
         });
         $("#checkSecond").change(function () {
-           $("#checksecond").prop('checked', $(this).prop("checked"));
+           $(":checkbox.checksecond").prop('checked', $(this).prop("checked"));
         });
         $("#checkThird").change(function () {
-           $("#checkthird").prop('checked', $(this).prop("checked"));
+           $(":checkbox.checkthird").prop('checked', $(this).prop("checked"));
         });
         $("#checkFourth").change(function () {
-           $("#checkfourth").prop('checked', $(this).prop("checked"));
+           $(":checkbox.checkfourth").prop('checked', $(this).prop("checked"));
         });
        function postSelectFor100(){
             var values = $('input:checkbox:checked.top100').map(function () {
