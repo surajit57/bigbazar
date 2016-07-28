@@ -26,15 +26,26 @@ router.get('/login', function(req, res){
 router.get('/signup' , UserController.getAdminSignupPage)
 router.post('/signup', passport.authenticate('local-admin-signup', {failureRedirect: '/admin/signup' , successRedirect:'/admin/home'}));
 
+router.get('/logout', function(req, res){
+		req.session.destroy(function(){
+        req.session = null;
+
+        res.clearCookie('express.sid', { path: '/' });
+        res.redirect('/admin/login');
+
+    });
+})
+
 router.get('/allBlogs', Auth.isAdminLogin, UserController.getAllBlogs);
 
 router.post('/select-for-100', Auth.isAdminLogin, UserController.postSelectFor100);
-// router.get('/unselect-for-100', Auth.isAdminLogin, UserController.unselectFor100);
+router.post('/unselect-for-100', Auth.isAdminLogin, UserController.unselectFor100);
 
 router.post('/select-for-15', Auth.isAdminLogin, UserController.postSelectFor15);
-// router.get('/unselect-for-100', Auth.isAdminLogin, UserController.unselectFor100);
+router.post('/unselect-for-15', Auth.isAdminLogin, UserController.unselectFor15);
 
 router.post('/select-for-3', Auth.isAdminLogin, UserController.postSelectFor3);
+router.post('/unselect-for-3', Auth.isAdminLogin, UserController.unselectFor3);
 
 
 module.exports = router;
