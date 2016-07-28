@@ -46,6 +46,9 @@ router.post('/unselect-for-15', Auth.isAdminLogin, UserController.unselectFor15)
 
 router.post('/select-for-3', Auth.isAdminLogin, UserController.postSelectFor3);
 router.post('/unselect-for-3', Auth.isAdminLogin, UserController.unselectFor3);
+// router.get('/unselect-for-100', Auth.isAdminLogin, UserController.unselectFor100);
+
+
 
 
 module.exports = router;
