@@ -417,6 +417,7 @@
             var values = $('input:checkbox:checked.top15').map(function () {
               return this.value;
             }).get();
+            console.log('values:------- ', values);
             if(values.length){
                 console.log('values:- ',values);
                 $.post( "/admin/select-for-15", {"userIds": JSON.stringify(values)})
