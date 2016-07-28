@@ -17,26 +17,38 @@ UserController.postBlog = function(req,res){
 
   var url = req.body.blog_url;
   var UserId = req.user.id;
- 
-
-    var blog = Blog.build({
-      url: req.body.blog_url,
-      userId: req.user.id
-    });
-    blog.save().then(function(blog){
-      if(!blog) return res.redirect('/users/home');
-          console.log('blog created');
-          User.update({
-            isBlogAdded: 1
-          },{
-            where: {
-              id: req.user.id
-            }
-          }).then(function(userData) {
-            // req.flash('info', 'Blog sucessfully posted');
-            return res.redirect('/users/home') 
+  User.findOne({
+    where: {
+      id: UserId,
+      isBlogAdded: 1
+    }
+  })
+    .then( function(blog){
+      console.log('blog value :--- ', blog);
+      if(!blog){
+          var blog = Blog.build({
+            url: req.body.blog_url,
+            userId: req.user.id
           });
-    });
+          blog.save().then(function(blog){
+            if(!blog) return res.redirect('/users/home');
+                console.log('blog created');
+                User.update({
+                  isBlogAdded: 1
+                },{
+                  where: {
+                    id: req.user.id
+                  }
+                }).then(function(userData) {
+                  // req.flash('info', 'Blog sucessfully posted');
+                  return res.redirect('/users/home') 
+                });
+          });
+      }
+      else{
+        console.log('ALready added');
+      }
+    } )
 };
 
 
