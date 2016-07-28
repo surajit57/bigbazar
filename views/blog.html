@@ -35,7 +35,7 @@
             </a>
             <div class="pull-right">
               <div class="add-button" style="margin-top: 4px;">
-                  <button type="button"  class="btn btn-default" style="background: transparent; border: transparent;color: #fff;"><i class="fa fa-lock" style="border-radius: 50%;padding: 4px 7px;background: #000;border: 2px solid #fff;"></i>&nbsp;&nbsp;SIGN OUT</button>
+                  <button onclick="logout()" type="button"  class="btn btn-default" style="background: transparent; border: transparent;color: #fff;"><i class="fa fa-lock" style="border-radius: 50%;padding: 4px 7px;background: #000;border: 2px solid #fff;"></i>&nbsp;&nbsp;SIGN OUT</button>
               </div> 
           </div>
           </div>
@@ -81,5 +81,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      function logout(){
+         $.get( "/users/logout", { })
+                  .done(function( data ) {
+                    window.location = "/users/login"
+                  });
+      }
+    </script>
   </body>
 </html>
