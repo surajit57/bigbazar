@@ -30,7 +30,7 @@
                 <div class="top-menu">
                     <div class="pull-right">
                         <div class="add-button" style="margin-top: 4px;">
-                          <button type="submit" class="btn btn-default" style="background: transparent; border: transparent;color: #fff;"><i class="fa fa-lock" style="border-radius: 50%;padding: 4px 7px;background: #000;border: 2px solid #fff;"></i>&nbsp;&nbsp;SIGN OUT</button>
+                          <button type="button" onclick="logout()" class="btn btn-default" style="background: transparent; border: transparent;color: #fff;"><i class="fa fa-lock" style="border-radius: 50%;padding: 4px 7px;background: #000;border: 2px solid #fff;"></i>&nbsp;&nbsp;SIGN OUT</button>
                       </div>
                     </div><!--pull-right-->    
                        
@@ -190,7 +190,7 @@
                                             <button class="next_button" onclick="postSelectFor15()">Select For Next Round <i class="fa fa-chevron-right"></i></button>
                                         </div>
                                         <div class="previewLevel">
-                                            <button class="preview_button" "><i class="fa fa-chevron-left"></i> Select For Preview Round</button>
+                                            <button onclick="unSelectFrom100()" class="preview_button" "><i class="fa fa-chevron-left"></i> Select For Preview Round</button>
                                         </div>                                        
                                     </div><!-- box-body -->
                                     <div class="previewnext">
@@ -257,7 +257,7 @@
                                             <button class="next_button" onclick="postSelectFor3()">Select For Next Round <i class="fa fa-chevron-right"></i></button>
                                         </div>
                                         <div class="previewLevel">
-                                            <button class="preview_button" "><i class="fa fa-chevron-left"></i> Select For Preview Round</button>
+                                            <button onclick="unSelectFrom15()" class="preview_button" "><i class="fa fa-chevron-left"></i> Select For Preview Round</button>
                                         </div> 
                                     </div><!-- box-body -->
                                     <div class="previewnext">
@@ -321,7 +321,7 @@
                                             </tbody>
                                         </table>
                                         <div class="previewLevel">
-                                            <button class="preview_button" "><i class="fa fa-chevron-left"></i> Select For Preview Round</button>
+                                            <button onclick="unSelectFrom3()" class="preview_button" "><i class="fa fa-chevron-left"></i> Change Winners</button>
                                         </div> 
                                     </div><!-- box-body -->
                                     <div class="previewnext">
@@ -382,6 +382,27 @@
                   .done(function( data ) {
                     if(data.code == 200){
                         alert('Selected Users are sucessfully moved to next round.');
+                        window.location = "/admin/home";
+                    }
+                    else{
+                        alert('Technical Error Please try after some time.');
+                    }
+                  });
+            }else{
+                alert('Please select users');
+            }
+       }
+
+       function unSelectFrom100(){
+            var values = $('input:checkbox:checked.top15').map(function () {
+              return this.value;
+            }).get();
+            if(values.length){
+                $.post( "/admin/unselect-for-100", {"userIds": JSON.stringify(values)})
+                  .done(function( data ) {
+                    if(data.code == 200){
+                        alert('Selected Users are sucessfully re-moved from this round.');
+                        window.location = "/admin/home";
                     }
                     else{
                         alert('Technical Error Please try after some time.');
@@ -402,6 +423,28 @@
                   .done(function( data ) {
                     if(data.code == 200){
                         alert('Selected Users are sucessfully moved to next round.');
+                        window.location = "/admin/home";
+                    }
+                    else{
+                        alert('Technical Error Please try after some time.');
+                    }
+                  });
+            }else{
+                alert('Please select users');
+            }
+       }
+
+       function unSelectFrom15(){
+            var values = $('input:checkbox:checked.top3').map(function () {
+              return this.value;
+            }).get();
+            if(values.length){
+                console.log('values to unSelectFrom15:-- ',values);
+                $.post( "/admin/unselect-for-15", {"userIds": JSON.stringify(values)})
+                  .done(function( data ) {
+                    if(data.code == 200){
+                        alert('Selected Users are sucessfully re-moved from this round.');
+                        window.location = "/admin/home";
                     }
                     else{
                         alert('Technical Error Please try after some time.');
@@ -421,6 +464,7 @@
                   .done(function( data ) {
                     if(data.code == 200){
                         alert('Selected Users are sucessfully moved to next round.');
+                        window.location = "/admin/home";
                     }
                     else{
                         alert('Technical Error Please try after some time.');
@@ -431,6 +475,33 @@
             }
        }
 
+       function unSelectFrom3(){
+            var values = $('input:checkbox:checked.winners').map(function () {
+              return this.value;
+            }).get();
+            if(values.length){
+                console.log('values to unSelectFrom15:-- ',values);
+                $.post( "/admin/unselect-for-3", {"userIds": JSON.stringify(values)})
+                  .done(function( data ) {
+                    if(data.code == 200){
+                        alert('Selected Users are sucessfully re-moved from this round.');
+                        window.location = "/admin/home";
+                    }
+                    else{
+                        alert('Technical Error Please try after some time.');
+                    }
+                  });
+            }else{
+                alert('Please select users');
+            }
+       }
+
+       function logout(){
+        $.get( "/admin/logout", { })
+                  .done(function( data ) {
+                    window.location = "/admin/login"
+                  });
+       }
    </script>
     <!-- END THEME LAYOUT SCRIPTS -->
     </body>

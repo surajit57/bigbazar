@@ -17,26 +17,38 @@ UserController.postBlog = function(req,res){
 
   var url = req.body.blog_url;
   var UserId = req.user.id;
- 
-
-    var blog = Blog.build({
-      url: req.body.blog_url,
-      userId: req.user.id
-    });
-    blog.save().then(function(blog){
-      if(!blog) return res.redirect('/users/home');
-          console.log('blog created');
-          User.update({
-            isBlogAdded: 1
-          },{
-            where: {
-              id: req.user.id
-            }
-          }).then(function(userData) {
-            // req.flash('info', 'Blog sucessfully posted');
-            return res.redirect('/users/home') 
+  User.findOne({
+    where: {
+      id: UserId,
+      isBlogAdded: 1
+    }
+  })
+    .then( function(blog){
+      console.log('blog value :--- ', blog);
+      if(!blog){
+          var blog = Blog.build({
+            url: req.body.blog_url,
+            userId: req.user.id
           });
-    });
+          blog.save().then(function(blog){
+            if(!blog) return res.redirect('/users/home');
+                console.log('blog created');
+                User.update({
+                  isBlogAdded: 1
+                },{
+                  where: {
+                    id: req.user.id
+                  }
+                }).then(function(userData) {
+                  // req.flash('info', 'Blog sucessfully posted');
+                  return res.redirect('/users/home') 
+                });
+          });
+      }
+      else{
+        console.log('ALready added');
+      }
+    } )
 };
 
 
@@ -83,9 +95,62 @@ var arr = JSON.parse(req.body.userIds);
   });
 }
 
-// UserController.selectFor100 = function(req, res){
-  
-// }
+UserController.unselectFor100 = function(req, res){
+  var arr = JSON.parse(req.body.userIds);
+  return Promise.map(arr,function(val){
+           console.log('val:- ',val);
+          return User.update({
+            isUnder100: 0,
+            isUnder15: 0,
+            isUnder3: 0
+           },{
+            where: {
+              id: val
+            }
+           })})
+           .then(function(user){
+              console.log('Users are unselectedFor100 ',user);
+              res.json({ code: 200 })
+           })
+}
+
+UserController.unselectFor15 = function(req, res){
+  var arr = JSON.parse(req.body.userIds);
+  console.log('insied:-- ',arr);
+  return Promise.map(arr,function(val){
+           console.log('val:- ',val);
+          return User.update({
+            isUnder15: 0,
+            isUnder3: 0
+           },{
+            where: {
+              id: val
+            }
+           })})
+           .then(function(user){
+              console.log('Users are unselectedFor15 ',user);
+              res.json({ code: 200 })
+           })
+}
+
+UserController.unselectFor3 = function(req, res){
+  var arr = JSON.parse(req.body.userIds);
+  console.log('insied:-- ',arr);
+  return Promise.map(arr,function(val){
+           console.log('val:- ',val);
+          return User.update({
+            isUnder3: 0
+           },{
+            where: {
+              id: val
+            }
+           })})
+           .then(function(user){
+              console.log('Users are unselectedFor15 ',user);
+              res.json({ code: 200 })
+           })
+}
+
 
 UserController.postSelectFor15 = function(req, res){
   var arr = JSON.parse(req.body.userIds);
