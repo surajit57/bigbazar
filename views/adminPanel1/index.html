@@ -195,7 +195,7 @@
                                         <div class="previewLevel">
                                             <button onclick="unSelectFrom100()" class="preview_button" "><i class="fa fa-chevron-left"></i> Select For Preview Round</button>
                                         </div>                                        
-                                    </div><!-- box-body -->
+                                    </div>
                                     <div class="previewnext">
                                         <nav>
                                             <ul class="pagination">
@@ -213,14 +213,14 @@
                                                 </li>
                                             </ul>
                                         </nav>
-                                </div><!--previewnext-->
-                            </div><!--tab_1_2-->
+                                </div>
+                            </div>
 
                             <div class="tab-pane fade" id="tab_1_3">
                                    <div class="selectcheckbox">
                                             <input type="checkbox" id="checkThird" class="form selectall" />
                                         <label>Select All</label>
-                                    </div><!--selectcheckbox-->
+                                    </div>
                                     <div class="box-body">
                                         <table class="table table-striped table-bordered responsive">
                                             <thead>
@@ -238,7 +238,7 @@
                                                 <% if (blogs[i].user.isUnder15) { %>
                                                  <tr>
 
-                                                        <td><input type="checkbox" class="top15" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                        <td><input type="checkbox" class="top15V" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
                                                         <td><%= blogs[i].url %></td>
                                                         <td>
@@ -306,7 +306,7 @@
                                                 <% if (blogs[i].user.isUnder3) { %>
                                                  <tr>
 
-                                                        <td><input type="checkbox" class="top15" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                        <td><input type="checkbox" class="winners" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
                                                         <td><%= blogs[i].url %></td>
                                                         <td>
@@ -441,9 +441,10 @@
        }
 
        function unSelectFrom15(){
-            var values = $('input:checkbox:checked.top3').map(function () {
+            var values = $('input:checkbox:checked.top15').map(function () {
               return this.value;
             }).get();
+            console.log('values:---- ', values);
             if(values.length){
                 console.log('values to unSelectFrom15:-- ',values);
                 $.post( "/admin/unselect-for-15", {"userIds": JSON.stringify(values)})
@@ -462,7 +463,7 @@
        }
 
        function postSelectFor3(){
-            var values = $('input:checkbox:checked.top3').map(function () {
+            var values = $('input:checkbox:checked.top15V').map(function () {
               return this.value;
             }).get();
             if(values.length){
@@ -486,7 +487,7 @@
               return this.value;
             }).get();
             if(values.length){
-                console.log('values to unSelectFrom15:-- ',values);
+                
                 $.post( "/admin/unselect-for-3", {"userIds": JSON.stringify(values)})
                   .done(function( data ) {
                     if(data.code == 200){
