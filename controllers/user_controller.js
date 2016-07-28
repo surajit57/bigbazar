@@ -8,12 +8,12 @@ var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 
 var transporter = nodemailer.createTransport(
-    smtpTransport('smtps://user@gmail.com:pass@smtp.gmail.com')
+    smtpTransport('smtps://bigbajar88@gmail.com:bigbajar@123@smtp.gmail.com')
 );
 var html_text = '<p><b>Thanks your blog sucessfully uploaded.</b></p>';
 function send_mail(email){
   transporter.sendMail({
-      from: 'user@gmail.com',
+      from: 'bigbajar88@gmail.com',
       to: email,
       cc: 'shashidhar@teampumpkin.com',
       text: 'Authenticated with OAuth2',
@@ -68,7 +68,7 @@ UserController.postBlog = function(req,res){
                     }
                   }).then(function(userData){
                     var email = userData.email;
-                    // send_mail(email);
+                    send_mail(email);
                   })
                   
                 }).then(function(data){
