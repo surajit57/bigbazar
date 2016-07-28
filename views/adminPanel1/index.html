@@ -106,7 +106,7 @@
                                                <% for(var i=0; i<blogs.length; i++) {%>
                                                 <tr>
 
-                                                   <td><input type="checkbox" class="top100" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                   <td><input type="checkbox" class="top100 checkTab" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                    <td><%= blogs[i].user.email %></td>
                                                    <td><%= blogs[i].url %></td>
                                                    <td>
@@ -170,7 +170,7 @@
                                                 <% if (blogs[i].user.isUnder100) { %>
                                                  <tr>
 
-                                                        <td><input type="checkbox" class="top15" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                        <td><input type="checkbox" class="top15 checksecond" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
                                                         <td><%= blogs[i].url %></td>
                                                         <td>
@@ -238,7 +238,7 @@
                                                 <% if (blogs[i].user.isUnder15) { %>
                                                  <tr>
 
-                                                        <td><input type="checkbox" class="top15V" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                        <td><input type="checkbox" class="top15 checkthird" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
                                                         <td><%= blogs[i].url %></td>
                                                         <td>
@@ -306,7 +306,7 @@
                                                 <% if (blogs[i].user.isUnder3) { %>
                                                  <tr>
 
-                                                        <td><input type="checkbox" class="winners" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+                                                        <td><input type="checkbox" class="winners checkfourth" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
                                                         <td><%= blogs[i].url %></td>
                                                         <td>
@@ -463,7 +463,7 @@
        }
 
        function postSelectFor3(){
-            var values = $('input:checkbox:checked.top15V').map(function () {
+            var values = $('input:checkbox:checked.top15').map(function () {
               return this.value;
             }).get();
             if(values.length){
