@@ -51,34 +51,23 @@ UserController.getAllBlogs = function(req, res){
 }
 UserController.selectFor100 = function(req, res){
 
-  User
-  .count({
-     where: {
-        isUnder100: 1
-     }
-  })
+  User.count({ where: { isUnder100: 1 }})
   .then(function(result) {
-    console.log(result);
     if(result >= 100){
       console.log('Already selectFor100 is full');
     }
     else{
-     return Promise.map([28, 30],function(val){
-           console.log('val:- ',val);
-          return User.update({
-            isUnder100: 1
-           },{
-            where: {
-              id: val
-            }
-           })})
-           .then(function(user){
-              console.log('Users are selectFor100 ',user);
-           })
+      return Promise.map([28, 30],function(val){
+        return User.update({ isUnder100: 1} ,
+        {
+          where: { id: val }
+         })
+      })
+      .then(function(user){
+        console.log('Users are selectFor100 ',user);
+      })
     }
   });
-
- 
 }
 
 
