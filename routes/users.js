@@ -20,6 +20,16 @@ router.get('/login', function(req, res){
 	res.render('userLogin.html');
 });
 
+router.get('/logout', function(req, res){
+		req.session.destroy(function(){
+        req.session = null;
+
+        res.clearCookie('express.sid', { path: '/' });
+        res.redirect('/users/login');
+
+    });
+});
+
 router.get('/blogPost', Auth.isLoggedIn, function(req, res){
 	res.render('blog.html');
 });

@@ -28,7 +28,6 @@ function send_mail(email){
     });
 }
 
-
 var UserController = {};
 
 UserController.getSignupPage = function(req, res){

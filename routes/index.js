@@ -16,7 +16,7 @@ router.post('/login', passport.authenticate('local-login', {failureRedirect: '/u
 	if(req.user.isAdmin){
 		return res.redirect('/admin/home');
 	}
-	return res.redirect('/user/home')
+	return res.redirect('/users/home')
 });
 
 module.exports = router;
