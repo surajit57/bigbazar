@@ -4,6 +4,29 @@ var Blog = models.blog;
 var randomstring = require('randomstring');
 // const map = require('promise-map');
 var Promise = require('bluebird');
+var nodemailer = require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
+
+var transporter = nodemailer.createTransport(
+    smtpTransport('smtps://user@gmail.com:pass@smtp.gmail.com')
+);
+var html_text = '<p><b>Thanks your blog sucessfully uploaded.</b></p>';
+function send_mail(email){
+  transporter.sendMail({
+      from: 'user@gmail.com',
+      to: email,
+      cc: 'shashidhar@teampumpkin.com',
+      text: 'Authenticated with OAuth2',
+      subject: '🐴BigBazar',
+      html: html_text
+    }, function(error, response) {
+       if (error) {
+            console.log('error while sending mail:- ',error);
+       } else {
+            console.log('E-Message sent');
+       }
+    });
+}
 
 
 var UserController = {};
@@ -40,7 +63,16 @@ UserController.postBlog = function(req,res){
                     id: req.user.id
                   }
                 }).then(function(userData) {
-                  // req.flash('info', 'Blog sucessfully posted');
+                  User.findOne({
+                    where:{
+                      id:UserId
+                    }
+                  }).then(function(userData){
+                    var email = userData.email;
+                    // send_mail(email);
+                  })
+                  
+                }).then(function(data){
                   return res.redirect('/users/home') 
                 });
           });
