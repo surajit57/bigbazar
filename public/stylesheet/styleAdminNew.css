@@ -30,4 +30,6 @@ form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;
 .nextLevel{ float: right;margin: 0px 10px;width: auto;}
 .selectcheckbox .checker {float: left;padding-right: 6px;}
 .next_button{padding: 7px 15px;background: #405764;color: #fff;border: none;}
+.previewLevel{ float: right;margin: 0px 10px;width: auto;}
+.preview_button{padding: 7px 15px;background: #405764;color: #fff;border: none;}
 /* BLOGGER PAGES CSS END */
