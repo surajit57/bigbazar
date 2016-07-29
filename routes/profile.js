@@ -21,7 +21,7 @@ require('../lib/passport.js')(passport);
 router.get('/',Auth.isLoggedIn, function(req, res){
 	console.log('I am at profile page');
 	// res.redirect('/admin/allBlogs');
-	res.render('profile.html');
+	res.render('newprofile.html');
 });
 
 
