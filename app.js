@@ -1,5 +1,5 @@
 var express = require('express');
-// var flash = require('express-flash');
+var flash = require('express-flash');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -13,6 +13,7 @@ var MySQLStore = require('express-mysql-session')(session);
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin');
+var profile = require('./routes/profile');
 
 var config = require( './config' );
 config.db.user = config.db.username;
@@ -43,6 +44,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 // app.use(require('flash')());
 // app.use(function (req, res, next) {
 //   // flash a message
@@ -53,6 +55,7 @@ app.use(passport.session());
 app.use('/', routes);
 app.use('/users', users);
 app.use('/admin', admin);
+app.use('/users/profile',profile)
 
 
 // catch 404 and forward to error handler
