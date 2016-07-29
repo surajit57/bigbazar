@@ -50,6 +50,10 @@
               </ol>
             </div>
 
+            <% if ( locals.messages ) { %>
+              <div class="flash"><%= locals.messages.info %></div>
+            <% } %>
+
             <div class="col-sm-6">
               <div class="tab-div">
 
