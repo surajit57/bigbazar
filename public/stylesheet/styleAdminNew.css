@@ -8,11 +8,11 @@ form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;
 .group-form{background: #fff;padding: 30px 30px;border: 1px solid #fff;}
 .login-title {color: #fff;text-align: center;margin: 0px auto; display: block;}
 .sign_in{display: block !important;margin: 0px auto;padding: 7px 30px !important;
-        background-color: #28156e;color: #fff;text-transform: uppercase; border-radius: 0px !important;}
+        background-color: #0e264e;color: #fff;text-transform: uppercase; border-radius: 0px !important;}
 .sign_in:hover{color: #fff !important;}
-.logoinimg {background: #28156e;  padding: 15px 0px;}
+.logoinimg {background: #0e264e;  padding: 15px 0px;}
 .login-title img{width: 150px;height: 55px;}
-.input-group-addon{background: #28156e !important;color: #fff !important;}
+.input-group-addon{background: #0e264e !important;color: #fff !important;}
 .logintext{text-align: center;display: block;  color: #000;font-weight:700; font-size: 15px;  padding-top: 5px;}
 /* LOGIN PAGES CSS END */
 /* BLOGGER PAGES CSS END */
