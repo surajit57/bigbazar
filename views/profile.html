@@ -2,16 +2,60 @@
 <html>
 <head>
 	<title></title>
+	<meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
+	<meta property="og:type"               content="article" />
+	<meta property="og:title"              content="When Great Minds Don’t Think Alike" />
+	<meta property="og:description"        content="How much does culture influence creative thinking?" />
+	<meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
 </head>
 <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1569759199992980',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+  function fbShare(){
+  	FB.ui(
+	{
+		method: 'feed',
+		name: "Celebrate the BigBazar Contest",
+		link: 'http://192.168.1.21:3000/users/profile',
+		picture: "http://www.freedigitalphotos.net/images/img/homepage/87357.jpg",
+		caption: "BigBazar Contest",
+		description: 'Share a message to show your blogs posted to BiBazar Contest',
+		message: 'Hello'
+	});
+  }
+</script>
+
+
 <form method="post" enctype="multipart/form-data" action="/users/profile/upload">
 
     <input type="file" name="displayImage">
     <input type="submit" value="Submit">
 </form>
 
+<button onclick="fbShare()">Facebook Share</button>
+
 <% if ( locals.messages ) { %>
               <div class="flash"><%= locals.messages.info %></div>
             <% } %>
 </body>
+
+
+
 </html>
+
