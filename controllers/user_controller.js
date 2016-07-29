@@ -31,7 +31,7 @@ function send_mail(email){
 var UserController = {};
 
 UserController.getSignupPage = function(req, res){
-	res.render('test.html');
+	res.render('userLogin.html');
 }
 
 
@@ -46,7 +46,7 @@ UserController.postBlog = function(req,res){
     }
   })
     .then( function(blog){
-      console.log('blog isBlogAdded::-- ', blog.isBlogAdded);
+      // console.log('blog isBlogAdded::-- ', blog.isBlogAdded);
       if(!blog){
           var blog = Blog.build({
             url: req.body.blog_url,
@@ -251,4 +251,14 @@ UserController.unselectFor3 = function(req, res){
            })
 }
 
+UserController.getListOfAllUsers = function(req, res){
+  console.log('coming herererwewre');
+
+  Blog.findAll({include:[{ model: models.user }]}).then(function(allblogs) {
+     
+      // return allblogs;
+      
+    // res.render('adminPanel1/index.html', {blogs: allblogs});
+  })
+}
 module.exports = UserController;
