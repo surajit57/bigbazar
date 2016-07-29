@@ -10,8 +10,8 @@ form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;
 .sign_in{display: block !important;margin: 0px auto;padding: 7px 30px !important;
         background-color: #28156e;color: #fff;text-transform: uppercase; border-radius: 0px !important;}
 .sign_in:hover{color: #fff !important;}
-.logoinimg {background: #28156e;  padding: 20px 0px;}
-.login-title img{width: 170px;height: 49px;}
+.logoinimg {background: #28156e;  padding: 15px 0px;}
+.login-title img{width: 150px;height: 55px;}
 .input-group-addon{background: #28156e !important;color: #fff !important;}
 .logintext{text-align: center;display: block;  color: #000;font-weight:700; font-size: 15px;  padding-top: 5px;}
 /* LOGIN PAGES CSS END */
