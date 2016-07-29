@@ -46,7 +46,7 @@ UserController.postBlog = function(req,res){
     }
   })
     .then( function(blog){
-      console.log('blog value :--- ', blog);
+      console.log('blog isBlogAdded::-- ', blog.isBlogAdded);
       if(!blog){
           var blog = Blog.build({
             url: req.body.blog_url,
@@ -72,12 +72,17 @@ UserController.postBlog = function(req,res){
                   })
                   
                 }).then(function(data){
-                  return res.redirect('/users/home') 
+                  return res.json({code: 200, message: "sucessfully uploaded"});
+                  // return res.redirect('/users/home') 
                 });
           });
       }
-      else{
+      else if(blog.isBlogAdded){
         console.log('ALready added');
+        return res.json({code: 100, message: "Blog is already uploaded."});
+      }
+      else{
+        return res.json({code: 0, message: "Error while uploading"});
       }
     } )
 };

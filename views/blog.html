@@ -66,12 +66,12 @@
           </div>
 
           <div class="col-sm-6">
-            <form method="POST" action="/users/blogPost">
+            <form >
               <!-- <div class="form-group"> -->
                 <label for="exampleInputEmail1">Enter URL:</label>
-                <input type="text" name="blog_url" class="" id="" placeholder="" style="">
+                <input type="text" name="blog_url" class="" id="blog_url" placeholder="" style="">
               <!-- </div> -->
-              <input type="submit" name="submit" class="blog_submit">
+              <input type="button" onclick="submitBlog()" name="submit" class="blog_submit" data-toggle="modal" data-target="#myModal">
             </form>
           </div>
 
@@ -107,6 +107,30 @@
                     window.location = "/users/login"
                   });
       }
+
+      function submitBlog(){
+        var urlVal = document.getElementById("blog_url").value;
+        if(urlVal.length){
+            console.log('urlVal:--- ',urlVal);
+            $.post( "/users/blogPost", {"blog_url": urlVal})
+                    .done(function( data ) {
+                      if(data.code == 200){
+                          alert('Selected Users are sucessfully moved to next round.');
+                          // window.location = "/admin/home";
+                      }
+                      else if(data.code == 100){
+                          alert('Blog was already uploaded.');
+                      }
+                      else{
+                          alert('Technical Error Please try after some time.');
+                      }
+                    });
+        }
+      else{
+        alert('Please enter a proper url');
+      }
+
+       }
     </script>
   </body>
 </html>
