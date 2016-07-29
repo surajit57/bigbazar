@@ -72,7 +72,7 @@
                 <label for="exampleInputEmail1">Enter URL:</label>
                 <input type="text" name="blog_url" class="" id="blog_url" placeholder="" style="">
               <!-- </div> -->
-              <button type="button" onclick="submitBlog()" name="submit" class="blog_submit" >Submit</button>
+              <button type="button" onclick="submitBlog()" name="submit" class="blog_submit">Submit</button>
             </form>
           </div>
 
@@ -150,7 +150,8 @@
                       }
                       else if(data.code == 100){
                           console.log('data.code:- ',data.code);
-                            $("#errorModal").show();                      
+                          alert('Blog was already uploaded.');
+                            // $("#errorModal").show();                      
                         }
                       else{
                           alert('Technical Error Please try after some time.');
