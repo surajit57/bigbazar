@@ -10,8 +10,6 @@ var router = express.Router();
 require('../lib/passport.js')(passport);
 
 router.get('/home', Auth.isLoggedIn , function(req, res){
-	req.flash('info', 'Welcome');
-	console.log('req.user:- ', req.user.isBlogAdded);
 	var UserData = req.user;
 	req.flash('info', req.user.isBlogAdded)
 	res.render('blog.html', {data: UserData });
@@ -39,5 +37,7 @@ router.get('/blogPost', Auth.isLoggedIn, function(req, res){
 	res.render('blog.html');
 });
 router.post('/blogPost', Auth.isLoggedIn, UserController.postBlog);
+
+router.get('/list', UserController.getListOfAllUsers);
 
 module.exports = router;
