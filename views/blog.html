@@ -72,7 +72,14 @@
                 <label for="exampleInputEmail1">Enter URL:</label>
                 <input type="text" name="blog_url" class="" id="blog_url" placeholder="" style="">
               <!-- </div> -->
-              <button type="button" onclick="submitBlog()" name="submit" class="blog_submit">Submit</button>
+              
+              <% if (locals.messages.info) { %>
+              <button type="button" onclick="submitBlog()" name="submit" class="blog_submit"  >Blog already Submitted</button>
+               <% } else { %> 
+                    <button type="button" onclick="submitBlog()" name="submit" class="blog_submit" data-toggle="modal" data-target="#myModal">Submit</button> <% } %>
+
+
+               
             </form>
           </div>
 
@@ -145,14 +152,9 @@
             $.post( "/users/blogPost", {"blog_url": urlVal})
                     .done(function( data ) {
                       if(data.code == 200){
-                          alert('Selected Users are sucessfully moved to next round.');
-                          // window.location = "/admin/home";
+                          // alert('Selected Users are sucessfully moved to next round.');
+                          window.location = "/users/home";
                       }
-                      else if(data.code == 100){
-                          console.log('data.code:- ',data.code);
-                          alert('Blog was already uploaded.');
-                            // $("#errorModal").show();                      
-                        }
                       else{
                           alert('Technical Error Please try after some time.');
                       }

@@ -11,14 +11,17 @@ require('../lib/passport.js')(passport);
 
 router.get('/home', Auth.isLoggedIn , function(req, res){
 	req.flash('info', 'Welcome');
-	res.render('blog.html');
+	console.log('req.user:- ', req.user.isBlogAdded);
+	var UserData = req.user;
+	req.flash('info', req.user.isBlogAdded)
+	res.render('blog.html', {data: UserData });
 });
 
 router.get('/signup' , UserController.getSignupPage);
 router.post('/signup', passport.authenticate('local-signup', {failureRedirect: '/users/login' , successRedirect:'/users/home'}));
 
 router.get('/login', function(req, res){
-	req.flash('info', 'Welcome:------------------------------------------');
+	// req.flash('info', 'Welcome:------------------------------------------');
 	res.render('userLogin.html');
 });
 

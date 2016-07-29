@@ -46,7 +46,7 @@ UserController.postBlog = function(req,res){
     }
   })
     .then( function(blog){
-      console.log('blog isBlogAdded::-- ', blog.isBlogAdded);
+      // console.log('blog isBlogAdded::-- ', blog.isBlogAdded);
       if(!blog){
           var blog = Blog.build({
             url: req.body.blog_url,
