@@ -45,12 +45,6 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-// app.use(require('flash')());
-// app.use(function (req, res, next) {
-//   // flash a message
-//   req.flash('info', 'hello!');
-//   next();
-// })
 
 app.use('/', routes);
 app.use('/users', users);
