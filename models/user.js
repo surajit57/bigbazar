@@ -32,6 +32,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     isUnder3: {
       type: DataTypes.BOOLEAN
+    },
+    imageUrl: {
+      type: DataTypes.STRING
     }
   }, {
     classMethods: {

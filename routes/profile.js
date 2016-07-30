@@ -18,12 +18,10 @@ var router = express.Router();
 require('../lib/passport.js')(passport);
 
 
-router.get('/',Auth.isLoggedIn, function(req, res){
-	console.log('I am at profile page');
-	// res.redirect('/admin/allBlogs');
-	res.render('newprofile.html');
-});
+router.get('/', Auth.isLoggedIn, UserController.getProfile);
+router.post('/', Auth.isLoggedIn, UserController.saveProfile);
 
+router.post('/updatepassword', Auth.isLoggedIn, UserController.changePassword);
 
 router.post('/upload',Auth.isLoggedIn, type, function (req, res) {
       console.log('image upload:::---------------------- ', req.file);

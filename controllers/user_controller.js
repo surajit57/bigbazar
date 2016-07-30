@@ -34,6 +34,70 @@ UserController.getSignupPage = function(req, res){
 	res.render('userLogin.html');
 }
 
+UserController.getProfile = function(req, res){
+  Blog.findOne({
+    where:{
+      userId:  req.user.id
+    }
+  }).then(function(blogDetail){
+    var userInfo = {
+      userInfo: req.user,
+      blogDetail: blogDetail
+    }
+    res.render('newprofile.html',{ userInfo: userInfo});
+  })
+}
+
+UserController.saveProfile = function(req, res){
+    var user = User.update({
+      name: req.body.name,
+      email: req.body.email
+    },{
+      where: {
+        id: req.user.id
+      }
+    }).then(function(val){
+      Blog.update({
+        url: req.body.url
+      },{
+        where:{
+          userId: req.user.id
+        }
+      }).then(function(blog){
+        res.redirect('/users/profile');
+      })
+    })
+}
+
+UserController.changePassword = function(req, res){
+  console.log('password change is under process');
+  console.log('Olde password:- ', req.body.currentPassword);
+  console.log('New password: - ', req.body.newPassword);
+  var pass = User.generateHash(req.body.newPassword);
+  console.log('pass:-- ', pass);
+
+  if(req.body.confirmPassword !== req.body.newPassword){
+    return req.flash('error', 'password doesnot match')
+  }
+
+      if(req.user.validPassword(req.body.currentPassword)){
+        User.update({
+          password: User.generateHash(req.body.newPassword)
+        },{
+          where:{
+            email: req.user.email
+          }
+        }).then(function(user){
+          console.log('password changed sucessfully');
+          return res.redirect('/users/profile');
+        })
+      }
+      else{
+        console.log('error');
+        return req.flash('error', 'Technical error')
+      }
+
+}
 
 UserController.postBlog = function(req,res){
 
@@ -254,11 +318,11 @@ UserController.unselectFor3 = function(req, res){
 UserController.getListOfAllUsers = function(req, res){
   console.log('coming herererwewre');
 
-  Blog.findAll({include:[{ model: models.user }]}).then(function(allblogs) {
+  Blog.findAll({include:[{ model: models.user }]})
+  .then(function(allblogs) {
      
-      // return allblogs;
-      
-    // res.render('adminPanel1/index.html', {blogs: allblogs});
+    // console.log('allblogs:-- ',allblogs.length);
+    res.render('users.html', {blogs: allblogs});
   })
 }
 module.exports = UserController;

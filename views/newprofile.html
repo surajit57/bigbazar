@@ -3,6 +3,13 @@
     <head>
     <meta charset="utf-8" />
     <title>BIG BAZAAR</title>
+
+    <meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="When Great Minds Don’t Think Alike" />
+    <meta property="og:description"        content="How much does culture influence creative thinking?" />
+    <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
@@ -21,6 +28,38 @@
     </head>
     <!-- END HEAD -->
     <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1569759199992980',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+  function fbShare(){
+    console.log('Share clicked');
+    FB.ui(
+    {
+        method: 'feed',
+        name: "Celebrate the BigBazar Contest",
+        link: 'http://192.168.1.21:3000/users/profile',
+        picture: "http://www.freedigitalphotos.net/images/img/homepage/87357.jpg",
+        caption: "BigBazar Contest",
+        description: 'Share a message to show your blogs posted to BiBazar Contest',
+        message: 'Hello'
+    });
+  }
+</script>
         <div class="page-header navbar navbar-fixed-top">
             <div class="page-header-inner ">
                 <div class="page-logo">
@@ -72,8 +111,15 @@
                                         <div class="profile-usertitle-name"><i class="fa fa-user" aria-hidden="true"></i> <span style="padding-left:5px">Hemant Singh Nagarkoti</span></div>
                                         <div class="profile-usertitle-name"><i class="fa fa-envelope" aria-hidden="true"></i><span style="padding-left:5px">hemant.singh@teampumpkin.com </span></div>
                                         <div class="profile-usertitle-name"><i class="fa fa-rss" aria-hidden="true"></i><a href="#" style="padding-left:5px">http://localhost:3000/admin/signup</a></div>
-                                    <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;"><a href="#" class="fb_bg" style="margin-right:0px;"><i class="fa fa-facebook"></i><b>Share via Facebook</b></a></div>
-                                    <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;"><a href="#" class="tw_bg"><i class="fa fa-twitter"></i><b>Share via Twiiter</b></a></div>
+                                    <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;">
+                                    <a href="#" onclick="fbShare()" class="fb_bg" style="margin-right:0px;"><i class="fa fa-facebook"></i><b>Share via Facebook</b></a>
+                                    </div>
+                                    <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;"><a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" class="tw_bg"><i class="fa fa-twitter"></i><b>Share via Twiiter</b></a></div>
+
+
+
+
+
                                     </div>
                                     <div class="profile-usermenu"></div>
                                 </div><!--portlet light profile-sidebar-portlet-->
@@ -103,21 +149,22 @@
                                             <div class="portlet-body">
                                                 <div class="tab-content">
                                                     <div class="tab-pane active" id="tab_1_1">
-                                                        <form role="form" action="#">
+                                                        <form role="form" method="post" action="/users/profile">
                                                             <div class="form-group">
                                                                 <label class="control-label">Name</label>
-                                                                <input type="text" placeholder="John" class="form-control"> </div>
+                                                                <input type="text" name="name" placeholder="John" class="form-control" value="<%= userInfo.userInfo.name %>" />
+                                                                
+                                                                 </div>
                                                             <div class="form-group">
                                                                 <label class="control-label">E-Mail Id</label>
-                                                                <input type="text" placeholder="example@gmail.com" class="form-control"> </div>
+                                                                <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>"> </div>
                                                             <div class="form-group">
                                                                 <label class="control-label">Blog Url</label>
-                                                                <input type="text" placeholder="http://www.mywebsite.com" class="form-control"> </div>
-                                                                <div class="form-group" style="margin-top: 25px;margin-bottom: 25px;">
-                                                                    <a href="#" class="fb_bg"><i class="fa fa-facebook"></i><b>Share via Facebook</b></a><a href="#" class="tw_bg"><i class="fa fa-twitter"></i><b>Share via Twiiter</b></a>
-                                                                    </div>
+                                                                <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url %>"> </div>
+                                                               
                                                             <div class="margiv-top-10">
-                                                                <a href="javascript:;" class="btn green"> Save Changes </a>
+                                                                <input type="submit" value="Save Changes" class="btn green">
+                                                                
                                                                 <a href="javascript:;" class="btn default"> Cancel </a>
                                                             </div>
                                                         </form>
@@ -140,18 +187,19 @@
                                                         </form>
                                                     </div>
                                                     <div class="tab-pane" id="tab_1_3">
-                                                        <form action="#">
+                                                        <form method="post" action="/users/profile/updatepassword">
                                                             <div class="form-group">
                                                                 <label class="control-label">Current Password</label>
-                                                                <input type="password" class="form-control"> </div>
+                                                                <input type="password" name="currentPassword" class="form-control"> </div>
                                                             <div class="form-group">
                                                                 <label class="control-label">New Password</label>
-                                                                <input type="password" class="form-control"> </div>
+                                                                <input type="password" name="newPassword" class="form-control"> </div>
                                                             <div class="form-group">
                                                                 <label class="control-label">Re-type New Password</label>
-                                                                <input type="password" class="form-control"> </div>
+                                                                <input type="password" name="confirmPassword" class="form-control"> </div>
                                                             <div class="margin-top-10">
-                                                                <a href="javascript:;" class="btn green"> Change Password </a>
+                                                                <input type="submit" class="btn green" value="Change Password"></input>
+                                                                                                                                
                                                                 <a href="javascript:;" class="btn default"> Cancel </a>
                                                             </div>
                                                         </form>
@@ -175,5 +223,25 @@
         <script src="../../js/app.min.js" type="text/javascript"></script>
         <script src="../../js/layout.min.js" type="text/javascript"></script>
         <script src="../../js/demo.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            
+            function logout(){
+                console.log('logout clicked');
+             $.get( "/logout", { })
+                      .done(function( data ) {
+                        window.location = "/users/login"
+                      });
+            }
+
+            function saveUserDetail(){
+                $.get( "/users/profile", { })
+                      .done(function( data ) {
+                        alert('saveUserDetail done', data.code);
+                        // window.location = "/users/login"
+                      });
+                }
+            
+
+        </script>
     </body>
 </html>
