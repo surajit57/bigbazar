@@ -44,6 +44,7 @@ UserController.getProfile = function(req, res){
       userInfo: req.user,
       blogDetail: blogDetail
     }
+    // res.render('profile.html');
     res.render('newprofile.html',{ userInfo: userInfo});
   })
 }

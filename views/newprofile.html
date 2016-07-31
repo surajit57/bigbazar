@@ -160,7 +160,15 @@
                                                                 <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>"> </div>
                                                             <div class="form-group">
                                                                 <label class="control-label">Blog Url</label>
-                                                                <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url %>"> </div>
+                                                                 <% if (userInfo.blogDetail) 
+                                                                 { %>
+                                                                 <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url %>">
+                                                                 <% } 
+                                                                 else { %>
+                                                                 <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control"  value="">
+                                                                 <% } %>
+                                                                
+                                                            </div>
                                                                
                                                             <div class="margiv-top-10">
                                                                 <input type="submit" value="Save Changes" class="btn green">
@@ -170,21 +178,26 @@
                                                         </form>
                                                     </div>
                                                     <div class="tab-pane" id="tab_1_2">
-                                                        <form action="#" role="form">
+                                                        <form method="post" enctype="multipart/form-data" action="/users/profile/upload" role="form">
                                                             <div class="form-group">
                                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                                                     <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
                                                                         <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""> </div>
                                                                     <div>
-                                                                        <input type="file" name="pic" class="form-control form-controls"  base-sixty-four-input="" style="height: auto;">
+                                                                        <input type="file" name="displayImage" class="form-control form-controls"  base-sixty-four-input="" style="height: auto;">
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div class="margin-top-10">
-                                                                <a href="javascript:;" class="btn green"> Submit </a>
+                                                                <input type="submit" class="btn green" value="Submit">
+                                                                <!-- <a href="javascript:;" class="btn green"> Submit </a> -->
                                                                 <a href="javascript:;" class="btn default"> Cancel </a>
                                                             </div>
                                                         </form>
+                                                        <% if ( locals.messages ) { %>
+                                                          <div class="flash"><b><%= locals.messages.info %></b></div>
+                                                        <% } %>
+                                                        
                                                     </div>
                                                     <div class="tab-pane" id="tab_1_3">
                                                         <form method="post" action="/users/profile/updatepassword">

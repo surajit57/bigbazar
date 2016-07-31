@@ -22,7 +22,7 @@
     "jade": "~1.11.0",
     "lodash": "^4.14.0",
     "morgan": "~1.6.1",
-    "multer": "^1.1.0",
+    "multer": "^1.0.3",
     "mysql": "^2.11.1",
     "nodemailer": "^2.5.0",
     "nodemailer-smtp-transport": "^2.6.0",

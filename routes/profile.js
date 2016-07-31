@@ -31,12 +31,52 @@ router.post('/upload',Auth.isLoggedIn, type, function (req, res) {
 		  console.log('tmp_path:-- ',tmp_path);
 		  console.log('target_path:-- ', target_path);
 		  // req.flash('info', 'Image Uploaded');
-		  res.json({code: 200, message: "Image Uploaded Sucessfully"})
+              // res.render('newprofile.html');
+              res.redirect('/users/profile');
+		  // res.json({code: 200, message: "Image Uploaded Sucessfully"})
       }
       else{
       	res.json({code: 0, message: "Technical Error while uploading profile."})
       }
 });
+
+
+// router.post('/upload', multer({
+//       dest: './public/pro/',
+//       changeDest: function(dest, req, res){
+//             var newDestination = dest;
+//             var stat = null;
+//             try{
+//                   stat = fs.statSync(newDestination);
+//             } catch(err){
+//                   fs.mkdirSync(newDestination);
+//             }
+//             if(stat && !stat.isDirectory()) {
+//                   throw new Error('newDestination cannot be created because an inode of a different type exists at ');
+//             }
+//             return newDestination;
+//       }
+// }), function(req, res){
+//       res.json({"code": 200, "status": req.files});
+// })
+
+
+// router.post('/upload/image',multer({
+//       dest: './public/pro1',
+//       changeDest: function(dest, req, res){
+//             var newDestination = dest;
+//             console.log('new Destination');
+//             var stat = null;
+//             try{
+//                   stat = fs.statSync(newDestination);
+//             } catch (err) {
+//                   throw new Error('Directory cannot be created  "' + dest + '" ');
+//             }
+//             return newDestination;
+//       }
+// }), function(req, res){
+//       console.log('file uploaded ');
+// });
 
 
 
