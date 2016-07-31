@@ -70,12 +70,14 @@
             <form >
               <!-- <div class="form-group"> -->
                 <label for="exampleInputEmail1">Enter URL:</label>
-                <input type="text" name="blog_url" class="" id="blog_url" placeholder="" style="">
+                <!-- <input type="text" name="blog_url" class="" id="blog_url" placeholder="" style="" > -->
               <!-- </div> -->
               
               <% if (locals.messages.info) { %>
-              <button type="button" onclick="submitBlog()" name="submit" class="blog_submit"  >Blog already Submitted</button>
+              <input type="text" name="blog_url" class="" id="blog_url" placeholder="" style="" disabled >
+              <button type="button" onclick="submitBlog()" name="submit" class="blog_submit" disabled >Blog already Submitted</button>
                <% } else { %> 
+               <input type="text" name="blog_url" class="" id="blog_url" placeholder="" style="" >
                     <button type="button" onclick="submitBlog()" name="submit" class="blog_submit" data-toggle="modal" data-target="#myModal">Submit</button> <% } %>
 
 
