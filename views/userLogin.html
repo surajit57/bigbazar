@@ -80,17 +80,17 @@
                       <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" name="password" class="form-control" id="pass1" placeholder="">
-                        <div id="">
-                          <label style="display: none;" id="error1">Password should be atleast 6 character long</label>
-                        </div>
                       </div>
+                      <div id="">
+                          <label style="display: none;color: red;" id="error1">Password should be atleast 6 character long</label>
+                        </div>
 
                       <div class="form-group">
                         <label for="exampleInputPassword1">Re-type Password</label>
                         <input type="password" name="confirmPassword" class="form-control" id="cpass1" placeholder="">
                       </div>
                       <div id="">
-                      <label style="display: none;" id="error2">Password doesn't matched</label>
+                      <label style="display: none;color: red;" id="error2">Password doesn't matched</label>
                       </div>
 
                       <button type="submit" class="btn btn-default">Submit</button>
@@ -107,9 +107,10 @@
                       <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" name="password" class="form-control" id="signInPass" placeholder="">
-                        <label id="error3" style="display: none;">Password cann't be smaller than 6 character</label>
                       </div>
-
+                      <div id="">
+                        <label id="error3" style="display: none; color: red;">Password cann't be smaller than 6 character</label>
+                      </div>
                       <a href="#" data-toggle="modal" data-target="#forgotpassword">Forgot Password?</a><br/>
 
                       <button type="submit" class="btn btn-default">Submit</button>
