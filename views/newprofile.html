@@ -206,8 +206,9 @@
                                                                            <% } 
                                                                         else { %>
                                                                             <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""> 
-                                                                    </div>
+                                                                    
                                                                         <% } %>
+                                                                        </div>
                                                                     </div>
                                                                     <div>
                                                                         <input type="file" name="displayImage" class="form-control form-controls"  base-sixty-four-input="" style="height: auto;">
@@ -218,7 +219,6 @@
                                                                 <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel">
                                                             </div>
                                                         </form>
-                                                        </div>
                                                         <% if ( locals.messages ) { %>
                                                           <div class="flash"><b><%= locals.messages.info %></b></div>
                                                         <% } %>
