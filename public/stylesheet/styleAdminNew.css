@@ -56,7 +56,7 @@ form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;
 .user_profile_image img{border-radius: 50%;display: block;margin: 0px auto;border: 2px dotted #fff;}
 .user_profile_details {float: left;width: 100%;color: #fff;text-align: center;
         font-size: 13px;font-weight: bold;text-transform: capitalize;padding: 0px 5px;}
-.user_profile_details > .name {width: 100%;float: left;margin-bottom: 10px;}
+.user_profile_details > .name {width: 100%;float: left;margin-bottom: 5px;}
 .user_profile_details >.blogurl {width: 100%;float: left;}
 .user_profile_details >.blogurl b{width: 100%;float: left;}
 .user_profile_details >.blogurl a{width: 100%;float: left;color: #dd6624;word-break: break-all; text-transform: none;}
