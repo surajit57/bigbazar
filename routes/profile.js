@@ -1,22 +1,18 @@
 var express = require('express');
 var router = express.Router();
-
+var models = require('../models');
+var User = models.user; 
+var Blog = models.blog;
 var passport = require('passport');
 var _ = require('lodash');
 var  UserController = require('../controllers/user_controller');
-
 var Auth = require('../lib/auth');
-
 var multer  = require('multer');
 var upload = multer({ dest: 'public/profile/'});
 var fs = require('fs');
 var type = upload.single('displayImage');
-
-
-
 var router = express.Router();
 require('../lib/passport.js')(passport);
-
 
 router.get('/', Auth.isLoggedIn, UserController.getProfile);
 router.post('/', Auth.isLoggedIn, UserController.saveProfile);
@@ -30,54 +26,24 @@ router.post('/upload',Auth.isLoggedIn, type, function (req, res) {
 		  var target_path = 'public/profile/' + req.file.originalname;
 		  console.log('tmp_path:-- ',tmp_path);
 		  console.log('target_path:-- ', target_path);
-		  // req.flash('info', 'Image Uploaded');
-              // res.render('newprofile.html');
-              res.redirect('/users/profile');
-		  // res.json({code: 200, message: "Image Uploaded Sucessfully"})
+              console.log('req.file name:- ',req.file.filename);
+              console.log('req.user:- ',req.user);
+
+              var user = User.update({
+                  imageUrl: 'http://localhost:3000/profile/'+req.file.filename,
+                },{
+                  where: {
+                    id: req.user.id
+                  }
+                }).then(function(val){
+                  console.log('val:-- ',val);
+                  req.flash('info', 'Image Uploaded');
+                  res.redirect('/users/profile');
+                })
       }
       else{
       	res.json({code: 0, message: "Technical Error while uploading profile."})
       }
 });
-
-
-// router.post('/upload', multer({
-//       dest: './public/pro/',
-//       changeDest: function(dest, req, res){
-//             var newDestination = dest;
-//             var stat = null;
-//             try{
-//                   stat = fs.statSync(newDestination);
-//             } catch(err){
-//                   fs.mkdirSync(newDestination);
-//             }
-//             if(stat && !stat.isDirectory()) {
-//                   throw new Error('newDestination cannot be created because an inode of a different type exists at ');
-//             }
-//             return newDestination;
-//       }
-// }), function(req, res){
-//       res.json({"code": 200, "status": req.files});
-// })
-
-
-// router.post('/upload/image',multer({
-//       dest: './public/pro1',
-//       changeDest: function(dest, req, res){
-//             var newDestination = dest;
-//             console.log('new Destination');
-//             var stat = null;
-//             try{
-//                   stat = fs.statSync(newDestination);
-//             } catch (err) {
-//                   throw new Error('Directory cannot be created  "' + dest + '" ');
-//             }
-//             return newDestination;
-//       }
-// }), function(req, res){
-//       console.log('file uploaded ');
-// });
-
-
 
 module.exports = router;
