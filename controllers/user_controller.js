@@ -144,7 +144,6 @@ UserController.changePassword = function(req, res){
 }
 
 UserController.postBlog = function(req,res){
-
   var url = req.body.blog_url;
   var UserId = req.user.id;
   User.findOne({
@@ -195,11 +194,9 @@ UserController.postBlog = function(req,res){
     } )
 };
 
-
 UserController.getAdminSignupPage = function(req, res){
   res.render('adminPanel1/signup.html');
 }
-
 
 UserController.getAllBlogs = function(req, res){
     Blog.findAll({include:[{ model: models.user }]}).then(function(allblogs) {
@@ -207,7 +204,6 @@ UserController.getAllBlogs = function(req, res){
     res.render('adminPanel1/index.html', {blogs: allblogs});
   });
 }
-
 
 UserController.postSelectFor100 = function(req, res){
 var arr = JSON.parse(req.body.userIds);
@@ -360,13 +356,20 @@ UserController.unselectFor3 = function(req, res){
 }
 
 UserController.getListOfAllUsers = function(req, res){
-  console.log('coming herererwewre');
+  console.log('coming getListOfAllUsers');
 
-  Blog.findAll({include:[{ model: models.user }]})
-  .then(function(allblogs) {
-     
-    // console.log('allblogs:-- ',allblogs.length);
-    res.render('users.html', {blogs: allblogs});
-  })
+  User.findAll({include:[{ model: models.blog }]}).then(function(allUsers) {
+    console.log('a::---------000- %j', allUsers[0]);
+    console.log('a::---------1111- %j', allUsers[1]);
+      console.log('----------------------------------------',allUsers[0].blogs.url);
+      // res.render('users.html', {allUsers: allUsers});
+      return res.render('users.html', {allUsers: allUsers});
+  });
+
+
+  // Blog.findAll({include:[{ model: models.user }]})
+  // .then(function(allblogs) {
+  //   res.render('users.html', {blogs: allblogs});
+  // })
 }
 module.exports = UserController;
