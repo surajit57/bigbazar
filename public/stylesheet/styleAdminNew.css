@@ -39,7 +39,9 @@ form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;
 .background{ background: url(../../images/bg-banner.png);background-repeat: no-repeat;
         background-attachment: fixed;float: left;width: 100%;/*height: 1080px;max-height: 667px;*/}
 .topselecter {float: left;width: 100%; margin: 10px 0px;} 
-.topselecter >.nav-tabs{width: 270px;float: left;background: transparent !important;border-radius: 5px;margin: 0px 0px;}
+.topselecter >.nav-tabs{width: 270px;float: left;background: transparent !important;border-radius: 5px;margin: 0px 0px; 
+        position: fixed; z-index: 0;
+}
 .topselecter >.nav-tabs>li{float: left;width: 100%;margin: 7px 0px !Important;height: auto;}
 .topselecter >.tab-content{float: right;width: 79%;background: transparent;padding-left: 50px;    padding-top: 0px;}
 .topselecter >.nav-tabs>li.active>a, .topselecter >.nav-tabs>li.active>a:focus, .topselecter >.nav-tabs>li.active>a:hover{
@@ -57,7 +59,7 @@ form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;
 .user_profile_details > .name {width: 100%;float: left;margin-bottom: 10px;}
 .user_profile_details >.blogurl {width: 100%;float: left;}
 .user_profile_details >.blogurl b{width: 100%;float: left;}
-.user_profile_details >.blogurl a{width: 100%;float: left;color: #dd6624;word-break: break-all;}
+.user_profile_details >.blogurl a{width: 100%;float: left;color: #dd6624;word-break: break-all; text-transform: none;}
 .user_profile_position {float: left;width: 100%;color: #fff;font-weight: bold;border-top: 1px solid #403c3c;padding: 9px 10px;margin: 9px 0px;}
 .number {width: auto;height: auto;padding: 5px 2px;word-break: break-word;color: #dd6624;font-weight: bold;font-size: 16px;}
 .user_position_details{display: block;margin: 0px auto;float: none;text-align: center;}

@@ -109,7 +109,7 @@
                                     
                                     <% if (userInfo.userInfo.imageUrl) 
                                        { %>
-                                       <img src="<%= userInfo.userInfo.imageUrl %>" class="img-responsive" alt="">
+                                       <img src="<%= userInfo.userInfo.imageUrl %>" class="img-responsive" alt="" style="width:150px; height:150px;">
                                        <% } 
                                     else { %>
                                         <img src="../../images/profile_user.jpg" class="img-responsive" alt="">
@@ -200,17 +200,15 @@
                                                                             <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""> </div>
                                                                         <% } %>
                                                                     
-                                                                        
-                                                                    <div>
-                                                                        <input type="file" name="displayImage" class="form-control form-controls"  base-sixty-four-input="" style="height: auto;">
-                                                                    </div>
                                                                 </div>
+                                                                <div>
+                                                                <input type="file" name="displayImage" class="form-control form-controls"  base-sixty-four-input="" style="height: auto;">
+                                                                    </div>
                                                             </div>
                                                             <div class="margin-top-10">
                                                                 <input type="submit" class="btn green" value="Submit">
-                                                                <!-- <a href="javascript:;" class="btn green"> Submit </a> -->
-                                                                <!-- <a href="javascript:;" class="btn default"> Cancel </a> -->
                                                                 <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel">
+                                                            </div>
                                                             </div>
                                                         </form>
                                                         <% if ( locals.messages ) { %>
@@ -231,8 +229,7 @@
                                                                 <input type="password" name="confirmPassword" class="form-control"> </div>
                                                             <div class="margin-top-10">
                                                                 <input type="submit" class="btn green" value="Change Password"></input>
-                                                                                                                                
-                                                                <!-- <a href="javascript:;" class="btn default"> Cancel </a> -->
+                                                                 <!-- <a href="javascript:;" class="btn default"> Cancel </a> -->
                                                                 <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel"> </input>
                                                             </div>
                                                         </form>
