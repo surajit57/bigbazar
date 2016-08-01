@@ -118,25 +118,33 @@
                                     else { %>
                                         <img src="../../images/profile_user.jpg" class="img-responsive" alt="">
                                     <% } %>
-                                         </div>
+                                    </div>
                                     <div class="profile-usertitle">
-                                        <div class="profile-usertitle-name"><i class="fa fa-user" aria-hidden="true"></i> <span style="padding-left:5px">Hemant Singh Nagarkoti</span></div>
-                                        <div class="profile-usertitle-name"><i class="fa fa-envelope" aria-hidden="true"></i><span style="padding-left:5px"><%= userInfo.userInfo.email %></span></div>
-                                        <div class="profile-usertitle-name"><i class="fa fa-rss" aria-hidden="true"></i><a href="#" style="padding-left:5px">http://104.236.84.1:3000/users/list</a></div>
-                                    <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;">
-                                    <a href="#" onclick="fbShare()" class="fb_bg" style="margin-right:0px;"><i class="fa fa-facebook"></i><b>Share via Facebook</b></a>
+                                        <div class="profile-usertitle-name">
+                                            <i class="fa fa-user" aria-hidden="true"></i> 
+                                            <span style="padding-left:5px">Hemant Singh Nagarkoti</span>
+                                        </div>
+                                        <div class="profile-usertitle-name">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                            <span style="padding-left:5px"><%= userInfo.userInfo.email %></span>
+                                        </div>
+                                        <div class="profile-usertitle-name">
+                                            <i class="fa fa-rss" aria-hidden="true"></i>
+                                            <a href="#" style="padding-left:5px">http://104.236.84.1:3000/users/list</a>
+                                        </div>
+                                        <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;">
+                                            <a href="#" onclick="fbShare()" class="fb_bg" style="margin-right:0px;">
+                                            <i class="fa fa-facebook"></i><b>Share via Facebook</b></a>
+                                        </div>
+                                        <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;">
+                                        <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" class="tw_bg">
+                                        <i class="fa fa-twitter"></i><b>Share via Twiiter</b></a>
                                     </div>
-                                    <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;"><a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" class="tw_bg"><i class="fa fa-twitter"></i><b>Share via Twiiter</b></a></div>
-
-
-
-
-
-                                    </div>
-                                    <div class="profile-usermenu"></div>
-                                </div><!--portlet light profile-sidebar-portlet-->
-                                <div class="portlet light" style="background: transparent;"></div>
-                            </div><!--profile-sidebar-->
+                                </div>
+                                <div class="profile-usermenu"></div>
+                            </div><!--portlet light profile-sidebar-portlet-->
+                            <div class="portlet light" style="background: transparent;"></div>
+                        </div><!--profile-sidebar-->
                             <div class="profile-content">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -157,7 +165,7 @@
                                                         <a href="#tab_1_3" data-toggle="tab">Change Password</a>
                                                     </li>
                                                 </ul>
-                                            </div>
+                                            </div><!--portlet-title tabbable-line-->
                                             <div class="portlet-body">
                                                 <div class="tab-content">
                                                     <div class="tab-pane active" id="tab_1_1">
@@ -165,13 +173,12 @@
                                                             <div class="form-group">
                                                                 <label class="control-label">Name</label>
                                                                 <input type="text" name="name" placeholder="John" class="form-control" value="<%= userInfo.userInfo.name %>" />
-                                                                
-                                                                 </div>
+                                                            </div>
                                                             <div class="form-group">
                                                                 <label class="control-label">E-Mail Id</label>
-                                                                <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>"> </div>
+                                                                <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>"> 
+                                                            </div>
                                                             <div class="form-group">
-
                                                                 <label class="control-label">Blog Url</label>
                                                                  <% if (userInfo.blogDetail) 
                                                                  { %>
@@ -180,17 +187,14 @@
                                                                  else { %>
                                                                  <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control"  value="">
                                                                  <% } %>
-                                                                
                                                             </div>
-                                                               
                                                             <div class="margiv-top-10">
-                                                                <input type="submit" value="Save Changes" class="btn green">
-                                                                
-                                                                <!-- <a href="javascript:;" class="btn default"> Cancel </a> -->
-                                                                <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel"> </input>
+                                                                <input type="submit" value="Save Changes" class="btn green" />
+                                                                <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel" /> 
                                                             </div>
                                                         </form>
-                                                    </div>
+                                                    </div><!--tab_1_1-->
+
                                                     <div class="tab-pane" id="tab_1_2">
                                                         <form method="post" enctype="multipart/form-data" action="/users/profile/upload" role="form">
                                                             <div class="form-group">
@@ -201,12 +205,12 @@
                                                                            <img src="<%= userInfo.userInfo.imageUrl %>" class="img-responsive image_reps" alt="">
                                                                            <% } 
                                                                         else { %>
-                                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""> </div>
+                                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""> 
+                                                                    </div>
                                                                         <% } %>
-                                                                    
-                                                                </div>
-                                                                <div>
-                                                                <input type="file" name="displayImage" class="form-control form-controls"  base-sixty-four-input="" style="height: auto;">
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="file" name="displayImage" class="form-control form-controls"  base-sixty-four-input="" style="height: auto;">
                                                                     </div>
                                                             </div>
                                                             <div class="margin-top-10">
@@ -214,11 +218,11 @@
                                                                 <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel">
                                                             </div>
                                                         </form>
+                                                        </div>
                                                         <% if ( locals.messages ) { %>
                                                           <div class="flash"><b><%= locals.messages.info %></b></div>
                                                         <% } %>
-                                                        
-                                                    </div>
+                                                    </div><!--tab_1_2-->
                                                     <div class="tab-pane" id="tab_1_3">
                                                         <form method="post" action="/users/profile/updatepassword">
                                                             <div class="form-group">
@@ -236,18 +240,18 @@
                                                                 <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel"> </input>
                                                             </div>
                                                         </form>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                                    </div><!--tab_1_3-->
+                                                </div><!--tab-content-->
+                                            </div><!--portlet-body-->
+                                        </div><!--portlet light-->
+                                    </div><!--col-md-12-->
+                                </div><!--row-->
+                            </div><!--profile-content-->
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
+        </div>
         <div class="page-footer">
             <div class="page-footer-inner"> Copyright © 2016 Big Bazzer. All rights reserved.</div>
             <div class="scroll-to-top"><i class="icon-arrow-up"></i></div>
