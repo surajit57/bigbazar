@@ -10,510 +10,94 @@
     <link href="http://52.35.82.113/dashboard/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/styleAdminNew.css" rel="stylesheet" type="text/css" />
-    <link href="../../stylesheet/layout.min.css" rel="stylesheet" type="text/css" />
-    <link href="../../stylesheet/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
-    <link href="../../stylesheet/custom.min.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="../images/favicon.ico" /> 
-
-    <script src="../../js/jquery.min.js" type="text/javascript"></script>
     </head>
-    <!-- END HEAD -->
-    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
-        <div class="page-header navbar navbar-fixed-top">
-            <div class="page-header-inner ">
-                <div class="page-logo">
-                    <a href="index.html">
-                        <img src="../../images/logo.png" alt="logo" class="logo-default" style="width:100px;height: 40px;margin: 5px 0px 0px 0px;" /> </a>
-                    <div class="menu-toggler sidebar-toggler"> </div>
-                </div>
-                
-                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
-                <div class="top-menu">
-                    <div class="pull-right">
-                        <div class="add-button" style="margin-top: 4px;">
-                          <button type="button" onclick="logout()" class="btn btn-default" style="background: transparent; border: transparent;color: #fff;"><i class="fa fa-lock" style="border-radius: 50%;padding: 4px 7px;background: #000;border: 2px solid #fff;"></i>&nbsp;&nbsp;SIGN OUT</button>
-                      </div>
-                    </div><!--pull-right-->    
-                       
-                </div>
-            </div>
-        </div>
-        <div class="clearfix"> </div>
-        <div class="page-container">
-            <div class="page-sidebar-wrapper">
-                <div class="page-sidebar navbar-collapse collapse">
-                   <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                   <li class="nav-item">
-                            <a href="javascript:;" class="nav-link nav-toggle">
-                                <i class="fa fa-rss"></i>
-                                <span class="title">Bloggers</span>
-                            </a>
-                        </li>
-                   </ul>
-                </div>
-            </div>
-            <div class="page-content-wrapper">
-                <div class="page-content">
-                    <div class="page-bar">
-                        <ul class="page-breadcrumb">
-                            <li>
-                                <a href="">Home</a>
-                                <i class="fa fa-circle"></i>
-                            </li>
-                            <li>
-                                <span>Bloggers</span>
-                            </li>
+    <body style="background: url(../../images/bg-banner.png);">
+        <div class="background">
+            <div class="row" style="margin: 0px">
+                <div class="col-md-12">
+                    <div class="topselecter">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#all" aria-controls="home" role="tab" data-toggle="tab">All Users </a></li>
+                            <li role="presentation"><a href="#top100" aria-controls="profile" role="tab" data-toggle="tab">Top 100 </a></li>
+                            <li role="presentation"><a href="#top50" aria-controls="messages" role="tab" data-toggle="tab">Top 50</a></li>
+                            <li role="presentation"><a href="#top3" aria-controls="messages" role="tab" data-toggle="tab">Top 3</a></li>
                         </ul>
-                    </div>
-                    <div class="row">
-		            <div class="col-md-12">
-                        <div class="portlet-body">
-                            <div class="row"  style="margin: 0px;">
-                                <ul class="nav nav-tabs">
-                                    <li class="active">
-                                        <a data-target="#tab_1_1" data-toggle="tab" style="text-transform: uppercase;">shorted for first round</a>
-                                    </li>
-                                    <li>
-                                        <a data-target="#tab_1_2" data-toggle="tab" style="text-transform: uppercase;">shorted for second round</a>
-                                    </li>
-                                    <li>
-                                        <a data-target="#tab_1_3" data-toggle="tab" style="text-transform: uppercase;">shorted for third round</a>
-                                    </li>
-                                     <li>
-                                        <a data-target="#tab_1_4" data-toggle="tab" style="text-transform: uppercase;">shorted for fourth round</a>
-                                    </li>
-                                </ul>
-                            </div><!--row-->
-                            <div class="tab-content">
-                                <div class="tab-pane fade active in" id="tab_1_1">
-                                    <div class="selectcheckbox">
-                                            <input type="checkbox" id="checkAll" class="form selectall" />
-                                        <label>Select All</label>
-                                    </div><!--selectcheckbox-->
-                                    <div class="box-body">
-                                        <table class="table table-striped table-bordered responsive">
-                                            <thead>
-                                                <tr>
-                                                    <th>Author Name</th>
-                                                    <th>Email Id</th>
-                                                    <th>Blog Url</th>
-                                                    <th>Top 100</th>
-                                                    <th>Top 15</th>
-                                                    <th>Top 3</th>
-                                                    <th>Share</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="top100">
-                                               <% for(var i=0; i<blogs.length; i++) {%>
-                                                <tr>
-
-                                                   <td><input type="checkbox" class="top100 checkTab" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
-                                                   <td><%= blogs[i].user.email %></td>
-                                                   <td><%= blogs[i].url %></td>
-                                                   <td>
-                                                        <% if (blogs[i].user.isUnder100) { %><p>Selected</p>
-                                                        <% } else { %> <p>Not Selected</p> <% } %>
-                                                    </td>
-                                                    <td>
-                                                        <% if (blogs[i].user.isUnder15) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
-                                                    </td>
-                                                    <td>
-                                                        <% if (blogs[i].user.isUnder3) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
-                                                    </td>
-                                                </tr>
-                                                 <% } %>
-                                                  
-                                            </tbody>
-                                        </table>
-                                        <div class="nextLevel">
-                                            <for
-                                            <button class="next_button" onclick="postSelectFor100()">Select For Next Round <i class="fa fa-chevron-right"></i></button>
-                                        </div>
-                                    </div><!-- box-body -->
-                                    <div class="previewnext">
-                                        <nav>
-                                            <ul class="pagination">
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Previous">
-                                                        <span aria-hidden="true">&laquo; Prev</span>
-                                                        <span class="sr-only">Previous</span>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#" aria-label="Next">
-                                                    <span aria-hidden="true">Next &raquo;</span>
-                                                    <span class="sr-only">Next</span></a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                </div><!--previewnext-->
-                            </div><!--tab_1_1-->
-                            <div class="tab-pane fade" id="tab_1_2">
-                                    <div class="selectcheckbox">
-                                            <input type="checkbox" id="checkSecond" class="form selectall sndCheck" />
-                                        <label>Select All</label>
-                                    </div><!--selectcheckbox-->
-                                    <div class="box-body">
-                                        <table class="table table-striped table-bordered responsive">
-                                            <thead>
-                                                <tr>
-                                                    <th>Author Name</th>
-                                                    <th>Email Id</th>
-                                                    <th>Blog Url</th>
-                                                    <th>Top 100</th>
-                                                    <th>Top 15</th>
-                                                    <th>Top 3</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <% for(var i=0; i<blogs.length; i++) {%>
-                                                <% if (blogs[i].user.isUnder100) { %>
-                                                 <tr>
-
-                                                        <td><input type="checkbox" class="top15 checksecond" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
-                                                        <td><%= blogs[i].user.email %></td>
-                                                        <td><%= blogs[i].url %></td>
-                                                        <td>
-                                                            <% if (blogs[i].user.isUnder100) { %><p>Selected</p>
-                                                            <% } else { %> <p>Not Selected</p> <% } %>
-                                                        </td>
-                                                        <td>
-                                                            <% if (blogs[i].user.isUnder15) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
-                                                        </td>
-                                                        <td>
-                                                            <% if (blogs[i].user.isUnder3) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
-                                                        </td>
-                                                    </tr>
-                                                     <% } else { %>  <% } %>
-                                                   
-                                                 <% } %>
-                                            </tbody>
-                                        </table>
-                                        <div class="nextLevel">
-                                            <button class="next_button" onclick="postSelectFor15()">Select For Next Round <i class="fa fa-chevron-right"></i></button>
-                                        </div>
-                                        <div class="previewLevel">
-                                            <button onclick="unSelectFrom100()" class="preview_button" "><i class="fa fa-chevron-left"></i> Select For Preview Round</button>
-                                        </div>                                        
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="all">
+                                <div class="user_profile">
+                                    <div class="user_profile_image">
+                                        <img src="../../images/profile_user.jpg">
                                     </div>
-                                    <div class="previewnext">
-                                        <nav>
-                                            <ul class="pagination">
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Previous">
-                                                        <span aria-hidden="true">&laquo; Prev</span>
-                                                        <span class="sr-only">Previous</span>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#" aria-label="Next">
-                                                    <span aria-hidden="true">Next &raquo;</span>
-                                                    <span class="sr-only">Next</span></a>
-                                                </li>
-                                            </ul>
-                                        </nav>
+                                    <div class="user_profile_details">
+                                        <span class="name">hemant singh nagarkoti</span>
+                                        <span class="blogurl"><b>Blog Url :</b><a href="https://www.youtube.com/watch?v=y6h-KGmcCeY" target="_blank">https://www.youtube.com/watch?v=y6h-KGmcCeY</a></span>
+                                    </div>
+                                    <div class="user_profile_position">
+                                        <div class="user_position_details">
+                                            <span class="position_text">Position</span>
+                                            <span class="keyword">:</span>
+                                            <span class="number">100</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="tab-pane fade" id="tab_1_3">
-                                   <div class="selectcheckbox">
-                                            <input type="checkbox" id="checkThird" class="form selectall" />
-                                        <label>Select All</label>
+                            <div role="tabpanel" class="tab-pane" id="top100"><div class="user_profile">
+                                    <div class="user_profile_image">
+                                        <img src="../../images/profile_user.jpg">
                                     </div>
-                                    <div class="box-body">
-                                        <table class="table table-striped table-bordered responsive">
-                                            <thead>
-                                                <tr>
-                                                    <th>Author Name</th>
-                                                    <th>Email Id</th>
-                                                    <th>Blog Url</th>
-                                                    <th>Top 100</th>
-                                                    <th>Top 15</th>
-                                                    <th>Top 3</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <% for(var i=0; i<blogs.length; i++) {%>
-                                                <% if (blogs[i].user.isUnder15) { %>
-                                                 <tr>
-
-                                                        <td><input type="checkbox" class="top15 checkthird" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
-                                                        <td><%= blogs[i].user.email %></td>
-                                                        <td><%= blogs[i].url %></td>
-                                                        <td>
-                                                            <% if (blogs[i].user.isUnder100) { %><p>Selected</p>
-                                                            <% } else { %> <p>Not Selected</p> <% } %>
-                                                        </td>
-                                                        <td>
-                                                            <% if (blogs[i].user.isUnder15) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
-                                                        </td>
-                                                        <td>
-                                                            <% if (blogs[i].user.isUnder3) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
-                                                        </td>
-                                                    </tr>
-                                                     <% } else { %>  <% } %>
-                                                   
-                                                 <% } %>
-                                            </tbody>
-                                        </table>
-                                        <div class="nextLevel">
-                                            <button class="next_button" onclick="postSelectFor3()">Select For Next Round <i class="fa fa-chevron-right"></i></button>
+                                    <div class="user_profile_details">
+                                        <span class="name">hemant singh nagarkoti</span>
+                                        <span class="blogurl"><b>Blog Url :</b><a href="https://www.youtube.com/watch?v=y6h-KGmcCeY" target="_blank">https://www.youtube.com/watch?v=y6h-KGmcCeY</a></span>
+                                    </div>
+                                    <div class="user_profile_position">
+                                        <div class="user_position_details">
+                                            <span class="position_text">Position</span>
+                                            <span class="keyword">:</span>
+                                            <span class="number">100</span>
                                         </div>
-                                        <div class="previewLevel">
-                                            <button onclick="unSelectFrom15()" class="preview_button" "><i class="fa fa-chevron-left"></i> Select For Preview Round</button>
-                                        </div> 
-                                    </div><!-- box-body -->
-                                    <div class="previewnext">
-                                        <nav>
-                                            <ul class="pagination">
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Previous">
-                                                        <span aria-hidden="true">&laquo; Prev</span>
-                                                        <span class="sr-only">Previous</span>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#" aria-label="Next">
-                                                    <span aria-hidden="true">Next &raquo;</span>
-                                                    <span class="sr-only">Next</span></a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                </div><!--previewnext-->
-                            </div><!--tab_1_3-->
-
-                            <div class="tab-pane fade" id="tab_1_4">
-                                  <div class="selectcheckbox">
-                                            <input type="checkbox" id="checkFourth" class="form selectall" />
-                                        <label>Select All</label>
-                                    </div><!--selectcheckbox-->
-                                    <div class="box-body">
-                                        <table class="table table-striped table-bordered responsive">
-                                            <thead>
-                                                <tr>
-                                                    <th>Author Name</th>
-                                                    <th>Email Id</th>
-                                                    <th>Blog Url</th>
-                                                    <th>Top 100</th>
-                                                    <th>Top 15</th>
-                                                    <th>Top 3</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                 <% for(var i=0; i<blogs.length; i++) {%>
-                                                <% if (blogs[i].user.isUnder3) { %>
-                                                 <tr>
-
-                                                        <td><input type="checkbox" class="winners checkfourth" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
-                                                        <td><%= blogs[i].user.email %></td>
-                                                        <td><%= blogs[i].url %></td>
-                                                        <td>
-                                                            <% if (blogs[i].user.isUnder100) { %><p>Selected</p>
-                                                            <% } else { %> <p>Not Selected</p> <% } %>
-                                                        </td>
-                                                        <td>
-                                                            <% if (blogs[i].user.isUnder15) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
-                                                        </td>
-                                                        <td>
-                                                            <% if (blogs[i].user.isUnder3) { %><p>Selected</p><% } else { %><p>Not Selected</p><% } %>
-                                                        </td>
-                                                    </tr>
-                                                     <% } else { %>  <% } %>
-                                                   
-                                                 <% } %>
-                                            </tbody>
-                                        </table>
-                                        <div class="previewLevel">
-                                            <button onclick="unSelectFrom3()" class="preview_button" "><i class="fa fa-chevron-left"></i> Change Winners</button>
-                                        </div> 
-                                    </div><!-- box-body -->
-                                    <div class="previewnext">
-                                        <nav>
-                                            <ul class="pagination">
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Previous">
-                                                        <span aria-hidden="true">&laquo; Prev</span>
-                                                        <span class="sr-only">Previous</span>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#" aria-label="Next">
-                                                    <span aria-hidden="true">Next &raquo;</span>
-                                                    <span class="sr-only">Next</span></a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                </div><!--previewnext-->
-                            </div><!--tab_1_4-->
-
-                        </div><!--tab-content-->
+                                    </div>
+                                </div></div>
+                            <div role="tabpanel" class="tab-pane" id="top50"><div class="user_profile">
+                                    <div class="user_profile_image">
+                                        <img src="../../images/profile_user.jpg">
+                                    </div>
+                                    <div class="user_profile_details">
+                                        <span class="name">hemant singh nagarkoti</span>
+                                        <span class="blogurl"><b>Blog Url :</b><a href="https://www.youtube.com/watch?v=y6h-KGmcCeY" target="_blank">https://www.youtube.com/watch?v=y6h-KGmcCeY</a></span>
+                                    </div>
+                                    <div class="user_profile_position">
+                                        <div class="user_position_details">
+                                            <span class="position_text">Position</span>
+                                            <span class="keyword">:</span>
+                                            <span class="number">50</span>
+                                        </div>
+                                    </div>
+                                </div></div>
+                            <div role="tabpanel" class="tab-pane" id="top3"><div class="user_profile">
+                                    <div class="user_profile_image">
+                                        <img src="../../images/profile_user.jpg">
+                                    </div>
+                                    <div class="user_profile_details">
+                                        <span class="name">hemant singh nagarkoti</span>
+                                        <span class="blogurl"><b>Blog Url :</b><a href="https://www.youtube.com/watch?v=y6h-KGmcCeY" target="_blank">https://www.youtube.com/watch?v=y6h-KGmcCeY</a></span>
+                                    </div>
+                                    <div class="user_profile_position">
+                                        <div class="user_position_details">
+                                            <span class="position_text">Position</span>
+                                            <span class="keyword">:</span>
+                                            <span class="number">03</span>
+                                        </div>
+                                    </div>
+                                </div></div>
+                        </div>
                     </div>
-                </div></div>
-        </div>
-        <div class="page-footer">
-            <div class="page-footer-inner"> Copyright © 2016 Big Bazzer. All rights reserved.
-            </div>
-            <div class="scroll-to-top">
-                <i class="icon-arrow-up"></i>
-            </div>
-        </div>
-    
-    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="../../js/app.min.js" type="text/javascript"></script>
-    <script src="../../js/layout.min.js" type="text/javascript"></script>
-    <script src="../../js/demo.min.js" type="text/javascript"></script>
-   <script type="text/javascript">
-       $("#checkAll").change(function () {
-           $(":checkbox.checkTab").prop('checked', $(this).prop("checked"));
-        });
-        $("#checkSecond").change(function () {
-           $(":checkbox.checksecond").prop('checked', $(this).prop("checked"));
-        });
-        $("#checkThird").change(function () {
-           $(":checkbox.checkthird").prop('checked', $(this).prop("checked"));
-        });
-        $("#checkFourth").change(function () {
-           $(":checkbox.checkfourth").prop('checked', $(this).prop("checked"));
-        });
-       function postSelectFor100(){
-            var values = $('input:checkbox:checked.top100').map(function () {
-              return this.value;
-            }).get();
-            if(values.length){
-                $.post( "/admin/select-for-100", {"userIds": JSON.stringify(values)})
-                  .done(function( data ) {
-                    if(data.code == 200){
-                        alert('Selected Users are sucessfully moved to next round.');
-                        window.location = "/admin/home";
-                    }
-                    else{
-                        alert('Technical Error Please try after some time.');
-                    }
-                  });
-            }else{
-                alert('Please select users');
-            }
-       }
-
-       function unSelectFrom100(){
-            var values = $('input:checkbox:checked.top15').map(function () {
-              return this.value;
-            }).get();
-            if(values.length){
-                $.post( "/admin/unselect-for-100", {"userIds": JSON.stringify(values)})
-                  .done(function( data ) {
-                    if(data.code == 200){
-                        alert('Selected Users are sucessfully re-moved from this round.');
-                        window.location = "/admin/home";
-                    }
-                    else{
-                        alert('Technical Error Please try after some time.');
-                    }
-                  });
-            }else{
-                alert('Please select users');
-            }
-       }
-
-       function postSelectFor15(){
-            var values = $('input:checkbox:checked.top15').map(function () {
-              return this.value;
-            }).get();
-            console.log('values:------- ', values);
-            if(values.length){
-                console.log('values:- ',values);
-                $.post( "/admin/select-for-15", {"userIds": JSON.stringify(values)})
-                  .done(function( data ) {
-                    if(data.code == 200){
-                        alert('Selected Users are sucessfully moved to next round.');
-                        window.location = "/admin/home";
-                    }
-                    else{
-                        alert('Technical Error Please try after some time.');
-                    }
-                  });
-            }else{
-                alert('Please select users');
-            }
-       }
-
-       function unSelectFrom15(){
-            var values = $('input:checkbox:checked.top15').map(function () {
-              return this.value;
-            }).get();
-            console.log('values:---- ', values);
-            if(values.length){
-                console.log('values to unSelectFrom15:-- ',values);
-                $.post( "/admin/unselect-for-15", {"userIds": JSON.stringify(values)})
-                  .done(function( data ) {
-                    if(data.code == 200){
-                        alert('Selected Users are sucessfully re-moved from this round.');
-                        window.location = "/admin/home";
-                    }
-                    else{
-                        alert('Technical Error Please try after some time.');
-                    }
-                  });
-            }else{
-                alert('Please select users');
-            }
-       }
-
-       function postSelectFor3(){
-            var values = $('input:checkbox:checked.top15').map(function () {
-              return this.value;
-            }).get();
-            if(values.length){
-                $.post( "/admin/select-for-3", {"userIds": JSON.stringify(values)})
-                  .done(function( data ) {
-                    if(data.code == 200){
-                        alert('Selected Users are sucessfully moved to next round.');
-                        window.location = "/admin/home";
-                    }
-                    else{
-                        alert('Technical Error Please try after some time.');
-                    }
-                  });
-            }else{
-                alert('Please select users');
-            }
-       }
-
-       function unSelectFrom3(){
-            var values = $('input:checkbox:checked.winners').map(function () {
-              return this.value;
-            }).get();
-            if(values.length){
-                
-                $.post( "/admin/unselect-for-3", {"userIds": JSON.stringify(values)})
-                  .done(function( data ) {
-                    if(data.code == 200){
-                        alert('Selected Users are sucessfully re-moved from this round.');
-                        window.location = "/admin/home";
-                    }
-                    else{
-                        alert('Technical Error Please try after some time.');
-                    }
-                  });
-            }else{
-                alert('Please select users');
-            }
-       }
-
-
-       function logout(){
-        $.get( "/admin/logout", { })
-                  .done(function( data ) {
-                    window.location = "/admin/login"
-                  });
-       }
-
-
-   </script>
-    <!-- END THEME LAYOUT SCRIPTS -->
+                </div><!--col-md-12-->
+            </div><!--row-->
+        </div><!--background-->
     </body>
+    <script src="../../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
 </html>
