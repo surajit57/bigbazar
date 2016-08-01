@@ -27,88 +27,122 @@
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="all">
-
-                           
-
-
-                                 <% for(var i=0; i<allUsers.length; i++) {%>
+                                <% for(var i=0; i<allUsers.length; i++) {%>
                                     <div class="user_profile">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg">
+                                        <div class="user_profile_image">
+                                            <img src="../../images/profile_user.jpg">
+                                        </div>
+                                        <div class="user_profile_details">
+                                            <span class="name"><%= allUsers[i].name %></span>
+                                            <span class="name"><%= allUsers[i].blogs.url %></span>
+                                                <% if (allUsers[i].blogs.length) { %>
+                                                   <span class="blogurl"><b>Blog Url :</b><a href="<%= allUsers[i].blogs[0].url%>" target="_blank"><%= allUsers[i].blogs[0].url%></a></span>
+                                                <% } else { %>
+                                                    <span class="blogurl"><b>Blog Url :</b><a href="http://104.236.84.1:3000/users/list" target="_blank">Blogs are not posted yet</a></span>
+                                                <% } %>
+                                        </div>
+                                            <div class="user_profile_position">
+                                                <div class="user_position_details">
+                                                    <span class="position_text">Position</span>
+                                                    <span class="keyword">:</span>
+                                                    <span class="number">100</span>
                                                 </div>
-                                                <div class="user_profile_details">
-                                                    <span name="name"><%= allUsers[i].name %></span>
-                                                    <span name="name"><%= allUsers[i].blogs.url %></span>
-                                                   <% if (allUsers[i].blogs.length) { %>
-                                                          
-                                                        <span class="blogurl"><b>Blog Url :</b><a href="<%= allUsers[i].blogs[0].url%>" target="_blank"><%= allUsers[i].blogs[0].url%></a></span>
-                                                       
-
-                                                    <% } else { %>
-                                                        <span class="blogurl"><b>Blog Url :</b><a href="http://104.236.84.1:3000/users/list" target="_blank">http://104.236.84.1:3000/users/list</a></span>
-                                                    <% } %>
-
-                                                </div>
-                                                <div class="user_profile_position">
-                                                    <div class="user_position_details">
-                                                        <span class="position_text">Position</span>
-                                                        <span class="keyword">:</span>
-                                                        <span class="number">100</span>
-                                                    </div>
-                                                </div>
+                                            </div>
                                     </div>
-                                                 <% } %>
-                               
-
+                                <% } %>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="top100"><div class="user_profile">
-                                    <div class="user_profile_image">
-                                        <img src="../../images/profile_user.jpg">
-                                    </div>
-                                    <div class="user_profile_details">
-                                        <span class="name">hemant singh nagarkoti</span>
-                                        <span class="blogurl"><b>Blog Url :</b><a href="https://www.youtube.com/watch?v=y6h-KGmcCeY" target="_blank">https://www.youtube.com/watch?v=y6h-KGmcCeY</a></span>
-                                    </div>
-                                    <div class="user_profile_position">
-                                        <div class="user_position_details">
-                                            <span class="position_text">Position</span>
-                                            <span class="keyword">:</span>
-                                            <span class="number">100</span>
+                            <div role="tabpanel" class="tab-pane" id="top100">
+                                 <% for(var i=0; i<allUsers.length; i++) {%>
+                                    
+                                    <% if (allUsers[i].isUnder100) { %>
+                                    <div class="user_profile">
+                                        <div class="user_profile_image">
+                                            <img src="../../images/profile_user.jpg">
                                         </div>
-                                    </div>
-                                </div></div>
-                            <div role="tabpanel" class="tab-pane" id="top50"><div class="user_profile">
-                                    <div class="user_profile_image">
-                                        <img src="../../images/profile_user.jpg">
-                                    </div>
-                                    <div class="user_profile_details">
-                                        <span class="name">hemant singh nagarkoti</span>
-                                        <span class="blogurl"><b>Blog Url :</b><a href="https://www.youtube.com/watch?v=y6h-KGmcCeY" target="_blank">https://www.youtube.com/watch?v=y6h-KGmcCeY</a></span>
-                                    </div>
-                                    <div class="user_profile_position">
-                                        <div class="user_position_details">
-                                            <span class="position_text">Position</span>
-                                            <span class="keyword">:</span>
-                                            <span class="number">50</span>
+                                        <div class="user_profile_details">
+                                            <span class="name"><%= allUsers[i].name %></span>
+                                            <span class="name"><%= allUsers[i].blogs.url %></span>
+                                                <% if (allUsers[i].blogs.length) { %>
+                                                   <span class="blogurl"><b>Blog Url :</b><a href="<%= allUsers[i].blogs[0].url%>" target="_blank"><%= allUsers[i].blogs[0].url%></a></span>
+                                                <% } else { %>
+                                                    <span class="blogurl"><b>Blog Url :</b><a href="http://104.236.84.1:3000/users/list" target="_blank">Blogs are not posted yet</a></span>
+                                                <% } %>
                                         </div>
+                                            <div class="user_profile_position">
+                                                <div class="user_position_details">
+                                                    <span class="position_text">Position</span>
+                                                    <span class="keyword">:</span>
+                                                    <span class="number">100</span>
+                                                </div>
+                                            </div>
                                     </div>
-                                </div></div>
-                            <div role="tabpanel" class="tab-pane" id="top3"><div class="user_profile">
-                                    <div class="user_profile_image">
-                                        <img src="../../images/profile_user.jpg">
-                                    </div>
-                                    <div class="user_profile_details">
-                                        <span class="name">hemant singh nagarkoti</span>
-                                        <span class="blogurl"><b>Blog Url :</b><a href="https://www.youtube.com/watch?v=y6h-KGmcCeY" target="_blank">https://www.youtube.com/watch?v=y6h-KGmcCeY</a></span>
-                                    </div>
-                                    <div class="user_profile_position">
-                                        <div class="user_position_details">
-                                            <span class="position_text">Position</span>
-                                            <span class="keyword">:</span>
-                                            <span class="number">03</span>
+                                    <% } else { %>
+
+                                     <% } %>
+                                    
+                                <% } %>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="top50">
+                                
+                                <% for(var i=0; i<allUsers.length; i++) {%>
+                                    <% if (allUsers[i].isUnder15) { %>
+                                    <div class="user_profile">
+                                        <div class="user_profile_image">
+                                            <img src="../../images/profile_user.jpg">
                                         </div>
+                                        <div class="user_profile_details">
+                                            <span class="name"><%= allUsers[i].name %></span>
+                                            <span class="name"><%= allUsers[i].blogs.url %></span>
+                                                <% if (allUsers[i].blogs.length) { %>
+                                                   <span class="blogurl"><b>Blog Url :</b><a href="<%= allUsers[i].blogs[0].url%>" target="_blank"><%= allUsers[i].blogs[0].url%></a></span>
+                                                <% } else { %>
+                                                    <span class="blogurl"><b>Blog Url :</b><a href="http://104.236.84.1:3000/users/list" target="_blank">Blogs are not posted yet</a></span>
+                                                <% } %>
+                                        </div>
+                                            <div class="user_profile_position">
+                                                <div class="user_position_details">
+                                                    <span class="position_text">Position</span>
+                                                    <span class="keyword">:</span>
+                                                    <span class="number">50</span>
+                                                </div>
+                                            </div>
                                     </div>
-                                </div></div>
+                                    <% } else { %>
+
+                                     <% } %>
+                                    
+                                <% } %>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="top3">
+                           <% for(var i=0; i<allUsers.length; i++) {%>
+                                    <% if (allUsers[i].isUnder15) { %>
+                                    <div class="user_profile">
+                                        <div class="user_profile_image">
+                                            <img src="../../images/profile_user.jpg">
+                                        </div>
+                                        <div class="user_profile_details">
+                                            <span class="name"><%= allUsers[i].name %></span>
+                                            <span class="name"><%= allUsers[i].blogs.url %></span>
+                                                <% if (allUsers[i].blogs.length) { %>
+                                                   <span class="blogurl"><b>Blog Url :</b><a href="<%= allUsers[i].blogs[0].url%>" target="_blank"><%= allUsers[i].blogs[0].url%></a></span>
+                                                <% } else { %>
+                                                    <span class="blogurl"><b>Blog Url :</b><a href="http://104.236.84.1:3000/users/list" target="_blank">Blogs are not posted yet</a></span>
+                                                <% } %>
+                                        </div>
+                                            <div class="user_profile_position">
+                                                <div class="user_position_details">
+                                                    <span class="position_text">Position</span>
+                                                    <span class="keyword">:</span>
+                                                    <span class="number">3</span>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <% } else { %>
+
+                                     <% } %>
+                                    
+                                <% } %>
+                            </div>
                         </div>
                     </div>
                 </div><!--col-md-12-->
