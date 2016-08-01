@@ -192,7 +192,15 @@
                                                             <div class="form-group">
                                                                 <div class="fileinput fileinput-new" data-provides="fileinput">
                                                                     <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""> </div>
+                                                                        <% if (userInfo.userInfo.imageUrl) 
+                                                                           { %>
+                                                                           <img src="<%= userInfo.userInfo.imageUrl %>" class="img-responsive" alt="">
+                                                                           <% } 
+                                                                        else { %>
+                                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""> </div>
+                                                                        <% } %>
+                                                                    
+                                                                        
                                                                     <div>
                                                                         <input type="file" name="displayImage" class="form-control form-controls"  base-sixty-four-input="" style="height: auto;">
                                                                     </div>

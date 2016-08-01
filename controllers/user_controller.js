@@ -59,14 +59,56 @@ UserController.saveProfile = function(req, res){
         id: req.user.id
       }
     }).then(function(val){
-      Blog.update({
-        url: req.body.url
-      },{
+      Blog.findOne({
         where:{
-          userId: req.user.id
+          userId:  req.user.id
         }
-      }).then(function(blog){
-        res.redirect('/users/profile');
+      }).then(function(blogDetail){
+          if(!blogDetail){
+            var url = req.body.blog_url;
+            var UserId = req.user.id;
+           
+              if(!blog){
+                  var blog = Blog.build({
+                    url: req.body.url,
+                    userId: req.user.id
+                  });
+                  blog.save().then(function(blog){
+                    if(!blog) return res.redirect('/users/home');
+                       return User.update({
+                          isBlogAdded: 1
+                        },{
+                          where: {
+                            id: req.user.id
+                          }
+                        }).then(function(userData) {
+                          return User.findOne({
+                            where:{
+                              id:UserId
+                            }
+                          }).then(function(userData){
+
+                            var email = userData.email;
+                             console.log('email',email);
+                            send_mail(email);
+                            return res.redirect('/users/profile') 
+                          })
+                          
+                        })
+                  });
+              }
+     }
+          else{
+              Blog.update({
+                url: req.body.url
+              },{
+                where:{
+                  userId: req.user.id
+                }
+              }).then(function(blog){
+                res.redirect('/users/profile');
+              })
+          }
       })
     })
 }
