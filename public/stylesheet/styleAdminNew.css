@@ -39,11 +39,7 @@ form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;
 .background{ background: url(../../images/bg-banner.png);background-repeat: no-repeat;
         background-attachment: fixed;float: left;width: 100%;/*height: 1080px;max-height: 667px;*/}
 .topselecter {float: left;width: 100%; margin: 10px 0px;} 
-.topselecter >.nav-tabs{width: 270px;float: left;background: transparent !important;border-radius: 5px;margin: 0px 0px; 
-        position: fixed; z-index: 0;
-}
 .topselecter >.nav-tabs>li{float: left;width: 100%;margin: 7px 0px !Important;height: auto;}
-.topselecter >.tab-content{float: right;width: 79%;background: transparent;padding-left: 50px;    padding-top: 0px;}
 .topselecter >.nav-tabs>li.active>a, .topselecter >.nav-tabs>li.active>a:focus, .topselecter >.nav-tabs>li.active>a:hover{
         background: #dd6624 !important;border-radius: 2px;font-size: 18px;font-weight: bold;
 }
@@ -63,4 +59,32 @@ form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;
 .user_profile_position {float: left;width: 100%;color: #fff;font-weight: bold;border-top: 1px solid #403c3c;padding: 9px 10px;margin: 9px 0px;}
 .number {width: auto;height: auto;padding: 5px 2px;word-break: break-word;color: #dd6624;font-weight: bold;font-size: 16px;}
 .user_position_details{display: block;margin: 0px auto;float: none;text-align: center;}
+
+
+@media screen and (max-width:1920px) and (min-width:1200px){
+        .topselecter >.tab-content{float: right;width: 79%;background: transparent;padding-left: 50px; padding-top: 0px;}
+        .topselecter >.nav-tabs{width: 270px;float: left;background: transparent !important;border-radius: 5px;margin: 0px 0px; 
+        position: fixed; z-index: 0;}
+}
+@media screen and (max-width:1199px) and (min-width:992px){
+        .topselecter >.tab-content{float: right;width: 69%;background: transparent;padding-left: 50px; padding-top: 0px;}
+        .topselecter >.nav-tabs{width: 270px;float: left;background: transparent !important;border-radius: 5px;margin: 0px 0px; 
+        position: fixed; z-index: 0;}
+}
+@media screen and (max-width:991px) and (min-width:768px){
+        .topselecter >.tab-content{float: right;width: 72%;background: transparent;padding-left: 50px; padding-top: 0px;}
+        .topselecter >.nav-tabs{width: 222px;float: left;background: transparent !important;border-radius: 5px;margin: 0px 0px; 
+        position: fixed; z-index: 0;}
+}
+@media screen and (max-width:767px) and (min-width:481px){
+        .topselecter >.tab-content{float: right;width: 100%;background: transparent;padding: 0px;}
+        .topselecter >.nav-tabs{width: 100%;float: left;background: transparent !important;border-radius: 5px;margin: 0px 0px; }
+        .user_profile{margin: 4px 9px;}
+        .topselecter >.tab-content{position: relative;margin-top: 190px; z-index: 0;}
+}
+@media screen and (max-width:480px) and (min-width:1px){
+        .topselecter >.tab-content{float: right;width: 100%;background: transparent;padding-left: 50px; padding-top: 0px;}
+        .topselecter >.nav-tabs{width: 100%;float: left;background: transparent !important;border-radius: 5px;margin: 0px 0px; }
+        .topselecter >.tab-content{position: relative;margin-top: 190px; z-index: 0;}
+}
 /*List Page css end*/
