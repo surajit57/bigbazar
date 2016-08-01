@@ -67,6 +67,12 @@ form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;
         .topselecter >.tab-content{float: right;width: 79%;background: transparent;padding-left: 50px; padding-top: 0px;}
         .topselecter >.nav-tabs{width: 270px;float: left;background: transparent !important;border-radius: 5px;margin: 0px 0px; 
         position: fixed; z-index: 0;}
+        .top_part{float: left;width: 100%;height: auto;margin-bottom: 71px;}
+        .top_part > header{float: left;width: 100%;position: fixed;z-index: 1;background: rgba(17, 39, 76, 0.18);}
+        .logo{float: right;background: #ffffff;width: 100%;}
+        .logo > img{float: right;padding: 0px 11px;}
+        .logo::before{background: url(../../images/arrow.png);content: " ";position: absolute;z-index: 0;
+                width: 100px;height: 71px;background-repeat: no-repeat;left: -72px;}
 }
 @media screen and (max-width:1199px) and (min-width:992px){
         .topselecter >.tab-content{float: right;width: 69%;background: transparent;padding-left: 50px; padding-top: 0px;}
