@@ -70,7 +70,6 @@ UserController.saveProfile = function(req, res){
             var url = req.body.blog_url;
             var UserId = req.user.id;
            
-              if(!blog){
                   var blog = Blog.build({
                     url: req.body.url,
                     userId: req.user.id
@@ -98,7 +97,7 @@ UserController.saveProfile = function(req, res){
                           
                         })
                   });
-              }
+              
      }
           else{
               Blog.update({
