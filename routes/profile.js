@@ -30,7 +30,7 @@ router.post('/upload',Auth.isLoggedIn, type, function (req, res) {
               console.log('req.user:- ',req.user);
 
               var user = User.update({
-                  imageUrl: 'http://localhost:3000/profile/'+req.file.filename,
+                  imageUrl: 'http://104.236.84.1:3000/profile/'+req.file.filename,
                 },{
                   where: {
                     id: req.user.id
