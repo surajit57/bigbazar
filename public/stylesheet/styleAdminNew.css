@@ -53,7 +53,7 @@ form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;
 .user_profile_details {float: left;width: 100%;color: #fff;text-align: center;
         font-size: 13px;font-weight: bold;text-transform: capitalize;padding: 0px 5px;}
 .user_profile_details > .name {width: 100%;float: left;margin-bottom: 5px;}
-.user_profile_details >.blogurl {width: 100%;float: left;}
+.user_profile_details >.blogurl {width: 100%;float: left;height: 50px;overflow: hidden;}
 .user_profile_details >.blogurl b{width: 100%;float: left;}
 .user_profile_details >.blogurl a{width: 100%;float: left;color: #dd6624;word-break: break-all; text-transform: none;}
 .user_profile_position {float: left;width: 100%;color: #fff;font-weight: bold;border-top: 1px solid #403c3c;padding: 9px 10px;margin: 9px 0px;}
