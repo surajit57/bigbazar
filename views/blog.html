@@ -99,6 +99,13 @@
             <a href="#" onClick="hide('popDiv')">Close</a>
           
           </div>
+
+          <div id="popDiverror" class="ontop">
+      
+            Click Error Close OR escape button to close it
+            <a href="#" onClick="hide('popDiverror')">Close</a>
+          
+          </div>
    
 
 
@@ -214,13 +221,14 @@
                           window.location = "/users/home";
                       }
                       else{
-                          // pop('popDiv');
+                          
+                          pop('popDiverror');
                           alert('Technical Error Please try after some time.');
                       }
                     });
         }
       else{
-        pop('popDiv');
+        pop('popDiverror');
       }
 
        }
