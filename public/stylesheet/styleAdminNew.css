@@ -73,6 +73,11 @@ form {float: left;width: 100%;height: auto;/*margin: 50px 0px;padding: 50px 0px;
         .logo > img{float: right;padding: 0px 11px;}
         .logo::before{background: url(../../images/arrow.png);content: " ";position: absolute;z-index: 0;
                 width: 100px;height: 71px;background-repeat: no-repeat;left: -72px;}
+        .txt_title {font-size: 38px;font-weight: 600;padding-bottom: 10px;
+    margin-bottom: 0px;
+    color: #fff;
+    text-align: center;
+}
 }
 @media screen and (max-width:1199px) and (min-width:992px){
         .topselecter >.tab-content{float: right;width: 69%;background: transparent;padding-left: 50px; padding-top: 0px;}
