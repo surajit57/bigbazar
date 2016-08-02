@@ -130,8 +130,15 @@
                                         </div>
                                         <div class="profile-usertitle-name">
                                             <i class="fa fa-rss" aria-hidden="true"></i>
-                                            <a href="#" style="padding-left:5px">http://104.236.84.1:3000/users/list</a>
-                                        </div>
+                                            <% if (userInfo.blogDetail) 
+                                             { %>
+                                            
+                                             <a href=" <%= userInfo.blogDetail.url %>" style="padding-left:5px"> <%= userInfo.blogDetail.url %></a>
+                                             <% } 
+                                             else { %>
+                                             <a href="http://104.236.84.1:3000/users/list" style="padding-left:5px">http://104.236.84.1:3000/users/list</a>
+                                             <% } %>
+                                       </div>
                                         <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;">
                                             <a href="#" onclick="fbShare()" class="fb_bg" style="margin-right:0px;">
                                             <i class="fa fa-facebook"></i><b>Share via Facebook</b></a>
