@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<% if ( locals.messages ) { %>
+              <div class="flash"><%= locals.messages.info %></div>
+            <% } %>
+
+<form method="post" action="/admin/events">
+  <label>Round No</label>
+  <input type="number" name="roundNo">
+  <label>Start Date</label>
+  <input type="date" name="startDate">
+  <label>End Date</label>
+  <input type="date" name="endDate">
+  <input type="submit">
+
+</form>
+
+
+</body>
+</html>

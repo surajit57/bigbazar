@@ -1,6 +1,7 @@
 var models = require('../models');
 var User = models.user; 
 var Blog = models.blog;
+var Events = models.events;
 var randomstring = require('randomstring');
 // const map = require('promise-map');
 var Promise = require('bluebird');
@@ -335,6 +336,45 @@ UserController.postSelectFor3 = function(req, res){
            })
     }
   });
+}
+
+UserController.setEventDate = function(req, res){
+
+  console.log('roundNo:- ', req.body.roundNo);
+
+  Events.fincOne({
+    where:{
+      roundNo: 
+    }
+  }).then(function(val){
+    if(!val){
+      var event = Events.build({
+        roundNo: req.body.roundNo,
+        startDate: req.body.startDate,
+        endDate: req.body.endDate
+      });
+        event.save().then(function(event){
+          if(!event) {
+            console.log('eroro:_ ', event);
+
+            return res.flash('error', 'Some error occurred while setting event dates.');
+          } 
+          console.log('event saved');
+            return res.redirect('/admin/events');
+           // return req.flash('info', 'Sucessfully events date changed.'); 
+        }); 
+    }
+    else{
+      req.flash('error','selected round is already filled');
+      return res.render('');
+    }
+  })
+
+  
+}
+
+UserController.editEventDate = function(req, res){
+
 }
 
 

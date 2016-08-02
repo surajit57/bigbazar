@@ -48,6 +48,12 @@ router.post('/select-for-3', Auth.isAdminLogin, UserController.postSelectFor3);
 router.post('/unselect-for-3', Auth.isAdminLogin, UserController.unselectFor3);
 // router.get('/unselect-for-100', Auth.isAdminLogin, UserController.unselectFor100);
 
+// router.get('/events', Auth.isAdminLogin, function(req, res){
+// 	res.render('adminPanel1/events.html');
+// });
+// router.post('/events', Auth.isAdminLogin, UserController.setEventDate);
+// router.put('/events', Auth.isAdminLogin, UserController.editEventDate);
+
 
 
 
