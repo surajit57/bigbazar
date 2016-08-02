@@ -22,6 +22,48 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="shortcut icon" href="../images/favicon.ico" /> 
+    <style>
+      .ontop {
+        z-index: 0;
+        width: 20%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: none;
+        position: absolute;       
+        background-color: #cccccc;
+        color: #aaaaaa;
+        opacity: .4;
+        filter: alpha(opacity = 50);
+      }
+      #popup {
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        color: #000000;
+        background-color: #ffffff;
+        /* To align popup window at the center of screen*/
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -150px;
+      }
+    </style>
+    <script type="text/javascript">
+      function pop(div) {
+        document.getElementById(div).style.display = 'block';
+      }
+      function hide(div) {
+        document.getElementById(div).style.display = 'none';
+      }
+      //To detect escape button
+      document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        if (evt.keyCode == 27) {
+          hide('popDiv');
+        }
+      };
+    </script>
   </head>
   <body>
     
@@ -41,11 +83,23 @@
           <div class="pull-right">
               <div class="add-button" style="margin-top: 4px;">
                   <button type="button" onclick="window.location = '/users/profile'"  class="btn btn-default" style="background: transparent; border: transparent;color: #fff;"><i class="fa fa-cog" style="border-radius: 50%;padding: 4px 5px;background: #0e264e;border: 2px solid #fff;"></i>&nbsp;&nbsp;SETTINGS</button>
-
               </div> 
           </div>
           </div>
         </div>
+
+        <div style="">
+
+        </div>
+
+
+          <div id="popDiv" class="ontop">
+      
+            Click Close OR escape button to close it
+            <a href="#" onClick="hide('popDiv')">Close</a>
+          
+          </div>
+   
 
 
         <div class="row">
@@ -78,7 +132,7 @@
               <button type="button" onclick="submitBlog()" name="submit" class="blog_submit" disabled >Blog already Submitted</button>
                <% } else { %> 
                <input type="text" name="blog_url" class="" id="blog_url" placeholder="" style="" >
-                    <button type="button" onclick="submitBlog()" name="submit" class="blog_submit" data-toggle="modal" data-target="#myModal">Submit</button> <% } %>
+                    <button type="button" onclick="submitBlog()" name="submit" class="blog_submit" >Submit</button> <% } %>
 
 
                
@@ -149,24 +203,32 @@
 
       function submitBlog(){
         var urlVal = document.getElementById("blog_url").value;
-        if(urlVal.length){
+        if(validateURL(urlVal)){
             console.log('urlVal:--- ',urlVal);
+            
             $.post( "/users/blogPost", {"blog_url": urlVal})
                     .done(function( data ) {
                       if(data.code == 200){
                           // alert('Selected Users are sucessfully moved to next round.');
+                          pop('popDiv');
                           window.location = "/users/home";
                       }
                       else{
+                          // pop('popDiv');
                           alert('Technical Error Please try after some time.');
                       }
                     });
         }
       else{
-        alert('Please enter a proper url');
+        pop('popDiv');
       }
 
        }
+
+       function validateURL(textval) {
+  var urlregex = new RegExp( "^(http|https|ftp)\://([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(/($|[a-zA-Z0-9\.\,\?\'\\\+&amp;%\$#\=~_\-]+))*$");
+  return urlregex.test(textval);
+}
     </script>
   </body>
 </html>
