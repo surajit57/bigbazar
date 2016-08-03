@@ -3,9 +3,19 @@
     <head>
     <meta charset="utf-8" />
     <title>BIG BAZAAR</title>
+
+    <meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="When Great Minds Don’t Think Alike" />
+    <meta property="og:description"        content="How much does culture influence creative thinking?" />
+    <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
+
+
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="http://52.35.82.113/dashboard/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -13,6 +23,38 @@
     <link rel="shortcut icon" href="../images/favicon.ico" /> 
     </head>
     <body style="background: url(../../images/bg-banner.png);">
+     <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1569759199992980',
+          xfbml      : true,
+          version    : 'v2.7'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+
+
+      function fbShare(){
+        console.log('Share clicked');
+        FB.ui(
+        {
+            method: 'feed',
+            name: "Celebrate the BigBazar Contest",
+            link: 'http://104.236.84.1:3000/users/list',
+            picture: "https://indiadesire.com/images/Big-Bazaar-Stores16052015.jpg",
+            caption: "BigBazar Contest",
+            description: 'Share a message to show your blogs posted to BiBazar Contest',
+            message: 'Hello'
+        });
+      }
+    </script>
         <div class="background">
             <div class="row" style="margin: 0px">
                 <div class="top_part">
@@ -63,8 +105,9 @@
                                             <div class="user_profile_position">
                                                 
                                                 <div class="user_position_details" style="font-size:18px;">
-                                                    <i class="fa fa-facebook ic_us"></i>
-                                                    <i class="fa fa-twitter ic_us"></i>
+                                                    <i class="fa fa-facebook ic_us" onclick="fbShare()"></i>
+                                                    <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" class="tw_bg">
+                                                    <i class="fa fa-twitter ic_us"></i></a>
                                                     <i class="fa fa-linkedin ic_us"></i>
                                                     
                                                 </div>
