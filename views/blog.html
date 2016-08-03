@@ -215,10 +215,12 @@
             
             $.post( "/users/blogPost", {"blog_url": urlVal})
                     .done(function( data ) {
+                      console.log('------------------ ', data);
+                      console.log('data:-- ', JSON.stringify(data));
                       if(data.code == 200){
                           // alert('Selected Users are sucessfully moved to next round.');
                           // pop('popDiv');
-                          aler('Blog Updated sucessfully');
+                          alert('Blog Updated sucessfully');
                           window.location = "/users/home";
                       }
                       else{

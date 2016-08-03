@@ -17,6 +17,8 @@ require('../lib/passport.js')(passport);
 router.get('/', Auth.isLoggedIn, UserController.getProfile);
 router.post('/', Auth.isLoggedIn, UserController.saveProfile);
 
+router.post('/email', Auth.isLoggedIn, UserController.saveNameEmailProfile);
+
 router.post('/updatepassword', Auth.isLoggedIn, UserController.changePassword);
 
 router.post('/upload',Auth.isLoggedIn, type, function (req, res) {

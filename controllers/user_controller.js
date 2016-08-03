@@ -37,26 +37,41 @@ UserController.getSignupPage = function(req, res){
 }
 
 UserController.getProfile = function(req, res){
-
-
-
-
   Blog.findOne({
     where:{
       userId:  req.user.id
     }
   }).then(function(blogDetail){
-    var userInfo = {
-      userInfo: req.user,
-      blogDetail: blogDetail
-    }
-    // res.render('blogDetail:-------------- ', blogDetail);
-    console.log('blogDetail:-------------- ', blogDetail);
-    res.render('newprofile.html',{ userInfo: userInfo});
+    Events.findAll({
+    }).then(function(events){
+      var userInfo = {
+        userInfo: req.user,
+        blogDetail: blogDetail,
+        events: events
+      }
+      return res.render('newprofile.html',{ userInfo: userInfo});
+    })
+        
   })
 }
 
+UserController.saveNameEmailProfile = function(req, res){
+    var user = User.update({
+      name: req.body.name,
+      email: req.body.email
+    },{
+      where: {
+        id: req.user.id
+      }
+    }).then(function(val){
+      console.log('val::::_------- ', val);
+      console.log("user name and email updated Successfully");
+      res.redirect('/users/profile');
+    })
+}
+
 UserController.saveProfile = function(req, res){
+
     var user = User.update({
       name: req.body.name,
       email: req.body.email
@@ -70,12 +85,12 @@ UserController.saveProfile = function(req, res){
           userId:  req.user.id
         }
       }).then(function(blogDetail){
-
           if(!blogDetail){
             var url = req.body.blog_url;
             var UserId = req.user.id;
             console.log('iniside save profile');
-           
+            console.log('You need to upload your blogs first');
+           res.json({code: 100, data:"You dont have any blogs saved. Please save it form home page."});
                   // var blog = Blog.build({
                   //   url: req.body.url,
                   //   userId: req.user.id
@@ -106,7 +121,7 @@ UserController.saveProfile = function(req, res){
               
      }
           else{
-            console.log('elseee');
+            console.log('elseee part update user blog urls');
             Events.findOne({
                 where: {
                   roundNo: 1
@@ -115,11 +130,10 @@ UserController.saveProfile = function(req, res){
                 console.log('roundCheck1: -- ', roundCheck1.roundBlocked);
                 if(!roundCheck1.roundBlocked){
                   console.log('update round 1 blog url');
-                  // addRound1(UserId,url, req, res);
-                  // updateBlog1();
+                  updateRound1Blog(req, res);
                 }
                 else{
-                  console.log('Round 1 is blocked');
+                  console.log('Round 1 is already blocked you cannot change it');
                   Events.findOne({
                     where: {
                       roundNo: 2
@@ -128,10 +142,9 @@ UserController.saveProfile = function(req, res){
                     console.log('roundCheck2:--- ', roundCheck2.roundBlocked);
                     if(!roundCheck2.roundBlocked){
                       console.log('Update round 2 blog url');
-                      // updateBlog2();
+                      updateRound2Blog(req, res);
                     }else{
-                        console.log('round 2 blog links are blocked');
-
+                        console.log('round 2 is also blocked');
                         Events.findOne({
                           where: {
                             roundNo: 3
@@ -139,36 +152,62 @@ UserController.saveProfile = function(req, res){
                         }).then(function(roundCheck3){
                           console.log('Round Check 3:- ', roundCheck3.roundBlocked);
                           if(!roundCheck3.roundBlocked){
-                            console.log('Update round 3 blog url');
-                            // updateBlog3();
+                            console.log('You can update round 3 blog');
+                            updateRound3Blog(req, res);
                           }
                           else{
-                            console.log('You can not update blogs now after result decleration');
+                            console.log('All rounds are blocked');
+                            res.json({code: 100, data:"Winners are already Declared you cannot make changes now"});
                           }
                         })
-
-
                     }
-
                   })
-
                 }
-              })
-
-
-              // Blog.update({
-              //   url: req.body.url
-              // },{
-              //   where:{
-              //     userId: req.user.id
-              //   }
-              // }).then(function(blog){
-              //   res.redirect('/users/profile');
-              // })
+              })   
           }
       })
     })
 }
+
+function updateRound1Blog(req, res){
+    Blog.update({
+      url: req.body.url
+    },{
+      where:{
+        userId: req.user.id
+      }
+    }).then(function(blog){
+      console.log('Blog 1 url Successfully added');
+      res.redirect('/users/profile');
+    })
+}
+
+function updateRound2Blog(req, res){
+    Blog.update({
+      url1: req.body.url1
+    },{
+      where:{
+        userId: req.user.id
+      }
+    }).then(function(blog){
+      console.log('Blog 2 url Successfully added');
+      res.redirect('/users/profile');
+    })
+}
+
+function updateRound3Blog(req, res){
+    Blog.update({
+      url2: req.body.url2
+    },{
+      where:{
+        userId: req.user.id
+      }
+    }).then(function(blog){
+      console.log('Blog 3 url Successfully added');
+      res.redirect('/users/profile');
+    })
+}
+
 
 UserController.changePassword = function(req, res){
   
@@ -313,6 +352,7 @@ function addRound1(UserId, url, req, res){
                       
                     })
                     .then(function(data){
+                      console.log('sucessfully uploaded1');
                       return res.json({code: 200, message: "sucessfully uploaded"});
                       // return res.redirect('/users/home') 
                     });
@@ -374,6 +414,7 @@ function addRound2(UserId, url, req, res){
                       })
                       
                     }).then(function(data){
+                      console.log('sucessfully uploaded2');
                       return res.json({code: 200, message: "sucessfully uploaded"});
                       // return res.redirect('/users/home') 
                     });
