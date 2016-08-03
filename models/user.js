@@ -35,6 +35,15 @@ module.exports = function(sequelize, DataTypes) {
     },
     imageUrl: {
       type: DataTypes.STRING
+    },
+    isRound1BlogAdded: {
+      type: DataTypes.BOOLEAN
+    },
+    isRound2BlogAdded: {
+      type: DataTypes.BOOLEAN
+    },
+    isRound3BlogAdded: {
+      type: DataTypes.BOOLEAN
     }
   }, {
     classMethods: {

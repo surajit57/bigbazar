@@ -217,18 +217,20 @@
                     .done(function( data ) {
                       if(data.code == 200){
                           // alert('Selected Users are sucessfully moved to next round.');
-                          pop('popDiv');
+                          // pop('popDiv');
+                          aler('Blog Updated sucessfully');
                           window.location = "/users/home";
                       }
                       else{
                           
-                          pop('popDiverror');
+                          // pop('popDiverror');
                           alert('Technical Error Please try after some time.');
                       }
                     });
         }
       else{
-        pop('popDiverror');
+        // pop('popDiverror');
+        alert('Not a valid url')
       }
 
        }

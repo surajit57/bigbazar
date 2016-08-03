@@ -3,7 +3,8 @@ module.exports = function(sequelize, DataTypes) {
   var events = sequelize.define('events', {
     roundNo: DataTypes.INTEGER,
     startDate: DataTypes.DATE,
-    endDate: DataTypes.DATE
+    endDate: DataTypes.DATE,
+    roundBlocked: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {

@@ -245,14 +245,37 @@
                                                                 <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>"> 
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label">Blog Url</label>
+                                                                <label class="control-label">Blog Url1</label>
                                                                  <% if (userInfo.blogDetail) 
                                                                  { %>
+
                                                                  <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url %>">
                                                                  <% } 
                                                                  else { %>
                                                                  <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control"  value="">
                                                                  <% } %>
+
+                                                                <label class="control-label">Blog Url2</label>
+                                                                <% if (userInfo.blogDetail) 
+                                                                 { %>
+
+                                                                 <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url1 %>">
+                                                                 <% } 
+                                                                 else { %>
+                                                                 <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control"  value="">
+                                                                 <% } %> 
+
+                                                                 <label class="control-label">Blog Url3</label>
+                                                                <% if (userInfo.blogDetail) 
+                                                                 { %>
+
+                                                                 <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url2 %>">
+                                                                 <% } 
+                                                                 else { %>
+                                                                 <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control"  value="">
+                                                                 <% } %> 
+
+                                                                 
                                                             </div>
                                                             <div class="margiv-top-10">
                                                                 <input type="submit" value="Save Changes" class="btn green" />

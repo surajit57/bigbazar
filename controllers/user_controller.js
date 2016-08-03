@@ -37,6 +37,10 @@ UserController.getSignupPage = function(req, res){
 }
 
 UserController.getProfile = function(req, res){
+
+
+
+
   Blog.findOne({
     where:{
       userId:  req.user.id
@@ -46,9 +50,8 @@ UserController.getProfile = function(req, res){
       userInfo: req.user,
       blogDetail: blogDetail
     }
-    // console.log();
-    // res.render('profile.html');
-    console.log('userInfo blog:-- ', req.user);
+    // res.render('blogDetail:-------------- ', blogDetail);
+    console.log('blogDetail:-------------- ', blogDetail);
     res.render('newprofile.html',{ userInfo: userInfo});
   })
 }
@@ -67,60 +70,109 @@ UserController.saveProfile = function(req, res){
           userId:  req.user.id
         }
       }).then(function(blogDetail){
+
           if(!blogDetail){
             var url = req.body.blog_url;
             var UserId = req.user.id;
+            console.log('iniside save profile');
            
-                  var blog = Blog.build({
-                    url: req.body.url,
-                    userId: req.user.id
-                  });
-                  blog.save().then(function(blog){
-                    if(!blog) return res.redirect('/users/home');
-                       return User.update({
-                          isBlogAdded: 1
-                        },{
-                          where: {
-                            id: req.user.id
-                          }
-                        }).then(function(userData) {
-                          return User.findOne({
-                            where:{
-                              id:UserId
-                            }
-                          }).then(function(userData){
+                  // var blog = Blog.build({
+                  //   url: req.body.url,
+                  //   userId: req.user.id
+                  // });
+                  // blog.save().then(function(blog){
+                  //   if(!blog) return res.redirect('/users/home');
+                  //      return User.update({
+                  //         isBlogAdded: 1
+                  //       },{
+                  //         where: {
+                  //           id: req.user.id
+                  //         }
+                  //       }).then(function(userData) {
+                  //         return User.findOne({
+                  //           where:{
+                  //             id:UserId
+                  //           }
+                  //         }).then(function(userData){
 
-                            var email = userData.email;
-                             console.log('email',email);
-                            send_mail(email);
-                            return res.redirect('/users/profile') 
-                          })
+                  //           var email = userData.email;
+                  //            console.log('email',email);
+                  //           send_mail(email);
+                  //           return res.redirect('/users/profile') 
+                  //         })
                           
-                        })
-                  });
+                  //       })
+                  // });
               
      }
           else{
-              Blog.update({
-                url: req.body.url
-              },{
-                where:{
-                  userId: req.user.id
+            console.log('elseee');
+            Events.findOne({
+                where: {
+                  roundNo: 1
                 }
-              }).then(function(blog){
-                res.redirect('/users/profile');
+              }).then(function(roundCheck1){
+                console.log('roundCheck1: -- ', roundCheck1.roundBlocked);
+                if(!roundCheck1.roundBlocked){
+                  console.log('update round 1 blog url');
+                  // addRound1(UserId,url, req, res);
+                  // updateBlog1();
+                }
+                else{
+                  console.log('Round 1 is blocked');
+                  Events.findOne({
+                    where: {
+                      roundNo: 2
+                    }
+                  }).then(function(roundCheck2){
+                    console.log('roundCheck2:--- ', roundCheck2.roundBlocked);
+                    if(!roundCheck2.roundBlocked){
+                      console.log('Update round 2 blog url');
+                      // updateBlog2();
+                    }else{
+                        console.log('round 2 blog links are blocked');
+
+                        Events.findOne({
+                          where: {
+                            roundNo: 3
+                          }
+                        }).then(function(roundCheck3){
+                          console.log('Round Check 3:- ', roundCheck3.roundBlocked);
+                          if(!roundCheck3.roundBlocked){
+                            console.log('Update round 3 blog url');
+                            // updateBlog3();
+                          }
+                          else{
+                            console.log('You can not update blogs now after result decleration');
+                          }
+                        })
+
+
+                    }
+
+                  })
+
+                }
               })
+
+
+              // Blog.update({
+              //   url: req.body.url
+              // },{
+              //   where:{
+              //     userId: req.user.id
+              //   }
+              // }).then(function(blog){
+              //   res.redirect('/users/profile');
+              // })
           }
       })
     })
 }
 
 UserController.changePassword = function(req, res){
-  console.log('password change is under process');
-  console.log('Olde password:- ', req.body.currentPassword);
-  console.log('New password: - ', req.body.newPassword);
+  
   var pass = User.generateHash(req.body.newPassword);
-  console.log('pass:-- ', pass);
 
   if(req.body.confirmPassword !== req.body.newPassword){
     return req.flash('error', 'password doesnot match')
@@ -134,7 +186,6 @@ UserController.changePassword = function(req, res){
             email: req.user.email
           }
         }).then(function(user){
-          console.log('password changed sucessfully');
           return res.redirect('/users/profile');
         })
       }
@@ -147,54 +198,257 @@ UserController.changePassword = function(req, res){
 
 UserController.postBlog = function(req,res){
   var url = req.body.blog_url;
-  var UserId = req.user.id;
-  User.findOne({
+  var UserId = req.user.id;  
+
+  Events.findOne({
     where: {
-      id: UserId,
-      isBlogAdded: 1
+      roundNo: 1
+    }
+  }).then(function(roundCheck1){
+    console.log('roundCheck1: -- ', roundCheck1.roundBlocked);
+    if(!roundCheck1.roundBlocked){
+      console.log('update round 1');
+      console.log('addRound1 fun');
+      addRound1(UserId,url, req, res);
+    }
+    else{
+      Events.findOne({
+        where: {
+          roundNo: 2
+        }
+      }).then(function(roundCheck2){
+        console.log('roundCheck2:-- ', roundCheck2.roundBlocked);
+        if(!roundCheck2.roundBlocked){
+          console.log('update round 2');
+          User.findOne({
+            where: {
+              id: UserId
+            }
+          }).then(function(response){
+            console.log('response:- ', response.isUnder100);
+
+            if(response.isUnder100){
+              console.log('addRound2 fun');
+              addRound2(UserId, url, req, res);
+            }else{
+              console.log('He is not eligible for top 100 round');
+            }
+          })
+        }
+        else{
+          
+          Events.findOne({
+            where: {
+              roundNo: 3
+            }
+          }).then(function(roundCheck3){
+            if(!roundCheck3.roundBlocked){
+              console.log('update round 3');
+              User.findOne({
+                where: {
+                  id: UserId
+                }
+              }).then(function(response){
+                console.log('response:- ', response.isUnder15);
+                if(response.isUnder15){
+                  console.log('addRound3 fun');
+                  addRound3(UserId, url, req, res);
+                }else{
+                  console.log('He is not eligible for top 15 round');
+                }
+                  })
+            }
+            else{
+              console.log('All rounds are completed');
+              return res.json({code: 100, message: "All rounds are completed."});
+            }
+          })
+        }
+      })
     }
   })
-    .then( function(blog){
-      // console.log('blog isBlogAdded::-- ', blog.isBlogAdded);
-      if(!blog){
-          var blog = Blog.build({
-            url: req.body.blog_url,
-            userId: req.user.id
-          });
-          blog.save().then(function(blog){
-            if(!blog) return res.redirect('/users/home');
-                console.log('blog created');
-                User.update({
-                  isBlogAdded: 1
-                },{
-                  where: {
-                    id: req.user.id
-                  }
-                }).then(function(userData) {
-                  User.findOne({
-                    where:{
-                      id:UserId
-                    }
-                  }).then(function(userData){
-                    var email = userData.email;
-                    send_mail(email);
-                  })
-                  
-                }).then(function(data){
-                  return res.json({code: 200, message: "sucessfully uploaded"});
-                  // return res.redirect('/users/home') 
-                });
-          });
-      }
-      else if(blog.isBlogAdded){
-        console.log('ALready added');
-        return res.json({code: 100, message: "Blog is already uploaded."});
-      }
-      else{
-        return res.json({code: 0, message: "Error while uploading"});
-      }
-    } )
+
+  
 };
+
+function addRound1(UserId, url, req, res){
+  console.log('updateRound1 fun');
+  var UserId = UserId;
+  var url = url;
+  console.log('userId:-- ', UserId, ' url:- ', url);
+  User.findOne({
+        where: {
+          id: UserId,
+          // isBlogAdded: 1,
+          isRound1BlogAdded: 1
+        }
+      }).then( function(blog){
+
+          if(!blog){
+            console.log('coominggg hereerre');
+              var blog = Blog.build({
+                url: req.body.blog_url,
+                userId: req.user.id
+              });
+              blog.save().then(function(blog){
+                console.log('Success:-- ', blog);
+                if(!blog) return res.redirect('/users/home');
+                    console.log('blog created');
+                    User.update({
+                      isRound1BlogAdded: 1
+                    },{
+                      where: {
+                        id: UserId
+                      }
+                    }).then(function(userData) {
+                      console.log('User update done');
+                      User.findOne({
+                        where:{
+                          id:UserId
+                        }
+                      }).then(function(userData){
+                        var email = userData.email;
+                        send_mail(email);
+                      })
+                      
+                    })
+                    .then(function(data){
+                      return res.json({code: 200, message: "sucessfully uploaded"});
+                      // return res.redirect('/users/home') 
+                    });
+              });
+            }
+          else if(blog.isRound1BlogAdded){
+            console.log('ALready added');
+            return res.json({code: 100, message: "Blog is already uploaded."});
+          }
+          else{
+            console.log('Erorr111');
+            return res.json({code: 0, message: "Error while uploading"});
+          }
+        })
+}
+
+function addRound2(UserId, url, req, res){
+  console.log('updateRound2 fun');
+  User.findOne({
+        where: {
+          id: UserId,
+          // isBlogAdded: 1,
+          isRound2BlogAdded: 1
+        }
+      }).then( function(blog){
+          if(!blog){
+            console.log('coming 123');
+              // var blog = Blog.build({
+              //   url1: req.body.blog_url,
+              //   userId: req.user.id
+              // });
+              // blog.save()
+              Blog.update({
+                url1: req.body.blog_url
+              },{
+                where: {
+                  userId: UserId
+                }
+              })
+              .then(function(blog){
+                console.log('blog:------------- ',blog);
+
+                if(!blog) return res.redirect('/users/home');
+                    console.log('blog created');
+                    User.update({
+                      isRound2BlogAdded: 1
+                    },{
+                      where: {
+                        id: req.user.id
+                      }
+                    }).then(function(userData) {
+                      User.findOne({
+                        where:{
+                          id:UserId
+                        }
+                      }).then(function(userData){
+                        var email = userData.email;
+                        send_mail(email);
+                      })
+                      
+                    }).then(function(data){
+                      return res.json({code: 200, message: "sucessfully uploaded"});
+                      // return res.redirect('/users/home') 
+                    });
+              });
+            }
+          else if(blog.isRound2BlogAdded){
+            console.log('ALready added');
+            return res.json({code: 100, message: "Blog is already uploaded."});
+          }
+          else{
+            return res.json({code: 0, message: "Error while uploading"});
+          }
+        })
+}
+
+
+function addRound3(UserId, url, req, res){
+  console.log('updateRound3 fun');
+  User.findOne({
+        where: {
+          id: UserId,
+          // isBlogAdded: 1,
+          isRound3BlogAdded: 1
+        }
+      }).then( function(blog){
+          if(!blog){
+            console.log('coming here1');
+              // var blog = Blog.build({
+              //   url3: req.body.blog_url,
+              //   userId: req.user.id
+              // });
+              // blog.save()
+              Blog.update({
+                url2: req.body.blog_url
+              },{
+                where: {
+                  userId: UserId
+                }
+              })
+              .then(function(blog){
+                if(!blog) return res.redirect('/users/home');
+                    console.log('blog created');
+                    User.update({
+                      isRound3BlogAdded: 1
+                    },{
+                      where: {
+                        id: req.user.id
+                      }
+                    }).then(function(userData) {
+                      User.findOne({
+                        where:{
+                          id:UserId
+                        }
+                      }).then(function(userData){
+                        var email = userData.email;
+                        send_mail(email);
+                      })
+                      
+                    }).then(function(data){
+                      console.log('coming sucessfully');
+                      return res.json({code: 200, message: "sucessfully uploaded"});
+                      // return res.redirect('/users/home') 
+                    });
+              });
+            }
+          else if(blog.isRound3BlogAdded){
+            console.log('ALready added1');
+            return res.json({code: 100, message: "Blog is already uploaded."});
+          }
+          else{
+            console.log('error1');
+            return res.json({code: 0, message: "Error while uploading"});
+          }
+        })
+}
 
 UserController.getAdminSignupPage = function(req, res){
   res.render('adminPanel1/signup.html');
@@ -338,44 +592,6 @@ UserController.postSelectFor3 = function(req, res){
   });
 }
 
-UserController.setEventDate = function(req, res){
-
-  console.log('roundNo:- ', req.body.roundNo);
-
-  Events.fincOne({
-    where:{
-      roundNo: 
-    }
-  }).then(function(val){
-    if(!val){
-      var event = Events.build({
-        roundNo: req.body.roundNo,
-        startDate: req.body.startDate,
-        endDate: req.body.endDate
-      });
-        event.save().then(function(event){
-          if(!event) {
-            console.log('eroro:_ ', event);
-
-            return res.flash('error', 'Some error occurred while setting event dates.');
-          } 
-          console.log('event saved');
-            return res.redirect('/admin/events');
-           // return req.flash('info', 'Sucessfully events date changed.'); 
-        }); 
-    }
-    else{
-      req.flash('error','selected round is already filled');
-      return res.render('');
-    }
-  })
-
-  
-}
-
-UserController.editEventDate = function(req, res){
-
-}
 
 
 UserController.unselectFor3 = function(req, res){
