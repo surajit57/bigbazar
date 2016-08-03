@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+
+<head>
     <meta charset="utf-8" />
     <title>BIG BAZAAR</title>
 
-    <meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
-    <meta property="og:type"               content="article" />
-    <meta property="og:title"              content="When Great Minds Don’t Think Alike" />
-    <meta property="og:description"        content="How much does culture influence creative thinking?" />
-    <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+    <meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="When Great Minds Don’t Think Alike" />
+    <meta property="og:description" content="How much does culture influence creative thinking?" />
+    <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
+    />
 
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
@@ -17,13 +20,15 @@
 
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link href="http://52.35.82.113/dashboard/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://52.35.82.113/dashboard/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
+        type="text/css" />
     <link href="../../stylesheet/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/styleAdminNew.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="../images/favicon.ico" /> 
-    </head>
-    <body style="background: url(../../images/bg-banner.png);">
-     <script>
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+</head>
+
+<body style="background: url(../../images/bg-banner.png);">
+    <script>
       window.fbAsyncInit = function() {
         FB.init({
           appId      : '1569759199992980',
@@ -55,170 +60,310 @@
         });
       }
     </script>
-        <div class="background">
-            <div class="row" style="margin: 0px">
-                <div class="top_part">
-                    <header>
-                        <div class="col-md-9"><p class="txt_title">Lorem Ipsum is simply dummy text</p></div>
-                        <div class="col-md-3" style="padding: 0px;">
-                            <div class="logo" style="float:right;">
-                                <img src="../../images/logo.png" alt="Big Bazaar" />
-                            </div>
-                        </div>
-                        
-                    </header>
-                </div>
-                <div class="col-md-12">
-                    <div class="topselecter">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#all" aria-controls="home" role="tab" data-toggle="tab">All Users </a></li>
-                            <li role="presentation"><a href="#top100" aria-controls="profile" role="tab" data-toggle="tab">Top 100 </a></li>
-                            <li role="presentation"><a href="#top50" aria-controls="messages" role="tab" data-toggle="tab">Top 50</a></li>
-                            <li role="presentation"><a href="#top3" aria-controls="messages" role="tab" data-toggle="tab">Top 3</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="all">
-                                <% for(var i=0; i<allUsers.length; i++) {%>
-                                    <div class="user_profile">
-                                        <div class="user_profile_image">
-                                            <img src="../../images/profile_user.jpg">
-                                        </div>
-                                        <div class="user_profile_details left">
-                                            <span class="name"><%= allUsers[i].name %></span>
-                                            <span class="name"><%= allUsers[i].blogs.url %></span>
-                                                <% if (allUsers[i].blogs.length) { %>
-                                                   <span class="blogurl"><b>Blog Url :</b>
-                                                   <a href="<%= allUsers[i].blogs[0].url%>" target="_blank"><%= allUsers[i].blogs[0].url%></a></span>
-                                                <% } else { %>
-                                                    <span class="number"><b>Blog Url :</b>
-
-                                                        Blogs isn't
-
-                                                        </span>
-                                                    
-                                                <% } %>
-                                                <span class="position_text">Round 1 :</span>
-                                                    <span class="number"><%= i + 1%></span>
-                                        </div>
-                                            <div class="user_profile_position">
-                                                
-                                                <div class="user_position_details" style="font-size:18px;">
-                                                    <i class="fa fa-facebook ic_us" onclick="fbShare()"></i>
-                                                    <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" class="tw_bg">
-                                                    <i class="fa fa-twitter ic_us"></i></a>
-                                                    <i class="fa fa-linkedin ic_us"></i>
-                                                    
-                                                </div>
-                                            </div>
-                                    </div>
-                                <% } %>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="top100">
-                            <% var j = 1; %>
-                                 <% for(var i=0; i<allUsers.length; i++) {%>
-                                 
-                                    <% if (allUsers[i].isUnder100) { %>
-                                    <div class="user_profile">
-                                        <div class="user_profile_image">
-                                            <img src="../../images/profile_user.jpg">
-                                        </div>
-                                        <div class="user_profile_details">
-                                            <span class="name"><%= allUsers[i].name %></span>
-                                            <span class="name"><%= allUsers[i].blogs.url %></span>
-                                                <% if (allUsers[i].blogs.length) { %>
-                                                   <span class="blogurl"><b>Blog Url :</b><a href="<%= allUsers[i].blogs[0].url%>" target="_blank"><%= allUsers[i].blogs[0].url%></a></span>
-                                                <% } else { %>
-                                                    <span class="blogurl"><b>Blog Url :</b><a href="http://104.236.84.1:3000/users/list" target="_blank">Blogs isn't posted yet</a></span>
-                                                <% } %>
-                                        </div>
-                                            <div class="user_profile_position">
-                                                <div class="user_position_details">
-                                                    <span class="position_text">Position</span>
-                                                    <span class="keyword">:</span>
-                                                    <span class="number"><%= j %></span>
-                                                </div>
-                                            </div>
-                                    </div>
-                                    <% j++; %>
-                                    <% } else { %>
-
-                                     <% } %>
-                                    
-                                <% } %>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="top50">
-                                <% var j = 1; %>
-                                <% for(var i=0; i<allUsers.length; i++) {%>
-                                    <% if (allUsers[i].isUnder15) { %>
-                                    <div class="user_profile">
-                                        <div class="user_profile_image">
-                                            <img src="../../images/profile_user.jpg">
-                                        </div>
-                                        <div class="user_profile_details">
-                                            <span class="name"><%= allUsers[i].name %></span>
-                                            <span class="name"><%= allUsers[i].blogs.url %></span>
-                                                <% if (allUsers[i].blogs.length) { %>
-                                                   <span class="blogurl"><b>Blog Url :</b><a href="<%= allUsers[i].blogs[0].url%>" target="_blank"><%= allUsers[i].blogs[0].url%></a></span>
-                                                <% } else { %>
-                                                    <span class="blogurl"><b>Blog Url :</b><a href="http://104.236.84.1:3000/users/list" target="_blank">Blogs isn't posted yet</a></span>
-                                                <% } %>
-                                        </div>
-                                            <div class="user_profile_position">
-                                                <div class="user_position_details">
-                                                    <span class="position_text">Position</span>
-                                                    <span class="keyword">:</span>
-                                                    <span class="number"><%= j %></span>
-                                                </div>
-                                            </div>
-                                    </div>
-
-                                    <% j++; %>
-                                    <% } else { %>
-
-                                     <% } %>
-                                    
-                                <% } %>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="top3">
-                             <% var j = 1; %>
-                           <% for(var i=0; i<allUsers.length; i++) {%>
-                                    <% if (allUsers[i].isUnder15) { %>
-                                    <div class="user_profile">
-                                        <div class="user_profile_image">
-                                            <img src="../../images/profile_user.jpg">
-                                        </div>
-                                        <div class="user_profile_details">
-                                            <span class="name"><%= allUsers[i].name %></span>
-                                            <span class="name"><%= allUsers[i].blogs.url %></span>
-                                                <% if (allUsers[i].blogs.length) { %>
-                                                   <span class="blogurl"><b>Blog Url :</b><a href="<%= allUsers[i].blogs[0].url%>" target="_blank"><%= allUsers[i].blogs[0].url%></a></span>
-                                                <% } else { %>
-                                                    <span class="blogurl"><b>Blog Url :</b><a href="http://104.236.84.1:3000/users/list" target="_blank">Blogs isn't posted yet</a></span>
-                                                <% } %>
-                                        </div>
-                                            <div class="user_profile_position">
-                                                <div class="user_position_details">
-                                                    <span class="position_text">Position</span>
-                                                    <span class="keyword">:</span>
-                                                    <span class="number"><%= j%></span>
-                                                </div>
-                                            </div>
-                                    </div>
-                                    <% j++; %>
-                                    <% } else { %>
-
-                                     <% } %>
-                                    
-                                <% } %>
-                            </div>
+    <div class="background">
+        <div class="row" style="margin: 0px">
+            <div class="top_part">
+                <header>
+                    <div class="col-md-9">
+                        <p class="txt_title">Lorem Ipsum is simply dummy text</p>
+                    </div>
+                    <div class="col-md-3" style="padding: 0px;">
+                        <div class="logo" style="float:right;">
+                            <img src="../../images/logo.png" alt="Big Bazaar" />
                         </div>
                     </div>
-                </div><!--col-md-12-->
-            </div><!--row-->
-        </div><!--background-->
-    </body>
-    <script src="../../js/jquery.min.js" type="text/javascript"></script>
-    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+
+                </header>
+            </div>
+            <div class="col-md-12">
+                <div class="topselecter">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#all" aria-controls="home" role="tab" data-toggle="tab">All Users </a></li>
+                        <li role="presentation"><a href="#top100" aria-controls="profile" role="tab" data-toggle="tab">Top 100 </a></li>
+                        <li role="presentation"><a href="#top50" aria-controls="messages" role="tab" data-toggle="tab">Top 50</a></li>
+                        <li role="presentation"><a href="#top3" aria-controls="messages" role="tab" data-toggle="tab">Top 3</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+
+                        <div role="tabpanel" class="tab-pane active" id="all">
+
+
+
+                            <% for(var i=0; i<allUsers.length; i++) {%>
+
+
+                                <!-- CARD+S-->
+                                <div class="col-sm-3">
+
+                                    <div class="col-item">
+                                        <div class="photo">
+                                            <div class="user_profile_image">
+                                                <img src="../../images/profile_user.jpg">
+                                            </div>
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                        <div class="info">
+                                            <div class="row">
+                                                <div class="price col-md-6">
+                                                    <h5>
+                                                        <%= allUsers[i].name %>
+                                                    </h5>
+                                                    <span><%= allUsers[i].blogs.url %></span>
+                                                    <% if (allUsers[i].blogs.length) { %>
+                                                        <span>Blog Url :
+                                                        <a href="<%= allUsers[i].blogs[0].url%>" target="_blank" style="white-space: nowrap;width: 12em;overflow: hidden;text-overflow: ellipsis;color: #dd6624;">
+                                                       <%= allUsers[i].blogs[0].url%></a>
+                                                       </span>
+                                                        <% } else { %>
+                                                        <span style="width: 18em;display: inline-flex;">
+                                                            Blog Url : 
+                                                             <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                Blogs isn't posted yet
+                                                            </span>
+                                                        </span>
+                                                            <% } %>
+                                                                <span>Round 1 : <%= i + 1%></span>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="separator clear-left">
+
+  <p class="btn-add">
+                                                    <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                </p>
+                                                <p class="btn-add">
+                                                   <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </a>
+                                                </p>
+                                              
+                                                <p class="btn-details">
+                                                    <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                </p>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END OF CARDS-->
+
+
+                                <% } %>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="top100">
+                            <% for(var i=0; i<allUsers.length; i++) {%>
+
+
+                                <!-- CARD+S-->
+                                <div class="col-sm-3">
+
+                                    <div class="col-item">
+                                        <div class="photo">
+                                            <div class="user_profile_image">
+                                                <img src="../../images/profile_user.jpg">
+                                            </div>
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                        <div class="info">
+                                            <div class="row">
+                                                <div class="price col-md-6">
+                                                    <h5>
+                                                        <%= allUsers[i].name %>
+                                                    </h5>
+                                                    <span><%= allUsers[i].blogs.url %></span>
+                                                    <% if (allUsers[i].blogs.length) { %>
+                                                        <span>Blog Url :
+                                                        <a href="<%= allUsers[i].blogs[0].url%>" target="_blank" style="white-space: nowrap;width: 12em;overflow: hidden;text-overflow: ellipsis;color: #dd6624;">
+                                                       <%= allUsers[i].blogs[0].url%></a>
+                                                       </span>
+                                                        <% } else { %>
+                                                        <span style="width: 18em;display: inline-flex;">
+                                                            Blog Url : 
+                                                             <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                Blogs isn't posted yet
+                                                            </span>
+                                                        </span>
+                                                            <% } %>
+                                                                <span>Round 1 : <%= i + 1%></span>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="separator clear-left">
+
+  <p class="btn-add">
+                                                    <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                </p>
+                                                <p class="btn-add">
+                                                   <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </a>
+                                                </p>
+                                              
+                                                <p class="btn-details">
+                                                    <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                </p>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END OF CARDS-->
+
+
+                                <% } %>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="top50">
+                            <% for(var i=0; i<allUsers.length; i++) {%>
+
+
+                                <!-- CARD+S-->
+                                <div class="col-sm-3">
+
+                                    <div class="col-item">
+                                        <div class="photo">
+                                            <div class="user_profile_image">
+                                                <img src="../../images/profile_user.jpg">
+                                            </div>
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                        <div class="info">
+                                            <div class="row">
+                                                <div class="price col-md-6">
+                                                    <h5>
+                                                        <%= allUsers[i].name %>
+                                                    </h5>
+                                                    <span><%= allUsers[i].blogs.url %></span>
+                                                    <% if (allUsers[i].blogs.length) { %>
+                                                        <span>Blog Url :
+                                                        <a href="<%= allUsers[i].blogs[0].url%>" target="_blank" style="white-space: nowrap;width: 12em;overflow: hidden;text-overflow: ellipsis;color: #dd6624;">
+                                                       <%= allUsers[i].blogs[0].url%></a>
+                                                       </span>
+                                                        <% } else { %>
+                                                        <span style="width: 18em;display: inline-flex;">
+                                                            Blog Url : 
+                                                             <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                Blogs isn't posted yet
+                                                            </span>
+                                                        </span>
+                                                            <% } %>
+                                                                <span>Round 1 : <%= i + 1%></span>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="separator clear-left">
+
+  <p class="btn-add">
+                                                    <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                </p>
+                                                <p class="btn-add">
+                                                   <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </a>
+                                                </p>
+                                              
+                                                <p class="btn-details">
+                                                    <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                </p>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END OF CARDS-->
+
+
+                                <% } %>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="top3">
+                           <% for(var i=0; i<allUsers.length; i++) {%>
+
+
+                                <!-- CARD+S-->
+                                <div class="col-sm-3">
+
+                                    <div class="col-item">
+                                        <div class="photo">
+                                            <div class="user_profile_image">
+                                                <img src="../../images/profile_user.jpg">
+                                            </div>
+                                        </div>
+                                        <div>
+
+                                        </div>
+                                        <div class="info">
+                                            <div class="row">
+                                                <div class="price col-md-6">
+                                                    <h5>
+                                                        <%= allUsers[i].name %>
+                                                    </h5>
+                                                    <span><%= allUsers[i].blogs.url %></span>
+                                                    <% if (allUsers[i].blogs.length) { %>
+                                                        <span>Blog Url :
+                                                        <a href="<%= allUsers[i].blogs[0].url%>" target="_blank" style="white-space: nowrap;width: 12em;overflow: hidden;text-overflow: ellipsis;color: #dd6624;">
+                                                       <%= allUsers[i].blogs[0].url%></a>
+                                                       </span>
+                                                        <% } else { %>
+                                                        <span style="width: 18em;display: inline-flex;">
+                                                            Blog Url : 
+                                                             <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                Blogs isn't posted yet
+                                                            </span>
+                                                        </span>
+                                                            <% } %>
+                                                                <span>Round 1 : <%= i + 1%></span>
+
+                                                </div>
+
+                                            </div>
+                                            <div class="separator clear-left">
+
+  <p class="btn-add">
+                                                    <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                </p>
+                                                <p class="btn-add">
+                                                   <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                        <i class="fa fa-twitter"></i>
+                                                    </a>
+                                                </p>
+                                              
+                                                <p class="btn-details">
+                                                    <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                </p>
+                                            </div>
+                                            <div class="clearfix">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- END OF CARDS-->
+
+
+                                <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--col-md-12-->
+        </div>
+        <!--row-->
+    </div>
+    <!--background-->
+</body>
+<script src="../../js/jquery.min.js" type="text/javascript"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+
 </html>
