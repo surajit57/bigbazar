@@ -95,7 +95,7 @@
 
 
                                 <!-- CARD+S-->
-                                <div class="col-sm-3">
+                                <div class="col-sm-3" style="padding: 10px;">
 
                                     <div class="col-item">
                                         <div class="photo">
@@ -114,10 +114,14 @@
                                                     </h5>
                                                     <span><%= allUsers[i].blogs.url %></span>
                                                     <% if (allUsers[i].blogs.length) { %>
-                                                        <span>Blog Url :
-                                                        <a href="<%= allUsers[i].blogs[0].url%>" target="_blank" style="white-space: nowrap;width: 12em;overflow: hidden;text-overflow: ellipsis;color: #dd6624;">
-                                                       <%= allUsers[i].blogs[0].url%></a>
-                                                       </span>
+
+                                                     <span style="width: 18em;display: inline-flex;">
+                                                            Blog Url : 
+                                                             <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <%= allUsers[i].blogs[0].url%>
+                                                            </span>
+                                                        </span>
+
                                                         <% } else { %>
                                                         <span style="width: 18em;display: inline-flex;">
                                                             Blog Url : 
@@ -155,13 +159,16 @@
 
 
                                 <% } %>
+                                
                         </div>
                         <div role="tabpanel" class="tab-pane" id="top100">
+                         
+
                             <% for(var i=0; i<allUsers.length; i++) {%>
 
 
                                 <!-- CARD+S-->
-                                <div class="col-sm-3">
+                                <div class="col-sm-3" style="padding: 10px;">
 
                                     <div class="col-item">
                                         <div class="photo">
@@ -180,10 +187,14 @@
                                                     </h5>
                                                     <span><%= allUsers[i].blogs.url %></span>
                                                     <% if (allUsers[i].blogs.length) { %>
-                                                        <span>Blog Url :
-                                                        <a href="<%= allUsers[i].blogs[0].url%>" target="_blank" style="white-space: nowrap;width: 12em;overflow: hidden;text-overflow: ellipsis;color: #dd6624;">
-                                                       <%= allUsers[i].blogs[0].url%></a>
-                                                       </span>
+
+                                                     <span style="width: 18em;display: inline-flex;">
+                                                            Blog Url : 
+                                                             <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <%= allUsers[i].blogs[0].url%>
+                                                            </span>
+                                                        </span>
+
                                                         <% } else { %>
                                                         <span style="width: 18em;display: inline-flex;">
                                                             Blog Url : 
@@ -223,11 +234,13 @@
                                 <% } %>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="top50">
+                           
+
                             <% for(var i=0; i<allUsers.length; i++) {%>
 
 
                                 <!-- CARD+S-->
-                                <div class="col-sm-3">
+                                <div class="col-sm-3" style="padding: 10px;">
 
                                     <div class="col-item">
                                         <div class="photo">
@@ -246,10 +259,14 @@
                                                     </h5>
                                                     <span><%= allUsers[i].blogs.url %></span>
                                                     <% if (allUsers[i].blogs.length) { %>
-                                                        <span>Blog Url :
-                                                        <a href="<%= allUsers[i].blogs[0].url%>" target="_blank" style="white-space: nowrap;width: 12em;overflow: hidden;text-overflow: ellipsis;color: #dd6624;">
-                                                       <%= allUsers[i].blogs[0].url%></a>
-                                                       </span>
+
+                                                     <span style="width: 18em;display: inline-flex;">
+                                                            Blog Url : 
+                                                             <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <%= allUsers[i].blogs[0].url%>
+                                                            </span>
+                                                        </span>
+
                                                         <% } else { %>
                                                         <span style="width: 18em;display: inline-flex;">
                                                             Blog Url : 
@@ -289,11 +306,13 @@
                                 <% } %>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="top3">
-                           <% for(var i=0; i<allUsers.length; i++) {%>
+                           
+
+                            <% for(var i=0; i<allUsers.length; i++) {%>
 
 
                                 <!-- CARD+S-->
-                                <div class="col-sm-3">
+                                <div class="col-sm-3" style="padding: 10px;">
 
                                     <div class="col-item">
                                         <div class="photo">
@@ -312,10 +331,14 @@
                                                     </h5>
                                                     <span><%= allUsers[i].blogs.url %></span>
                                                     <% if (allUsers[i].blogs.length) { %>
-                                                        <span>Blog Url :
-                                                        <a href="<%= allUsers[i].blogs[0].url%>" target="_blank" style="white-space: nowrap;width: 12em;overflow: hidden;text-overflow: ellipsis;color: #dd6624;">
-                                                       <%= allUsers[i].blogs[0].url%></a>
-                                                       </span>
+
+                                                     <span style="width: 18em;display: inline-flex;">
+                                                            Blog Url : 
+                                                             <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <%= allUsers[i].blogs[0].url%>
+                                                            </span>
+                                                        </span>
+
                                                         <% } else { %>
                                                         <span style="width: 18em;display: inline-flex;">
                                                             Blog Url : 

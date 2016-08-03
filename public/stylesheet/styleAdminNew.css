@@ -305,7 +305,7 @@ font-size: 22px;
 }*/
 .col-item .price
 {
-    /*width: 50%;*/
+    width: 100%;
     float: left;
     margin-top: 2em;
     margin: 1em;
