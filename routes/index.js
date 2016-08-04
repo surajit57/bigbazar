@@ -19,6 +19,14 @@ router.post('/login', passport.authenticate('local-login', {failureRedirect: '/u
 	return res.redirect('/users/home')
 });
 
+router.post('/adminlogin', passport.authenticate('local-login', {failureRedirect: '/admin/login'}),function(req, res){
+	// if(req.user.isAdmin){
+		
+		return res.redirect('/admin/home');
+	// }
+	// return res.redirect('/users/home')
+});
+
 router.get('/logout', function(req, res){
 	 req.logout();
 	req.flash('success', "<div class='container'>You are now logged out</div>");
