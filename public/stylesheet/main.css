@@ -376,7 +376,7 @@ body{font-family: 'Roboto', sans-serif; }
     color: #fff;
     font-size: 20px !important;
 }
-.btn.focus, .btn:focus, .btn:hover
+.btn-lo.focus, .btn-lo:focus, .btn-lo:hover
 {
 	color: #fff !important;
 }
