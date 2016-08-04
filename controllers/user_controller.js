@@ -706,11 +706,20 @@ UserController.getListOfAllUsers = function(req, res){
   console.log('coming getListOfAllUsers');
 
   User.findAll({include:[{ model: models.blog }]}).then(function(allUsers) {
+
     console.log('a::---------000- %j', allUsers[0]);
-    console.log('a::---------1111- %j', allUsers[1]);
-      console.log('----------------------------------------',allUsers[0].blogs.url);
+    // console.log('a::---------1111- %j', allUsers[1]);
+    //   console.log('----------------------------------------',allUsers[0].blogs.url);
       // res.render('users.html', {allUsers: allUsers});
-      return res.render('users.html', {allUsers: allUsers});
+      // return res.render('users.html', {allUsers: allUsers});
+
+      Events.findAll({}).then(function(events){
+        console.log('events:---- %j',events);
+        // allUsers.push(events);
+        return res.render('users.html', {allUsers: allUsers, events: events});
+      })
+
+      
   });
 
 
