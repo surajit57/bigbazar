@@ -22,36 +22,36 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <link rel="shortcut icon" href="../images/favicon.ico" />
-  <style>
-    .ontop {
-      z-index: 0;
-      width: 20%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      display: none;
-      position: absolute;
-      background-color: #cccccc;
-      color: #aaaaaa;
-      opacity: .4;
-      filter: alpha(opacity=50);
-    }
-    
-    #popup {
-      width: 300px;
-      height: 200px;
-      position: absolute;
-      color: #000000;
-      background-color: #ffffff;
-      /* To align popup window at the center of screen*/
-      top: 50%;
-      left: 50%;
-      margin-top: -100px;
-      margin-left: -150px;
-    }
-  </style>
-  <script type="text/javascript">
+    <link rel="shortcut icon" href="../images/favicon.ico" /> 
+    <style>
+      .ontop {
+        height: auto;
+        z-index: 1;
+        top: 3px;
+        float: right;
+        right: 2px;
+        opacity: 1;
+        color: #fff;
+        padding: 20px 15px;
+        font-size: 16px;
+        display: none;
+        position: absolute;
+        background-color: red
+      }
+      #popup {
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        color: #000000;
+        background-color: #ffffff;
+        /* To align popup window at the center of screen*/
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -150px;
+      }
+    </style>
+    <script type="text/javascript">
       function pop(div) {
         document.getElementById(div).style.display = 'block';
       }
@@ -130,20 +130,11 @@
   </div>
 
 
-  <!--
+  
           <div id="popDiv" class="ontop">
-      
-            Click Close OR escape button to close it
-            <a href="#" onClick="hide('popDiv')">Close</a>
-          
           </div>
-
           <div id="popDiverror" class="ontop">
-      
-            Click Error Close OR escape button to close it
-            <a href="#" onClick="hide('popDiverror')">Close</a>
-          
-          </div>-->
+          </div>
   </div>
 
 
@@ -213,21 +204,29 @@
                       console.log('------------------ ', data);
                       console.log('data:-- ', JSON.stringify(data));
                       if(data.code == 200){
-                          // alert('Selected Users are sucessfully moved to next round.');
-                          // pop('popDiv');
-                          alert('Blog Updated sucessfully');
-                          window.location = "/users/home";
+                          var Message = data.message;
+                          document.getElementById('popDiv').innerHTML = 
+                          "Your Blog is uploaded Sucessfully. <a href='' onClick='hide('popDiv')''>Close</a>";
+                          pop('popDiv');
+                          // window.location = "/users/home";
+                      }
+                      else if(data.code == 100){
+                          var errorMessage = data.message;
+                          console.log('errorMessage:- ',errorMessage);
+                          document.getElementById('popDiverror').innerHTML =
+                           "Blog is already uploaded for current round. <a href='' onClick='hide('popDiverror')''>Close</a>";
+                          pop('popDiverror');
                       }
                       else{
-                          
-                          // pop('popDiverror');
-                          alert('Technical Error Please try after some time.');
+                          var errorMessage = data.message;
+                          document.getElementById('popDiverror').innerHTML = "Technical Error. Please try after some time. <a href='' onClick='hide('popDiverror')''>Close</a>";
+                          pop('popDiverror');
                       }
                     });
         }
       else{
-        // pop('popDiverror');
-        alert('Not a valid url')
+        document.getElementById('popDiverror').innerHTML = "Input Blog Url is not valid. <a href='' onClick='hide('popDiverror')''>Close</a>";
+        pop('popDiverror');
       }
 
        }

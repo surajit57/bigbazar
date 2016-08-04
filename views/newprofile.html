@@ -377,10 +377,10 @@
                                                             <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>">
                                                         </div>
 
+                                                            <div class="form-group">
+                                                                <label class="control-label">Round First Blog Link</label>
+                                                                 <% if (userInfo.blogDetail) 
 
-                                                        <div class="form-group">
-                                                            <label class="control-label">Blog Url1</label>
-                                                            <% if (userInfo.blogDetail) 
                                                                  { %>
                                                                 <% if(userInfo.events[0].roundBlocked)
                                                                     { %>
@@ -395,8 +395,9 @@
                                                                                 <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="">
                                                                                 <% } %>
 
-                                                                                    <label class="control-label">Blog Url2</label>
-                                                                                    <% if (userInfo.blogDetail) 
+                                                                <label class="control-label">Round Second Blog Link</label>
+                                                                <% if (userInfo.blogDetail) 
+
                                                                  { %>
                                                                                         <% if(userInfo.events[1].roundBlocked)
                                                                     { %>
@@ -413,8 +414,9 @@
                                                                                                         <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control" value="">
                                                                                                         <% } %>
 
-                                                                                                            <label class="control-label">Blog Url3</label>
-                                                                                                            <% if (userInfo.blogDetail) 
+                                                                 <label class="control-label">Round Third Blog Link</label>
+                                                                <% if (userInfo.blogDetail) 
+
                                                                  { %>
                                                                                                                 <% if(userInfo.events[2].roundBlocked)
                                                                     { %>
