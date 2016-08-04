@@ -84,7 +84,7 @@ $(document).ready(function(){
     <div class="page-header navbar navbar-fixed-top" style="background-color:#fff; color:#000; height:100px;    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.48);">
         <div class="page-header-inner ">
             <div class="page-logo">
-                <a href="/users/list">
+                <a href="/users/home">
                     <img src="../../images/logo.png" alt="logo" class="logo-default" style="width:100%;margin:20px;" /> </a>
                 <!--<div class="menu-toggler sidebar-toggler"> </div>-->
             </div>
@@ -94,11 +94,13 @@ $(document).ready(function(){
                 <div class="pull-right">
                     <div class="add-button">
 
-                        <button type="button" onclick="logout()" class="btn btn-default uppercase" style="position: relative;right: 50px;top: 10px;
+                        <button type="button" onclick="logout()" class="btn btn-default uppercase" style="position: relative;right:100px;top: 10px;
 ">
-              <i class="fa fa-cog log-fa"></i>Sign out</button>
+              <i class="fa fa-user log-fa"></i>Register | Login</button>
+              
 
                     </div>
+                    
                 </div>
                 <!--pull-right-->
 
@@ -148,6 +150,12 @@ $(document).ready(function(){
         <div class="page-content-wrapper" style="background-color:#fff">
             <div class="page-content" style="min-height:1200px">
 
+<div class="page-bar">
+                    <ul class="page-breadcrumb">
+                        <li><a href="/users/home">Home</a><i class="fa fa-circle"></i></li>
+                        <li><span>Bloggers</span></li>
+                    </ul>
+                </div>
                 <div class="row" style="margin: 0px">
 
                     <div class="col-md-12">

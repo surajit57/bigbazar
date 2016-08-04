@@ -70,12 +70,12 @@
 
 <body>
 
-  <div class="full-width-bg submit-blog">
+  <div class="full-width-bg index submit-blog ">
 
 
     <div class="row" style="margin-top:30px">
 
-      <div class="col-sm-6 text-center">
+      <div class="col-sm-6">
 
         <div class="row">
           <div class="col-sm-12 text-center">
@@ -85,7 +85,18 @@
           </div>
         </div>
 
+    <div class="row" style="padding: 50px 100px;">
 
+          <h2>Lorem Ipsum is simply dummy text</h2>
+          <h4>Follow below steps to participate</h4>
+          <ol>
+            <li>Step-1: Lorem Ipsum is simply dummy text of the printing</li>
+            <li>Step-2: Lorem Ipsum is simply dummy text of the printing</li>
+            <li>Step-3: Lorem Ipsum is simply dummy text of the printing</li>
+            <li>Step-4: Lorem Ipsum is simply dummy text of the printing</li>
+            <li>Step-5: Lorem Ipsum is simply dummy text of the printing</li>
+          </ol>
+        </div>
       </div>
 
       <div class="col-sm-6" style="padding:30px;">
@@ -93,11 +104,13 @@
         <div class="col-sm-12" style="padding:5px 80px;">
          
           
- <button onclick="logout()" type="button" class="btn btn-default">
-                <i class="fa fa-lock sub-fa"></i>SIGN OUT</button>
+              <button onclick="logout()" type="button" class="btn btn-default">
+                <i class="fa fa-lock sub-fa"></i>SIGN OUT
+                </button>
                 <button type="button" onclick="window.location = '/users/profile'" class="btn btn-default">
               <i class="fa fa-cog sub-fa"></i>SETTINGS</button>
-
+              <button type="button" onclick="window.location = '/users/list'" class="btn btn-default" style="width: 32%;letter-spacing: 0.3px;">
+              <i class="fa fa-rss sub-fa"></i>EXPLORE BLOGGERS</button>
         </div> 
         </div>
         <div class="row" style="margin-top: 4px;">
@@ -111,10 +124,10 @@
           <!-- </div> -->
 
           <% if (locals.messages.info) { %>
-            <input type="text" name="blog_url" class="" id="blog_url" placeholder="ENTER URL" style="" disabled>
+            <input type="text" name="blog_url" class="" id="blog_url" placeholder="ENTER YOUR BLOG URL" style="" disabled>
             <button type="button" onclick="submitBlog()" name="submit" class="blog_submit" disabled>Blog already Submitted</button>
             <% } else { %>
-              <input type="text" name="blog_url" class="" id="blog_url" placeholder="ENTER URL" style="">
+              <input type="text" name="blog_url" class="" id="blog_url" placeholder="ENTER YOUR BLOG URL" style="">
               <button type="button" onclick="submitBlog()" name="submit" class="blog_submit">Submit</button>
               <% } %>
 

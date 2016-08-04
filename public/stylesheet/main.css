@@ -30,7 +30,7 @@ body{font-family: 'Roboto', sans-serif; }
     padding-bottom: 10px;
     border-bottom: 2px solid #f37022;
     margin-bottom: 20px;
-    color: #013976;
+    color: #013976 !important;
 }
 
 .index h4{
@@ -384,5 +384,18 @@ body{font-family: 'Roboto', sans-serif; }
 {
 	color: #fff;
 }
+.bt-hm :hover {
+
+    color: #333;
+  
+    border-color: #adadad;
+	border: 0px;
+}
+
+.fnt-13
+{
+	font-size: 13px !important;
+}
+
 /* End of Profile Page*/
 

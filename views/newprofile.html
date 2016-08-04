@@ -20,7 +20,7 @@
     <link href="http://52.35.82.113/dashboard/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
         type="text/css" />
     <link href="../../stylesheet/bootstrap.min.css" rel="stylesheet" type="text/css" />
-     <link href="../stylesheet/main.css" rel="stylesheet">
+    <link href="../stylesheet/main.css" rel="stylesheet">
     <link href="../../stylesheet/styleAdminNew.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/layout.min.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
@@ -37,47 +37,49 @@
             padding-bottom: 4px;
         }
     </style>
-     <style>
-      .ontop {
-        height: auto;
-        z-index: 1;
-        top: 3px;
-        float: right;
-        right: 2px;
-        opacity: 1;
-        color: #fff;
-        padding: 20px 15px;
-        font-size: 16px;
-        display: none;
-        position: absolute;
-        background-color: red
-      }
-      .ontopSucess {
-        height: auto;
-        z-index: 1;
-        top: 3px;
-        float: right;
-        right: 2px;
-        opacity: 1;
-        color: #fff;
-        padding: 20px 15px;
-        font-size: 16px;
-        display: none;
-        position: absolute;
-        background-color: green
-      }
-      #popup {
-        width: 300px;
-        height: 200px;
-        position: absolute;
-        color: #000000;
-        background-color: #ffffff;
-        /* To align popup window at the center of screen*/
-        top: 50%;
-        left: 50%;
-        margin-top: -100px;
-        margin-left: -150px;
-      }
+    <style>
+        .ontop {
+            height: auto;
+            z-index: 1;
+            top: 3px;
+            float: right;
+            right: 2px;
+            opacity: 1;
+            color: #fff;
+            padding: 20px 15px;
+            font-size: 16px;
+            display: none;
+            position: absolute;
+            background-color: red
+        }
+        
+        .ontopSucess {
+            height: auto;
+            z-index: 1;
+            top: 3px;
+            float: right;
+            right: 2px;
+            opacity: 1;
+            color: #fff;
+            padding: 20px 15px;
+            font-size: 16px;
+            display: none;
+            position: absolute;
+            background-color: green
+        }
+        
+        #popup {
+            width: 300px;
+            height: 200px;
+            position: absolute;
+            color: #000000;
+            background-color: #ffffff;
+            /* To align popup window at the center of screen*/
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -150px;
+        }
     </style>
     <script type="text/javascript">
       function pop(div) {
@@ -134,9 +136,8 @@
     <div class="page-header navbar navbar-fixed-top" style="background-color:#fff; color:#000; height:100px;box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.48);">
         <div class="page-header-inner ">
             <div class="page-logo">
-                <a href="/users/list">
-                    <img src="../../images/logo.png" alt="logo" class="logo-default" style="width:100%;margin: 20px;"
-                    /> </a>
+                <a href="/users/home">
+                    <img src="../../images/logo.png" alt="logo" class="logo-default" style="width:100%;margin: 20px;" />                    </a>
                 <!--<div class="menu-toggler sidebar-toggler"> </div>-->
             </div>
 
@@ -144,12 +145,12 @@
             <div class="top-menu">
                 <div class="pull-right">
                     <div class="add-button">
-                     
-              <button type="button" onclick="logout()" class="btn btn-default uppercase" style="position: relative;right: 50px;top: 10px;
+
+                        <button type="button" onclick="logout()" class="btn btn-default uppercase" style="position: relative;right: 50px;top: 10px;
 ">
               <i class="fa fa-cog log-fa"></i>Sign out</button>
 
-                    
+
                     </div>
                 </div>
                 <!--pull-right-->
@@ -158,18 +159,18 @@
         </div>
     </div>
     <div class="clearfix"> </div>
-    <div class="page-container" >
-        <div class="page-sidebar-wrapper" >
+    <div class="page-container">
+        <div class="page-sidebar-wrapper">
             <div class="page-sidebar navbar-collapse collapse" style="background-color:#fff">
                 <div class="topselecter">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#all" aria-controls="home" role="tab" data-toggle="tab"> Users </a></li>
+                        <li role="presentation" class="active" >
+                            <a href="/users/list" class=" fnt-13"> Explore Bloggers </a></li>
                         <!--<li role="presentation"><a href="#top100" aria-controls="profile" role="tab" data-toggle="tab">Top 100 </a></li>-->
                     </ul>
-                
 
-            </div>
+                </div>
             </div>
         </div>
         <!--page-sidebar-wrapper-->
@@ -177,20 +178,20 @@
             <div class="page-content" style="min-height:1200px">
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
-                        <li><a href="/users/list">Home</a><i class="fa fa-circle"></i></li>
-                        <li><span>User</span></li>
+                        <li><a href="/users/home">Home</a><i class="fa fa-circle"></i></li>
+                        <li><span>Explore Bloggers</span></li>
                     </ul>
                 </div>
 
-          <div id="popDiv" class="ontopSucess">
-          </div>
-          <div id="popDiverror" class="ontop">
-          </div>
+                <div id="popDiv" class="ontopSucess">
+                </div>
+                <div id="popDiverror" class="ontop">
+                </div>
                 <!--page-bar-->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="profile-sidebar">
-                            <div class="portlet light profile-sidebar-portlet" >
+                            <div class="portlet light profile-sidebar-portlet">
                                 <div class="profile-userpic">
 
                                     <% if (userInfo.userInfo.imageUrl) 
@@ -202,7 +203,7 @@
                                             <% } %>
                                 </div>
                                 <div class="profile-usertitle">
-                                    <div class="profile-usertitle-name"  style="padding:15px;">
+                                    <div class="profile-usertitle-name" style="padding:15px;">
                                         <i class="fa fa-user pr-fa" aria-hidden="true"></i>
                                         <span class="pr-side1"><%= userInfo.userInfo.name %></span>
                                     </div>
@@ -211,92 +212,6 @@
                                         <span class="pr-side1"><%= userInfo.userInfo.email %></span>
                                     </div>
 
-                                    <!--<div class="profile-usertitle-name">
-                                        <i class="fa fa-rss" aria-hidden="true"></i>
-                                        <% if (userInfo.blogDetail) 
-                                             { %>
-
-                                            <a href=" <%= userInfo.blogDetail.url %>" style="padding-left:5px">
-                                                <%= userInfo.blogDetail.url %>
-                                            </a>
-                                            <% } 
-                                             else { %>
-                                                <a href="http://104.236.84.1:3000/users/list" style="padding-left:5px">http://104.236.84.1:3000/users/list</a>
-                                                <% } %>
-                                    </div>-->
-                                    <!--<div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;">
-                                        <a href="#" onclick="fbShare()" class="fb_bg" style="margin-right:0px;">
-                                            <i class="fa fa-facebook"></i><b>Share via Facebook</b></a>
-                                    </div>
-                                    <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;">
-                                        <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" class="tw_bg">
-                                            <i class="fa fa-twitter"></i><b>Share via Twiiter</b></a>
-                                    </div>-->
-                                    <!--<div class="progress">
-
-
-
-
-                                        <% if (userInfo.userInfo.isUnder3 && userInfo.userInfo.isUnder15 && userInfo.userInfo.isUnder100) { %>
-                                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-                                                style="width:25%">
-                                                Blog Posted
-                                            </div>
-                                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-                                                style="width:25%">
-                                                Top 100
-                                            </div>
-                                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-                                                style="width:25%">
-                                                Top 15
-                                            </div>
-                                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-                                                style="width:25%">
-                                                Top 3
-                                            </div>
-                                            <% } 
-                                    else if(userInfo.userInfo.isUnder15 && userInfo.userInfo.isUnder100) { %>
-
-                                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-                                                    style="width:25%">
-                                                    Blog Posted
-                                                </div>
-                                                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-                                                    style="width:25%">
-                                                    Top 100
-                                                </div>
-                                                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-                                                    style="width:25%">
-                                                    Top 15
-                                                </div>
-                                                <% }
-                                     else if(userInfo.userInfo.isUnder100) { %>
-
-                                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-                                                        style="width:25%">
-                                                        Blog Posted
-                                                    </div>
-                                                    <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-                                                        style="width:25%">
-                                                        Top 100
-                                                    </div>
-
-                                                    <% }
-                                     else if(userInfo.userInfo.isBlogAdded) { %>
-
-                                                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-                                                            style="width:25%">
-                                                            Blog Posted
-                                                        </div>
-                                                        <% }
-                                     else { %>
-
-                                                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
-                                                                style="width:45%">
-                                                                Blog Not Posted Yet
-                                                            </div>
-                                                            <% } %>
-                                    </div>-->
 
                                 </div>
                                 <div class="profile-usermenu"></div>
@@ -336,49 +251,16 @@
                                                     <form>
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la uppercase">Name</label>
-                                                            <input type="text" id="UserName" name="name" placeholder="John" class="form-control pr-side-inp" value="<%= userInfo.userInfo.name %>" />
+                                                            <input type="text" id="UserName" name="name" placeholder="John" class="form-control pr-side-inp" value="<%= userInfo.userInfo.name %>"
+                                                            />
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la uppercase">EMail</label>
                                                             <input type="text" id="UserEmail" name="email" placeholder="example@gmail.com" class="form-control pr-side-inp" value="<%= userInfo.userInfo.email %>">
                                                         </div>
-                                                        <!--  <div class="form-group">
-                                                                <label class="control-label">Blog Url1</label>
-                                                                 <% if (userInfo.blogDetail) 
-                                                                 { %>
+                                                       
+                                                        <div style="float:left">
 
-                                                                 <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url %>">
-                                                                 <% } 
-                                                                 else { %>
-                                                                 <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control"  value="">
-                                                                 <% } %>
-
-                                                                <label class="control-label">Blog Url2</label>
-                                                                <% if (userInfo.blogDetail) 
-                                                                 { %>
-
-                                                                 <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url1 %>">
-                                                                 <% } 
-                                                                 else { %>
-                                                                 <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control"  value="">
-                                                                 <% } %> 
-
-                                                                 <label class="control-label">Blog Url3</label>
-                                                                <% if (userInfo.blogDetail) 
-                                                                 { %>
-
-                                                                 <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url2 %>">
-                                                                 <% } 
-                                                                 else { %>
-                                                                 <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control"  value="">
-                                                                 <% } %> 
-
-                                                                 
-                                                            </div> -->
-
-
-                                                        <div  style="float:left">
-                                                            
                                                             <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
                                                             <input type="button" onclick="saveUserNameEmail()" value="Save Changes" class="btn pr-side-btn1" />
                                                         </div>
@@ -406,12 +288,12 @@
                                                             </div>
                                                         </div>
 
-                                                        <div  style="float:left">
-                                                            
+                                                        <div style="float:left">
+
                                                             <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
                                                             <input type="submit" value="Submit" class="btn pr-side-btn1" />
                                                         </div>
-                                                        
+
                                                     </form>
                                                     <% if ( locals.messages ) { %>
                                                         <div class="flash"><b><%= locals.messages.info %></b></div>
@@ -429,8 +311,8 @@
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la">Re-type New Password</label>
                                                             <input type="password" id="confirmPasswordField" name="confirmPassword" class="form-control pr-side-inp">                                                            </div>
-                                                        <div  style="float:left">
-                                                            
+                                                        <div style="float:left">
+
                                                             <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
                                                             <input type="button" onclick="changePassword()" value="Change Password" class="btn pr-side-btn1" />
                                                         </div>
@@ -449,10 +331,10 @@
                                                             <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>">
                                                         </div>
 
-                                                            <div class="form-group">
-                                                               
-                                                                <label class="control-label pr-side-inp-la">Round First Blog Link</label>
-                                                                 <% if (userInfo.blogDetail) 
+                                                        <div class="form-group">
+
+                                                            <label class="control-label pr-side-inp-la">Round First Blog Link</label>
+                                                            <% if (userInfo.blogDetail) 
 
                                                                  { %>
                                                                 <% if(userInfo.events[0].roundBlocked)
@@ -468,8 +350,8 @@
                                                                                 <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="">
                                                                                 <% } %>
 
-                                                                <label class="control-label pr-side-inp-la">Round Second Blog Link</label>
-                                                                <% if (userInfo.blogDetail) 
+                                                                                    <label class="control-label pr-side-inp-la">Round Second Blog Link</label>
+                                                                                    <% if (userInfo.blogDetail) 
 
                                                                  { %>
                                                                                         <% if(userInfo.events[1].roundBlocked)
@@ -487,8 +369,8 @@
                                                                                                         <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="">
                                                                                                         <% } %>
 
-                                                                 <label class="control-label pr-side-inp-la">Round Third Blog Link</label>
-                                                                <% if (userInfo.blogDetail) 
+                                                                                                            <label class="control-label pr-side-inp-la">Round Third Blog Link</label>
+                                                                                                            <% if (userInfo.blogDetail) 
 
                                                                  { %>
                                                                                                                 <% if(userInfo.events[2].roundBlocked)
@@ -506,8 +388,8 @@
 
 
                                                         </div>
-                                                        <div  style="float:left">
-                                                            
+                                                        <div style="float:left">
+
                                                             <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
                                                             <input type="submit" value="Submit" class="btn pr-side-btn1" />
                                                         </div>
