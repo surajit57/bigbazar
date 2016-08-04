@@ -227,7 +227,9 @@
                                                 <tr>
                                                     <th>Author Name</th>
                                                     <th>Email Id</th>
-                                                    <th>Blog Url</th>
+                                                    <th>Round 1 Blog Url</th>
+                                                    <th>Round 2 Blog Url</th>
+                                                    <th>Round 3 Blog Url</th>
                                                     <th>Top 100</th>
                                                     <th>Top 15</th>
                                                     <th>Top 3</th>
@@ -241,6 +243,8 @@
                                                         <td><input type="checkbox" class="top15 checksecond" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
                                                         <td><%= blogs[i].url %></td>
+                                                        <td><%= blogs[i].url1 %></td>
+                                                        <td><%= blogs[i].url2 %></td>
                                                         <td>
                                                             <% if (blogs[i].user.isUnder100) { %><p>Selected</p>
                                                             <% } else { %> <p>Not Selected</p> <% } %>
@@ -295,7 +299,9 @@
                                                 <tr>
                                                     <th>Author Name</th>
                                                     <th>Email Id</th>
-                                                    <th>Blog Url</th>
+                                                    <th>Round 1 Blog Url</th>
+                                                    <th>Round 2 Blog Url</th>
+                                                    <th>Round 3 Blog Url</th>
                                                     <th>Top 100</th>
                                                     <th>Top 15</th>
                                                     <th>Top 3</th>
@@ -309,6 +315,8 @@
                                                         <td><input type="checkbox" class="top15 checkthird" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
                                                         <td><%= blogs[i].url %></td>
+                                                        <td><%= blogs[i].url1 %></td>
+                                                        <td><%= blogs[i].url2 %></td>
                                                         <td>
                                                             <% if (blogs[i].user.isUnder100) { %><p>Selected</p>
                                                             <% } else { %> <p>Not Selected</p> <% } %>
@@ -363,7 +371,9 @@
                                                 <tr>
                                                     <th>Author Name</th>
                                                     <th>Email Id</th>
-                                                    <th>Blog Url</th>
+                                                    <th>Round 1 Blog Url</th>
+                                                    <th>Round 2 Blog Url</th>
+                                                    <th>Round 3 Blog Url</th>
                                                     <th>Top 100</th>
                                                     <th>Top 15</th>
                                                     <th>Top 3</th>
@@ -377,6 +387,8 @@
                                                         <td><input type="checkbox" class="winners checkfourth" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
                                                         <td><%= blogs[i].url %></td>
+                                                        <td><%= blogs[i].url1 %></td>
+                                                        <td><%= blogs[i].url2 %></td>
                                                         <td>
                                                             <% if (blogs[i].user.isUnder100) { %><p>Selected</p>
                                                             <% } else { %> <p>Not Selected</p> <% } %>
