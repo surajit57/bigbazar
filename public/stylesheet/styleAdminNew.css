@@ -122,7 +122,7 @@ form {
 .nav-tabs>li.active>a:hover {
 	color: #f6f6f6 !important;
 	cursor: default;
-	background-color: #000 !important;
+	background-color: transparent !important;
 	border: transparent;
 	border-bottom-color: transparent;
 	cursor: pointer;
