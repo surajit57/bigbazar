@@ -67,12 +67,16 @@
             message: 'Hello'
         });
       }
-    </script>
+   
+$(document).ready(function(){
+    $('[data-toggle="tab"]').tab();
+});
+</script>
 
     <div class="page-header navbar navbar-fixed-top" style="background-color:#fff; color:#000; height:100px;    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.48);">
         <div class="page-header-inner ">
             <div class="page-logo">
-                <a href="index.html">
+                <a href="/users/list">
                     <img src="../../images/logo.png" alt="logo" class="logo-default" style="width:100%;margin: 5px 0px 0px 0px;"
                     /> </a>
                 <!--<div class="menu-toggler sidebar-toggler"> </div>-->
@@ -105,10 +109,10 @@
                 <div class="topselecter">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#all" aria-controls="home" role="tab" data-toggle="tab">All Users </a></li>
-                        <li role="presentation"><a href="#top100" aria-controls="profile" role="tab" data-toggle="tab">Top 100 </a></li>
-                        <li role="presentation"><a href="#top50" aria-controls="messages" role="tab" data-toggle="tab">Top 50</a></li>
-                        <li role="presentation"><a href="#top3" aria-controls="messages" role="tab" data-toggle="tab">Top 3</a></li>
+                        <li role="presentation" class="active"><a href="#all" aria-controls="home" role="tab" data-toggle="tab" style="background-color:#dd6624 !important">All Users </a></li>
+                        <li role="presentation"><a href="#top100" aria-controls="profile" role="tab" data-toggle="tab"  title="Top 100 Users List">Top 100 </a></li>
+                        <li role="presentation"><a href="#top50" aria-controls="messages" role="tab" data-toggle="tab"  title="Expires on Aug 10">Top 50</a></li>
+                        <li role="presentation"><a href="#top3" aria-controls="messages" role="tab" data-toggle="tab"  title="Expires on Aug 20">Top 3</a></li>
                     </ul>
                 
 
@@ -807,5 +811,14 @@
 </body>
 <script src="../../js/jquery.min.js" type="text/javascript"></script>
 <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
-
+ <script type="text/javascript">
+            
+            function logout(){
+                console.log('logout clicked');
+             $.get( "/logout", { })
+                      .done(function( data ) {
+                        window.location = "/users/login"
+                      });
+            }
+            </script>
 </html>
