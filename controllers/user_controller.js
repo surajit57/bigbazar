@@ -222,7 +222,8 @@ UserController.changePassword = function(req, res){
   var pass = User.generateHash(req.body.newPassword);
 
   if(req.body.confirmPassword !== req.body.newPassword){
-    return req.flash('error', 'password doesnot match')
+    return res.json({code: 100, message:"New Password and Confirm Password fields doesnot matched."});
+    // return req.flash('error', 'password doesnot match')
   }
 
       if(req.user.validPassword(req.body.currentPassword)){
@@ -233,12 +234,18 @@ UserController.changePassword = function(req, res){
             email: req.user.email
           }
         }).then(function(user){
-          return res.redirect('/users/profile');
+          if(user){
+            return res.json({code:200, message:"Password Changed Successfully."})
+          }
+          else{
+            return res.json({code:0, message: "Technical Error. Please try after some time."})
+          }
         })
       }
       else{
         console.log('error');
-        return req.flash('error', 'Technical error')
+        // return req.flash('error', 'Technical error')
+        res.json({code: 100, message:"Current input password is wrong."});
       }
 
 }

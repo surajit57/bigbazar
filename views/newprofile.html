@@ -419,20 +419,20 @@
                                                 </div>
                                                 <!--tab_1_2-->
                                                 <div class="tab-pane" id="tab_1_3">
-                                                    <form method="post" action="/users/profile/updatepassword">
+                                                    <form>
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la">Current Password</label>
-                                                            <input type="password" name="currentPassword" class="form-control pr-side-inp">                                                            </div>
+                                                            <input type="password" id="oldPasswordField" name="currentPassword" class="form-control pr-side-inp">                                                            </div>
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la">New Password</label>
-                                                            <input type="password" name="newPassword" class="form-control pr-side-inp">                                                            </div>
+                                                            <input type="password" id="newPasswordField" name="newPassword" class="form-control pr-side-inp">                                                            </div>
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la">Re-type New Password</label>
-                                                            <input type="password" name="confirmPassword" class="form-control pr-side-inp">                                                            </div>
+                                                            <input type="password" id="confirmPasswordField" name="confirmPassword" class="form-control pr-side-inp">                                                            </div>
                                                         <div  style="float:left">
                                                             
                                                             <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
-                                                            <input type="submit" value="Change Password" class="btn pr-side-btn1" />
+                                                            <input type="button" onclick="changePassword()" value="Change Password" class="btn pr-side-btn1" />
                                                         </div>
                                                     </form>
                                                 </div>
@@ -569,12 +569,10 @@
                   console.log('name:- ', name, 'email:- ',email);
                 $.post("/users/profile/email", {"name": name, "email": email})
                     .done(function( data ) {
-                      console.log('------------------ ', data);
-                      console.log('data:-- ', JSON.stringify(data));
                       if(data.code == 200){
                           var Message = data.message;
                           document.getElementById('popDiv').innerHTML = 
-                          "Your Blog is uploaded Sucessfully. <a href='' onClick='hide('popDiv')''>Close</a>";
+                          " Sucessfully changed. <a href='' onClick='hide('popDiv')''>Close</a>";
                           pop('popDiv');
                           // window.location = "/users/home";
                       }
@@ -585,6 +583,57 @@
                       }
                     });
                 }
+            
+                function changePassword(){
+                  var oldPasswordField = document.getElementById('oldPasswordField').value;
+                  var newPasswordField = document.getElementById('newPasswordField').value;
+                  var confirmPasswordField = document.getElementById('confirmPasswordField').value;
+
+                  if(oldPasswordField.length < 6){
+                    var errorMessage = "Password field must be 6 character long.";
+                    document.getElementById('popDiverror').innerHTML = " "+ errorMessage +" <a href='' onClick='hide('popDiverror')''>Close</a>";
+                    pop('popDiverror');
+                  }
+                  else if(newPasswordField.length < 6){
+                    var errorMessage = "New Password field must be 6 character long.";
+                    document.getElementById('popDiverror').innerHTML = " "+ errorMessage +" <a href='' onClick='hide('popDiverror')''>Close</a>";
+                    pop('popDiverror');
+                  }
+                  else if(confirmPasswordField.length < 6){
+                    var errorMessage = "Confirm Password field must be 6 character long.";
+                    document.getElementById('popDiverror').innerHTML = " "+ errorMessage +" <a href='' onClick='hide('popDiverror')''>Close</a>";
+                    pop('popDiverror');
+                  }
+                  else if(newPasswordField != confirmPasswordField){
+                    var errorMessage = "New Password and Confirm Password does not match.";
+                    document.getElementById('popDiverror').innerHTML = " "+ errorMessage +" <a href='' onClick='hide('popDiverror')''>Close</a>";
+                    pop('popDiverror');
+                  }
+                  else{
+                      $.post("/users/profile/updatepassword", {"currentPassword": oldPasswordField, "newPassword": newPasswordField, "confirmPassword": confirmPasswordField})
+                    .done(function( data ) {
+                      if(data.code == 200){
+                        console.log('data:- ',JSON.stringify(data));
+                          var Message = data.message;
+                          document.getElementById('popDiv').innerHTML = 
+                          " "+ Message +" <a href='' onClick='hide('popDiv')''>Close</a>";
+                          pop('popDiv');
+                      }
+                      else if(data.code == 100){
+                          var errorMessage = data.message;
+                          document.getElementById('popDiverror').innerHTML = " "+ errorMessage +" <a href='' onClick='hide('popDiverror')''>Close</a>";
+                          pop('popDiverror');
+                      }
+                      else{
+                          var errorMessage = data.message;
+                          document.getElementById('popDiverror').innerHTML = " "+ errorMessage +" <a href='' onClick='hide('popDiverror')''>Close</a>";
+                          pop('popDiverror');
+                      }
+                    });
+                  }
+                }
+
+                
 
         </script>
 </body>
