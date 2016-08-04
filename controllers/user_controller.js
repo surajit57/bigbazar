@@ -526,7 +526,13 @@ var arr = JSON.parse(req.body.userIds);
            })})
            .then(function(user){
               console.log('Users are selectFor100 ',user);
-              res.json({ code: 200 });
+              if(user){
+                return res.json({ code: 200 });
+              }
+              else{
+                res.json({ code: 0 });
+              }
+              
            })
     }
   });
@@ -547,7 +553,13 @@ UserController.unselectFor100 = function(req, res){
            })})
            .then(function(user){
               console.log('Users are unselectedFor100 ',user);
-              res.json({ code: 200 })
+              if(user){
+                res.json({ code: 200 })
+              }
+              else{
+                res.json({ code: 0 })
+              }
+              
            })
 }
 
@@ -576,7 +588,13 @@ UserController.postSelectFor15 = function(req, res){
            })})
            .then(function(user){
               console.log('Users are selectFor15 ',user);
-              res.json({ code: 200 });
+              if(user){
+                res.json({ code: 200 });
+              }
+              else{
+                res.json({ code: 0 });
+              }
+              
            })
     }
   });
@@ -597,7 +615,13 @@ var arr = JSON.parse(req.body.userIds);
            })})
            .then(function(user){
               console.log('Users are unselectedFor100 ',user);
-              res.json({ code: 200 })
+              if(user){
+                res.json({ code: 200 })
+              }
+              else{
+                res.json({ code: 0 })
+              }
+              
            })
 };
 
@@ -627,7 +651,12 @@ UserController.postSelectFor3 = function(req, res){
            })})
            .then(function(user){
               console.log('Users are selectFor3 ',user);
-              res.json({ code: 200 })
+              if(user){
+                res.json({ code: 200 })
+              }
+              else{
+                res.json({ code: 0 })
+              }
            })
     }
   });
@@ -649,7 +678,12 @@ UserController.unselectFor3 = function(req, res){
            })})
            .then(function(user){
               console.log('Users are unselectedFor15 ',user);
-              res.json({ code: 200 })
+              if(user){
+                res.json({ code: 200 })
+              }
+              else{
+                res.json({ code: 0 })
+              }
            })
 }
 
