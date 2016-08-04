@@ -18,11 +18,11 @@
     <meta content="" name="author" />
 
 
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="http://52.35.82.113/dashboard/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
         type="text/css" />
     <link href="../../stylesheet/bootstrap.min.css" rel="stylesheet" type="text/css" />
-     <link href="../stylesheet/main.css" rel="stylesheet">
+    <link href="../stylesheet/main.css" rel="stylesheet">
     <link href="../../stylesheet/styleAdminNew.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/layout.min.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
@@ -33,13 +33,13 @@
 
     <script src="../../js/jquery.min.js" type="text/javascript"></script>
 
-    
 
-     <style>
-       .disabledTab {
-   pointer-events: none;
-}
-   </style>
+
+    <style>
+        .disabledTab {
+            pointer-events: none;
+        }
+    </style>
 
 </head>
 
@@ -85,20 +85,19 @@ $(document).ready(function(){
         <div class="page-header-inner ">
             <div class="page-logo">
                 <a href="/users/list">
-                    <img src="../../images/logo.png" alt="logo" class="logo-default" style="width:100%;margin:20px;"
-                    /> </a>
+                    <img src="../../images/logo.png" alt="logo" class="logo-default" style="width:100%;margin:20px;" /> </a>
                 <!--<div class="menu-toggler sidebar-toggler"> </div>-->
-            </div>  
+            </div>
 
             <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
             <div class="top-menu">
                 <div class="pull-right">
-                       <div class="add-button">
-                     
-              <button type="button" onclick="logout()" class="btn btn-default uppercase" style="position: relative;right: 50px;top: 10px;
+                    <div class="add-button">
+
+                        <button type="button" onclick="logout()" class="btn btn-default uppercase" style="position: relative;right: 50px;top: 10px;
 ">
               <i class="fa fa-cog log-fa"></i>Sign out</button>
-                    
+
                     </div>
                 </div>
                 <!--pull-right-->
@@ -108,732 +107,737 @@ $(document).ready(function(){
     </div>
 
 
- <div class="clearfix"> </div>
+    <div class="clearfix"> </div>
     <div class="page-container">
 
- <div class="page-sidebar-wrapper">
+        <div class="page-sidebar-wrapper">
             <div class="page-sidebar navbar-collapse collapse" style="background-color:#fff">
                 <div class="topselecter">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
 
                         <li role="presentation" class="active"><a href="#all" aria-controls="home" role="tab" data-toggle="tab">All Users </a></li>
-                         <% if(!events[0].roundBlocked) { %>
+                        <% if(!events[0].roundBlocked) { %>
                             <li role="presentation" class="disabled disabledTab"><a href="#top100" aria-controls="profile" role="tab" data-toggle="tab">Top 100 </a></li>
-                         <% } else {%>
-                            <li role="presentation" class="disabled"><a href="#top100" aria-controls="profile" role="tab" data-toggle="tab">Top 100 </a></li>
-                         <% } %>
+                            <% } else {%>
+                                <li role="presentation"><a href="#top100" aria-controls="profile" role="tab" data-toggle="tab" title="Top 100 is blocked">Top 100 </a></li>
+                                <% } %>
 
-                         <% if(!events[1].roundBlocked) { %>
-                            <li role="presentation" class="disabled disabledTab"><a href="#top50" aria-controls="messages" role="tab" data-toggle="tab">Top 50</a></li>
-                         <% } else {%>
-                            <li role="presentation" class="disabled disabledTab"><a href="#top50" aria-controls="messages" role="tab" data-toggle="tab">Top 50</a></li>
-                        <% } %>
-                        <% if(!events[2].roundBlocked) { %>
-                            <li role="presentation" class="disabled disabledTab"><a href="#top3" aria-controls="messages" role="tab" data-toggle="tab">Top 3</a></li>
-                        <% } else {%>
-                            <li role="presentation"><a href="#top3" aria-controls="messages" role="tab" data-toggle="tab">Top 3</a></li>
-                        <% } %>
+                                    <% if(!events[1].roundBlocked) { %>
+                                        <li role="presentation" class="disabled disabledTab"><a href="#top50" aria-controls="messages" role="tab" data-toggle="tab" title="Top 15 is blocked">Top 50</a></li>
+                                        <% } else {%>
+                                            <li role="presentation">
+                                                <a href="#top50" aria-controls="messages" role="tab" data-toggle="tab">Top 15</a>
+                                            </li>
+                                            <% } %>
+                                                <% if(!events[2].roundBlocked) { %>
+                                                    <li role="presentation" class="disabled disabledTab"><a href="#top3" aria-controls="messages" role="tab" data-toggle="tab"
+                                                            title="Top 15 is blocked">Top 3</a></li>
+                                                    <% } else {%>
+                                                        <li role="presentation"><a href="#top3" aria-controls="messages" role="tab" data-toggle="tab">Top 3</a></li>
+                                                        <% } %>
 
                     </ul>
-                
 
+
+                </div>
             </div>
         </div>
- </div>
         <!--page-sidebar-wrapper-->
 
-<div class="page-content-wrapper" style="background-color:#fff">
+        <div class="page-content-wrapper" style="background-color:#fff">
             <div class="page-content" style="min-height:1200px">
-               
-        <div class="row" style="margin: 0px">
-          
-            <div class="col-md-12">
-                
-                    <!-- Tab panes -->
-                    <div class="tab-content">
- 
-                        <div role="tabpanel" class="tab-pane active" id="all">
 
-                              
-                            <% for(var i=0; i<allUsers.length; i++) {%>
-                                <!-- CARD+S-->
-                                
-                                <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
-                                   
+                <div class="row" style="margin: 0px">
 
-                                    <!-- For First Blog Url -->
+                    <div class="col-md-12">
 
-                                    <% if(allUsers[i].blogs[0].url) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-                                        <div class="col-item" style="border-radius:15px !important;">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg" class="img-circle">
-                                                </div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                           <%= allUsers[i].name %>
-                                                        </h5>
-                                                         <span style="width: 18em;display: inline-flex;">
-                                                                Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
-                                                                     <%= allUsers[i].blogs[0].url %>
-                                                                </span>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                       <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
-                                                  
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
 
-                                    <% } %>
-                                    <!-- For First Blog Url -->
-
-                                    <!-- For Second Blog Url -->
-                                    <% if(allUsers[i].blogs[0].url1) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-
-                
-
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg">
-                                                </div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                           <%= allUsers[i].name %>
-                                                        </h5>
-                                                         <span style="width: 18em;display: inline-flex;">
-                                                                Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
-                                                                     <%= allUsers[i].blogs[0].url1 %>
-                                                                </span>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                       <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
-                                                  
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <% } %>
-                                    <!-- For Second Blog Url -->
-
-                                    <!-- For Third Blog Url -->
-                                    <% if(allUsers[i].blogs[0].url2) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg">
-                                                </div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                           <%= allUsers[i].name %>
-                                                        </h5>
-                                                         <span style="width: 18em;display: inline-flex;">
-                                                                Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
-                                                                     <%= allUsers[i].blogs[0].url2 %>
-                                                                </span>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                       <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
-                                                  
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <% } %>
-                                    <!-- For Third Blog Url -->
+                            <div role="tabpanel" class="tab-pane active" id="all">
 
 
-
-                                <% } %>
-
-                               
-                                <!-- END OF CARDS-->
-                                <% } %>
-
-
-
-                                
-                                
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="top100">
-   
-
-                            <% for(var i=0; i<allUsers.length; i++) {%>
-                                <!-- CARD+S-->
-
-                                <% if(allUsers[i].isUnder100) {%>
+                                <% for(var i=0; i<allUsers.length; i++) {%>
+                                    <!-- CARD+S-->
 
                                     <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
-                                   
 
-                                    <!-- For First Blog Url -->
 
-                                    <% if(allUsers[i].blogs[0].url) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg">
-                                                </div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                           <%= allUsers[i].name %>
-                                                        </h5>
-                                                         <span style="width: 18em;display: inline-flex;">
+                                        <!-- For First Blog Url -->
+
+                                        <% if(allUsers[i].blogs[0].url) { %>
+                                            <div class="col-sm-3" style="padding: 10px;">
+                                                <div class="col-item" style="border-radius:15px !important;">
+                                                    <div class="photo">
+                                                        <div class="user_profile_image">
+                                                            <img src="../../images/profile_user.jpg" class="img-circle">
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                    </div>
+                                                    <div class="info">
+                                                        <div class="row">
+                                                            <div class="price col-md-6">
+                                                                <h5>
+                                                                    <%= allUsers[i].name %>
+                                                                </h5>
+                                                                <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
                                                                      <%= allUsers[i].blogs[0].url %>
                                                                 </span>
-                                                            </span>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="separator clear-left">
+                                                            <p class="btn-add">
+                                                                <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                            </p>
+                                                            <p class="btn-add">
+                                                                <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                                    <i class="fa fa-twitter"></i>
+                                                                </a>
+                                                            </p>
+
+                                                            <p class="btn-details">
+                                                                <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                            </p>
+                                                        </div>
+                                                        <div class="clearfix">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                       <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
-                                                  
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
 
-                                    <% } %>
-                                    <!-- For First Blog Url -->
+                                            <% } %>
+                                                <!-- For First Blog Url -->
 
-                                    <!-- For Second Blog Url -->
-                                    <% if(allUsers[i].blogs[0].url1) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg">
-                                                </div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                           <%= allUsers[i].name %>
-                                                        </h5>
-                                                         <span style="width: 18em;display: inline-flex;">
+                                                <!-- For Second Blog Url -->
+                                                <% if(allUsers[i].blogs[0].url1) { %>
+                                                    <div class="col-sm-3" style="padding: 10px;">
+
+
+
+                                                        <div class="col-item">
+                                                            <div class="photo">
+                                                                <div class="user_profile_image">
+                                                                    <img src="../../images/profile_user.jpg">
+                                                                </div>
+                                                            </div>
+                                                            <div>
+                                                            </div>
+                                                            <div class="info">
+                                                                <div class="row">
+                                                                    <div class="price col-md-6">
+                                                                        <h5>
+                                                                            <%= allUsers[i].name %>
+                                                                        </h5>
+                                                                        <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
                                                                      <%= allUsers[i].blogs[0].url1 %>
                                                                 </span>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                       <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
-                                                  
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <% } %>
-                                    <!-- For Second Blog Url -->
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="separator clear-left">
+                                                                    <p class="btn-add">
+                                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                                    </p>
+                                                                    <p class="btn-add">
+                                                                        <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                                            <i class="fa fa-twitter"></i>
+                                                                        </a>
+                                                                    </p>
 
-                                    <!-- For Third Blog Url -->
-                                    <% if(allUsers[i].blogs[0].url2) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg">
-                                                </div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                           <%= allUsers[i].name %>
-                                                        </h5>
-                                                         <span style="width: 18em;display: inline-flex;">
+                                                                    <p class="btn-details">
+                                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                                    </p>
+                                                                </div>
+                                                                <div class="clearfix">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <% } %>
+                                                        <!-- For Second Blog Url -->
+
+                                                        <!-- For Third Blog Url -->
+                                                        <% if(allUsers[i].blogs[0].url2) { %>
+                                                            <div class="col-sm-3" style="padding: 10px;">
+                                                                <div class="col-item">
+                                                                    <div class="photo">
+                                                                        <div class="user_profile_image">
+                                                                            <img src="../../images/profile_user.jpg">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div>
+                                                                    </div>
+                                                                    <div class="info">
+                                                                        <div class="row">
+                                                                            <div class="price col-md-6">
+                                                                                <h5>
+                                                                                    <%= allUsers[i].name %>
+                                                                                </h5>
+                                                                                <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
                                                                      <%= allUsers[i].blogs[0].url2 %>
                                                                 </span>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                       <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
-                                                  
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <% } %>
-                                    <!-- For Third Blog Url -->
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="separator clear-left">
+                                                                            <p class="btn-add">
+                                                                                <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                                            </p>
+                                                                            <p class="btn-add">
+                                                                                <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                                                    <i class="fa fa-twitter"></i>
+                                                                                </a>
+                                                                            </p>
+
+                                                                            <p class="btn-details">
+                                                                                <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="clearfix">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <% } %>
+                                                                <!-- For Third Blog Url -->
 
 
 
-                                <% } %>
+                                                                <% } %>
 
 
-                                <% } %>
-
-                               
-                                <!-- END OF CARDS-->
+                                                                    <!-- END OF CARDS-->
+                                                                    <% } %>
 
 
-                                <% } %>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="top50">
-                           
-                           <% for(var i=0; i<allUsers.length; i++) {%>
-                                <!-- CARD+S-->
 
-                                <% if(allUsers[i].isUnder15) {%>
 
-                                    <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
-                                   
 
-                                    <!-- For First Blog Url -->
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="top100">
 
-                                    <% if(allUsers[i].blogs[0].url) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg">
-                                                </div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                           <%= allUsers[i].name %>
-                                                        </h5>
-                                                         <span style="width: 18em;display: inline-flex;">
+
+                                <% for(var i=0; i<allUsers.length; i++) {%>
+                                    <!-- CARD+S-->
+
+                                    <% if(allUsers[i].isUnder100) {%>
+
+                                        <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
+
+
+                                            <!-- For First Blog Url -->
+
+                                            <% if(allUsers[i].blogs[0].url) { %>
+                                                <div class="col-sm-3" style="padding: 10px;">
+                                                    <div class="col-item">
+                                                        <div class="photo">
+                                                            <div class="user_profile_image">
+                                                                <img src="../../images/profile_user.jpg">
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                        </div>
+                                                        <div class="info">
+                                                            <div class="row">
+                                                                <div class="price col-md-6">
+                                                                    <h5>
+                                                                        <%= allUsers[i].name %>
+                                                                    </h5>
+                                                                    <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
                                                                      <%= allUsers[i].blogs[0].url %>
                                                                 </span>
-                                                            </span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="separator clear-left">
+                                                                <p class="btn-add">
+                                                                    <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                                </p>
+                                                                <p class="btn-add">
+                                                                    <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                                        <i class="fa fa-twitter"></i>
+                                                                    </a>
+                                                                </p>
+
+                                                                <p class="btn-details">
+                                                                    <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                                </p>
+                                                            </div>
+                                                            <div class="clearfix">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                       <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
-                                                  
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <% } %>
-                                    <!-- For First Blog Url -->
+                                                <% } %>
+                                                    <!-- For First Blog Url -->
 
-                                    <!-- For Second Blog Url -->
-                                    <% if(allUsers[i].blogs[0].url1) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg">
-                                                </div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                           <%= allUsers[i].name %>
-                                                        </h5>
-                                                         <span style="width: 18em;display: inline-flex;">
+                                                    <!-- For Second Blog Url -->
+                                                    <% if(allUsers[i].blogs[0].url1) { %>
+                                                        <div class="col-sm-3" style="padding: 10px;">
+                                                            <div class="col-item">
+                                                                <div class="photo">
+                                                                    <div class="user_profile_image">
+                                                                        <img src="../../images/profile_user.jpg">
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                </div>
+                                                                <div class="info">
+                                                                    <div class="row">
+                                                                        <div class="price col-md-6">
+                                                                            <h5>
+                                                                                <%= allUsers[i].name %>
+                                                                            </h5>
+                                                                            <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
                                                                      <%= allUsers[i].blogs[0].url1 %>
                                                                 </span>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                       <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
-                                                  
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <% } %>
-                                    <!-- For Second Blog Url -->
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="separator clear-left">
+                                                                        <p class="btn-add">
+                                                                            <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                                        </p>
+                                                                        <p class="btn-add">
+                                                                            <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                                                <i class="fa fa-twitter"></i>
+                                                                            </a>
+                                                                        </p>
 
-                                    <!-- For Third Blog Url -->
-                                    <% if(allUsers[i].blogs[0].url2) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg">
-                                                </div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                           <%= allUsers[i].name %>
-                                                        </h5>
-                                                         <span style="width: 18em;display: inline-flex;">
+                                                                        <p class="btn-details">
+                                                                            <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="clearfix">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <% } %>
+                                                            <!-- For Second Blog Url -->
+
+                                                            <!-- For Third Blog Url -->
+                                                            <% if(allUsers[i].blogs[0].url2) { %>
+                                                                <div class="col-sm-3" style="padding: 10px;">
+                                                                    <div class="col-item">
+                                                                        <div class="photo">
+                                                                            <div class="user_profile_image">
+                                                                                <img src="../../images/profile_user.jpg">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <div class="row">
+                                                                                <div class="price col-md-6">
+                                                                                    <h5>
+                                                                                        <%= allUsers[i].name %>
+                                                                                    </h5>
+                                                                                    <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
                                                                      <%= allUsers[i].blogs[0].url2 %>
                                                                 </span>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                       <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
-                                                  
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <% } %>
-                                    <!-- For Third Blog Url -->
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="separator clear-left">
+                                                                                <p class="btn-add">
+                                                                                    <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                                                </p>
+                                                                                <p class="btn-add">
+                                                                                    <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                                                        <i class="fa fa-twitter"></i>
+                                                                                    </a>
+                                                                                </p>
+
+                                                                                <p class="btn-details">
+                                                                                    <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="clearfix">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <% } %>
+                                                                    <!-- For Third Blog Url -->
 
 
 
-                                <% } %>
+                                                                    <% } %>
 
 
-                                <% } %>
-
-                               
-                                <!-- END OF CARDS-->
+                                                                        <% } %>
 
 
-                                <% } %>
+                                                                            <!-- END OF CARDS-->
 
-                           
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="top3">
-                          <% for(var i=0; i<allUsers.length; i++) {%>
-                                <!-- CARD+S-->
 
-                                <% if(allUsers[i].isUnder3) {%>
+                                                                            <% } %>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="top50">
 
-                                    <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
-                                   
+                                <% for(var i=0; i<allUsers.length; i++) {%>
+                                    <!-- CARD+S-->
 
-                                    <!-- For First Blog Url -->
+                                    <% if(allUsers[i].isUnder15) {%>
 
-                                    <% if(allUsers[i].blogs[0].url) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg">
-                                                </div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                           <%= allUsers[i].name %>
-                                                        </h5>
-                                                         <span style="width: 18em;display: inline-flex;">
+                                        <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
+
+
+                                            <!-- For First Blog Url -->
+
+                                            <% if(allUsers[i].blogs[0].url) { %>
+                                                <div class="col-sm-3" style="padding: 10px;">
+                                                    <div class="col-item">
+                                                        <div class="photo">
+                                                            <div class="user_profile_image">
+                                                                <img src="../../images/profile_user.jpg">
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                        </div>
+                                                        <div class="info">
+                                                            <div class="row">
+                                                                <div class="price col-md-6">
+                                                                    <h5>
+                                                                        <%= allUsers[i].name %>
+                                                                    </h5>
+                                                                    <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
                                                                      <%= allUsers[i].blogs[0].url %>
                                                                 </span>
-                                                            </span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="separator clear-left">
+                                                                <p class="btn-add">
+                                                                    <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                                </p>
+                                                                <p class="btn-add">
+                                                                    <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                                        <i class="fa fa-twitter"></i>
+                                                                    </a>
+                                                                </p>
+
+                                                                <p class="btn-details">
+                                                                    <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                                </p>
+                                                            </div>
+                                                            <div class="clearfix">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                       <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
-                                                  
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <% } %>
-                                    <!-- For First Blog Url -->
+                                                <% } %>
+                                                    <!-- For First Blog Url -->
 
-                                    <!-- For Second Blog Url -->
-                                    <% if(allUsers[i].blogs[0].url1) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg">
-                                                </div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                           <%= allUsers[i].name %>
-                                                        </h5>
-                                                         <span style="width: 18em;display: inline-flex;">
+                                                    <!-- For Second Blog Url -->
+                                                    <% if(allUsers[i].blogs[0].url1) { %>
+                                                        <div class="col-sm-3" style="padding: 10px;">
+                                                            <div class="col-item">
+                                                                <div class="photo">
+                                                                    <div class="user_profile_image">
+                                                                        <img src="../../images/profile_user.jpg">
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                </div>
+                                                                <div class="info">
+                                                                    <div class="row">
+                                                                        <div class="price col-md-6">
+                                                                            <h5>
+                                                                                <%= allUsers[i].name %>
+                                                                            </h5>
+                                                                            <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
                                                                      <%= allUsers[i].blogs[0].url1 %>
                                                                 </span>
-                                                            </span>
-                                                    </div>
-                                                </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                       <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
-                                                  
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <% } %>
-                                    <!-- For Second Blog Url -->
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="separator clear-left">
+                                                                        <p class="btn-add">
+                                                                            <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                                        </p>
+                                                                        <p class="btn-add">
+                                                                            <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                                                <i class="fa fa-twitter"></i>
+                                                                            </a>
+                                                                        </p>
 
-                                    <!-- For Third Blog Url -->
-                                    <% if(allUsers[i].blogs[0].url2) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-                                        <div class="col-item">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg">
-                                                </div>
-                                            </div>
-                                            <div>
-                                            </div>
-                                            <div class="info">
-                                                <div class="row">
-                                                    <div class="price col-md-6">
-                                                        <h5>
-                                                           <%= allUsers[i].name %>
-                                                        </h5>
-                                                         <span style="width: 18em;display: inline-flex;">
+                                                                        <p class="btn-details">
+                                                                            <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="clearfix">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <% } %>
+                                                            <!-- For Second Blog Url -->
+
+                                                            <!-- For Third Blog Url -->
+                                                            <% if(allUsers[i].blogs[0].url2) { %>
+                                                                <div class="col-sm-3" style="padding: 10px;">
+                                                                    <div class="col-item">
+                                                                        <div class="photo">
+                                                                            <div class="user_profile_image">
+                                                                                <img src="../../images/profile_user.jpg">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <div class="row">
+                                                                                <div class="price col-md-6">
+                                                                                    <h5>
+                                                                                        <%= allUsers[i].name %>
+                                                                                    </h5>
+                                                                                    <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
                                                                      <%= allUsers[i].blogs[0].url2 %>
                                                                 </span>
-                                                            </span>
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="separator clear-left">
+                                                                                <p class="btn-add">
+                                                                                    <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                                                </p>
+                                                                                <p class="btn-add">
+                                                                                    <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                                                        <i class="fa fa-twitter"></i>
+                                                                                    </a>
+                                                                                </p>
+
+                                                                                <p class="btn-details">
+                                                                                    <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="clearfix">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <% } %>
+                                                                    <!-- For Third Blog Url -->
+
+
+
+                                                                    <% } %>
+
+
+                                                                        <% } %>
+
+
+                                                                            <!-- END OF CARDS-->
+
+
+                                                                            <% } %>
+
+
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="top3">
+                                <% for(var i=0; i<allUsers.length; i++) {%>
+                                    <!-- CARD+S-->
+
+                                    <% if(allUsers[i].isUnder3) {%>
+
+                                        <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
+
+
+                                            <!-- For First Blog Url -->
+
+                                            <% if(allUsers[i].blogs[0].url) { %>
+                                                <div class="col-sm-3" style="padding: 10px;">
+                                                    <div class="col-item">
+                                                        <div class="photo">
+                                                            <div class="user_profile_image">
+                                                                <img src="../../images/profile_user.jpg">
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                        </div>
+                                                        <div class="info">
+                                                            <div class="row">
+                                                                <div class="price col-md-6">
+                                                                    <h5>
+                                                                        <%= allUsers[i].name %>
+                                                                    </h5>
+                                                                    <span style="width: 18em;display: inline-flex;">
+                                                                Blog Url : 
+                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                     <%= allUsers[i].blogs[0].url %>
+                                                                </span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="separator clear-left">
+                                                                <p class="btn-add">
+                                                                    <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                                </p>
+                                                                <p class="btn-add">
+                                                                    <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                                        <i class="fa fa-twitter"></i>
+                                                                    </a>
+                                                                </p>
+
+                                                                <p class="btn-details">
+                                                                    <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                                </p>
+                                                            </div>
+                                                            <div class="clearfix">
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                       <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
-                                                  
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="fbShare()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <% } %>
-                                    <!-- For Third Blog Url -->
+
+                                                <% } %>
+                                                    <!-- For First Blog Url -->
+
+                                                    <!-- For Second Blog Url -->
+                                                    <% if(allUsers[i].blogs[0].url1) { %>
+                                                        <div class="col-sm-3" style="padding: 10px;">
+                                                            <div class="col-item">
+                                                                <div class="photo">
+                                                                    <div class="user_profile_image">
+                                                                        <img src="../../images/profile_user.jpg">
+                                                                    </div>
+                                                                </div>
+                                                                <div>
+                                                                </div>
+                                                                <div class="info">
+                                                                    <div class="row">
+                                                                        <div class="price col-md-6">
+                                                                            <h5>
+                                                                                <%= allUsers[i].name %>
+                                                                            </h5>
+                                                                            <span style="width: 18em;display: inline-flex;">
+                                                                Blog Url : 
+                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                     <%= allUsers[i].blogs[0].url1 %>
+                                                                </span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="separator clear-left">
+                                                                        <p class="btn-add">
+                                                                            <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                                        </p>
+                                                                        <p class="btn-add">
+                                                                            <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                                                <i class="fa fa-twitter"></i>
+                                                                            </a>
+                                                                        </p>
+
+                                                                        <p class="btn-details">
+                                                                            <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="clearfix">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <% } %>
+                                                            <!-- For Second Blog Url -->
+
+                                                            <!-- For Third Blog Url -->
+                                                            <% if(allUsers[i].blogs[0].url2) { %>
+                                                                <div class="col-sm-3" style="padding: 10px;">
+                                                                    <div class="col-item">
+                                                                        <div class="photo">
+                                                                            <div class="user_profile_image">
+                                                                                <img src="../../images/profile_user.jpg">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div>
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <div class="row">
+                                                                                <div class="price col-md-6">
+                                                                                    <h5>
+                                                                                        <%= allUsers[i].name %>
+                                                                                    </h5>
+                                                                                    <span style="width: 18em;display: inline-flex;">
+                                                                Blog Url : 
+                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                     <%= allUsers[i].blogs[0].url2 %>
+                                                                </span>
+                                                                                    </span>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="separator clear-left">
+                                                                                <p class="btn-add">
+                                                                                    <i class="fa fa-facebook" onclick="fbShare()"></i>
+                                                                                </p>
+                                                                                <p class="btn-add">
+                                                                                    <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
+                                                                                        <i class="fa fa-twitter"></i>
+                                                                                    </a>
+                                                                                </p>
+
+                                                                                <p class="btn-details">
+                                                                                    <i class="fa fa-linkedin" onclick="fbShare()"></i>
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="clearfix">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <% } %>
+                                                                    <!-- For Third Blog Url -->
 
 
 
-                                <% } %>
+                                                                    <% } %>
 
 
-                                <% } %>
-
-                               
-                                <!-- END OF CARDS-->
+                                                                        <% } %>
 
 
-                                <% } %>
+                                                                            <!-- END OF CARDS-->
 
+
+                                                                            <% } %>
+
+                            </div>
                         </div>
                     </div>
                 </div>
+                <!--col-md-12-->
             </div>
-            <!--col-md-12-->
+            <!--row-->
         </div>
-        <!--row-->
-    </div></div></div>
+    </div>
+    </div>
     <!--background-->
 </body>
 <script src="../../js/jquery.min.js" type="text/javascript"></script>
 <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
- <script type="text/javascript">
+<script type="text/javascript">
             
             function logout(){
                 console.log('logout clicked');
@@ -843,4 +847,5 @@ $(document).ready(function(){
                       });
             }
             </script>
+
 </html>

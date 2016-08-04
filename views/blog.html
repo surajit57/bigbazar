@@ -206,7 +206,7 @@
                       if(data.code == 200){
                           var Message = data.message;
                           document.getElementById('popDiv').innerHTML = 
-                          "Your Blog is uploaded Sucessfully. <a href='' onClick='hide('popDiv')''>Close</a>";
+                          "Your Blog is uploaded Sucessfully. <a href='' onClick='hide('popDiv')''><i class='fa fa-close f-alert'></i></a>";
                           pop('popDiv');
                           // window.location = "/users/home";
                       }
@@ -214,18 +214,18 @@
                           var errorMessage = data.message;
                           console.log('errorMessage:- ',errorMessage);
                           document.getElementById('popDiverror').innerHTML =
-                           "Blog is already uploaded for current round. <a href='' onClick='hide('popDiverror')''>Close</a>";
+                           "Blog is already uploaded for current round. <a href='' onClick='hide('popDiverror')''><i class='fa fa-close f-alert'></i></a>";
                           pop('popDiverror');
                       }
                       else{
                           var errorMessage = data.message;
-                          document.getElementById('popDiverror').innerHTML = "Technical Error. Please try after some time. <a href='' onClick='hide('popDiverror')''>Close</a>";
+                          document.getElementById('popDiverror').innerHTML = "Technical Error. Please try after some time. <a href='' onClick='hide('popDiverror')''><i class='fa fa-close f-alert'></i></a>";
                           pop('popDiverror');
                       }
                     });
         }
       else{
-        document.getElementById('popDiverror').innerHTML = "Input Blog Url is not valid. <a href='' onClick='hide('popDiverror')''><i class="fa fa-close log-fa"></i></a>";
+        document.getElementById('popDiverror').innerHTML = "Input Blog Url is not valid. <a href='' onClick='hide('popDiverror')''><i class='fa fa-close f-alert'></i></a>";
         pop('popDiverror');
       }
 

@@ -380,5 +380,9 @@ body{font-family: 'Roboto', sans-serif; }
 {
 	color: #fff !important;
 }
+.f-alert
+{
+	color: #fff;
+}
 /* End of Profile Page*/
 
