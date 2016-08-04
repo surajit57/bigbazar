@@ -171,7 +171,13 @@ $(document).ready(function(){
                                                 <div class="col-item" style="border-radius:15px !important;">
                                                     <div class="photo">
                                                         <div class="user_profile_image">
-                                                            <img src="../../images/profile_user.jpg" class="img-circle">
+                                                            <% if (allUsers[i].imageUrl) 
+                                                               { %>
+                                                                <img src="<%= allUsers[i].imageUrl %>" class="img-circle">
+                                                                <% } 
+                                                            else { %>
+                                                                    <img src="../../images/profile_user.jpg" class="img-circle">
+                                                                    <% } %>
                                                         </div>
                                                     </div>
                                                     <div>
