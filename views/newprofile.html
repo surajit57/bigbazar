@@ -469,37 +469,42 @@
 
                                                                 <label class="control-label pr-side-inp-la">Round Second Blog Link</label>
                                                                 <% if (userInfo.blogDetail) { %>
-                                                                                        <% if(userInfo.events[1].roundBlocked)
-                                                                    { %>
-
-                                                                                            <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url1 %>"
+                                                                    <% if(userInfo.events[1].roundBlocked) { %>
+                                                                        <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url1 %>"
                                                                                                 disabled>
-                                                                                            <%}
+                                                                     <%}
                                                                     else { %>
-                                                                                                <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url1 %>">
-                                                                                                <% } %>
+                                                                        <% if(userInfo.events[0].roundBlocked) { %>
+                                                                         <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url1 %>">
+                                                                         <%} else { %>
+                                                                            <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url1 %>" disabled>
+                                                                         <% } %>
+                                                                     <% } %>
 
-                                                                                                    <% } 
+                                                                 <% } 
                                                                  else { %>
-                                                                                                        <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="">
-                                                                                                        <% } %>
+                                                                    <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="" disabled>
+                                                                <% } %>
 
                                                                  <label class="control-label pr-side-inp-la">Round Third Blog Link</label>
-                                                                <% if (userInfo.blogDetail) 
-
-                                                                 { %>
-                                                                                                                <% if(userInfo.events[2].roundBlocked)
-                                                                    { %>
-                                                                                                                    <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url2 %>"
+                                                                <% if (userInfo.blogDetail) { %>
+                                                                     <% if(userInfo.events[2].roundBlocked) { %>
+                                                                       <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url2 %>"
                                                                                                                         disabled>
-                                                                                                                    <%}
+                                                                     <%}
                                                                     else { %>
-                                                                                                                        <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url2 %>">
-                                                                                                                        <% } %>
-                                                                                                                            <% } 
+
+                                                                    <% if(userInfo.events[0].roundBlocked) { %>
+                                                                          <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url2 %>">
+                                                                         <%} else { %>
+                                                                             <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url2 %>" disabled>
+                                                                         <% } %>
+                                                                       
+                                                                     <% } %>
+                                                                <% } 
                                                                  else { %>
-                                                                                                                                <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="">
-                                                                                                                                <% } %>
+                                                                     <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="" disabled>
+                                                               <% } %>
 
 
                                                         </div>
