@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+
+<head>
     <meta charset="utf-8" />
     <title>BIG BAZAAR</title>
 
-    <meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
-    <meta property="og:type"               content="article" />
-    <meta property="og:title"              content="When Great Minds Don’t Think Alike" />
-    <meta property="og:description"        content="How much does culture influence creative thinking?" />
-    <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+    <meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="When Great Minds Don’t Think Alike" />
+    <meta property="og:description" content="How much does culture influence creative thinking?" />
+    <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
+    />
 
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link href="http://52.35.82.113/dashboard/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://52.35.82.113/dashboard/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
+        type="text/css" />
     <link href="../../stylesheet/bootstrap.min.css" rel="stylesheet" type="text/css" />
+     <link href="../stylesheet/main.css" rel="stylesheet">
     <link href="../../stylesheet/styleAdminNew.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/layout.min.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
     <link href="../../stylesheet/custom.min.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/profile.min.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/components.min.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="../images/favicon.ico" /> 
+    <link rel="shortcut icon" href="../images/favicon.ico" />
 
     <script src="../../js/jquery.min.js" type="text/javascript"></script>
     <style>
-        .image_reps{height: 144px !important;width: 100%;padding-bottom: 4px;}
+        .image_reps {
+            height: 144px !important;
+            width: 100%;
+            padding-bottom: 4px;
+        }
     </style>
 
-    </head>
-    <!-- END HEAD -->
-    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+</head>
+<!-- END HEAD -->
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
     <script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -64,190 +74,207 @@
     });
   }
 </script>
-        <div class="page-header navbar navbar-fixed-top">
-            <div class="page-header-inner ">
-                <div class="page-logo">
-                    <a href="index.html">
-                        <img src="../../images/logo.png" alt="logo" class="logo-default" style="width:100px;height: 40px;margin: 5px 0px 0px 0px;" /> </a>
-                    <div class="menu-toggler sidebar-toggler"> </div>
+    <div class="page-header navbar navbar-fixed-top">
+        <div class="page-header-inner ">
+            <div class="page-logo">
+                <a href="index.html">
+                    <img src="../../images/logo.png" alt="logo" class="logo-default" style="width:100px;height: 40px;margin: 5px 0px 0px 0px;"
+                    /> </a>
+                <div class="menu-toggler sidebar-toggler"> </div>
+            </div>
+
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+            <div class="top-menu">
+                <div class="pull-right">
+                    <div class="add-button" style="margin-top: 4px;">
+                        <button type="button" onclick="logout()" class="btn btn-default" style="background: transparent; border: transparent;color: #fff;"><i class="fa fa-lock" style="border-radius: 50%;padding: 4px 7px;background: #000;border: 2px solid #fff;"></i>&nbsp;&nbsp;SIGN OUT</button>
+                    </div>
                 </div>
-                
-                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
-                <div class="top-menu">
-                    <div class="pull-right">
-                        <div class="add-button" style="margin-top: 4px;">
-                          <button type="button" onclick="logout()" class="btn btn-default" style="background: transparent; border: transparent;color: #fff;"><i class="fa fa-lock" style="border-radius: 50%;padding: 4px 7px;background: #000;border: 2px solid #fff;"></i>&nbsp;&nbsp;SIGN OUT</button>
-                      </div>
-                    </div><!--pull-right-->    
-                       
-                </div>
+                <!--pull-right-->
+
             </div>
         </div>
-        <div class="clearfix"> </div>
-        <div class="page-container">
-            <div class="page-sidebar-wrapper">
-                <div class="page-sidebar navbar-collapse collapse">
-                   <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                       <li class="nav-item">
-                            <a href="javascript:;" class="nav-link nav-toggle">
-                                <i class="fa fa-user"></i>
-                                <span class="title">User</span>
-                            </a>
-                        </li>
-                   </ul>
+    </div>
+    <div class="clearfix"> </div>
+    <div class="page-container">
+        <div class="page-sidebar-wrapper">
+            <div class="page-sidebar navbar-collapse collapse">
+                <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                    <li class="nav-item">
+                        <a href="javascript:;" class="nav-link nav-toggle">
+                            <i class="fa fa-user"></i>
+                            <span class="title">User</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--page-sidebar-wrapper-->
+        <div class="page-content-wrapper">
+            <div class="page-content" style="min-height:1200px">
+                <div class="page-bar">
+                    <ul class="page-breadcrumb">
+                        <li><a href="">Home</a><i class="fa fa-circle"></i></li>
+                        <li><span>User</span></li>
+                    </ul>
                 </div>
-            </div><!--page-sidebar-wrapper-->
-            <div class="page-content-wrapper">
-                <div class="page-content" style="min-height:1200px">
-                    <div class="page-bar">
-                        <ul class="page-breadcrumb">
-                            <li><a href="">Home</a><i class="fa fa-circle"></i></li>
-                            <li><span>User</span></li>
-                        </ul>
-                    </div><!--page-bar-->
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="profile-sidebar">
-                                <div class="portlet light profile-sidebar-portlet">
-                                    <div class="profile-userpic">
-                                    
+                <!--page-bar-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="profile-sidebar">
+                            <div class="portlet light profile-sidebar-portlet" >
+                                <div class="profile-userpic">
+
                                     <% if (userInfo.userInfo.imageUrl) 
                                        { %>
-                                       <img src="<%= userInfo.userInfo.imageUrl %>" class="img-responsive" alt="" style="width:150px; height:150px;">
-                                       <% } 
+                                        <img src="<%= userInfo.userInfo.imageUrl %>" class="img-responsive" alt="" style="width:150px; height:150px;">
+                                        <% } 
                                     else { %>
-                                        <img src="../../images/profile_user.jpg" class="img-responsive" alt="">
-                                    <% } %>
+                                            <img src="../../images/profile_user.jpg" class="img-responsive" alt="">
+                                            <% } %>
+                                </div>
+                                <div class="profile-usertitle">
+                                    <div class="profile-usertitle-name"  style="padding:15px;">
+                                        <i class="fa fa-user pr-fa" aria-hidden="true"></i>
+                                        <span class="pr-side1"><%= userInfo.userInfo.name %></span>
                                     </div>
-                                    <div class="profile-usertitle">
-                                        <div class="profile-usertitle-name">
-                                            <i class="fa fa-user" aria-hidden="true"></i> 
-                                            <span style="padding-left:5px"><%= userInfo.userInfo.name %></span>
-                                        </div>
-                                        <div class="profile-usertitle-name">
-                                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                                            <span style="padding-left:5px"><%= userInfo.userInfo.email %></span>
-                                        </div>
-                                        <div class="profile-usertitle-name">
-                                            <i class="fa fa-rss" aria-hidden="true"></i>
-                                            <% if (userInfo.blogDetail) 
+                                    <div class="profile-usertitle-name">
+                                        <i class="fa fa-envelope pr-fa" aria-hidden="true"></i>
+                                        <span class="pr-side1"><%= userInfo.userInfo.email %></span>
+                                    </div>
+
+                                    <!--<div class="profile-usertitle-name">
+                                        <i class="fa fa-rss" aria-hidden="true"></i>
+                                        <% if (userInfo.blogDetail) 
                                              { %>
-                                            
-                                             <a href=" <%= userInfo.blogDetail.url %>" style="padding-left:5px"> <%= userInfo.blogDetail.url %></a>
-                                             <% } 
+
+                                            <a href=" <%= userInfo.blogDetail.url %>" style="padding-left:5px">
+                                                <%= userInfo.blogDetail.url %>
+                                            </a>
+                                            <% } 
                                              else { %>
-                                             <a href="http://104.236.84.1:3000/users/list" style="padding-left:5px">http://104.236.84.1:3000/users/list</a>
-                                             <% } %>
-                                       </div>
-                                        <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;">
-                                            <a href="#" onclick="fbShare()" class="fb_bg" style="margin-right:0px;">
+                                                <a href="http://104.236.84.1:3000/users/list" style="padding-left:5px">http://104.236.84.1:3000/users/list</a>
+                                                <% } %>
+                                    </div>-->
+                                    <!--<div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;">
+                                        <a href="#" onclick="fbShare()" class="fb_bg" style="margin-right:0px;">
                                             <i class="fa fa-facebook"></i><b>Share via Facebook</b></a>
-                                        </div>
-                                        <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;">
-                                        <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" class="tw_bg">
-                                        <i class="fa fa-twitter"></i><b>Share via Twiiter</b></a>
                                     </div>
-                                      <div class="progress">
-                                      
+                                    <div class="profile-usertitle-name" style="margin-bottom: 25px;margin-top: 20px;">
+                                        <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" class="tw_bg">
+                                            <i class="fa fa-twitter"></i><b>Share via Twiiter</b></a>
+                                    </div>-->
+                                    <!--<div class="progress">
 
 
-                                     
-                                    <% if (userInfo.userInfo.isUnder3 && userInfo.userInfo.isUnder15 && userInfo.userInfo.isUnder100) { %>
-                                         <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+
+
+                                        <% if (userInfo.userInfo.isUnder3 && userInfo.userInfo.isUnder15 && userInfo.userInfo.isUnder100) { %>
+                                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                style="width:25%">
                                                 Blog Posted
                                             </div>
-                                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                style="width:25%">
                                                 Top 100
                                             </div>
-                                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                style="width:25%">
                                                 Top 15
                                             </div>
-                                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:25%">
+                                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                style="width:25%">
                                                 Top 3
                                             </div>
-                                    <% } 
-                                    else if(userInfo.userInfo.isUnder15 && userInfo.userInfo.isUnder100) { %> 
+                                            <% } 
+                                    else if(userInfo.userInfo.isUnder15 && userInfo.userInfo.isUnder100) { %>
 
-                                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:25%">
-                                                Blog Posted
-                                            </div>
-                                             <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:25%">
-                                                Top 100
-                                            </div>
-                                            <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:25%">
-                                                Top 15
-                                            </div>
-                                     <% }
-                                     else if(userInfo.userInfo.isUnder100) { %> 
+                                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                    style="width:25%">
+                                                    Blog Posted
+                                                </div>
+                                                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                    style="width:25%">
+                                                    Top 100
+                                                </div>
+                                                <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                    style="width:25%">
+                                                    Top 15
+                                                </div>
+                                                <% }
+                                     else if(userInfo.userInfo.isUnder100) { %>
 
-                                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:25%">
-                                                Blog Posted
-                                            </div>
-                                             <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:25%">
-                                                Top 100
-                                            </div>
-                                           
-                                     <% }
-                                     else if(userInfo.userInfo.isBlogAdded) { %> 
+                                                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width:25%">
+                                                        Blog Posted
+                                                    </div>
+                                                    <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width:25%">
+                                                        Top 100
+                                                    </div>
 
-                                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:25%">
-                                                Blog Posted
-                                            </div>
-                                     <% }
-                                     else { %> 
+                                                    <% }
+                                     else if(userInfo.userInfo.isBlogAdded) { %>
 
-                                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:45%">
-                                                Blog Not Posted Yet
-                                            </div>
-                                     <% }
+                                                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                            style="width:25%">
+                                                            Blog Posted
+                                                        </div>
+                                                        <% }
+                                     else { %>
 
-                                      %>
+                                                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                                style="width:45%">
+                                                                Blog Not Posted Yet
+                                                            </div>
+                                                            <% } %>
+                                    </div>-->
 
-
-                                           
-                                    </div>
                                 </div>
                                 <div class="profile-usermenu"></div>
-                            </div><!--portlet light profile-sidebar-portlet-->
+                            </div>
+                            <!--portlet light profile-sidebar-portlet-->
                             <div class="portlet light" style="background: transparent;"></div>
-                        </div><!--profile-sidebar-->
-                            <div class="profile-content">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="portlet light" style="float:left; width:100%;">
-                                            <div class="portlet-title tabbable-line">
-                                                <div class="caption caption-md">
-                                                    <i class="icon-globe theme-font hide"></i>
-                                                    <span class="caption-subject font-blue-madison bold uppercase">Profile Account</span>
-                                                </div>
-                                                <ul class="nav nav-tabs">
-                                                    <li class="active">
-                                                        <a href="#tab_1_1" data-toggle="tab">Personal Info</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#tab_1_2" data-toggle="tab">Change Avatar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#tab_1_3" data-toggle="tab">Change Password</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#tab_1_4" data-toggle="tab">Blog</a>
-                                                    </li>
-                                                </ul>
-                                            </div><!--portlet-title tabbable-line-->
-                                            <div class="portlet-body">
-                                                <div class="tab-content">
-                                                    <div class="tab-pane active" id="tab_1_1">
-                                                        <form role="form" method="post" action="/users/profile/email">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Name</label>
-                                                                <input type="text" name="name" placeholder="John" class="form-control" value="<%= userInfo.userInfo.name %>" />
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label">E-Mail Id</label>
-                                                                <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>"> 
-                                                            </div>
-                                                           <!--  <div class="form-group">
+                        </div>
+                        <!--profile-sidebar-->
+                        <div class="profile-content">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="portlet light" style="float:left;width: 95%; padding: 2%;">
+                                        <div class="portlet-title tabbable-line">
+                                            <div class="caption caption-md">
+                                                <i class="icon-globe theme-font hide"></i>
+                                                <span class="caption-subject bold uppercase">Profile Account</span>
+                                            </div>
+                                            <ul class="nav nav-tabs pr-side2-tabs">
+                                                <li class="active pr-side2-tab">
+                                                    <a class="pr-side-a" href="#tab_1_1" data-toggle="tab">Personal Info</a>
+                                                </li>
+                                                <li>
+                                                    <a class="pr-side-a" href="#tab_1_2" data-toggle="tab">Change Avatar</a>
+                                                </li>
+                                                <li>
+                                                    <a class="pr-side-a" href="#tab_1_3" data-toggle="tab">Change Password</a>
+                                                </li>
+                                                <li>
+                                                    <a class="pr-side-a" href="#tab_1_4" data-toggle="tab">Blog</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!--portlet-title tabbable-line-->
+                                        <div class="portlet-body">
+                                            <div class="tab-content">
+                                                <div class="tab-pane active" id="tab_1_1">
+                                                    <form role="form" method="post" action="/users/profile/email">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Name</label>
+                                                            <input type="text" name="name" placeholder="John" class="form-control" value="<%= userInfo.userInfo.name %>" />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">E-Mail Id</label>
+                                                            <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>">
+                                                        </div>
+                                                        <!--  <div class="form-group">
                                                                 <label class="control-label">Blog Url1</label>
                                                                  <% if (userInfo.blogDetail) 
                                                                  { %>
@@ -281,150 +308,163 @@
                                                                  
                                                             </div> -->
 
-                                                            
-                                                            <div class="margiv-top-10">
-                                                                <input type="submit" value="Save Changes" class="btn green" />
-                                                                <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel" /> 
-                                                            </div>
-                                                        </form>
-                                                    </div><!--tab_1_1-->
 
-                                                    <div class="tab-pane" id="tab_1_2">
-                                                        <form method="post" enctype="multipart/form-data" action="/users/profile/upload" role="form">
-                                                            <div class="form-group">
-                                                                <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                                                                        <% if (userInfo.userInfo.imageUrl) 
+                                                        <div class="margiv-top-10">
+                                                            <input type="submit" value="Save Changes" class="btn green" />
+                                                            <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel" />
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!--tab_1_1-->
+
+                                                <div class="tab-pane" id="tab_1_2">
+                                                    <form method="post" enctype="multipart/form-data" action="/users/profile/upload" role="form">
+                                                        <div class="form-group">
+                                                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                                    <% if (userInfo.userInfo.imageUrl) 
                                                                            { %>
-                                                                           <img src="<%= userInfo.userInfo.imageUrl %>" class="img-responsive image_reps" alt="">
-                                                                           <% } 
+                                                                        <img src="<%= userInfo.userInfo.imageUrl %>" class="img-responsive image_reps" alt="">
+                                                                        <% } 
                                                                         else { %>
-                                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt=""> 
-                                                                    
-                                                                        <% } %>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div>
-                                                                        <input type="file" name="displayImage" class="form-control form-controls"  base-sixty-four-input="" style="height: auto;">
-                                                                    </div>
+                                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+
+                                                                            <% } %>
+                                                                </div>
                                                             </div>
-                                                            <div class="margin-top-10">
-                                                                <input type="submit" class="btn green" value="Submit">
-                                                                <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel">
+                                                            <div>
+                                                                <input type="file" name="displayImage" class="form-control form-controls" base-sixty-four-input="" style="height: auto;">
                                                             </div>
-                                                        </form>
-                                                        <% if ( locals.messages ) { %>
-                                                          <div class="flash"><b><%= locals.messages.info %></b></div>
+                                                        </div>
+                                                        <div class="margin-top-10">
+                                                            <input type="submit" class="btn green" value="Submit">
+                                                            <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel">
+                                                        </div>
+                                                    </form>
+                                                    <% if ( locals.messages ) { %>
+                                                        <div class="flash"><b><%= locals.messages.info %></b></div>
                                                         <% } %>
-                                                    </div><!--tab_1_2-->
-                                                    <div class="tab-pane" id="tab_1_3">
-                                                        <form method="post" action="/users/profile/updatepassword">
-                                                            <div class="form-group">
-                                                                <label class="control-label">Current Password</label>
-                                                                <input type="password" name="currentPassword" class="form-control"> </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label">New Password</label>
-                                                                <input type="password" name="newPassword" class="form-control"> </div>
-                                                            <div class="form-group">
-                                                                <label class="control-label">Re-type New Password</label>
-                                                                <input type="password" name="confirmPassword" class="form-control"> </div>
-                                                            <div class="margin-top-10">
-                                                                <input type="submit" class="btn green" value="Change Password"></input>
-                                                                 <!-- <a href="javascript:;" class="btn default"> Cancel </a> -->
-                                                                <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel"> </input>
-                                                            </div>
-                                                        </form>
-                                                    </div><!--tab_1_3-->
+                                                </div>
+                                                <!--tab_1_2-->
+                                                <div class="tab-pane" id="tab_1_3">
+                                                    <form method="post" action="/users/profile/updatepassword">
+                                                        <div class="form-group">
+                                                            <label class="control-label">Current Password</label>
+                                                            <input type="password" name="currentPassword" class="form-control">                                                            </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">New Password</label>
+                                                            <input type="password" name="newPassword" class="form-control">                                                            </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Re-type New Password</label>
+                                                            <input type="password" name="confirmPassword" class="form-control">                                                            </div>
+                                                        <div class="margin-top-10">
+                                                            <input type="submit" class="btn green" value="Change Password"></input>
+                                                            <!-- <a href="javascript:;" class="btn default"> Cancel </a> -->
+                                                            <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel">                                                            </input>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!--tab_1_3-->
                                                 <div class="tab-pane" id="tab_1_4">
-                                                        <form role="form" method="post" action="/users/profile">
-                                                           
-                                                        <div class="form-group" style="display: none;" >
-                                                                <label class="control-label">Name</label>
-                                                                <input type="text" name="name" placeholder="John" class="form-control" value="<%= userInfo.userInfo.name %>" />
-                                                            </div>
-                                                            <div class="form-group" style="display: none;" >
-                                                                <label class="control-label">E-Mail Id</label>
-                                                                <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>"> 
-                                                            </div>
+                                                    <form role="form" method="post" action="/users/profile">
+
+                                                        <div class="form-group" style="display: none;">
+                                                            <label class="control-label">Name</label>
+                                                            <input type="text" name="name" placeholder="John" class="form-control" value="<%= userInfo.userInfo.name %>" />
+                                                        </div>
+                                                        <div class="form-group" style="display: none;">
+                                                            <label class="control-label">E-Mail Id</label>
+                                                            <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>">
+                                                        </div>
 
 
-                                                            <div class="form-group">
-                                                                <label class="control-label">Blog Url1</label>
-                                                                 <% if (userInfo.blogDetail) 
+                                                        <div class="form-group">
+                                                            <label class="control-label">Blog Url1</label>
+                                                            <% if (userInfo.blogDetail) 
                                                                  { %>
-                                                                    <% if(userInfo.events[0].roundBlocked)
+                                                                <% if(userInfo.events[0].roundBlocked)
                                                                     { %>
-                                                                      <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url %>" disabled>
+                                                                    <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url %>"
+                                                                        disabled>
                                                                     <%}
                                                                     else { %>
-                                                                      <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url %>">
-                                                                    <% } %>
-                                                                 <% } 
+                                                                        <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url %>">
+                                                                        <% } %>
+                                                                            <% } 
                                                                  else { %>
-                                                                 <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control"  value="">
-                                                                 <% } %>
+                                                                                <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="">
+                                                                                <% } %>
 
-                                                                <label class="control-label">Blog Url2</label>
-                                                                <% if (userInfo.blogDetail) 
+                                                                                    <label class="control-label">Blog Url2</label>
+                                                                                    <% if (userInfo.blogDetail) 
                                                                  { %>
-                                                                   <% if(userInfo.events[1].roundBlocked)
+                                                                                        <% if(userInfo.events[1].roundBlocked)
                                                                     { %>
 
-                                                                      <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url1 %>" disabled>
-                                                                    <%}
+                                                                                            <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url1 %>"
+                                                                                                disabled>
+                                                                                            <%}
                                                                     else { %>
-                                                                       <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url1 %>" >
-                                                                    <% } %>
+                                                                                                <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url1 %>">
+                                                                                                <% } %>
 
-                                                                 <% } 
+                                                                                                    <% } 
                                                                  else { %>
-                                                                 <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control"  value="">
-                                                                 <% } %> 
+                                                                                                        <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control" value="">
+                                                                                                        <% } %>
 
-                                                                 <label class="control-label">Blog Url3</label>
-                                                                <% if (userInfo.blogDetail) 
+                                                                                                            <label class="control-label">Blog Url3</label>
+                                                                                                            <% if (userInfo.blogDetail) 
                                                                  { %>
-                                                                    <% if(userInfo.events[2].roundBlocked)
+                                                                                                                <% if(userInfo.events[2].roundBlocked)
                                                                     { %>
-                                                                        <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url2 %>" disabled>
-                                                                    <%}
+                                                                                                                    <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url2 %>"
+                                                                                                                        disabled>
+                                                                                                                    <%}
                                                                     else { %>
-                                                                         <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url2 %>" >
-                                                                    <% } %>
-                                                                 <% } 
+                                                                                                                        <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url2 %>">
+                                                                                                                        <% } %>
+                                                                                                                            <% } 
                                                                  else { %>
-                                                                 <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control"  value="">
-                                                                 <% } %> 
+                                                                                                                                <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control" value="">
+                                                                                                                                <% } %>
 
-                                                                 
-                                                            </div>
-                                                            <div class="margiv-top-10">
-                                                                <input type="submit" value="Save Changes" class="btn green" />
-                                                                <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel" /> 
-                                                            </div>
-                                                        </form>
-                                                    </div><!--tab_1_1-->
 
-                                                </div><!--tab-content-->
-                                            </div><!--portlet-body-->
-                                        </div><!--portlet light-->
-                                    </div><!--col-md-12-->
-                                </div><!--row-->
-                            </div><!--profile-content-->
+                                                        </div>
+                                                        <div class="margiv-top-10">
+                                                            <input type="submit" value="Save Changes" class="btn green" />
+                                                            <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel" />
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!--tab_1_1-->
+
+                                            </div>
+                                            <!--tab-content-->
+                                        </div>
+                                        <!--portlet-body-->
+                                    </div>
+                                    <!--portlet light-->
+                                </div>
+                                <!--col-md-12-->
+                            </div>
+                            <!--row-->
                         </div>
+                        <!--profile-content-->
                     </div>
                 </div>
             </div>
         </div>
-        <div class="page-footer">
-            <div class="page-footer-inner"> Copyright © 2016 Big Bazzer. All rights reserved.</div>
-            <div class="scroll-to-top"><i class="icon-arrow-up"></i></div>
-        </div>
-        <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../../js/app.min.js" type="text/javascript"></script>
-        <script src="../../js/layout.min.js" type="text/javascript"></script>
-        <script src="../../js/demo.min.js" type="text/javascript"></script>
-        <script type="text/javascript">
+    </div>
+    <div class="page-footer">
+        <div class="page-footer-inner"> Copyright © 2016 Big Bazzer. All rights reserved.</div>
+        <div class="scroll-to-top"><i class="icon-arrow-up"></i></div>
+    </div>
+    <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../js/app.min.js" type="text/javascript"></script>
+    <script src="../../js/layout.min.js" type="text/javascript"></script>
+    <script src="../../js/demo.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
             
             function logout(){
                 console.log('logout clicked');
@@ -444,5 +484,6 @@
             
 
         </script>
-    </body>
+</body>
+
 </html>
