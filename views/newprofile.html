@@ -240,7 +240,7 @@
                         <div class="profile-content">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="portlet light" style="float:left;width: 95%; padding: 4%;">
+                                    <div class="portlet light" style="float:left;width: 100%; padding: 20px;">
                                         <div class="portlet-title tabbable-line">
                                             <div class="caption caption-md">
                                                 <i class="icon-globe theme-font hide"></i>
@@ -264,7 +264,7 @@
                                         <!--portlet-title tabbable-line-->
                                         <div class="portlet-body">
                                             <div class="tab-content t-nopad">
-                                                <div class="tab-pane active" id="tab_1_1">
+                                                <div class="tab-pane active t-pad-t30" id="tab_1_1">
                                                     <form role="form" method="post" action="/users/profile/email">
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la uppercase">Name</label>
@@ -334,13 +334,16 @@
                                                                 </div>
                                                             </div>
                                                             <div>
-                                                                <input type="file" name="displayImage" class="form-control form-controls " base-sixty-four-input="" style="height: auto;">
+                                                                <input type="file" name="displayImage" class="form-control form-controls pr-side-inp-f " base-sixty-four-input="">
                                                             </div>
                                                         </div>
-                                                        <div class="margin-top-10">
-                                                            <input type="submit" class="btn green" value="Submit">
-                                                            <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel">
+
+                                                        <div  style="float:left">
+                                                            
+                                                            <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
+                                                            <input type="submit" value="Submit" class="btn pr-side-btn1" />
                                                         </div>
+                                                        
                                                     </form>
                                                     <% if ( locals.messages ) { %>
                                                         <div class="flash"><b><%= locals.messages.info %></b></div>
@@ -350,18 +353,18 @@
                                                 <div class="tab-pane" id="tab_1_3">
                                                     <form method="post" action="/users/profile/updatepassword">
                                                         <div class="form-group">
-                                                            <label class="control-label">Current Password</label>
-                                                            <input type="password" name="currentPassword" class="form-control">                                                            </div>
+                                                            <label class="control-label pr-side-inp-la">Current Password</label>
+                                                            <input type="password" name="currentPassword" class="form-control pr-side-inp">                                                            </div>
                                                         <div class="form-group">
-                                                            <label class="control-label">New Password</label>
-                                                            <input type="password" name="newPassword" class="form-control">                                                            </div>
+                                                            <label class="control-label pr-side-inp-la">New Password</label>
+                                                            <input type="password" name="newPassword" class="form-control pr-side-inp">                                                            </div>
                                                         <div class="form-group">
-                                                            <label class="control-label">Re-type New Password</label>
-                                                            <input type="password" name="confirmPassword" class="form-control">                                                            </div>
-                                                        <div class="margin-top-10">
-                                                            <input type="submit" class="btn green" value="Change Password"></input>
-                                                            <!-- <a href="javascript:;" class="btn default"> Cancel </a> -->
-                                                            <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel">                                                            </input>
+                                                            <label class="control-label pr-side-inp-la">Re-type New Password</label>
+                                                            <input type="password" name="confirmPassword" class="form-control pr-side-inp">                                                            </div>
+                                                        <div  style="float:left">
+                                                            
+                                                            <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
+                                                            <input type="submit" value="Change Password" class="btn pr-side-btn1" />
                                                         </div>
                                                     </form>
                                                 </div>
@@ -379,64 +382,66 @@
                                                         </div>
 
                                                             <div class="form-group">
-                                                                <label class="control-label">Round First Blog Link</label>
+                                                               
+                                                                <label class="control-label pr-side-inp-la">Round First Blog Link</label>
                                                                  <% if (userInfo.blogDetail) 
 
                                                                  { %>
                                                                 <% if(userInfo.events[0].roundBlocked)
                                                                     { %>
-                                                                    <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url %>"
+                                                                    <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url %>"
                                                                         disabled>
                                                                     <%}
                                                                     else { %>
-                                                                        <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url %>">
+                                                                        <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url %>">
                                                                         <% } %>
                                                                             <% } 
                                                                  else { %>
-                                                                                <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control" value="">
+                                                                                <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="">
                                                                                 <% } %>
 
-                                                                <label class="control-label">Round Second Blog Link</label>
+                                                                <label class="control-label pr-side-inp-la">Round Second Blog Link</label>
                                                                 <% if (userInfo.blogDetail) 
 
                                                                  { %>
                                                                                         <% if(userInfo.events[1].roundBlocked)
                                                                     { %>
 
-                                                                                            <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url1 %>"
+                                                                                            <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url1 %>"
                                                                                                 disabled>
                                                                                             <%}
                                                                     else { %>
-                                                                                                <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url1 %>">
+                                                                                                <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url1 %>">
                                                                                                 <% } %>
 
                                                                                                     <% } 
                                                                  else { %>
-                                                                                                        <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control" value="">
+                                                                                                        <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="">
                                                                                                         <% } %>
 
-                                                                 <label class="control-label">Round Third Blog Link</label>
+                                                                 <label class="control-label pr-side-inp-la">Round Third Blog Link</label>
                                                                 <% if (userInfo.blogDetail) 
 
                                                                  { %>
                                                                                                                 <% if(userInfo.events[2].roundBlocked)
                                                                     { %>
-                                                                                                                    <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url2 %>"
+                                                                                                                    <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url2 %>"
                                                                                                                         disabled>
                                                                                                                     <%}
                                                                     else { %>
-                                                                                                                        <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control" value="<%= userInfo.blogDetail.url2 %>">
+                                                                                                                        <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url2 %>">
                                                                                                                         <% } %>
                                                                                                                             <% } 
                                                                  else { %>
-                                                                                                                                <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control" value="">
+                                                                                                                                <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="">
                                                                                                                                 <% } %>
 
 
                                                         </div>
-                                                        <div class="margiv-top-10">
-                                                            <input type="submit" value="Save Changes" class="btn green" />
-                                                            <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel" />
+                                                        <div  style="float:left">
+                                                            
+                                                            <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
+                                                            <input type="submit" value="Submit" class="btn pr-side-btn1" />
                                                         </div>
                                                     </form>
                                                 </div>
