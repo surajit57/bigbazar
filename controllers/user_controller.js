@@ -56,6 +56,8 @@ UserController.getProfile = function(req, res){
 }
 
 UserController.saveNameEmailProfile = function(req, res){
+  console.log('name:---------------- ', req.body.name);
+  console.log('email:-------------------------------- ', req.body.email);
     var user = User.update({
       name: req.body.name,
       email: req.body.email
@@ -66,7 +68,13 @@ UserController.saveNameEmailProfile = function(req, res){
     }).then(function(val){
       console.log('val::::_------- ', val);
       console.log("user name and email updated Successfully");
-      res.redirect('/users/profile');
+      if(val){
+        res.json({code: 200, data: "Successfully Updated"});
+      }
+      else{
+        res.json({code: 0, data: "Technical Error. Please Try after some time."});
+      }
+      // res.redirect('/users/profile');
     })
 }
 

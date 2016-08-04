@@ -37,6 +37,63 @@
             padding-bottom: 4px;
         }
     </style>
+     <style>
+      .ontop {
+        height: auto;
+        z-index: 1;
+        top: 3px;
+        float: right;
+        right: 2px;
+        opacity: 1;
+        color: #fff;
+        padding: 20px 15px;
+        font-size: 16px;
+        display: none;
+        position: absolute;
+        background-color: red
+      }
+      .ontopSucess {
+        height: auto;
+        z-index: 1;
+        top: 3px;
+        float: right;
+        right: 2px;
+        opacity: 1;
+        color: #fff;
+        padding: 20px 15px;
+        font-size: 16px;
+        display: none;
+        position: absolute;
+        background-color: green
+      }
+      #popup {
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        color: #000000;
+        background-color: #ffffff;
+        /* To align popup window at the center of screen*/
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -150px;
+      }
+    </style>
+    <script type="text/javascript">
+      function pop(div) {
+        document.getElementById(div).style.display = 'block';
+      }
+      function hide(div) {
+        document.getElementById(div).style.display = 'none';
+      }
+      //To detect escape button
+      document.onkeydown = function(evt) {
+        evt = evt || window.event;
+        if (evt.keyCode == 27) {
+          hide('popDiv');
+        }
+      };
+    </script>
 
 </head>
 <!-- END HEAD -->
@@ -118,6 +175,11 @@
                         <li><span>User</span></li>
                     </ul>
                 </div>
+
+          <div id="popDiv" class="ontopSucess">
+          </div>
+          <div id="popDiverror" class="ontop">
+          </div>
                 <!--page-bar-->
                 <div class="row">
                     <div class="col-md-12">
@@ -265,14 +327,14 @@
                                         <div class="portlet-body">
                                             <div class="tab-content t-nopad">
                                                 <div class="tab-pane active t-pad-t30" id="tab_1_1">
-                                                    <form role="form" method="post" action="/users/profile/email">
+                                                    <form>
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la uppercase">Name</label>
-                                                            <input type="text" name="name" placeholder="John" class="form-control pr-side-inp" value="<%= userInfo.userInfo.name %>" />
+                                                            <input type="text" id="UserName" name="name" placeholder="John" class="form-control pr-side-inp" value="<%= userInfo.userInfo.name %>" />
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la uppercase">EMail</label>
-                                                            <input type="text" name="email" placeholder="example@gmail.com" class="form-control pr-side-inp" value="<%= userInfo.userInfo.email %>">
+                                                            <input type="text" id="UserEmail" name="email" placeholder="example@gmail.com" class="form-control pr-side-inp" value="<%= userInfo.userInfo.email %>">
                                                         </div>
                                                         <!--  <div class="form-group">
                                                                 <label class="control-label">Blog Url1</label>
@@ -312,7 +374,7 @@
                                                         <div  style="float:left">
                                                             
                                                             <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
-                                                            <input type="submit" value="Save Changes" class="btn pr-side-btn1" />
+                                                            <input type="button" onclick="saveUserNameEmail()" value="Save Changes" class="btn pr-side-btn1" />
                                                         </div>
                                                     </form>
                                                 </div>
@@ -490,6 +552,33 @@
                       });
                 }
             
+                function saveUserNameEmail(){
+                  console.log('button clicked');
+                  var name = document.getElementById('UserName').value;
+                  var email = document.getElementById('UserEmail').value;
+                  var json = {
+                    "name": name,
+                    "email": email
+                  }
+                  console.log('name:- ', name, 'email:- ',email);
+                $.post("/users/profile/email", {"name": name, "email": email})
+                    .done(function( data ) {
+                      console.log('------------------ ', data);
+                      console.log('data:-- ', JSON.stringify(data));
+                      if(data.code == 200){
+                          var Message = data.message;
+                          document.getElementById('popDiv').innerHTML = 
+                          "Your Blog is uploaded Sucessfully. <a href='' onClick='hide('popDiv')''>Close</a>";
+                          pop('popDiv');
+                          // window.location = "/users/home";
+                      }
+                      else{
+                          var errorMessage = data.message;
+                          document.getElementById('popDiverror').innerHTML = "Technical Error. Please try after some time. <a href='' onClick='hide('popDiverror')''>Close</a>";
+                          pop('popDiverror');
+                      }
+                    });
+                }
 
         </script>
 </body>
