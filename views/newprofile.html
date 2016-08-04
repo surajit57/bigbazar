@@ -240,7 +240,7 @@
                         <div class="profile-content">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="portlet light" style="float:left;width: 95%; padding: 2%;">
+                                    <div class="portlet light" style="float:left;width: 95%; padding: 4%;">
                                         <div class="portlet-title tabbable-line">
                                             <div class="caption caption-md">
                                                 <i class="icon-globe theme-font hide"></i>
@@ -250,29 +250,29 @@
                                                 <li class="active pr-side2-tab">
                                                     <a class="pr-side-a" href="#tab_1_1" data-toggle="tab">Personal Info</a>
                                                 </li>
-                                                <li>
+                                                <li class="pr-side2-tab">
                                                     <a class="pr-side-a" href="#tab_1_2" data-toggle="tab">Change Avatar</a>
                                                 </li>
-                                                <li>
+                                                <li class="pr-side2-tab">
                                                     <a class="pr-side-a" href="#tab_1_3" data-toggle="tab">Change Password</a>
                                                 </li>
-                                                <li>
+                                                <li class="pr-side2-tab">
                                                     <a class="pr-side-a" href="#tab_1_4" data-toggle="tab">Blog</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <!--portlet-title tabbable-line-->
                                         <div class="portlet-body">
-                                            <div class="tab-content">
+                                            <div class="tab-content t-nopad">
                                                 <div class="tab-pane active" id="tab_1_1">
                                                     <form role="form" method="post" action="/users/profile/email">
                                                         <div class="form-group">
-                                                            <label class="control-label">Name</label>
-                                                            <input type="text" name="name" placeholder="John" class="form-control" value="<%= userInfo.userInfo.name %>" />
+                                                            <label class="control-label pr-side-inp-la uppercase">Name</label>
+                                                            <input type="text" name="name" placeholder="John" class="form-control pr-side-inp" value="<%= userInfo.userInfo.name %>" />
                                                         </div>
                                                         <div class="form-group">
-                                                            <label class="control-label">E-Mail Id</label>
-                                                            <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>">
+                                                            <label class="control-label pr-side-inp-la uppercase">EMail</label>
+                                                            <input type="text" name="email" placeholder="example@gmail.com" class="form-control pr-side-inp" value="<%= userInfo.userInfo.email %>">
                                                         </div>
                                                         <!--  <div class="form-group">
                                                                 <label class="control-label">Blog Url1</label>
@@ -309,9 +309,10 @@
                                                             </div> -->
 
 
-                                                        <div class="margiv-top-10">
-                                                            <input type="submit" value="Save Changes" class="btn green" />
-                                                            <input type="button" onclick="window.location = '/users/home'" class="btn default" value="Cancel" />
+                                                        <div  style="float:left">
+                                                            
+                                                            <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
+                                                            <input type="submit" value="Save Changes" class="btn pr-side-btn1" />
                                                         </div>
                                                     </form>
                                                 </div>
@@ -333,7 +334,7 @@
                                                                 </div>
                                                             </div>
                                                             <div>
-                                                                <input type="file" name="displayImage" class="form-control form-controls" base-sixty-four-input="" style="height: auto;">
+                                                                <input type="file" name="displayImage" class="form-control form-controls " base-sixty-four-input="" style="height: auto;">
                                                             </div>
                                                         </div>
                                                         <div class="margin-top-10">

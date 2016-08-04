@@ -321,4 +321,36 @@ body{font-family: 'Roboto', sans-serif; }
     text-transform: none !important;
     letter-spacing: 0px !important;
 }
+
+.pr-side-inp-la
+{
+	color: #9E9E9E;;
+	font-size: 15px;
+	font-weight: 600 !important;
+}
+.pr-side-inp
+{
+	height: 50px;
+   
+}
+
+.t-nopad
+{
+	padding: 0px !important;
+	padding-top: 50px !important;
+}
+.pr-side-btn1
+{
+	margin: 0px;
+	background-color: #1b3f7b;
+    color: #fff;
+    font-weight: 600;
+}
+.pr-side-btn2
+{
+	margin-left: 10px;
+	    background-color: #03A9F4;
+    color: #fff;
+    font-weight: 600;
+}
 /* End of Profile Page*/
