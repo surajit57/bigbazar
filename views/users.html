@@ -25,9 +25,13 @@
     <link href="../../stylesheet/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/styleAdminNew.css" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="../images/favicon.ico" />
+    <link href="../../stylesheet/layout.min.css" rel="stylesheet" type="text/css" />
+     <link href="../stylesheet/main.css" rel="stylesheet">
+  
+    
 </head>
 
-<body style="background: url(../../images/bg-banner.png);">
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
     <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -60,22 +64,35 @@
         });
       }
     </script>
-    <div class="background">
-        <div class="row" style="margin: 0px">
-            <div class="top_part">
-                <header>
-                    <div class="col-md-9">
-                        <p class="txt_title">Lorem Ipsum is simply dummy text</p>
-                    </div>
-                    <div class="col-md-3" style="padding: 0px;">
-                        <div class="logo" style="float:right;">
-                            <img src="../../images/logo.png" alt="Big Bazaar" />
-                        </div>
-                    </div>
 
-                </header>
+    <div class="page-header navbar navbar-fixed-top" style="background-color:#fff; color:#000; height:100px;    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.48);">
+        <div class="page-header-inner ">
+            <div class="page-logo">
+                <a href="index.html">
+                    <img src="../../images/logo.png" alt="logo" class="logo-default" style="width:100%;margin: 5px 0px 0px 0px;"
+                    /> </a>
+                <div class="menu-toggler sidebar-toggler"> </div>
             </div>
-            <div class="col-md-12">
+
+            <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+            <div class="top-menu">
+                <div class="pull-right">
+                    <div class="add-button" style="margin-top: 4px;">
+                        <button type="button" onclick="logout()" class="btn btn-default" style="background: transparent; border: transparent;color: #fff;"><i class="fa fa-lock" style="border-radius: 50%;padding: 4px 7px;background: #000;border: 2px solid #fff;"></i>&nbsp;&nbsp;SIGN OUT</button>
+                    </div>
+                </div>
+                <!--pull-right-->
+
+            </div>
+        </div>
+    </div>
+
+
+ <div class="clearfix"> </div>
+    <div class="page-container">
+
+ <div class="page-sidebar-wrapper">
+            <div class="page-sidebar navbar-collapse collapse">
                 <div class="topselecter">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
@@ -84,10 +101,28 @@
                         <li role="presentation"><a href="#top50" aria-controls="messages" role="tab" data-toggle="tab">Top 50</a></li>
                         <li role="presentation"><a href="#top3" aria-controls="messages" role="tab" data-toggle="tab">Top 3</a></li>
                     </ul>
+                
+
+            </div>
+        </div>
+        <!--page-sidebar-wrapper-->
+
+<div class="page-content-wrapper">
+            <div class="page-content" style="min-height:1200px">
+               
+        <div class="row" style="margin: 0px">
+          
+            <div class="col-md-12">
+                
                     <!-- Tab panes -->
                     <div class="tab-content">
 
                         <div role="tabpanel" class="tab-pane active" id="all">
+<div class="row">
+                 tab 1daaaaaaaaaaaaaaaaaaa
+</div>
+               
+
                             <% for(var i=0; i<allUsers.length; i++) {%>
                                 <!-- CARD+S-->
                                 
@@ -146,6 +181,9 @@
                                     <!-- For Second Blog Url -->
                                     <% if(allUsers[i].blogs[0].url1) { %>
                                     <div class="col-sm-3" style="padding: 10px;">
+
+                
+
                                         <div class="col-item">
                                             <div class="photo">
                                                 <div class="user_profile_image">
@@ -251,7 +289,9 @@
                                 
                         </div>
                         <div role="tabpanel" class="tab-pane" id="top100">
-                         
+                                                 <div class="row">
+                 tab 1daaaaaaaaaaabbbbbbbbbbbbbbb
+</div>
 
                             <% for(var i=0; i<allUsers.length; i++) {%>
                                 <!-- CARD+S-->
@@ -757,7 +797,7 @@
             <!--col-md-12-->
         </div>
         <!--row-->
-    </div>
+    </div></div></div>
     <!--background-->
 </body>
 <script src="../../js/jquery.min.js" type="text/javascript"></script>
