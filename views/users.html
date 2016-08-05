@@ -100,12 +100,12 @@ var text = "Hi, guys please found my blog at BigBazar contest.";
             <div class="page-logo">
                 <a href="/users/home">
                     <img src="../../images/logo.png" alt="logo" class="logo-default" style="width:100%;margin:20px;" /> </a>
-    </div>
+            </div>
 
             <div class="top-menu tp-m">
-               <div class="pull-left">
+                <div class="pull-left">
                     <div class="add-button tp-mar20-20 tp-a-hov ">
-                     
+
                         <!-- social Share -->
                         <i class="fa fa-facebook tp-mar20" onclick="fbShare()"></i>
                         <a class="tp-mar20" href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world">
@@ -131,9 +131,9 @@ var text = "Hi, guys please found my blog at BigBazar contest.";
             </div>
         </div>
     </div>
-
-
+    
     <div class="clearfix"> </div>
+
     <div class="page-container">
 
         <div class="page-sidebar-wrapper">
@@ -150,7 +150,8 @@ var text = "Hi, guys please found my blog at BigBazar contest.";
                                 <% } %>
 
                                     <% if(!events[1].roundBlocked) { %>
-                                        <li role="presentation" class="disabled disabledTab"><a class=" fnt-14" href="#top50" aria-controls="messages" role="tab" data-toggle="tab" title="Top 15 is blocked">Top 50</a></li>
+                                        <li role="presentation" class="disabled disabledTab"><a class=" fnt-14" href="#top50" aria-controls="messages" role="tab" data-toggle="tab"
+                                                title="Top 15 is blocked">Top 50</a></li>
                                         <% } else {%>
                                             <li role="presentation">
                                                 <a class=" fnt-14" href="#top50" aria-controls="messages" role="tab" data-toggle="tab">Top 15</a>
@@ -160,7 +161,8 @@ var text = "Hi, guys please found my blog at BigBazar contest.";
                                                     <li role="presentation" class="disabled disabledTab"><a class=" fnt-14" href="#top3" aria-controls="messages" role="tab" data-toggle="tab"
                                                             title="Top 15 is blocked">Top 3</a></li>
                                                     <% } else {%>
-                                                        <li role="presentation"><a class=" fnt-14" href="#top3" aria-controls="messages" role="tab" data-toggle="tab">Top 3</a></li>
+                                                        <li role="presentation"><a class=" fnt-14" href="#top3" aria-controls="messages" role="tab"
+                                                                data-toggle="tab">Top 3</a></li>
                                                         <% } %>
 
                     </ul>
@@ -254,288 +256,182 @@ var text = "Hi, guys please found my blog at BigBazar contest.";
                                                                  <span class="li-blg-tx"> 
                                                                      <a href="<%= allUsers[i].blogs[0].url1 %>"><%= allUsers[i].blogs[0].url1 %></a>
                                                                 </span>
-                                                                <<<<<<< HEAD </span>
+                                                                </span>
 
                                                             </div>
 
                                                             <div class="clearfix">
-                                                                =======
-                                                                </span>
+
                                                             </div>
                                                         </div>
-                                                        <div class="separator clear-left">
-                                                            <p class="btn-add">
-                                                                <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                            </p>
-                                                            <p class="btn-add">
-                                                                <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                                    <i class="fa fa-twitter"></i>
-                                                                </a>
-                                                            </p>
-
-                                                            <p class="btn-details">
-                                                                <i class="fa fa-linkedin" onclick="shareContent()"></i>
-                                                            </p>
-                                                        </div>
-                                                        <div class="clearfix">
-                                                        </div>
-                                                        >>>>>>> fa83e3a124ed782c3a4fc3f93209dd36ae63461e
                                                     </div>
-                            </div>
-                        </div>
 
-                        <% } %>
-                            <!-- For Second Blog Url -->
+                                                    <% } %>
+                                                        <!-- For Second Blog Url -->
 
-                            <!-- For Third Blog Url -->
-                            <% if(allUsers[i].blogs[0].url2) { %>
-                                <div class="col-sm-3" style="padding: 10px;">
-                                    <div class="col-item pr-card">
-                                        <div class="photo">
-                                            <div class="user_profile_image">
-                                                <img src="../../images/profile_user.jpg" class="img-circle">
-                                            </div>
-                                        </div>
-                                        <div class="separator clear-left"> </div>
-                                        <div class="info list-inf">
+                                                        <!-- For Third Blog Url -->
+                                                        <% if(allUsers[i].blogs[0].url2) { %>
+                                                            <div class="col-sm-3" style="padding: 10px;">
+                                                                <div class="col-item pr-card">
+                                                                    <div class="photo">
+                                                                        <div class="user_profile_image">
+                                                                            <img src="../../images/profile_user.jpg" class="img-circle">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="separator clear-left"> </div>
+                                                                    <div class="info list-inf">
 
-                                            <h5>
-                                                <%= allUsers[i].name %>
-                                            </h5>
-                                            <span style="width: 18em;display: inline-flex;">
+                                                                        <h5>
+                                                                            <%= allUsers[i].name %>
+                                                                        </h5>
+                                                                        <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span class="li-blg-tx"> 
                                                                      <a href="<%= allUsers[i].blogs[0].url2 %>"> <%= allUsers[i].blogs[0].url2 %> </a>
                                                                 </span>
-                                            <<<<<<< HEAD </span>
+                                                                        </span>
 
-                                        </div>
+                                                                    </div>
 
-                                        <div class="clearfix">
-                                            =======
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                        </p>
-                                        <p class="btn-add">
-                                            <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </p>
+                                                                    <div class="clearfix">
 
-                                        <p class="btn-details">
-                                            <i class="fa fa-linkedin" onclick="shareContent()"></i>
-                                        </p>
-                                    </div>
-                                    <div class="clearfix">
-                                    </div>
-                                    >>>>>>> fa83e3a124ed782c3a4fc3f93209dd36ae63461e
-                                </div>
-                    </div>
-                </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
 
-                <% } %>
-                    <!-- For Third Blog Url -->
+                                                            <% } %>
+                                                                <!-- For Third Blog Url -->
 
 
 
-                    <% } %>
+                                                                <% } %>
 
 
-                        <!-- END OF CARDS-->
-                        <% } %>
+                                                                    <!-- END OF CARDS-->
+                                                                    <% } %>
+                                                                     </div>
+
+                            <div role="tabpanel" class="tab-pane" id="top100">
+                                
+                                <% for(var i=0; i<allUsers.length; i++) {%>
+                                    <!-- CARD+S-->
+
+                                    <% if(allUsers[i].isUnder100) {%>
+
+                                        <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
 
 
+                                            <!-- For First Blog Url -->
 
+                                            <% if(allUsers[i].blogs[0].url) { %>
+                                                <div class="col-sm-3" style="padding: 10px;">
+                                                    <div class="col-item pr-card">
+                                                        <div class="photo">
+                                                            <div class="user_profile_image">
+                                                                <img src="../../images/profile_user.jpg" class="img-circle">
+                                                            </div>
+                                                        </div>
+                                                        <div class="separator clear-left"> </div>
+                                                        <div class="info list-inf">
 
-
-            </div>
-            <div role="tabpanel" class="tab-pane" id="top100">
-
-
-                <% for(var i=0; i<allUsers.length; i++) {%>
-                    <!-- CARD+S-->
-
-                    <% if(allUsers[i].isUnder100) {%>
-
-                        <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
-
-
-                            <!-- For First Blog Url -->
-
-                            <% if(allUsers[i].blogs[0].url) { %>
-                                <div class="col-sm-3" style="padding: 10px;">
-                                    <div class="col-item pr-card">
-                                        <div class="photo">
-                                            <div class="user_profile_image">
-                                                <img src="../../images/profile_user.jpg" class="img-circle">
-                                            </div>
-                                        </div>
-                                        <div class="separator clear-left"> </div>
-                                        <div class="info list-inf">
-
-                                            <h5>
-                                                <%= allUsers[i].name %>
-                                            </h5>
-                                            <span style="width: 18em;display: inline-flex;">
+                                                            <h5>
+                                                                <%= allUsers[i].name %>
+                                                            </h5>
+                                                            <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span class="li-blg-tx"> 
                                                                      <a href="<%= allUsers[i].blogs[0].url %>"><%= allUsers[i].blogs[0].url %></a>
                                                                 </span>
-                                            <<<<<<< HEAD </span>
-                                        </div>
+                                                            </span>
+                                                        </div>
 
-                                        <div class="clearfix">
+                                                        <div class="clearfix">
 
-                                            =======
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="separator clear-left">
-                                        <p class="btn-add">
-                                            <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                        </p>
-                                        <p class="btn-add">
-                                            <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                <i class="fa fa-twitter"></i>
-                                            </a>
-                                        </p>
 
-                                        <p class="btn-details">
-                                            <i class="fa fa-linkedin" onclick="shareContent()"></i>
-                                        </p>
-                                    </div>
-                                    <div class="clearfix">
-                                    </div>
-                                    >>>>>>> fa83e3a124ed782c3a4fc3f93209dd36ae63461e
-                                </div>
-            </div>
-        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-        <% } %>
-            <!-- For First Blog Url -->
+                                                <% } %>
+                                                    <!-- For First Blog Url -->
 
-            <!-- For Second Blog Url -->
-            <% if(allUsers[i].blogs[0].url1) { %>
-                <div class="col-sm-3" style="padding: 10px;">
-                    <div class="col-item pr-card">
-                        <div class="photo">
-                            <div class="user_profile_image">
-                                <img src="../../images/profile_user.jpg" class="img-circle">
-                            </div>
-                        </div>
-                        <div class="separator clear-left"> </div>
-                        <div class="info list-inf">
+                                                    <!-- For Second Blog Url -->
+                                                    <% if(allUsers[i].blogs[0].url1) { %>
+                                                        <div class="col-sm-3" style="padding: 10px;">
+                                                            <div class="col-item pr-card">
+                                                                <div class="photo">
+                                                                    <div class="user_profile_image">
+                                                                        <img src="../../images/profile_user.jpg" class="img-circle">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="separator clear-left"> </div>
+                                                                <div class="info list-inf">
 
-                            <h5>
-                                <%= allUsers[i].name %>
-                            </h5>
-                            <span style="width: 18em;display: inline-flex;">
+                                                                    <h5>
+                                                                        <%= allUsers[i].name %>
+                                                                    </h5>
+                                                                    <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span class="li-blg-tx"> 
                                                                     <a href="<%= allUsers[i].blogs[0].url1 %>"> <%= allUsers[i].blogs[0].url1 %></a>
                                                                 </span>
-                            <<<<<<< HEAD </span>
-                        </div>
+                                                                    </span>
+                                                                </div>
 
 
-                        <div class="clearfix">
+                                                                <div class="clearfix">
 
-                            =======
-                            </span>
-                        </div>
-                    </div>
-                    <div class="separator clear-left">
-                        <p class="btn-add">
-                            <i class="fa fa-facebook" onclick="fbShare()"></i>
-                        </p>
-                        <p class="btn-add">
-                            <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                        </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <% } %>
+                                                            <!-- For Second Blog Url -->
 
-                        <p class="btn-details">
-                            <i class="fa fa-linkedin" onclick="shareContent()"></i>
-                        </p>
-                    </div>
-                    <div class="clearfix">
-                    </div>
-                    >>>>>>> fa83e3a124ed782c3a4fc3f93209dd36ae63461e
-                </div>
-    </div>
-    </div>
-    <% } %>
-        <!-- For Second Blog Url -->
+                                                            <!-- For Third Blog Url -->
+                                                            <% if(allUsers[i].blogs[0].url2) { %>
+                                                                <div class="col-sm-3" style="padding: 10px;">
+                                                                    <div class="col-item pr-card">
+                                                                        <div class="photo">
+                                                                            <div class="user_profile_image">
+                                                                                <img src="../../images/profile_user.jpg" class="img-circle">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="separator clear-left"> </div>
+                                                                        <div class="info list-inf">
 
-        <!-- For Third Blog Url -->
-        <% if(allUsers[i].blogs[0].url2) { %>
-            <div class="col-sm-3" style="padding: 10px;">
-                <div class="col-item pr-card">
-                    <div class="photo">
-                        <div class="user_profile_image">
-                            <img src="../../images/profile_user.jpg" class="img-circle">
-                        </div>
-                    </div>
-                    <div class="separator clear-left"> </div>
-                    <div class="info list-inf">
-
-                        <h5>
-                            <%= allUsers[i].name %>
-                        </h5>
-                        <span style="width: 18em;display: inline-flex;">
+                                                                            <h5>
+                                                                                <%= allUsers[i].name %>
+                                                                            </h5>
+                                                                            <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span class="li-blg-tx"> 
                                                                    <a href="<%= allUsers[i].blogs[0].url2 %>">  <%= allUsers[i].blogs[0].url2 %> </a>
                                                                 </span>
-                        <<<<<<< HEAD </span>
-                    </div>
+                                                                            </span>
+                                                                        </div>
 
 
-                    <div class="clearfix">
+                                                                        <div class="clearfix">
 
-                        =======
-                        </span>
-                    </div>
-                </div>
-                <div class="separator clear-left">
-                    <p class="btn-add">
-                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                    </p>
-                    <p class="btn-add">
-                        <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </p>
 
-                    <p class="btn-details">
-                        <i class="fa fa-linkedin" onclick="shareContent()"></i>
-                    </p>
-                </div>
-                <div class="clearfix">
-                </div>
-                >>>>>>> fa83e3a124ed782c3a4fc3f93209dd36ae63461e
-            </div>
-            </div>
-            </div>
-            <% } %>
-                <!-- For Third Blog Url -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <% } %>
+                                                                    <!-- For Third Blog Url -->
 
 
 
-                <% } %>
+                                                                    <% } %>
 
 
-                    <% } %>
+                                                                        <% } %>
 
 
-                        <!-- END OF CARDS-->
+                                                                            <!-- END OF CARDS-->
 
 
-                        <% } %>
+                                                                            <% } %>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="top50">
 
@@ -568,355 +464,231 @@ var text = "Hi, guys please found my blog at BigBazar contest.";
                                                                  <span class="li-blg-tx"> 
                                                                    <a href="<%= allUsers[i].blogs[0].url %>">  <%= allUsers[i].blogs[0].url %> </a>
                                                                 </span>
-                                                            <<<<<<< HEAD </span>
+                                                            </span>
                                                         </div>
 
 
                                                         <div class="clearfix">
 
-                                                            =======
-                                                            </span>
                                                         </div>
                                                     </div>
-                                                    <div class="separator clear-left">
-                                                        <p class="btn-add">
-                                                            <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                        </p>
-                                                        <p class="btn-add">
-                                                            <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                                <i class="fa fa-twitter"></i>
-                                                            </a>
-                                                        </p>
-
-                                                        <p class="btn-details">
-                                                            <i class="fa fa-linkedin" onclick="shareContent()"></i>
-                                                        </p>
-                                                    </div>
-                                                    <div class="clearfix">
-                                                    </div>
-                                                    >>>>>>> fa83e3a124ed782c3a4fc3f93209dd36ae63461e
                                                 </div>
-                            </div>
-                            </div>
 
-                            <% } %>
-                                <!-- For First Blog Url -->
+                                                <% } %>
+                                                    <!-- For First Blog Url -->
 
-                                <!-- For Second Blog Url -->
-                                <% if(allUsers[i].blogs[0].url1) { %>
-                                    <div class="col-sm-3" style="padding: 10px;">
-                                        <div class="col-item pr-card">
-                                            <div class="photo">
-                                                <div class="user_profile_image">
-                                                    <img src="../../images/profile_user.jpg" class="img-circle">
-                                                </div>
-                                            </div>
-                                            <div class="separator clear-left"> </div>
-                                            <div class="info list-inf">
+                                                    <!-- For Second Blog Url -->
+                                                    <% if(allUsers[i].blogs[0].url1) { %>
+                                                        <div class="col-sm-3" style="padding: 10px;">
+                                                            <div class="col-item pr-card">
+                                                                <div class="photo">
+                                                                    <div class="user_profile_image">
+                                                                        <img src="../../images/profile_user.jpg" class="img-circle">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="separator clear-left"> </div>
+                                                                <div class="info list-inf">
 
-                                                <h5>
-                                                    <%= allUsers[i].name %>
-                                                </h5>
-                                                <span style="width: 18em;display: inline-flex;">
+                                                                    <h5>
+                                                                        <%= allUsers[i].name %>
+                                                                    </h5>
+                                                                    <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span class="li-blg-tx"> 
                                                                     <a href="<%= allUsers[i].blogs[0].url1 %>"> <%= allUsers[i].blogs[0].url1 %> </a>
                                                                 </span>
-                                                <<<<<<< HEAD </span>
-                                            </div>
+                                                                    </span>
+                                                                </div>
 
 
-                                            <div class="clearfix">
+                                                                <div class="clearfix">
 
-                                                =======
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="separator clear-left">
-                                            <p class="btn-add">
-                                                <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                            </p>
-                                            <p class="btn-add">
-                                                <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </p>
-
-                                            <p class="btn-details">
-                                                <i class="fa fa-linkedin" onclick="shareContent()"></i>
-                                            </p>
-                                        </div>
-                                        <div class="clearfix">
-                                        </div>
-                                        >>>>>>> fa83e3a124ed782c3a4fc3f93209dd36ae63461e
-                                    </div>
-                                    </div>
-                                    </div>
-                                    <% } %>
-                                        <!-- For Second Blog Url -->
-
-                                        <!-- For Third Blog Url -->
-                                        <% if(allUsers[i].blogs[0].url2) { %>
-                                            <div class="col-sm-3" style="padding: 10px;">
-                                                <div class="col-item pr-card">
-                                                    <div class="photo">
-                                                        <div class="user_profile_image">
-                                                            <img src="../../images/profile_user.jpg" class="img-circle">
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="separator clear-left"> </div>
-                                                    <div class="info list-inf">
+                                                        <% } %>
+                                                            <!-- For Second Blog Url -->
 
-                                                        <h5>
-                                                            <%= allUsers[i].name %>
-                                                        </h5>
-                                                        <span style="width: 18em;display: inline-flex;">
+                                                            <!-- For Third Blog Url -->
+                                                            <% if(allUsers[i].blogs[0].url2) { %>
+                                                                <div class="col-sm-3" style="padding: 10px;">
+                                                                    <div class="col-item pr-card">
+                                                                        <div class="photo">
+                                                                            <div class="user_profile_image">
+                                                                                <img src="../../images/profile_user.jpg" class="img-circle">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="separator clear-left"> </div>
+                                                                        <div class="info list-inf">
+
+                                                                            <h5>
+                                                                                <%= allUsers[i].name %>
+                                                                            </h5>
+                                                                            <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span class="li-blg-tx"> 
                                                                     <a href="<%= allUsers[i].blogs[0].url2 %>"> <%= allUsers[i].blogs[0].url2 %> </a>
                                                                 </span>
-                                                        <<<<<<< HEAD </span>
-                                                    </div>
+                                                                            </span>
+                                                                        </div>
 
 
-                                                    <div class="clearfix">
+                                                                        <div class="clearfix">
 
-                                                        =======
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                                <div class="separator clear-left">
-                                                    <p class="btn-add">
-                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                    </p>
-                                                    <p class="btn-add">
-                                                        <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                            <i class="fa fa-twitter"></i>
-                                                        </a>
-                                                    </p>
 
-                                                    <p class="btn-details">
-                                                        <i class="fa fa-linkedin" onclick="shareContent()"></i>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix">
-                                                </div>
-                                                >>>>>>> fa83e3a124ed782c3a4fc3f93209dd36ae63461e
-                                            </div>
-                                            </div>
-                                            </div>
-                                            <% } %>
-                                                <!-- For Third Blog Url -->
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <% } %>
+                                                                    <!-- For Third Blog Url -->
 
 
 
-                                                <% } %>
+                                                                    <% } %>
 
 
-                                                    <% } %>
+                                                                        <% } %>
 
 
-                                                        <!-- END OF CARDS-->
+                                                                            <!-- END OF CARDS-->
 
 
-                                                        <% } %>
+                                                                            <% } %>
 
 
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="top3">
+                                <% for(var i=0; i<allUsers.length; i++) {%>
+                                    <!-- CARD+S-->
+
+                                    <% if(allUsers[i].isUnder3) {%>
+
+                                        <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
+
+
+                                            <!-- For First Blog Url -->
+
+                                            <% if(allUsers[i].blogs[0].url) { %>
+                                                <div class="col-sm-3" style="padding: 10px;">
+                                                    <div class="col-item pr-card">
+                                                        <div class="photo">
+                                                            <div class="user_profile_image">
+                                                                <img src="../../images/profile_user.jpg" class="img-circle">
                                                             </div>
-                                                            <div role="tabpanel" class="tab-pane" id="top3">
-                                                                <% for(var i=0; i<allUsers.length; i++) {%>
-                                                                    <!-- CARD+S-->
+                                                        </div>
+                                                        <div class="separator clear-left"> </div>
+                                                        <div class="info list-inf">
 
-                                                                    <% if(allUsers[i].isUnder3) {%>
-
-                                                                        <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
-
-
-                                                                            <!-- For First Blog Url -->
-
-                                                                            <% if(allUsers[i].blogs[0].url) { %>
-                                                                                <div class="col-sm-3" style="padding: 10px;">
-                                                                                    <div class="col-item pr-card">
-                                                                                        <div class="photo">
-                                                                                            <div class="user_profile_image">
-                                                                                                <img src="../../images/profile_user.jpg" class="img-circle">
-                                                                                            </div>
-                                                                                        </div>
-                                                                                        <div class="separator clear-left"> </div>
-                                                                                        <div class="info list-inf">
-
-                                                                                            <h5>
-                                                                                                <%= allUsers[i].name %>
-                                                                                            </h5>
-                                                                                            <span style="width: 18em;display: inline-flex;">
+                                                            <h5>
+                                                                <%= allUsers[i].name %>
+                                                            </h5>
+                                                            <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span class="li-blg-tx"> 
                                                                     <a href="<%= allUsers[i].blogs[0].url %>"> <%= allUsers[i].blogs[0].url %> </a>
                                                                 </span>
-                                                                                            <<<<<<< HEAD </span>
-                                                                                        </div>
+                                                            </span>
+                                                        </div>
 
 
-                                                                                        <div class="clearfix">
+                                                        <div class="clearfix">
 
-                                                                                            =======
-                                                                                            </span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="separator clear-left">
-                                                                                        <p class="btn-add">
-                                                                                            <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                                                        </p>
-                                                                                        <p class="btn-add">
-                                                                                            <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                                                                <i class="fa fa-twitter"></i>
-                                                                                            </a>
-                                                                                        </p>
 
-                                                                                        <p class="btn-details">
-                                                                                            <i class="fa fa-linkedin" onclick="shareContent()"></i>
-                                                                                        </p>
-                                                                                    </div>
-                                                                                    <div class="clearfix">
-                                                                                    </div>
-                                                                                    >>>>>>> fa83e3a124ed782c3a4fc3f93209dd36ae63461e
-                                                                                </div>
-                                                            </div>
-                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                                            <% } %>
-                                                                <!-- For First Blog Url -->
+                                                <% } %>
+                                                    <!-- For First Blog Url -->
 
-                                                                <!-- For Second Blog Url -->
-                                                                <% if(allUsers[i].blogs[0].url1) { %>
-                                                                    <div class="col-sm-3" style="padding: 10px;">
-                                                                        <div class="col-item pr-card">
-                                                                            <div class="photo">
-                                                                                <div class="user_profile_image">
-                                                                                    <img src="../../images/profile_user.jpg" class="img-circle">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="separator clear-left"> </div>
-                                                                            <div class="info list-inf">
+                                                    <!-- For Second Blog Url -->
+                                                    <% if(allUsers[i].blogs[0].url1) { %>
+                                                        <div class="col-sm-3" style="padding: 10px;">
+                                                            <div class="col-item pr-card">
+                                                                <div class="photo">
+                                                                    <div class="user_profile_image">
+                                                                        <img src="../../images/profile_user.jpg" class="img-circle">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="separator clear-left"> </div>
+                                                                <div class="info list-inf">
 
-                                                                                <h5>
-                                                                                    <%= allUsers[i].name %>
-                                                                                </h5>
-                                                                                <span style="width: 18em;display: inline-flex;">
+                                                                    <h5>
+                                                                        <%= allUsers[i].name %>
+                                                                    </h5>
+                                                                    <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span class="li-blg-tx"> 
                                                                     <a href="<%= allUsers[i].blogs[0].url1 %>"> <%= allUsers[i].blogs[0].url1 %> </a>
                                                                 </span>
-                                                                                <<<<<<< HEAD </span>
+                                                                    </span>
+                                                                </div>
+
+
+                                                                <div class="clearfix">
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <% } %>
+                                                            <!-- For Second Blog Url -->
+
+                                                            <!-- For Third Blog Url -->
+                                                            <% if(allUsers[i].blogs[0].url2) { %>
+                                                                <div class="col-sm-3" style="padding: 10px;">
+                                                                    <div class="col-item pr-card">
+                                                                        <div class="photo">
+                                                                            <div class="user_profile_image">
+                                                                                <img src="../../images/profile_user.jpg" class="img-circle">
                                                                             </div>
-
-
-                                                                            <div class="clearfix">
-
-                                                                                =======
-                                                                                </span>
-                                                                            </div>
                                                                         </div>
-                                                                        <div class="separator clear-left">
-                                                                            <p class="btn-add">
-                                                                                <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                                            </p>
-                                                                            <p class="btn-add">
-                                                                                <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                                                    <i class="fa fa-twitter"></i>
-                                                                                </a>
-                                                                            </p>
+                                                                        <div class="separator clear-left"> </div>
+                                                                        <div class="info list-inf">
 
-                                                                            <p class="btn-details">
-                                                                                <i class="fa fa-linkedin" onclick="shareContent()"></i>
-                                                                            </p>
-                                                                        </div>
-                                                                        <div class="clearfix">
-                                                                        </div>
-                                                                        >>>>>>> fa83e3a124ed782c3a4fc3f93209dd36ae63461e
-                                                                    </div>
-                                                                    </div>
-                                                                    </div>
-                                                                    <% } %>
-                                                                        <!-- For Second Blog Url -->
-
-                                                                        <!-- For Third Blog Url -->
-                                                                        <% if(allUsers[i].blogs[0].url2) { %>
-                                                                            <div class="col-sm-3" style="padding: 10px;">
-                                                                                <div class="col-item pr-card">
-                                                                                    <div class="photo">
-                                                                                        <div class="user_profile_image">
-                                                                                            <img src="../../images/profile_user.jpg" class="img-circle">
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div class="separator clear-left"> </div>
-                                                                                    <div class="info list-inf">
-
-                                                                                        <h5>
-                                                                                            <%= allUsers[i].name %>
-                                                                                        </h5>
-                                                                                        <span style="width: 18em;display: inline-flex;">
+                                                                            <h5>
+                                                                                <%= allUsers[i].name %>
+                                                                            </h5>
+                                                                            <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
                                                                  <span class="li-blg-tx"> 
                                                                    <a href="<%= allUsers[i].blogs[0].url2 %>">  <%= allUsers[i].blogs[0].url2 %> </a>
                                                                 </span>
-                                                                                        <<<<<<< HEAD </span>
-                                                                                    </div>
+                                                                            </span>
+                                                                        </div>
 
 
-                                                                                    <div class="clearfix">
+                                                                        <div class="clearfix">
 
-                                                                                        =======
-                                                                                        </span>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="separator clear-left">
-                                                                                    <p class="btn-add">
-                                                                                        <i class="fa fa-facebook" onclick="fbShare()"></i>
-                                                                                    </p>
-                                                                                    <p class="btn-add">
-                                                                                        <a href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world" style="color:#fff">
-                                                                                            <i class="fa fa-twitter"></i>
-                                                                                        </a>
-                                                                                    </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <% } %>
+                                                                    <!-- For Third Blog Url -->
 
-                                                                                    <p class="btn-details">
-                                                                                        <i class="fa fa-linkedin" onclick="shareContent()"></i>
-                                                                                    </p>
-                                                                                </div>
-                                                                                <div class="clearfix">
-                                                                                </div>
-                                                                                >>>>>>> fa83e3a124ed782c3a4fc3f93209dd36ae63461e
-                                                                            </div>
-                                                                            </div>
-                                                                            </div>
+
+
+                                                                    <% } %>
+
+
+                                                                        <% } %>
+
+
+                                                                            <!-- END OF CARDS-->
+
+
                                                                             <% } %>
-                                                                                <!-- For Third Blog Url -->
 
-
-
-                                                                                <% } %>
-
-
-                                                                                    <% } %>
-
-
-                                                                                        <!-- END OF CARDS-->
-
-
-                                                                                        <% } %>
-
-                                                                                            </div>
-                                                                                            </div>
-                                                                                            </div>
-                                                                                            </div>
-                                                                                            <!--col-md-12-->
-                                                                                            </div>
-                                                                                            <!--row-->
-                                                                                            </div>
-                                                                                            </div>
-                                                                                            </div>
-                                                                                            <!--background-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--col-md-12-->
+            </div>
+            <!--row-->
+        </div>
+    </div>
+   
+    <!--background-->
 </body>
 <script src="../../js/jquery.min.js" type="text/javascript"></script>
 <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
