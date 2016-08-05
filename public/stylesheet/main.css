@@ -397,5 +397,27 @@ body{font-family: 'Roboto', sans-serif; }
 	font-size: 13px !important;
 }
 
+.btn-default:active
+{
+    color: #333;
+    background-color: transparent !important;
+    box-shadow: none;
+}
+.btn-default:active:hover {
+    background-color: transparent;
+    
+}
+.btn-default:focus
+{
+    color: #333;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: #e81919;
+    border: 1px solid #f8f8f8;
+    outline: none !important;
+}
+.btn-default:hover
+{
+        border:0px;
+}
 /* End of Profile Page*/
 
