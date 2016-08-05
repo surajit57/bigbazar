@@ -328,6 +328,9 @@ body{font-family: 'Roboto', sans-serif; }
 	font-size: 15px;
 	font-weight: 600 !important;
 }
+.edit-input {
+    display:none;
+}
 .pr-side-inp
 {
 	height: 50px;
@@ -337,6 +340,34 @@ body{font-family: 'Roboto', sans-serif; }
 {
 	height: 50px;
    padding: 12px;
+}
+.text-info
+{    border: 1px solid #c5c4c4;
+    height: 50px;
+    width: 100%;
+    background-color: #eeeeee;
+    padding: 10px;
+    color: grey !important;
+}
+.pr-side-inp-b
+{
+    width: 90%;
+	height: 50px;
+   margin-bottom: 5px;
+}
+.pr-side-lab-b
+{
+    display:flex;
+    width: 100%;
+	height: 50px;
+   margin-bottom: 5px;
+}
+
+.pr-side-inp-fa
+{   
+    color: grey !important;
+    margin: 15px;
+    font-size: 20px;
 }
 
 .t-nopad

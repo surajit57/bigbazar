@@ -82,6 +82,21 @@
         }
     </style>
     <script type="text/javascript">
+
+      $(document).ready(function() {
+    $('a.edit').click(function () {
+        var dad = $(this).parent().parent();
+        dad.find('label').hide();
+        dad.find('input[type="text"]').show().focus();
+    });
+    
+    $('input[type=text]').focusout(function() {
+        var dad = $(this).parent();
+        $(this).hide();
+        dad.find('label').show();
+    });
+});
+
       function pop(div) {
         document.getElementById(div).style.display = 'block';
       }
@@ -165,7 +180,7 @@
                 <div class="topselecter">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active" >
+                        <li role="presentation" class="active">
                             <a href="/users/list" class=" fnt-13"> Explore Bloggers </a></li>
 
                         <!--<li role="presentation"><a href="#top100" aria-controls="profile" role="tab" data-toggle="tab">Top 100 </a></li>-->
@@ -183,7 +198,7 @@
 
                         <li><span>Explore Bloggers</span></li>
 
-                      
+
                     </ul>
                 </div>
 
@@ -203,7 +218,7 @@
                                         <img src="<%= userInfo.userInfo.imageUrl %>" class="img-responsive" alt="" style="width:150px; height:150px;">
                                         <% } 
                                     else { %>
-                                            <img src="../../images/profile_user.jpg" class="img-responsive" alt="">
+                                            <img src="../../images/profile_user.jpg" class="img-responsive" alt="" style="width:150px; height:150px;">
                                             <% } %>
                                 </div>
                                 <div class="profile-usertitle">
@@ -262,7 +277,7 @@
                                                             <label class="control-label pr-side-inp-la uppercase">EMail</label>
                                                             <input type="text" id="UserEmail" name="email" placeholder="example@gmail.com" class="form-control pr-side-inp" value="<%= userInfo.userInfo.email %>">
                                                         </div>
-                                                       
+
                                                         <div style="float:left">
 
                                                             <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
@@ -282,7 +297,7 @@
                                                                         <img src="<%= userInfo.userInfo.imageUrl %>" class="img-responsive image_reps" alt="">
                                                                         <% } 
                                                                         else { %>
-                                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="">
+                                                                            <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" class="img-responsive image_reps" alt="">
 
                                                                             <% } %>
                                                                 </div>
@@ -335,65 +350,192 @@
                                                             <input type="text" name="email" placeholder="example@gmail.com" class="form-control" value="<%= userInfo.userInfo.email %>">
                                                         </div>
 
-                                                            <div class="form-group">
-                                                               
-                                                                <label class="control-label pr-side-inp-la">Round First Blog Link</label>
-                                                                 <% if (userInfo.blogDetail) 
+                                                        <div class="form-group">
+
+                                                            <label class="control-label pr-side-inp-la">Round First Blog Link</label>
+                                                            <% if (userInfo.blogDetail) 
 
                                                                  { %>
                                                                 <% if(userInfo.events[0].roundBlocked)
                                                                     { %>
-                                                                    <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url %>"
-                                                                        disabled>
+
+                                                                    <!--edit box-->
+                                                                    <div style="display:flex">
+                                                                        <label for="name" class="pr-side-lab-b">
+                                                                                        <p class="text-info"><%= userInfo.blogDetail.url %></p>
+                                                                                        <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
+                                                                                    </label>
+                                                                        <!--<input type="text" class="edit-input" />-->
+                                                                        <input type="text" name="url" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.url %>"
+                                                                            disabled>
+
+                                                                    </div>
+                                                                    <!-- end edit box-->
+
+                                                                    <!--<input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url %>" disabled>-->
                                                                     <%}
                                                                     else { %>
-                                                                        <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url %>">
+
+                                                                        <!--edit box-->
+                                                                        <div style="display:flex">
+                                                                            <label for="name" class="pr-side-lab-b">
+                                                                                        <p class="text-info"><%= userInfo.blogDetail.url %></p>
+                                                                                        <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
+                                                                                    </label>
+                                                                            <!--<input type="text" class="edit-input" />-->
+                                                                            <input type="text" name="url" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.url %>">
+
+                                                                        </div>
+                                                                        <!-- end edit box-->
+
+                                                                        <!--<input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url %>">-->
                                                                         <% } %>
                                                                             <% } 
                                                                  else { %>
-                                                                                <input type="text" name="url" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="">
+                                                                                <!--edit box-->
+                                                                                <div style="display:flex">
+                                                                                    <label for="name" class="pr-side-lab-b">
+                                                                                        <p class="text-info">http://www.mywebsite.com</p>
+                                                                                        <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
+                                                                                    </label>
+                                                                                    <!--<input type="text" class="edit-input" />-->
+                                                                                    <input type="text" name="url" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="">
+
+                                                                                </div>
+
+
+                                                                                <!-- end edit box-->
+
                                                                                 <% } %>
 
-                                                                <label class="control-label pr-side-inp-la">Round Second Blog Link</label>
-                                                                <% if (userInfo.blogDetail) { %>
-                                                                    <% if(userInfo.events[1].roundBlocked) { %>
-                                                                        <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url1 %>"
 
-                                                                                                disabled>
-                                                                     <%}
+                                                                                    <label class="control-label pr-side-inp-la">Round Second Blog Link</label>
+                                                                                    <% if (userInfo.blogDetail) { %>
+                                                                                        <% if(userInfo.events[1].roundBlocked) { %>
+                                                                                            <!--edit box-->
+                                                                                            <div style="display:flex">
+                                                                                                <label for="name" class="pr-side-lab-b">
+                                                                                        <p class="text-info"><%= userInfo.blogDetail.url1 %></p>
+                                                                                        <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
+                                                                                    </label>
+                                                                                                <!--<input type="text" class="edit-input" />-->
+                                                                                                <input type="text" name="url" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.url1 %>"
+                                                                                                    disabled>
+
+                                                                                            </div>
+                                                                                            <!-- end edit box-->
+                                                                                            <%}
                                                                     else { %>
-                                                                        <% if(userInfo.events[0].roundBlocked) { %>
-                                                                         <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url1 %>">
-                                                                         <%} else { %>
-                                                                            <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url1 %>" disabled>
-                                                                         <% } %>
-                                                                     <% } %>
+                                                                                                <% if(userInfo.events[0].roundBlocked) { %>
+                                                                                                    <!--edit box-->
+                                                                                                    <div style="display:flex">
+                                                                                                        <label for="name" class="pr-side-lab-b">
+                                                                                        <p class="text-info"><%= userInfo.blogDetail.url1 %></p>
+                                                                                        <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
+                                                                                    </label>
+                                                                                                        <!--<input type="text" class="edit-input" />-->
+                                                                                                        <input type="text" name="url1" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.url1 %>">
+                                                                                                    </div>
+                                                                                                    <!-- end edit box-->
+                                                                                                    <!--<input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url1 %>">-->
+                                                                                                    <%} else { %>
+                                                                                                        <!--edit box-->
+                                                                                                        <div style="display:flex">
+                                                                                                            <label for="name" class="pr-side-lab-b">
+                                                                                        <p class="text-info"><%= userInfo.blogDetail.url1 %></p>
+                                                                                        <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
+                                                                                    </label>
+                                                                                                            <!--<input type="text" class="edit-input" />-->
+                                                                                                            <input type="text" name="url1" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.url1 %>"
+                                                                                                                disabled>
 
-                                                                 <% } 
+                                                                                                        </div>
+                                                                                                        <!-- end edit box-->
+                                                                                                        <% } %>
+                                                                                                            <% } %>
+
+                                                                                                                <% } 
                                                                  else { %>
-                                                                    <input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="" disabled>
-                                                                <% } %>
+                                                                                                                    <!--edit box-->
+                                                                                                                    <div style="display:flex">
+                                                                                                                        <label for="name" class="pr-side-lab-b">
+                                                                                        <p class="text-info">http://www.mywebsite.com</p>
+                                                                                        <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
+                                                                                    </label>
+                                                                                                                        <!--<input type="text" class="edit-input" />-->
+                                                                                                                        <input type="text" name="url1" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value=""
+                                                                                                                            disabled>
 
-                                                                 <label class="control-label pr-side-inp-la">Round Third Blog Link</label>
-                                                                <% if (userInfo.blogDetail) { %>
-                                                                     <% if(userInfo.events[2].roundBlocked) { %>
-                                                                       <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url2 %>"
+                                                                                                                    </div>
+                                                                                                                    <!-- end edit box-->
+                                                                                                                    <!--<input type="text" name="url1" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="" disabled>-->
+                                                                                                                    <% } %>
 
-                                                                                                                        disabled>
-                                                                     <%}
+                                                                                                                        <label class="control-label pr-side-inp-la">Round Third Blog Link</label>
+                                                                                                                        <% if (userInfo.blogDetail) { %>
+                                                                                                                            <% if(userInfo.events[2].roundBlocked) { %>
+
+                                                                                                                                <!--edit box-->
+                                                                                                                                <div style="display:flex">
+                                                                                                                                    <label for="name" class="pr-side-lab-b">
+                                                                                        <p class="text-info"><%= userInfo.blogDetail.url2 %></p>
+                                                                                        <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
+                                                                                    </label>
+                                                                                                                                    <!--<input type="text" class="edit-input" />-->
+                                                                                                                                    <input type="text" name="url2" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.url2 %>"
+                                                                                                                                        disabled>
+
+                                                                                                                                </div>
+                                                                                                                                <!-- end edit box-->
+
+                                                                                                                                <!--<input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url2 %>"  disabled>-->
+                                                                                                                                <%}
                                                                     else { %>
 
-                                                                    <% if(userInfo.events[0].roundBlocked) { %>
-                                                                          <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url2 %>">
-                                                                         <%} else { %>
-                                                                             <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url2 %>" disabled>
-                                                                         <% } %>
-                                                                       
-                                                                     <% } %>
-                                                                <% } 
+                                                                                                                                    <% if(userInfo.events[0].roundBlocked) { %>
+                                                                                                                                        <!--edit box-->
+                                                                                                                                        <div style="display:flex">
+                                                                                                                                            <label for="name" class="pr-side-lab-b">
+                                                                                        <p class="text-info"><%= userInfo.blogDetail.url2 %></p>
+                                                                                        <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
+                                                                                    </label>
+                                                                                                                                            <!--<input type="text" class="edit-input" />-->
+                                                                                                                                            <input type="text" name="url2" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.url2 %>">
+
+                                                                                                                                        </div>
+                                                                                                                                        <!-- end edit box-->
+                                                                                                                                        <!--<input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="<%= userInfo.blogDetail.url2 %>">-->
+                                                                                                                                        <%} else { %>
+                                                                                                                                            <!--edit box-->
+                                                                                                                                            <div style="display:flex">
+                                                                                                                                                <label for="name" class="pr-side-lab-b">
+                                                                                        <p class="text-info"><%= userInfo.blogDetail.url2 %></p>
+                                                                                        <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
+                                                                                    </label>
+                                                                                                                                                <!--<input type="text" class="edit-input" />-->
+                                                                                                                                                <input type="text" name="url2" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.url2 %>"
+                                                                                                                                                    disabled>
+
+                                                                                                                                            </div>
+                                                                                                                                            <!-- end edit box-->
+                                                                                                                                            <% } %>
+
+                                                                                                                                                <% } %>
+                                                                                                                                                    <% } 
                                                                  else { %>
-                                                                     <input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="" disabled>
-                                                               <% } %>
+                                                                                                                                                        <!--edit box-->
+                                                                                                                                                        <div style="display:flex">
+                                                                                                                                                            <label for="name" class="pr-side-lab-b">
+                                                                                        <p class="text-info">http://www.mywebsite.coms</p>
+                                                                                        <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
+                                                                                    </label>
+                                                                                                                                                            <!--<input type="text" class="edit-input" />-->
+                                                                                                                                                            <input type="text" name="url2" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value=""
+                                                                                                                                                                disabled>
+                                                                                                                                                        </div>
+                                                                                                                                                        <!-- end edit box-->
+                                                                                                                                                        <!--<input type="text" name="url2" placeholder="http://www.mywebsite.com" class="form-control pr-side-inp" value="" disabled>-->
+                                                                                                                                                        <% } %>
 
 
                                                         </div>
@@ -432,7 +574,7 @@
     <script src="../../js/layout.min.js" type="text/javascript"></script>
     <script src="../../js/demo.min.js" type="text/javascript"></script>
     <script type="text/javascript">
-            
+          
             function logout(){
                 console.log('logout clicked');
              $.get( "/logout", { })
