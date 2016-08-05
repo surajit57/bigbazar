@@ -44,9 +44,7 @@ router.post('/blogPost', Auth.isLoggedIn, UserController.postBlog);
 // router.get('/blogPost1', Auth.isLoggedIn, UserController.postBlog);
 
 router.get('/list', UserController.getListOfAllUsers);
-router.get('/test', function(req, res){
-	res.render('l.html');
-});
+
 
 
 module.exports = router;
