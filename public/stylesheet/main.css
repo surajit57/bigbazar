@@ -427,6 +427,10 @@ body{font-family: 'Roboto', sans-serif; }
 {
 	font-size: 13px !important;
 }
+.fnt-14
+{
+	font-size: 15px !important;
+}
 
 .pr-card
 {
@@ -480,3 +484,25 @@ body{font-family: 'Roboto', sans-serif; }
 
 
 /* End of List Page*/
+/*top menu*/
+.tp-m
+{
+width:40%; 
+font-size:25px; 
+color: #ff6008;
+}
+.tp-mar20-20
+{
+    margin: 20px 20px;
+}
+.tp-mar20
+{
+    margin: 18px 20px;
+}
+.tp-a-hov a
+{
+    color:#ff6008 !important;
+}
+.tp-a-hov a:hover {
+    text-decoration: none !important;
+}
