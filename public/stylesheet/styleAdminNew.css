@@ -274,10 +274,15 @@ font-size: 22px;
 	width: 100%;
 	height: auto;
 	float: left;
-	padding: 15px 10px;
+	padding: 30px;
 }
 
+.list-inf
+{
 
+	color:#fff !important;
+	padding: 10px 0px 20px 20px !important;
+}
 
 /* CARD FOR HOME */
 
