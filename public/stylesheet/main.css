@@ -457,3 +457,26 @@ body{font-family: 'Roboto', sans-serif; }
 }
 /* End of Profile Page*/
 
+/* List Page*/
+
+.li-blg-tx
+{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #dd6624;
+    width: 10em;
+}
+
+.li-blg-tx a
+{
+    color: #dd6624 !important;
+}
+
+.li-blg-tx a :hover
+{
+    color: #dd6624 !important;
+}
+
+
+/* End of List Page*/

@@ -97,10 +97,10 @@ $(document).ready(function(){
                         <button type="button" onclick="window.location='/users/home'" class="btn btn-default uppercase" style="position: relative;right:100px;top: 10px;
 ">
               <i class="fa fa-user log-fa"></i>Register | Login</button>
-              
+
 
                     </div>
-                    
+
                 </div>
                 <!--pull-right-->
 
@@ -150,7 +150,7 @@ $(document).ready(function(){
         <div class="page-content-wrapper" style="background-color:#fff">
             <div class="page-content" style="min-height:1200px">
 
-<div class="page-bar">
+                <div class="page-bar">
                     <ul class="page-breadcrumb">
                         <li><a href="/users/home">Home</a><i class="fa fa-circle"></i></li>
                         <li><span>Bloggers</span></li>
@@ -198,7 +198,7 @@ $(document).ready(function(){
                                                                 </h5>
                                                                 <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <span class="li-blg-tx"> 
                                                                      <a href="<%= allUsers[i].blogs[0].url %>"><%= allUsers[i].blogs[0].url %> </a>
                                                                 </span>
                                                                 </span>
@@ -230,10 +230,10 @@ $(document).ready(function(){
                                                 <!-- For Second Blog Url -->
                                                 <% if(allUsers[i].blogs[0].url1) { %>
                                                     <div class="col-sm-3" style="padding: 10px;">
-                                                         <div class="col-item  pr-card">
+                                                        <div class="col-item  pr-card">
                                                             <div class="photo">
                                                                 <div class="user_profile_image">
-                                                                    <img src="../../images/profile_user.jpg"  class="img-circle">
+                                                                    <img src="../../images/profile_user.jpg" class="img-circle">
                                                                 </div>
                                                             </div>
                                                             <div>
@@ -246,7 +246,7 @@ $(document).ready(function(){
                                                                         </h5>
                                                                         <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <span class="li-blg-tx"> 
                                                                      <a href="<%= allUsers[i].blogs[0].url1 %>"><%= allUsers[i].blogs[0].url1 %></a>
                                                                 </span>
                                                                         </span>
@@ -293,7 +293,7 @@ $(document).ready(function(){
                                                                                 </h5>
                                                                                 <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <span class="li-blg-tx"> 
                                                                      <a href="<%= allUsers[i].blogs[0].url2 %>"> <%= allUsers[i].blogs[0].url2 %> </a>
                                                                 </span>
                                                                                 </span>
@@ -365,7 +365,7 @@ $(document).ready(function(){
                                                                     </h5>
                                                                     <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <span class="li-blg-tx"> 
                                                                      <a href="<%= allUsers[i].blogs[0].url %>"><%= allUsers[i].blogs[0].url %></a>
                                                                 </span>
                                                                     </span>
@@ -413,7 +413,7 @@ $(document).ready(function(){
                                                                             </h5>
                                                                             <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <span class="li-blg-tx"> 
                                                                     <a href="<%= allUsers[i].blogs[0].url1 %>"> <%= allUsers[i].blogs[0].url1 %></a>
                                                                 </span>
                                                                             </span>
@@ -460,7 +460,7 @@ $(document).ready(function(){
                                                                                     </h5>
                                                                                     <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <span class="li-blg-tx"> 
                                                                    <a href="<%= allUsers[i].blogs[0].url2 %>">  <%= allUsers[i].blogs[0].url2 %> </a>
                                                                 </span>
                                                                                     </span>
@@ -531,7 +531,7 @@ $(document).ready(function(){
                                                                     </h5>
                                                                     <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <span class="li-blg-tx"> 
                                                                    <a href="<%= allUsers[i].blogs[0].url %>">  <%= allUsers[i].blogs[0].url %> </a>
                                                                 </span>
                                                                     </span>
@@ -579,7 +579,7 @@ $(document).ready(function(){
                                                                             </h5>
                                                                             <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <span class="li-blg-tx"> 
                                                                     <a href="<%= allUsers[i].blogs[0].url1 %>"> <%= allUsers[i].blogs[0].url1 %> </a>
                                                                 </span>
                                                                             </span>
@@ -626,7 +626,7 @@ $(document).ready(function(){
                                                                                     </h5>
                                                                                     <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <span class="li-blg-tx"> 
                                                                     <a href="<%= allUsers[i].blogs[0].url2 %>"> <%= allUsers[i].blogs[0].url2 %> </a>
                                                                 </span>
                                                                                     </span>
@@ -698,7 +698,7 @@ $(document).ready(function(){
                                                                     </h5>
                                                                     <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <span class="li-blg-tx"> 
                                                                     <a href="<%= allUsers[i].blogs[0].url %>"> <%= allUsers[i].blogs[0].url %> </a>
                                                                 </span>
                                                                     </span>
@@ -746,7 +746,7 @@ $(document).ready(function(){
                                                                             </h5>
                                                                             <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <span class="li-blg-tx"> 
                                                                     <a href="<%= allUsers[i].blogs[0].url1 %>"> <%= allUsers[i].blogs[0].url1 %> </a>
                                                                 </span>
                                                                             </span>
@@ -793,7 +793,7 @@ $(document).ready(function(){
                                                                                     </h5>
                                                                                     <span style="width: 18em;display: inline-flex;">
                                                                 Blog Url : 
-                                                                 <span style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;color: #dd6624;width: 6em;"> 
+                                                                 <span class="li-blg-tx"> 
                                                                    <a href="<%= allUsers[i].blogs[0].url2 %>">  <%= allUsers[i].blogs[0].url2 %> </a>
                                                                 </span>
                                                                                     </span>
