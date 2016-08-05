@@ -290,7 +290,8 @@ font-size: 22px;
 .col-item .photo img
 {
     margin: 0 auto;
-    width: 50%;
+    width: 150px;
+    height: 150px;
 }
 
 .col-item .info
