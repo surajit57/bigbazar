@@ -20,8 +20,8 @@ body{font-family: 'Roboto', sans-serif; }
 }
 
 .logo{
-	padding-top: 30px;
-    padding-bottom: 30px;
+	padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .index h2{
@@ -39,7 +39,7 @@ body{font-family: 'Roboto', sans-serif; }
 }
 
 .index ol li{
-	font-size: 15px;
+	font-size: 21px;
     padding-bottom: 5px;
     color: #013976;
 }
@@ -182,7 +182,8 @@ body{font-family: 'Roboto', sans-serif; }
 }
 
 
-@media screen and (max-width: 767px){ 
+@media screen and (max-width: 767px){
+
 	.full-width-bg{
 		width: 100%;
 		height: 100%;
@@ -194,10 +195,53 @@ body{font-family: 'Roboto', sans-serif; }
 		margin-top: 20px;
 		margin-bottom: 40px;
 	}
-	
+    body > div.full-width-bg.index > div > div:nth-child(1) > div:nth-child(2){
+        padding: 0px 0px !important;
+
+    }
+    img#bigimg1 {
+        width: 100% !important;
+        height: auto;
+    }
+    body > div.full-width-bg.index > div > div:nth-child(1) > div:nth-child(2){
+        padding: 0px 0px !important;
+
+    }
+    img#bigimg1 {
+        width: 100% !important;
+        height: auto;
+    }
+    a.btn.btn-lo {
+        width: 78% !important;
+    }
+    body > div.full-width-bg.index.submit-blog > div > div:nth-child(1) > div:nth-child(2) > h2 {
+        text-align: center;
+    }
+    .submit-blog input[type="text"]{
+        width: 208px !important;
+    }
 } 
 
-@media screen and (max-width: 450px){ 
+@media screen and (max-width: 450px){
+    body > div.full-width-bg.index.submit-blog > div > div:nth-child(1) > div:nth-child(2) > h2 {
+        text-align: center;
+    }
+    body > div.full-width-bg.index > div > div:nth-child(1) > div:nth-child(2){
+        padding: 0px 0px !important;
+
+    }
+    a.btn.btn-lo {
+        width: 78% !important;
+    }
+    img#bigimg1 {
+        width: 100% !important;
+        height: auto;
+    }
+    iframe.embed-responsive-item {
+        width: 100% !important;
+    }
+    .submit-blog input[type="text"] {
+        width: 224px !important;}
 	
 }
 .blog_submit{
@@ -505,4 +549,7 @@ color: #ff6008;
 }
 .tp-a-hov a:hover {
     text-decoration: none !important;
+}
+.pull-right.text-center {
+    padding: 0px 133px 0px 11px;
 }
