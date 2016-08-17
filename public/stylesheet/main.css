@@ -554,3 +554,43 @@ color: #ffa800;
 .pull-right.text-center {
     padding: 0px 133px 0px 11px;
 }
+
+
+
+/* ----------- iPhone 6 ----------- */
+
+
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+.fkword
+    {
+        width: 160px !important;
+        height: auto  !important;
+        float: left  !important;
+        margin: 0px  !important;
+        padding: 15px  !important;
+    }
+    .fkword1
+    {
+        width: 70px !important;
+        height: auto;
+        float: left;
+        position: relative;
+        top: 40px;
+        left: 100px;
+    }
+    .fkword2
+    {
+        padding: 0px !important;
+    }
+    .fkword3
+    {
+        padding: 20px !important;
+    }
+}
+
