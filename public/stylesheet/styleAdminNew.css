@@ -245,7 +245,7 @@ form {
 .topselecter >.nav-tabs>li.active>a,
 .topselecter >.nav-tabs>li.active>a:focus,
 .topselecter >.nav-tabs>li.active>a:hover {
-	background: #dd6624 !important;
+	background: #ffa800 !important;
 	border-radius: 2px;
 	font-size: 18px;
 	font-weight: bold;
