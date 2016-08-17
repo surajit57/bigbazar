@@ -10,7 +10,8 @@ body{font-family: 'Roboto', sans-serif; }
     top: 0;
     left: 0;
     z-index: 0;
-    background-image: url(../images/bck.jpg);
+    /*background-image: url(../images/bck.jpg);*/
+    background-color: #ffffff;
     background-repeat: no-repeat;
     background-position: center center;
     -webkit-background-size: cover;
@@ -51,8 +52,8 @@ body{font-family: 'Roboto', sans-serif; }
 }
 
 .tab-div form{
-	padding: 25px;
-    background-color: #fff;
+	padding: 16px;
+    background-color: rgb(243, 243, 243);
 }
 
 .tab-div label{
@@ -73,7 +74,7 @@ body{font-family: 'Roboto', sans-serif; }
 }
 .nav-tabs>li>a{
 	 color: #000;
-    background-color: #fff;
+    background-color: #f3f3f3;
     border: 0px solid #fff;
 	font-weight: 600;
 	    letter-spacing: 1px;
@@ -96,7 +97,7 @@ body{font-family: 'Roboto', sans-serif; }
 	border-radius: 0px;
 	font-weight: 600;
 	/*color: #333333;*/
-	    background-color: #f37022;
+	    background-color: #ffa800;
     color: #fff;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -113,7 +114,7 @@ body{font-family: 'Roboto', sans-serif; }
 
 .btn-lo
 {
-	 background-color: #013976;
+	 background-color: #ffa800;
     color: #fff;
     width: 100%;
     padding: 12px;
@@ -130,7 +131,7 @@ body{font-family: 'Roboto', sans-serif; }
 
 .btn{
 	margin: 0px 20px;
-	float: right;
+	float: left;
 }
 
 #forgotpassword form{
@@ -159,7 +160,7 @@ body{font-family: 'Roboto', sans-serif; }
 .submit-blog input[type="text"]{
 	width: 470px;
     height: 50px;
-    margin-top: 20px;
+    margin-top: 0px;
 	padding: 10px;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.35);
