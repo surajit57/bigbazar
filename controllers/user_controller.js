@@ -19,7 +19,7 @@ function send_mail(email){
       // bcc: 'hemant_nagarkoti@yahoo.com',
       bcc: 'shashidhar@teampumpkin.com',
       text: 'Authenticated with OAuth2',
-      subject: '🐴BigBazar',
+      subject: '🐴BigBazaar',
       html: html_text
     }, function(error, response) {
        if (error) {
