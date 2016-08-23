@@ -280,7 +280,7 @@ font-size: 22px;
 .list-inf
 {
 
-	color:#fff !important;
+	color:#222 !important;
 	padding: 10px 0px 20px 20px !important;
 }
 
@@ -290,7 +290,7 @@ font-size: 22px;
 {
         border: 1px solid #3b4658;
     border-radius: 5px;
-    background: #3b4658;
+    background: #D3D3D3;
 }
 .col-item .photo img
 {
@@ -617,6 +617,15 @@ font-size: 22px;
 		z-index: 0;
 	}
 }
+@media only screen
+and (min-device-width: 1px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+	img.logo-default {
+		width: 196px !important;
+	}
 
+}
 
 /*List Page css end*/
