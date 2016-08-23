@@ -636,4 +636,7 @@ color: #ffa800;
         width: 61%!important;
         margin-left: 9% !important;
     }
+    img.logo-default {
+        width: 196px !important;
+    }
 }
