@@ -607,9 +607,9 @@ color: #ffa800;
     .tp-mar20-20 {
         padding: 66px 3px 0px 0px !important;
     }
-    img.logo-default {
-        width: 196px !important;
-    }
+    /*img.logo-default {*/
+        /*width: 196px !important;*/
+    /*}*/
     button.btn.btn-default.uppercase {
         right: 44px !important;
     }
