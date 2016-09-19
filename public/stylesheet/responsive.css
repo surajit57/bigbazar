@@ -1,0 +1,95 @@
+@media (min-width:992px) {
+    #custom-bootstrap-menu.navbar-default .navbar-nav>li>a{
+        padding: 10px 20px !important;
+     }
+}
+
+@media only screen and ( min-width: 768px) and ( max-width: 992px) {
+    #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+            padding: 10px 8px !important;
+     }
+}
+
+@media only screen and ( max-width: 767px ) {
+
+    .container { width: 479px; }
+.logo {
+    width: 55%;
+    display: block;
+    margin: 0 auto;
+}
+    .collapse {
+     display:block !important;
+}
+.nav>li {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: transparent !important;
+}
+p.headline {
+    font-size:40px !important;
+    }
+    .description {
+    padding: 0px !important;
+}
+p.top-social-links {
+    margin-top: 10px;
+    text-align: center !important;
+    margin-bottom: 30px;
+}
+.content_one {
+    margin-top: 15px !important;
+    margin-bottom: 30px;
+    border-bottom: 8px solid #ccc;
+}
+img.dis_img {
+    width: 100% !important;
+}
+.content3{
+    margin-bottom: 30px !important;
+}
+.content3_text {
+    padding: 40px !important;
+}
+.content4_text {
+    padding: 14px !important;
+    height: 130px !important;
+}
+.color {
+    background: url(../images/address_bg.jpg) no-repeat bottom center #13b0a7;
+    width: 100% !important;
+    background-size: 100% !important;
+    height: 277px;
+    padding: 114px 0 0;
+    text-align: center;
+}
+.content4 {
+    margin-bottom: 30px;
+}
+.orange_text {
+    color: #F7941D;
+    font-size: 11.2pt !important;
+}
+p.text3 {
+    width: 92%;
+    font-size: 8.85pt !important;
+}
+.header_contact p {
+    text-align: center !important;
+}
+a#grow_business {
+        width: 80% !important;
+}
+
+}
+
+    @media only screen and ( max-width: 479px) {
+
+         .container { width: 100% !important;}
+         .content4 {
+    width: 100% !important;
+}
+    }

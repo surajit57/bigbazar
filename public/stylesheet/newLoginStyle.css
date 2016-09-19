@@ -1,0 +1,138 @@
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+
+
+h4 {
+    color: #3D2515;
+    text-align: center!important;
+    font-size: 39px!important;
+    font-weight: bold!important;
+    margin-top: 85px !important;
+    margin-bottom: 20px;
+    font-family: 'Josefin Sans', sans-serif!important;
+}
+h1{
+color: #ffffff !important;
+font-family: 'Josefin Sans', sans-serif!important;
+
+}
+
+.logo, .banner_home {
+    width: 100%;
+    padding-top: 33px;
+    padding-left: 59px;
+}
+
+
+
+
+
+
+
+
+/*start new css*/
+
+
+ a.bt1 {
+    width: 227px;
+    height: 35px !important;
+    float: right;
+    padding: 7px 0px 0px 42px;
+    text-decoration: none !important;
+	color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+ a.bt1:hover {
+ color: #fff;
+    background-color: #3276b1;
+    border-color: #285e8e;
+ }
+
+ a.bt2 {
+    width: 227px;
+    height: 35px !important;
+    float: right;
+    padding: 7px 0px 0px 53px;
+    text-decoration: none !important;
+	color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+a.bt2:hover {
+ color: #fff;
+    background-color: #39b3d7;
+    border-color: #269abc;
+ }
+.socialbtn2{
+padding-top:13px;
+}
+.socialbtn1{
+padding-top:10px;
+}
+#loginbox{
+  width: 227px !important;
+  float:right;
+  padding-top:15px;
+
+}
+.log{
+width: 227px !important;
+color: #fff;
+    background-color: #39b3d7;
+    border-color: #269abc;
+	 height: 35px !important;
+	 text-align:center;
+}
+.frm{
+padding-top:10px !important;
+}
+
+.logins{
+width:220px;
+text-align:center;
+color:#fff !important;
+padding-top:5px;
+text-decoration:none !important;
+}
+
+.logd {
+    background-color: #9e9e9e;
+    border: 1px solid #ccc;
+    height: 30px;
+}
+.logtxt{
+text-align:center;
+padding-top:3px;
+}
+
+.mrgall{
+margin-top:10px;
+
+}
+
+.ctrl{
+
+	text-align:center;
+	font-size:11px;
+	color:#333 !important;
+}
+.ptxt{
+	  font-size:10px !important;
+	  color:#333 !important
+	  }
+	  .ptxts{
+	  font-size:9px !important;
+	  padding-top:15px;
+	  color:#333 !important
+	  }
+	.panel.panel-info {
+    width: 237px !important;
+}
+.panel{
+border-radius: 23px !important;
+}

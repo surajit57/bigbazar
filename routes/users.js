@@ -20,7 +20,8 @@ router.post('/signup', passport.authenticate('local-signup', {failureRedirect: '
 
 router.get('/login', function(req, res){
 	// req.flash('info', 'Welcome:------------------------------------------');
-	res.render('userLogin.html');
+	// res.render('userLogin.html');
+	res.render('newuserLogin.html');
 });
 
 router.get('/logout', function(req, res){
@@ -35,7 +36,7 @@ router.get('/logout', function(req, res){
 
 router.get('/blogPost', Auth.isLoggedIn, function(req, res){
 
-	
+
 
 
 	res.render('blog.html');
