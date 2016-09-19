@@ -15,6 +15,12 @@ router.get('/home', Auth.isLoggedIn , function(req, res){
 	res.render('blog.html', {data: UserData });
 });
 
+router.get( '/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
+router.get( '/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/users/login' }), (req, res) => {
+  //  res.apiSuccess( { $redirect : '/#/do-login' }, 'Authenticated with Facebook' );
+	res.redirect('/users/home');
+ });
+
 router.get('/signup' , UserController.getSignupPage);
 router.post('/signup', passport.authenticate('local-signup', {failureRedirect: '/users/login' , successRedirect:'/users/home'}));
 

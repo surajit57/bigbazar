@@ -9,6 +9,10 @@ var _ = require('lodash'),
     SITE_ROOT: 'http://localhost:3000',
     cookieName: 'xxyyzz.sid',
     cookieSecret: 'F#JKLn&()yHIO$%900nsd',
+    fbLogin:{
+      appId: "1569759199992980",
+      appSecret:"a4667f29a5bb35c60f61d26df0cb25ca",
+    },
     // mail:{
     //   email: 'admin@collab.com',
     //   authStr: 'smtps://user%40gmail.com:pass@smtp.gmail.com',
@@ -30,4 +34,3 @@ config.db = dbConfigs[env];
 config.env = env;
 
 module.exports = config;
-

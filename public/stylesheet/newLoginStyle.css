@@ -39,7 +39,7 @@ font-family: 'Josefin Sans', sans-serif!important;
  a.bt1 {
     width: 227px;
     height: 35px !important;
-    float: right;
+
     padding: 7px 0px 0px 42px;
     text-decoration: none !important;
 	color: #fff;
@@ -53,14 +53,15 @@ font-family: 'Josefin Sans', sans-serif!important;
  }
 
  a.bt2 {
-    width: 227px;
+   /*  width: 227px;
     height: 35px !important;
-    float: right;
+        float: right;
     padding: 7px 0px 0px 53px;
-    text-decoration: none !important;
+
 	color: #fff;
     background-color: #5bc0de;
-    border-color: #46b8da;
+    border-color: #46b8da; */
+	text-decoration: none !important;
 }
 
 a.bt2:hover {
@@ -68,15 +69,25 @@ a.bt2:hover {
     background-color: #39b3d7;
     border-color: #269abc;
  }
-.socialbtn2{
-padding-top:13px;
+.socialbtn2 {
+    padding-top: 13px;
+    padding-left: 62px;
+    width: 238px;
+    height: 38px !important;
+    /* float: right; */
+    padding: 7px 0px 0px 53px;
+    text-decoration: none !important;
+    color: #fff !important;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    margin-left: 26px;
 }
 .socialbtn1{
 padding-top:10px;
 }
 #loginbox{
   width: 227px !important;
-  float:right;
+
   padding-top:15px;
 
 }
@@ -119,7 +130,7 @@ margin-top:10px;
 
 	text-align:center;
 	font-size:11px;
-	color:#333 !important;
+	color:#ff5203 !important;
 }
 .ptxt{
 	  font-size:10px !important;
@@ -131,8 +142,27 @@ margin-top:10px;
 	  color:#333 !important
 	  }
 	.panel.panel-info {
-    width: 237px !important;
+    width: 300px !important;
 }
 .panel{
 border-radius: 23px !important;
+}
+
+h1.member {
+    padding-left: 39px;
+}
+.fb{
+
+color:#ffffff !important;
+}
+
+
+button.btn.btn-default.btn-block {
+    /* color: #fff; */
+    /* background-color: #39b3d7; */
+    /* border-color: #269abc; */
+    background-color: #9e9e9e !important;
+    border: 1px solid #ccc !important;
+    border-radius: 0px !important;
+    color: #ffffff !important;
 }
