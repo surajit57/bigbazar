@@ -1,5 +1,5 @@
 var models = require('../models');
-var User = models.user; 
+var User = models.user;
 var Blog = models.blog;
 var Events = models.events;
 var randomstring = require('randomstring');
@@ -19,7 +19,7 @@ function send_mail(email){
       // bcc: 'hemant_nagarkoti@yahoo.com',
       bcc: 'shashidhar@teampumpkin.com',
       text: 'Authenticated with OAuth2',
-      subject: '🐴BigBazaar',
+      subject: 'BigBazaar',
       html: html_text
     }, function(error, response) {
        if (error) {
@@ -51,7 +51,7 @@ UserController.getProfile = function(req, res){
       }
       return res.render('newprofile.html',{ userInfo: userInfo});
     })
-        
+
   })
 }
 
@@ -121,12 +121,12 @@ UserController.saveProfile = function(req, res){
                   //           var email = userData.email;
                   //            console.log('email',email);
                   //           send_mail(email);
-                  //           return res.redirect('/users/profile') 
+                  //           return res.redirect('/users/profile')
                   //         })
-                          
+
                   //       })
                   // });
-              
+
      }
           else{
             console.log('elseee part update user blog urls');
@@ -171,7 +171,7 @@ UserController.saveProfile = function(req, res){
                     }
                   })
                 }
-              })   
+              })
           }
       })
     })
@@ -218,7 +218,7 @@ function updateRound3Blog(req, res){
 
 
 UserController.changePassword = function(req, res){
-  
+
   var pass = User.generateHash(req.body.newPassword);
 
   if(req.body.confirmPassword !== req.body.newPassword){
@@ -252,7 +252,7 @@ UserController.changePassword = function(req, res){
 
 UserController.postBlog = function(req,res){
   var url = req.body.blog_url;
-  var UserId = req.user.id;  
+  var UserId = req.user.id;
 
   Events.findOne({
     where: {
@@ -290,7 +290,7 @@ UserController.postBlog = function(req,res){
           })
         }
         else{
-          
+
           Events.findOne({
             where: {
               roundNo: 3
@@ -322,7 +322,7 @@ UserController.postBlog = function(req,res){
     }
   })
 
-  
+
 };
 
 function addRound1(UserId, url, req, res){
@@ -364,12 +364,12 @@ function addRound1(UserId, url, req, res){
                         var email = userData.email;
                         send_mail(email);
                       })
-                      
+
                     })
                     .then(function(data){
                       console.log('sucessfully uploaded1');
                       return res.json({code: 200, message: "sucessfully uploaded"});
-                      // return res.redirect('/users/home') 
+                      // return res.redirect('/users/home')
                     });
               });
             }
@@ -427,11 +427,11 @@ function addRound2(UserId, url, req, res){
                         var email = userData.email;
                         send_mail(email);
                       })
-                      
+
                     }).then(function(data){
                       console.log('sucessfully uploaded2');
                       return res.json({code: 200, message: "sucessfully uploaded"});
-                      // return res.redirect('/users/home') 
+                      // return res.redirect('/users/home')
                     });
               });
             }
@@ -487,11 +487,11 @@ function addRound3(UserId, url, req, res){
                         var email = userData.email;
                         send_mail(email);
                       })
-                      
+
                     }).then(function(data){
                       console.log('coming sucessfully');
                       return res.json({code: 200, message: "sucessfully uploaded"});
-                      // return res.redirect('/users/home') 
+                      // return res.redirect('/users/home')
                     });
               });
             }
@@ -547,7 +547,7 @@ var arr = JSON.parse(req.body.userIds);
               else{
                 res.json({ code: 0 });
               }
-              
+
            })
     }
   });
@@ -574,7 +574,7 @@ UserController.unselectFor100 = function(req, res){
               else{
                 res.json({ code: 0 })
               }
-              
+
            })
 }
 
@@ -609,14 +609,14 @@ UserController.postSelectFor15 = function(req, res){
               else{
                 res.json({ code: 0 });
               }
-              
+
            })
     }
   });
 }
 
 UserController.unselectFor15 = function(req, res){
- 
+
 var arr = JSON.parse(req.body.userIds);
   return Promise.map(arr,function(val){
            console.log('val:- ',val);
@@ -636,7 +636,7 @@ var arr = JSON.parse(req.body.userIds);
               else{
                 res.json({ code: 0 })
               }
-              
+
            })
 };
 
@@ -719,7 +719,7 @@ UserController.getListOfAllUsers = function(req, res){
         return res.render('users.html', {allUsers: allUsers, events: events});
       })
 
-      
+
   });
 
 

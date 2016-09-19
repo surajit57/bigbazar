@@ -23,6 +23,7 @@ body{font-family: 'Roboto', sans-serif; }
 .logo{
 	padding-top: 0px;
     padding-bottom: 0px;
+		padding: 13px 0px 13px 0px;
 }
 
 .index h2{
