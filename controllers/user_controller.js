@@ -36,6 +36,14 @@ UserController.getSignupPage = function(req, res){
 	res.render('userLogin.html');
 }
 
+UserController.forgotPassword = function(req, res){
+  console.log('get request for forgot password:--- ', req);
+}
+
+UserController.retrievePassword = function(req, res){
+  console.log('post request for reset pass');
+}
+
 UserController.getProfile = function(req, res){
   Blog.findOne({
     where:{
@@ -259,6 +267,7 @@ UserController.postBlog = function(req,res){
       roundNo: 1
     }
   }).then(function(roundCheck1){
+    console.log('Check:------------------------------- ', roundCheck1);
     console.log('roundCheck1: -- ', roundCheck1.roundBlocked);
     if(!roundCheck1.roundBlocked){
       console.log('update round 1');

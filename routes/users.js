@@ -30,6 +30,10 @@ router.get('/login', function(req, res){
 	res.render('newuserLogin.html');
 });
 
+router.get('/forgotpassword/:email', UserController.forgotPassword);
+
+router.post('/forgotpassword', UserController.retrievePassword);
+// res.render('newuserLogin.html');
 router.get('/logout', function(req, res){
 		req.session.destroy(function(){
         req.session = null;
