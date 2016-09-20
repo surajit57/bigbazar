@@ -6,7 +6,7 @@ var _ = require('lodash'),
   envConfig = {},
   defaultConfig = {
     appRoot: path.resolve( __dirname + '/..' ),
-    SITE_ROOT: 'http://localhost:3001',
+    SITE_ROOT: 'http://fbbblogstar.in',
     cookieName: 'xxyyzz.sid',
     cookieSecret: 'F#JKLn&()yHIO$%900nsd',
     fbLogin:{
