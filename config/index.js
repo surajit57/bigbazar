@@ -6,7 +6,7 @@ var _ = require('lodash'),
   envConfig = {},
   defaultConfig = {
     appRoot: path.resolve( __dirname + '/..' ),
-    SITE_ROOT: 'http://fbbblogstar.in',
+    SITE_ROOT: 'http://localhost:3001',
     cookieName: 'xxyyzz.sid',
     cookieSecret: 'F#JKLn&()yHIO$%900nsd',
     fbLogin:{
@@ -18,7 +18,7 @@ var _ = require('lodash'),
     //   authStr: 'smtps://user%40gmail.com:pass@smtp.gmail.com',
     // },
     env: 'development',
-    port: 3000,
+    port: 3001,
   },
   config;
 
