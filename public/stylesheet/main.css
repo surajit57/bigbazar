@@ -573,6 +573,8 @@ color: #ffa800;
   and (max-device-width: 667px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
+
+    
     img.logo-default {
         width: 56% !important;
         padding: 7px 60px 0px 0px !important;
