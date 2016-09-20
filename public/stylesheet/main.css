@@ -781,7 +781,7 @@ body > div.page-header.navbar.navbar-fixed-top > div > div.top-menu.tp-m > div.p
 
 body > div.page-header.navbar.navbar-fixed-top > div > div.top-menu.tp-m {
     width: 100% !important;
-    padding-top: 13%;
+    padding-top:20%;
     background-color: transparent !important;
 }
 
@@ -799,12 +799,67 @@ body > div.page-header.navbar.navbar-fixed-top {
     height: 200px !important;
 }
 
+.topselecter >.nav-tabs>li>a {
+    color: #fff;
+}
 
+.page-sidebar.navbar-collapse.collapse {
+    display: block !important;
+    background: transparent !important;
+    color: #fff;
+}
+
+.page-sidebar-wrapper {
+    background: transparent;
+    height: 240px;
+}
+
+
+.topselecter >.nav-tabs>li>a {
+    color: #fff;
+}
+
+.page-sidebar.navbar-collapse.collapse {
+    display: block !important;
+    background: transparent !important;
+    color: #fff;
+}
+
+.page-sidebar-wrapper {
+    background: transparent;
+    height: 240px;
+}
+
+body > div.page-header.navbar.navbar-fixed-top > div > a {
+    display: none !important;
+}
+body > div.page-container > div.page-sidebar-wrapper {
+    //display: none;
+}
+
+body > div.page-container > div.page-content-wrapper > div > div.row > div > div.profile-content > div > div > div > div.portlet-title.tabbable-line > ul {
+    height: 60px !important;
+}
+.page-sidebar .selected, .page-sidebar.navbar-collapse.collapse{
+    display: block !important;
+}
+body > div.page-container > div.page-sidebar-wrapper > div{
+    display: block !important;
+}
+.portlet>.portlet-title>.nav-tabs {
+
+    height: 60px !important;
+}
+body > div.page-header.navbar.navbar-fixed-top > div > a {
+    display: none !important;
+}
 }
 
 
 @media only screen and (min-width : 461px) and (max-width :767px) {
-
+body > div.page-header.navbar.navbar-fixed-top > div > a {
+    display: none !important;
+}
 body > div.full-width-bg.index.submit-blog > div {
     width: 100% !important;
     margin: 0 !important;
@@ -902,7 +957,12 @@ body > div.page-header.navbar.navbar-fixed-top {
 
 }
 
+@media (max-width: 991px){
+   .page-sidebar .selected, .page-sidebar.navbar-collapse.collapse {
+    display: block !important;
+}
 
+}
 
 
 
