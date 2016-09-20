@@ -809,3 +809,8 @@ body > div.full-width-bg.index.submit-blog > div > div:nth-child(2) > img {
     padding-left: 0 !important;
 }
 }
+
+
+.page-container-bg-solid .page-bar .page-breadcrumb, .page-content-white .page-bar .page-breadcrumb {
+padding: 39px 0 !important;
+}
