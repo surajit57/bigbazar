@@ -692,3 +692,120 @@ color: #ffa800;
 .row.sant {
 background: #103157 !important;
 }
+
+
+
+@media only screen and (max-width: 460px) {
+
+body > div.full-width-bg.index.submit-blog > div {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body > div.full-width-bg.index.submit-blog > div > div.col-md-12 {
+    padding: 0;
+    background: #103157 !important;
+    margin: 0;
+}
+
+.row.sant {
+    width: 100% !important;
+}
+body > div.full-width-bg.index.submit-blog > div > div.col-md-12 > div > div.col-md-2 {
+    width: 50% !important;
+    display: inline-block;
+}
+.pull-right.text-center {
+    padding: 0px 4% 0px 0px;
+}
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(3) {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(3) > div:nth-child(1) {
+    width: 100% !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(3) > div:nth-child(1) > div {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(3) > div:nth-child(2) {
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+}
+
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(3) > div:nth-child(2) > div > center > video {
+    width: 100%;
+}
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(2) > img {
+    margin: 0;
+    padding-left: 0 !important;
+}
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(3) > div:nth-child(1) > div>button {
+    width: 45%;
+    display: inline-block;
+}
+
+}
+
+
+@media only screen and (min-width : 461px) and (max-width :767px) {
+
+body > div.full-width-bg.index.submit-blog > div {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body > div.full-width-bg.index.submit-blog > div > div.col-md-12 {
+    padding: 0;
+    background: #103157 !important;
+    margin: 0;
+}
+
+.row.sant {
+    width: 100% !important;
+}
+body > div.full-width-bg.index.submit-blog > div > div.col-md-12 > div > div.col-md-2 {
+    width: 50% !important;
+    display: inline-block;
+}
+.pull-right.text-center {
+    padding: 0px 4% 0px 0px;
+}
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(3) {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(3) > div:nth-child(1) {
+    width: 100% !important;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(3) > div:nth-child(1) > div {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(3) > div:nth-child(2) {
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+}
+
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(3) > div:nth-child(2) > div > center > video {
+    width: 100%;
+}
+
+body > div.full-width-bg.index.submit-blog > div > div:nth-child(2) > img {
+    margin: 0;
+    padding-left: 0 !important;
+}
+}
