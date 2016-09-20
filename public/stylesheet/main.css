@@ -107,7 +107,7 @@ body{font-family: 'Roboto', sans-serif; }
 
 .btn-default {
        background-color: transparent;
-    color: #000;
+    color: #ffffff;
     border:0px;
     width: 100px;
     margin-top: 10px;
@@ -128,7 +128,7 @@ body{font-family: 'Roboto', sans-serif; }
 }
 .btn-default:hover {
        background-color: transparent;
-
+       color:#ffa800 !important;
 }
 
 .btn{
@@ -554,7 +554,7 @@ color: #ffa800;
     text-decoration: none !important;
 }
 .pull-right.text-center {
-    padding: 0px 133px 0px 11px;
+    padding: 56px 133px 0px 11px;
 }
 
 

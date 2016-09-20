@@ -100,7 +100,22 @@
 
                 <div class=" pull-right text-center">
 
-                    <img src="../images/fbicon.png" class="logo fkword11"  style="width: 100px;height:auto;float: left;  ">
+                  <div class="row">
+                  <div class="col-sm-12">
+
+                      <button type="button" onclick="window.location = '/users/list'" class="btn btn-default" style="width: 32%;letter-spacing: 0.3px;">
+                          <i class="fa fa-rss sub-fa"></i>EXPLORE BLOGGERS</button>
+
+                          <button type="button" style=""onclick="window.location = '/users/profile'" class="btn btn-default">
+                        <i class="fa fa-cog sub-fa"></i>SETTINGS</button>
+
+                      <button onclick="logout()" type="button" class="btn btn-default">
+                          <i class="fa fa-lock sub-fa"></i>SIGN OUT
+                      </button>
+
+
+                  </div>
+                  </div>
 
                 </div>
             </div>
@@ -140,23 +155,8 @@
 
         <!--</div>-->
       <div class="col-sm-6 col-md-6" style="padding:0px;">
-        <div class="row">
-        <div class="col-sm-12">
 
-            <button type="button" onclick="window.location = '/users/list'" class="btn btn-default" style="width: 32%;letter-spacing: 0.3px;">
-                <i class="fa fa-rss sub-fa"></i>EXPLORE BLOGGERS</button>
-
-                <button type="button" style=""onclick="window.location = '/users/profile'" class="btn btn-default">
-              <i class="fa fa-cog sub-fa"></i>SETTINGS</button>
-
-            <button onclick="logout()" type="button" class="btn btn-default">
-                <i class="fa fa-lock sub-fa"></i>SIGN OUT
-            </button>
-
-
-        </div>
-        </div>
-        <div class="row" style="margin-top: 4px;">
+        <div class="row" style="margin-top: 18px;">
            <div class="col-sm-12 col-md -6">
               <center> <video width="90%" height="300" controls>
                    <source src="../images/LogoFinalEdited.mp4" type="video/mp4">
