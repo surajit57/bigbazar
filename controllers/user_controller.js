@@ -15,7 +15,7 @@ var smtpTransport = require('nodemailer-smtp-transport');
 //     smtpTransport('smtps://cheers@fbbblogstar.in:star@6204@smtp.gmail.com')
 // );
 var transporter = nodemailer.createTransport(
-    smtpTransport('smtps://hemant.singh@teampumpkin.com:admin@4321@smtp.gmail.com')
+    smtpTransport('smtps://cheers@fbbblogstar.in:star@6204@smtp.gmail.com')
 );
 var html_text = '<p><b>Thanks your blog sucessfully uploaded.</b></p>';
 function send_mail(email){
@@ -160,7 +160,7 @@ UserController.resetPassword = function(req, res){
     function(user, done) {
       console.log('send password changed mail', user);
       transporter.sendMail({
-          from: 'hemant.singh@teampumpkin.com',
+          from: 'cheers@fbbblogstar.in',
           to: user.email,
           text: 'Hello,\n\n' +
             'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n',
