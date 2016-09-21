@@ -5,8 +5,9 @@
     <title>Forgot Password</title>
   </head>
   <body>
-    <form class="" action="/users/forgotpassword"  method="post">
-      <input type="text" name="newPassword" placeholder="newPassword">
+    <p> <%= user.resetPasswordToken %>  </p>
+    <form class="" action="/users/reset/<%= user.resetPasswordToken %>"  method="post">
+      <input type="text" name="password" placeholder="newPassword">
       <input type="text" name="confirmPassword" placeholder="confirmPassword">
       <button type="submit" name="reset">Reset</button>
     </form>

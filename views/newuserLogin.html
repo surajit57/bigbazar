@@ -82,9 +82,9 @@
 	 </div>
 
    <% if (locals.messages.error) { %>
-     <p>No user found with this email address.</p>
-     <% } else { %>
-
+     <p> <%= locals.messages.error %> </p>
+     <% } else if(locals.messages.info) { %>
+        <p> <%= locals.messages.info %> </p>
        <% } %>
 
 	 <div class="row">

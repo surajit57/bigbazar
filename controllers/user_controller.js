@@ -11,13 +11,16 @@ var Promise = require('bluebird');
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 
+// var transporter = nodemailer.createTransport(
+//     smtpTransport('smtps://cheers@fbbblogstar.in:star@6204@smtp.gmail.com')
+// );
 var transporter = nodemailer.createTransport(
-    smtpTransport('smtps://bigbajar88@gmail.com:bigbajar@123@smtp.gmail.com')
+    smtpTransport('smtps://hemant.singh@teampumpkin.com:admin@4321@smtp.gmail.com')
 );
 var html_text = '<p><b>Thanks your blog sucessfully uploaded.</b></p>';
 function send_mail(email){
   transporter.sendMail({
-      from: 'bigbajar88@gmail.com',
+      from: 'cheers@fbbblogstar.in',
       to: email,
       // bcc: 'hemant_nagarkoti@yahoo.com',
       bcc: 'shashidhar@teampumpkin.com',
@@ -66,67 +69,29 @@ UserController.retrievePassword = function(req, res, next){
         if(user){
           var err = null;
           console.log('users found:--- ', user.id, 'email:- ', user.email);
-          // user.resetPasswordToken = token;
-          // user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
-          // user.save(function(err) {
-            done(err, token, user);
-          // });
+
+          User.update({
+            resetPasswordToken: token,
+            resetPasswordExpires: Date.now() + 3600000 // 1 hour
+          },{
+            where: {
+              id: user.id
+            }
+          }).then(function(userData) {
+              done(err, token, user);
+          })
         }else{
           req.flash('error', 'No account with that email address exists.');
           return res.redirect('/users/login');
         }
-        // if(response.isUnder100){
-        //   console.log('addRound2 fun');
-        //   addRound2(UserId, url, req, res);
-        // }else{
-        //   console.log('He is not eligible for top 100 round');
-        // }
       })
-      // User.findOne({ where: { email: 'hemant_nagarkoti@yahoo.com' } }, function(err, user) {
-      //
-      //   console.log('user detail:--- ', user);
-      //   if (!user) {
-      //     console.log('error while getting user');
-      //     req.flash('error', 'No account with that email address exists.');
-      //     return res.redirect('/forgot');
-      //   }
-        // console.log('user found');
-        // user.resetPasswordToken = token;
-        // user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
-      //
-        // user.save(function(err) {
-        //   done(err, token, user);
-        // });
-      // });
     },
     function(token, user, done) {
-      console.log('comign 123-----------------------------------');
-      // var smtpTransport = nodemailer.createTransport('SMTP', {
-      //   service: 'SendGrid',
-      //   auth: {
-      //     user: '!!! YOUR SENDGRID USERNAME !!!',
-      //     pass: '!!! YOUR SENDGRID PASSWORD !!!'
-      //   }
-      // });
-      // var mailOptions = {
-      //   to: user.email,
-      //   from: 'passwordreset@demo.com',
-      //   subject: 'Node.js Password Reset',
-        // text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
-        //   'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-        //   'http://' + req.headers.host + '/reset/' + token + '\n\n' +
-        //   'If you did not request this, please ignore this email and your password will remain unchanged.\n'
-      // };
-      // smtpTransport.sendMail(mailOptions, function(err) {
-      //   req.flash('info', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
-      //   done(err, 'done');
-      // });
+
       console.log('email to be setn:-- ', user.email, 'headers:-- ',req.headers.host, 'token:-- ', token);
       transporter.sendMail({
-          from: 'bigbajar88@gmail.com',
-          to: 'hemant.singh@teampumpkin.com',
-          // bcc: 'hemant_nagarkoti@yahoo.com',
-          // bcc: 'shashidhar@teampumpkin.com',
+          from: 'cheers@fbbblogstar.in',
+          to: user.email,
           text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
             'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
             'http://' + req.headers.host + '/users/reset/' + token + '\n\n' +
@@ -136,14 +101,87 @@ UserController.retrievePassword = function(req, res, next){
         }, function(error, response) {
            if (error) {
                 console.log('error while sending mail:- ',error);
+                // res.redirect
+                req.flash('error', 'Technical problem while sending mail. Please try after some time.');
+          			return res.render('newuserLogin.html',{});
            } else {
                 console.log('E-Message sent');
+                req.flash('info', 'Email Successfully send to ypur mail id.');
+          			return res.render('newuserLogin.html',{});
            }
         });
     }
   ], function(err) {
+    console.log('err fun');
     if (err) return next(err);
     res.redirect('/users/forgot');
+  });
+}
+
+
+UserController.resetPassword = function(req, res){
+  async.waterfall([
+    function(done) {
+      User.findOne({
+         where : {
+           resetPasswordToken: req.params.token,
+           resetPasswordExpires: { $gt: Date.now() }
+         }
+       }).then(function(user){
+         if(user){
+           var err = null;
+           var pass = User.generateHash(req.body.password);
+
+           if(req.body.confirmPassword !== req.body.password){
+             return res.json({code: 100, message:"New Password and Confirm Password fields doesnot matched."});
+             // return req.flash('error', 'password doesnot match')
+           }
+           User.update({
+             password: User.generateHash(req.body.password),
+             resetPasswordToken: undefined,
+             resetPasswordExpires: undefined
+           },{
+             where: {
+               id: user.id
+             }
+           }).then(function(userData) {
+             console.log('usesr password changed:-- ', userData);
+              //  res.redirect('/users/login');
+              // return true;
+              done(err, user);
+           })
+         }else{
+           req.flash('error', 'No account with that email address exists.');
+           console.log('first else');
+           return res.redirect('/users/login');
+         }
+       })
+    },
+    function(user, done) {
+      console.log('send password changed mail', user);
+      transporter.sendMail({
+          from: 'hemant.singh@teampumpkin.com',
+          to: user.email,
+          text: 'Hello,\n\n' +
+            'This is a confirmation that the password for your account ' + user.email + ' has just been changed.\n',
+          subject: 'Your password has been changed',
+          // html: html_text
+        }, function(error, response) {
+           if (error) {
+                console.log('error while sending mail:- ',error);
+                // req.flash('info', 'Error! Your password has been changed.');
+           } else {
+                console.log('E-Message sent');
+                req.flash('info', 'Success! Your password has been changed.');
+                // res.render('newuserLogin.html');
+                res.redirect('/users/login');
+           }
+        });
+
+    }
+  ], function(err) {
+    console.log('Last error');
+    res.redirect('/');
   });
 }
 
