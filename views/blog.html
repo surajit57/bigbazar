@@ -1,70 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Big Bazaar</title>
-
-  <!-- Bootstrap -->
-  <link href="../stylesheet/bootstrap.min.css" rel="stylesheet">
-    <link href="../stylesheet/layout.min.css" rel="stylesheet">
-
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,100' rel='stylesheet' type='text/css'>
-
-  <link href="../stylesheet/main.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Big Bazaar</title>
+    <!-- Bootstrap -->
+    <link href="../stylesheet/bootstrap.min.css" rel="stylesheet" />
+    <link href="../stylesheet/layout.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,100" rel="stylesheet" type="text/css" />
+    <link href="../stylesheet/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <link rel="shortcut icon" href="../images/favicon.ico" />
     <style>
       .ontop {
-        height: auto;
-        z-index: 1;
-        top: 3px;
-        float: right;
-        right: 2px;
-        opacity: 1;
-        color: #fff;
-        padding: 20px 15px;
-        font-size: 16px;
-        display: none;
-        position: absolute;
-        background-color: red
+        height: auto;z-index: 1;top: 3px;
+        float: right;right: 2px;opacity: 1;
+        color: #fff;padding: 20px 15px;font-size: 16px;
+        display: none;position: absolute;background-color: red
       }
       .ontopSucess {
-        height: auto;
-        z-index: 1;
-        top: 3px;
-        float: right;
-        right: 2px;
-        opacity: 1;
-        color: #fff;
-        padding: 20px 15px;
-        font-size: 16px;
-        display: none;
-        position: absolute;
-        background-color: green
+        height: auto;z-index: 1;top: 3px;
+        float: right;right: 2px;opacity: 1;
+        color: #fff;padding: 20px 15px;font-size: 16px;
+        display: none;position: absolute;background-color: green
       }
       #popup {
-        width: 300px;
-        height: 200px;
-        position: absolute;
-        color: #000000;
-        background-color: #ffffff;
-        /* To align popup window at the center of screen*/
-        top: 50%;
-        left: 50%;
-        margin-top: -100px;
-        margin-left: -150px;
+        width: 300px;height: 200px;position: absolute;
+        color: #000000;background-color: #ffffff;top: 50%;
+        left: 50%;margin-top: -100px;margin-left: -150px;
       }
     </style>
     <script type="text/javascript">
@@ -83,12 +54,8 @@
       };
     </script>
 </head>
-
 <body>
-
-  <div class="full-width-bg index submit-blog ">
-
-
+  <div class="full_width_bg index submit-blog ">
     <div class="row" style="">
         <div class="col-md-12">
             <div class="row sant">
@@ -97,129 +64,148 @@
                         <img src="../images/Logo1.png"  class="logo fkword" style=" width: 200px;height:auto; ">
                     </a>
                 </div>
-
                 <div class=" pull-right text-center">
-
                   <div class="row">
-                  <div class="col-sm-12">
-
-                      <button type="button" onclick="window.location = '/users/list'" class="btn btn-default" style="width: 32%;letter-spacing: 0.3px;">
-                          <i class="fa fa-rss sub-fa"></i>EXPLORE BLOGGERS</button>
-
+                      <div class="col-sm-12">
+                          <button type="button" onclick="window.location = '/users/list'" class="btn btn-default" style="width: 32%;letter-spacing: 0.3px;">
+                              <i class="fa fa-rss sub-fa"></i>EXPLORE BLOGGERS
+                          </button>
                           <button type="button" style=""onclick="window.location = '/users/profile'" class="btn btn-default">
-                        <i class="fa fa-cog sub-fa"></i>SETTINGS</button>
-
-                      <button onclick="logout()" type="button" class="btn btn-default">
-                          <i class="fa fa-lock sub-fa"></i>SIGN OUT
-                      </button>
-
-
+                              <i class="fa fa-cog sub-fa"></i>SETTINGS
+                          </button>
+                          <button onclick="logout()" type="button" class="btn btn-default">
+                            <i class="fa fa-lock sub-fa"></i>SIGN OUT
+                          </button>
+                    </div>
                   </div>
-                  </div>
-
                 </div>
             </div>
-
-
-        </div>
-
-      <div class="col-sm-6 col-md-6">
-
-
-        <!-- <div class="row"> -->
-          <!-- <div class="col-sm-12 text-center"> -->
-            <!--<a href="#" target="_blank">-->
-            <image src="../images/blogstar-steps.png" style="width: 100%; padding-top: 20px;
-    padding-left: 20px;">
-              <!-- <img src="../images/blog.png" class="logo" style="width: 200px;float: left;height:auto; margin-top: -40px; padding: 13px;"> -->
-            <!--</a>-->
-          <!-- </div> -->
-        <!-- </div> -->
-
-    <!-- <div class="row" style="padding: 10px 100px;">
-
-          <h2>Follow below steps to participate</h2>
-
-          <ol>
-            <li>Step-1:  Read ‘Trending Femina’</li>
-            <li>Step-2: Select Any Of Your Favourite Topic From The ‘Trending Femina’ ’Magazine</li>
-            <li>Step-3: Blog About The Topic</li>
-            <li>Step-4: Submit Your Blog Link After Registration</li>
-
-          </ol>
-        </div> -->
-      </div>
-        <!--<div class=" pull-right text-center">-->
-            <!---->
-                <!--<img src="../images/fbicon.png"   style="width: 100px;height:auto;float: left;  ">-->
-
-        <!--</div>-->
-      <div class="col-sm-6 col-md-6" style="padding:0px;">
-
-        <div class="row" style="margin-top: 18px;">
-           <div class="col-sm-12 col-md -6">
-              <center> <video width="90%" height="300" controls>
-                   <source src="../images/LogoFinalEdited.mp4" type="video/mp4">
-
-
-               </video></center>
-            <!--<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/E9am3ySQoJ0" style="border:0px;width:90%; height:300px;"></iframe>-->
-         <form>
-          <!-- <div class="form-group"> -->
-          <!--<label for="exampleInputEmail1">Enter URL:</label>-->
-          <!-- <input type="text" name="blog_url" class="" id="blog_url" placeholder="" style="" > -->
-          <!-- </div> -->
-
-          <% if (locals.messages.info) { %>
-            <input type="text" name="blog_url" class="" id="blog_url" placeholder="ENTER YOUR BLOG URL" style="" disabled>
-            <button type="button" onclick="submitBlog()" name="submit" class="blog_submit" disabled>Blog already Submitted</button>
-            <% } else { %>
-              <input type="text" name="blog_url" class="" id="blog_url" placeholder="ENTER YOUR BLOG URL" style="">
-              <button type="button" onclick="submitBlog()" name="submit" class="blog_submit">Submit</button>
-              <% } %>
-
-
-
-        </form>
-        </div>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-
-
-          <div id="popDiv" class="ontopSucess">
           </div>
-          <div id="popDiverror" class="ontop">
-          </div>
-  </div>
-
-  <div class="page-footer">
-      <div class="page-footer-inner"> Copyright © 2016 Big Bazzer. All rights reserved.</div>
-      <div class="scroll-to-top"><i class="icon-arrow-up"></i></div>
-  </div>
-  <!-- Modal -->
-  <div class="modal fade success" id="myModal" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <span class="success_icon"><i class="fa fa-check-circle"></i></span>
-        </div>
-        <div class="modal-body">
-          <p>Thanks for your Submission</p>
-        </div>
       </div>
     </div>
-  </div>
-  <!-- Modal -->
-  <div class="modal fade error" id="errorModal" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
+    <div class="blog-section">
+          <div class="row" style="margin:0px;">
+            <div class="col-sm-6 col-md-6">
+                <div class="row" style="margin-top: 18px;">
+                    <div class="videosection">
+                        <center> 
+                            <video width="90%" height="300" controls>
+                                <source src="../images/LogoFinalEdited.mp4" type="video/mp4">
+                            </video>
+                        </center>
+                         <center>
+                            <form>
+                                <% if (locals.messages.info) { %>
+                                    <input type="text" name="blog_url" class="" id="blog_url" placeholder="ENTER YOUR BLOG URL" style="" disabled>
+                                    <button type="button" onclick="submitBlog()" name="submit" class="blog_submit" disabled>Blog already Submitted</button>
+                                <% } else { %>
+                                    <input type="text" name="blog_url" class="" id="blog_url" placeholder="ENTER YOUR BLOG URL" style="">
+                                    <button type="button" onclick="submitBlog()" name="submit" class="blog_submit">Submit</button>
+                                <% } %>
+                            </form>
+                         </center>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6">
+                  <div class="form-section" style="margin-top: 18px;">
+                    <form>
+                        <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group col-md-6 select-dropleft">
+                            <select class="form-control" id="exampleSelect1">
+                              <option>Age</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                      </div>
+                      <div class="form-group col-md-6 select-dropright">
+                          <select class="form-control" id="exampleSelect1">
+                              <option>City</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                      </div>
+                      <div class="form-group">
+                          <input type="email" class="form-control" placeholder="E-mail">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Web Url">
+                      </div>
+                      <div class="form-group row">
+                          <div class="offset">
+                              <button type="submit" class="btn btn-primary" id="submit-form">Submit</button>
+                          </div>
+                      </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin:0px;">
+            <div class="col-sm-12 col-md-12">
+                <div class="crusader-section">
+                    <h3>Got the nerve to be 
+                      a Digital Crusader</h3>
+                    <div class="num-txt-section">
+                        <span>rounds</span>
+                        <div class="numder-section">
+                            <img src="../images/numone.png" alt="" />
+                            <p>Select any fit from http://boldissexy.in/ ,
+                              Mention the fbb fit name of the denims you
+                              are wearing and style % different looks of 
+                              yourself wearing the same denims</p>
+                        </div>
+                        <div class="numder-section">
+                            <img src="../images/numtwo.png" alt="" />
+                            <p>Top 100 participants receive FBB GIFT Vouchers
+                              and writ on a new  Topic. FInal 30 to be selected
+                              by a panel of judges led by VRAUN DHAWAN</p>
+                        </div>
+                        <div class="numder-section">
+                            <img src="../images/numthree.png" alt="" />
+                            <p class="boder-none">Top 30 WInners to fly down to Mumbai for an 
+                              exclusive events as they get awarded the 
+                              Annual Contract for Fbb and Entry into the
+                              fbb elite club</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+        </div>
+    </div>
+      <div id="popDiv" class="ontopSucess">
+      </div>
+      <div id="popDiverror" class="ontop">
+      </div>
+    </div>
+    <div class="page-footer">
+        <div class="page-footer-inner"> Copyright © 2016 Big Bazzer. All rights reserved.</div>
+        <div class="scroll-to-top"><i class="icon-arrow-up"></i></div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade success" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <span class="success_icon"><i class="fa fa-check-circle"></i></span>
+                </div>
+                <div class="modal-body">
+                  <p>Thanks for your Submission</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade error" id="errorModal" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>

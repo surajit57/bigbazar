@@ -977,3 +977,81 @@ body > div.page-header.navbar.navbar-fixed-top {
 .page-container-bg-solid .page-bar .page-breadcrumb, .page-content-white .page-bar .page-breadcrumb {
 padding: 39px 0 !important;
 }
+
+/* BLOG START CSS */
+.full_width_bg {
+    width: 100%; height: auto;position: fixed;
+    top: 0;left: 0;z-index: 0;
+    /* background-image: url(../images/bck.jpg); */
+    background-color: #ffffff;background-repeat: no-repeat;
+    background-position: center center;-webkit-background-size: cover;
+    -moz-background-size: cover;-o-background-size: cover;
+    background-size: cover;
+}
+.blog-section {
+    float: left; width: 100%; background: url(../images/blogbg.jpg);
+    height: auto;margin-top: 120px;position: relative;
+    z-index: 0;
+}
+.blog-section form{
+    text-align: center;margin-bottom: 40px;
+}
+.blog-section #blog_url{
+    width: 470px;
+    height: 50px;
+    margin-top: 0px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+}
+.crusader-section {
+    float: left;width: 100%;margin-bottom: 30px;
+    padding-left: 30px;
+}
+.crusader-section h3{
+    color: #fff;font-size: 34px;width: 330px;
+    padding-left: 35px;
+}
+.num-txt-section {
+    float: left;width: 100%;height: auto;
+}
+.num-txt-section span{
+    color: #ff4747; padding-left: 10px;
+}
+.numder-section {
+    float: left;width: 100%;padding: 10px 0px;
+    color: #fff;
+}
+.numder-section img {
+    width: 58px;float: left;margin-right: 20px;
+    padding: 5px 0px;
+}
+.boder-none{
+    border-bottom: none !important;
+}
+.numder-section p{
+    float: left;width: 300px;font-size: 14px;
+    border-bottom: 2px solid #fff;padding-bottom: 15px;margin-bottom: 0px;
+}
+.form-section{
+    float: left; width: 100%;height: auto;
+}
+.form-section form{
+    background: rgba(255,255,255,.9);padding: 40px 40px;
+    border: 1px solid #CCC;
+}
+.select-dropleft{
+    padding-left: 0px;
+}
+.select-dropright{
+    padding-right: 0px;
+}
+.form-section form input.form-control {
+    height: 40px;
+}
+#submit-form{
+    background-color: #1b3f7b;
+    border-radius: 0px;
+    padding: 9px 30px;
+}
+/* BLOG START CSS */
