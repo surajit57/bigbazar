@@ -81,6 +81,12 @@
 	  </div>
 	 </div>
 
+   <% if (locals.messages.error) { %>
+     <p>No user found with this email address.</p>
+     <% } else { %>
+
+       <% } %>
+
 	 <div class="row">
 	  <div class="col-md-4">
       <div class="socialbtn2"><a href="/users/auth/facebook" class="bt2"><p class="fb">Log in with Facebook</p></a> </div>
@@ -232,10 +238,10 @@
           </div> -->
         <div class="modal-body">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <form>
+          <form action="/users/forgot" method="POST">
             <div class="form-group">
               <label for="exampleInputEmail1">Email</label>
-              <input type="email" class="form-control" id="" placeholder="">
+              <input type="email" name="email" class="form-control" id="" placeholder="">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
           </form>

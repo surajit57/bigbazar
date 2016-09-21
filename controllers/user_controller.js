@@ -3,6 +3,9 @@ var User = models.user;
 var Blog = models.blog;
 var Events = models.events;
 var randomstring = require('randomstring');
+var async = require('async');
+var crypto = require('crypto');
+var bcrypt = require('bcrypt-nodejs');
 // const map = require('promise-map');
 var Promise = require('bluebird');
 var nodemailer = require('nodemailer');
@@ -37,11 +40,111 @@ UserController.getSignupPage = function(req, res){
 }
 
 UserController.forgotPassword = function(req, res){
-  console.log('get request for forgot password:--- ', req);
+  console.log('forgot pass', req.body.email);
+  res.render('forgot.html', {
+    user: req.user
+  });
 }
 
-UserController.retrievePassword = function(req, res){
-  console.log('post request for reset pass');
+UserController.retrievePassword = function(req, res, next){
+  // console.log('post request for reset pass');
+  async.waterfall([
+    function(done) {
+      crypto.randomBytes(20, function(err, buf) {
+        var token = buf.toString('hex');
+        console.log('first token:- ', token);
+        done(err, token);
+      });
+    },
+    function(token, done) {
+      console.log('coming here', token);
+      User.findOne({
+        where: {
+          email: req.body.email
+        }
+      }).then(function(user){
+        if(user){
+          var err = null;
+          console.log('users found:--- ', user.id, 'email:- ', user.email);
+          // user.resetPasswordToken = token;
+          // user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+          // user.save(function(err) {
+            done(err, token, user);
+          // });
+        }else{
+          req.flash('error', 'No account with that email address exists.');
+          return res.redirect('/users/login');
+        }
+        // if(response.isUnder100){
+        //   console.log('addRound2 fun');
+        //   addRound2(UserId, url, req, res);
+        // }else{
+        //   console.log('He is not eligible for top 100 round');
+        // }
+      })
+      // User.findOne({ where: { email: 'hemant_nagarkoti@yahoo.com' } }, function(err, user) {
+      //
+      //   console.log('user detail:--- ', user);
+      //   if (!user) {
+      //     console.log('error while getting user');
+      //     req.flash('error', 'No account with that email address exists.');
+      //     return res.redirect('/forgot');
+      //   }
+        // console.log('user found');
+        // user.resetPasswordToken = token;
+        // user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+      //
+        // user.save(function(err) {
+        //   done(err, token, user);
+        // });
+      // });
+    },
+    function(token, user, done) {
+      console.log('comign 123-----------------------------------');
+      // var smtpTransport = nodemailer.createTransport('SMTP', {
+      //   service: 'SendGrid',
+      //   auth: {
+      //     user: '!!! YOUR SENDGRID USERNAME !!!',
+      //     pass: '!!! YOUR SENDGRID PASSWORD !!!'
+      //   }
+      // });
+      // var mailOptions = {
+      //   to: user.email,
+      //   from: 'passwordreset@demo.com',
+      //   subject: 'Node.js Password Reset',
+        // text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
+        //   'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+        //   'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+        //   'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+      // };
+      // smtpTransport.sendMail(mailOptions, function(err) {
+      //   req.flash('info', 'An e-mail has been sent to ' + user.email + ' with further instructions.');
+      //   done(err, 'done');
+      // });
+      console.log('email to be setn:-- ', user.email, 'headers:-- ',req.headers.host, 'token:-- ', token);
+      transporter.sendMail({
+          from: 'bigbajar88@gmail.com',
+          to: 'hemant.singh@teampumpkin.com',
+          // bcc: 'hemant_nagarkoti@yahoo.com',
+          // bcc: 'shashidhar@teampumpkin.com',
+          text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
+            'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+            'http://' + req.headers.host + '/users/reset/' + token + '\n\n' +
+            'If you did not request this, please ignore this email and your password will remain unchanged.\n',
+          subject: 'BigBazaar Reset Password Link'
+          // html: html_text
+        }, function(error, response) {
+           if (error) {
+                console.log('error while sending mail:- ',error);
+           } else {
+                console.log('E-Message sent');
+           }
+        });
+    }
+  ], function(err) {
+    if (err) return next(err);
+    res.redirect('/users/forgot');
+  });
 }
 
 UserController.getProfile = function(req, res){
@@ -261,6 +364,9 @@ UserController.changePassword = function(req, res){
 UserController.postBlog = function(req,res){
   var url = req.body.blog_url;
   var UserId = req.user.id;
+  var user_age = '18';
+  var user_city = 'New Delhi';
+  var user_phone = '9811564873';
 
   Events.findOne({
     where: {
@@ -358,7 +464,8 @@ function addRound1(UserId, url, req, res){
                 if(!blog) return res.redirect('/users/home');
                     console.log('blog created');
                     User.update({
-                      isRound1BlogAdded: 1
+                      isRound1BlogAdded: 1,
+                      
                     },{
                       where: {
                         id: UserId

@@ -44,6 +44,18 @@ module.exports = function(sequelize, DataTypes) {
     },
     isRound3BlogAdded: {
       type: DataTypes.BOOLEAN
+    },
+    age: {
+      type: DataTypes.STRING
+    },
+    city: {
+      type: DataTypes.STRING
+    },
+    resetPasswordToken: {
+      type: DataTypes.STRING
+    },
+    resetPasswordExpires: {
+      type: DataTypes.DATE
     }
   }, {
     classMethods: {

@@ -9,6 +9,9 @@ var Auth = require('../lib/auth');
 var router = express.Router();
 require('../lib/passport.js')(passport);
 
+var models = require('../models');
+var User = models.user;
+
 router.get('/home', Auth.isLoggedIn , function(req, res){
 	var UserData = req.user;
 	req.flash('info', req.user.isBlogAdded)
@@ -30,9 +33,78 @@ router.get('/login', function(req, res){
 	res.render('newuserLogin.html');
 });
 
-router.get('/forgotpassword/:email', UserController.forgotPassword);
+router.get('/forgot', UserController.forgotPassword);
+//
+// router.post('/forgotpassword', UserController.retrievePassword);
 
-router.post('/forgotpassword', UserController.retrievePassword);
+// router.post('/forgot', UserController.retrievePassword);
+router.post('/forgot', UserController.retrievePassword);
+
+router.get('/reset/:token', function(req, res) {
+	console.log('token:-- ',req.params.token);
+	User.findOne({
+		where: {
+			email: 'hemant_nagarkoti@yahoo.com'
+		}
+	}).then(function(user){
+		if(user){
+			res.render('forgot.html', {
+				user: req.user
+			});
+		}else{
+			console.log('Password reset token is invalid or has expired.');
+			req.flash('error', 'Password reset token is invalid or has expired.');
+			return res.render('errorPage.html',{});
+		}
+		// if(response.isUnder100){
+		//   console.log('addRound2 fun');
+		//   addRound2(UserId, url, req, res);
+		// }else{
+		//   console.log('He is not eligible for top 100 round');
+		// }
+	})
+
+	// User.findOne({ where: { email: 'hemant_nagarkoti@yahoo.com' } }, function(user) {
+		// console.log('err:-- ', err);
+		// console.log('user:-- ', user);
+		// if (!user) {
+		// 	req.flash('error', 'Password reset token is invalid or has expired.');
+		// 	return res.redirect('/forgot');
+		// }
+		// res.render('reset', {
+		// 	user: req.user
+		// });
+	// });
+
+  // User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
+  //   if (!user) {
+  //     req.flash('error', 'Password reset token is invalid or has expired.');
+  //     return res.redirect('/forgot');
+  //   }
+  //   res.render('reset', {
+  //     user: req.user
+  //   });
+  // });
+
+
+	// var resetPasswordToken = 'd07c543ede5e7c14a6c9f6ed5652807a9ba5c316';
+	// if(resetPasswordToken == req.params.token){
+	// 	console.log('reset password');
+	// 	res.render('forgot.html', {
+  //     user: req.user
+  //   });
+	// }
+	// else{
+		// console.log('Password reset token is invalid or has expired.');
+		// req.flash('error', 'Password reset token is invalid or has expired.');
+		// return res.render('errorPage.html',{});
+	// }
+});
+
+router.get('/error', function(req, res){
+	res.render('errorPage.html');
+})
+
 // res.render('newuserLogin.html');
 router.get('/logout', function(req, res){
 		req.session.destroy(function(){
