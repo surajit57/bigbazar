@@ -41,6 +41,7 @@
     <script type="text/javascript">
       function pop(div) {
         document.getElementById(div).style.display = 'block';
+        alert('pop');
       }
       function hide(div) {
         document.getElementById(div).style.display = 'none';
@@ -88,7 +89,7 @@
             <div class="row" style="margin:0px;">
             <div class="col-sm-12 col-md-12">
                 <div class="crusader-section">
-                    <h3>Got the nerve to be 
+                    <h3>Got the nerve to be
                       a Digital Crusader</h3>
                     <div class="num-txt-section">
                         <span>rounds</span>
@@ -96,7 +97,7 @@
                             <img src="../images/numone.png" alt="" />
                             <p>Select any fit from http://boldissexy.in/ ,
                               Mention the fbb fit name of the denims you
-                              are wearing and style % different looks of 
+                              are wearing and style % different looks of
                               yourself wearing the same denims</p>
                         </div>
                         <div class="numder-section">
@@ -107,8 +108,8 @@
                         </div>
                         <div class="numder-section">
                             <img src="../images/numthree.png" alt="" />
-                            <p class="boder-none">Top 30 WInners to fly down to Mumbai for an 
-                              exclusive events as they get awarded the 
+                            <p class="boder-none">Top 30 WInners to fly down to Mumbai for an
+                              exclusive events as they get awarded the
                               Annual Contract for Fbb and Entry into the
                               fbb elite club</p>
                         </div>
@@ -120,7 +121,7 @@
             <div class="col-sm-6 col-md-6">
                 <div class="row" style="margin-top: 18px;">
                     <div class="videosection">
-                        <center> 
+                        <center>
                             <video width="90%" height="300" controls>
                                 <source src="../images/LogoFinalEdited.mp4" type="video/mp4">
                             </video>
@@ -136,6 +137,7 @@
                                 <% } %>
                             </form>
                          </center>-->
+
                     </div>
                 </div>
             </div>
@@ -144,42 +146,48 @@
                     <form>
                         <h3 class="txt-submit">Submit Your Blog<h3>
                         <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Name">
+                              <input type="text" name="name" id="userName" class="form-control" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                              <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone">
                         </div>
                         <div class="form-group col-md-6 select-dropleft">
-                            <select class="form-control" id="exampleSelect1">
-                              <option>Age</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
+                            <select class="form-control" id="ageSelect">
+                              <option value="0">Age</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
                             </select>
                       </div>
                       <div class="form-group col-md-6 select-dropright">
-                          <select class="form-control" id="exampleSelect1">
-                              <option>City</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
+                          <select class="form-control" id="citySelect">
+                              <option value="0">City</option>
+                              <option value="New Delhi">New Delhi</option>
+                              <option value="Mumbai">Mumbai</option>
+                              <option value="Bengaluru">Bengaluru</option>
+                              <option value="Tamil Nadu">Tamil Nadu</option>
                             </select>
                       </div>
                       <div class="form-group">
-                          <input type="email" class="form-control" placeholder="E-mail">
+                          <input type="email" id="newEmail" class="form-control" placeholder="E-mail">
                       </div>
                       <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Web Url">
+                          <input type="text" id="blog_url" name="blog_url" class="form-control" placeholder="Web Url">
                       </div>
                       <div class="form-group row">
                           <div class="offset">
-                              <button type="submit" class="btn btn-primary" id="submit-form">Submit</button>
+                            <% if (locals.messages.info) { %>
+                              <button type="button" onclick="submitBlog()" class="btn btn-primary" id="submit-form" disabled>Blog Already Added</button>
+                              <% } else { %>
+                                <button type="button" onclick="submitBlog()" class="btn btn-primary" id="submit-form">Submit</button>
+                                <% } %>
                           </div>
                       </div>
                   </form>
                 </div>
             </div>
         </div>
-        </div>  
     </div>
       <div id="popDiv" class="ontopSucess">
       </div>
@@ -249,9 +257,12 @@
       function submitBlog(){
         var urlVal = document.getElementById("blog_url").value;
         if(validateURL(urlVal)){
-            console.log('urlVal:--- ',urlVal);
-
-            $.post( "/users/blogPost", {"blog_url": urlVal})
+            var age = document.getElementById("ageSelect").value;
+            var city = document.getElementById("citySelect").value;
+            var name= document.getElementById("userName").value;
+            var newEmail= document.getElementById("newEmail").value;
+            var phone = document.getElementById("phone").value;
+            $.post( "/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone })
                     .done(function( data ) {
                       console.log('------------------ ', data);
                       console.log('data:-- ', JSON.stringify(data));

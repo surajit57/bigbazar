@@ -59,6 +59,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     blogEmail:{
       type: DataTypes.STRING
+    },
+    blogUserName: {
+      type: DataTypes.STRING
     }
   }, {
     classMethods: {
