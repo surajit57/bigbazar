@@ -981,12 +981,15 @@ padding: 39px 0 !important;
 /* BLOG START CSS */
 .full_width_bg {
     width: 100%; height: auto;position: fixed;
-    top: 0;left: 0;z-index: 0;
+    top: 0;left: 0;z-index: 1;
     /* background-image: url(../images/bck.jpg); */
     background-color: #ffffff;background-repeat: no-repeat;
     background-position: center center;-webkit-background-size: cover;
     -moz-background-size: cover;-o-background-size: cover;
     background-size: cover;
+}
+.opt-bg{
+    background: rgba(255,255,255,0.5);
 }
 .blog-section {
     float: left; width: 100%; background: url(../images/blogbg.jpg);
@@ -1006,39 +1009,53 @@ padding: 39px 0 !important;
 }
 .crusader-section {
     float: left;width: 100%;margin-bottom: 30px;
-    padding-left: 30px;
+    padding-left: 30px; margin-top: 30px;
 }
 .crusader-section h3{
-    color: #fff;font-size: 34px;width: 330px;
-    padding-left: 35px;
+    color: #000;font-size: 34px;/*width: 330px;*/
+    padding-left: 10px;text-align: center;
+    font-weight: bold;text-transform: uppercase;
+    text-shadow: 3px 3px 15px #504545;
 }
 .num-txt-section {
     float: left;width: 100%;height: auto;
 }
 .num-txt-section span{
-    color: #ff4747; padding-left: 10px;
+    color: #103157;padding-left: 10px;float: left;
+    width: 100%;font-size: 18px;text-transform: capitalize;
+    font-weight: bold;
 }
 .numder-section {
-    float: left;width: 100%;padding: 10px 0px;
-    color: #fff;
+    float: left;width: 31%;padding: 10px 0px;
+    color: #fff;color: #000;
+    font-weight: 700;
 }
 .numder-section img {
     width: 58px;float: left;margin-right: 20px;
     padding: 5px 0px;
 }
+.videosection video{
+    background: rgba(255,255,255,0.8);border: 1px solid #ccc;
+}
 .boder-none{
-    border-bottom: none !important;
+    border-right: none !important;
 }
 .numder-section p{
-    float: left;width: 300px;font-size: 14px;
-    border-bottom: 2px solid #fff;padding-bottom: 15px;margin-bottom: 0px;
+    float: left;width: 300px;font-size: 15px;
+    border-right: 2px solid #fff;padding-bottom: 15px;margin-bottom: 0px;
+    padding-right: 10px;
 }
 .form-section{
     float: left; width: 100%;height: auto;
 }
 .form-section form{
-    background: rgba(255,255,255,.9);padding: 40px 40px;
+    /*background: rgba(168, 162, 162, 0.7);*/padding: 40px 40px;
     border: 1px solid #CCC;
+}
+.txt-submit{
+    margin-top: 0px;font-size: 28px;color: #000;
+    text-transform: uppercase;font-weight: 600;
+    text-shadow: 3px 3px 15px #6f6f6f;
 }
 .select-dropleft{
     padding-left: 0px;
