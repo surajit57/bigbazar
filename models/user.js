@@ -56,6 +56,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     resetPasswordExpires: {
       type: DataTypes.DATE
+    },
+    blogEmail:{
+      type: DataTypes.STRING
     }
   }, {
     classMethods: {
