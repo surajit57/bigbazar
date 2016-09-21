@@ -360,13 +360,13 @@ UserController.changePassword = function(req, res){
       }
 
 }
-
+var user_age = '18';
+var user_city = 'New Delhi';
+var user_phone = '9090909090';
 UserController.postBlog = function(req,res){
   var url = req.body.blog_url;
   var UserId = req.user.id;
-  var user_age = '18';
-  var user_city = 'New Delhi';
-  var user_phone = '9811564873';
+
 
   Events.findOne({
     where: {
@@ -465,7 +465,9 @@ function addRound1(UserId, url, req, res){
                     console.log('blog created');
                     User.update({
                       isRound1BlogAdded: 1,
-                      
+                      age: user_age,
+                      city: user_city,
+                      phone: user_phone
                     },{
                       where: {
                         id: UserId
@@ -517,7 +519,8 @@ function addRound2(UserId, url, req, res){
               // });
               // blog.save()
               Blog.update({
-                url1: req.body.blog_url
+                url1: req.body.blog_url,
+
               },{
                 where: {
                   userId: UserId
@@ -529,7 +532,10 @@ function addRound2(UserId, url, req, res){
                 if(!blog) return res.redirect('/users/home');
                     console.log('blog created');
                     User.update({
-                      isRound2BlogAdded: 1
+                      isRound2BlogAdded: 1,
+                      age: user_age,
+                      city: user_city,
+                      phone: user_phone
                     },{
                       where: {
                         id: req.user.id
@@ -579,7 +585,10 @@ function addRound3(UserId, url, req, res){
               // });
               // blog.save()
               Blog.update({
-                url2: req.body.blog_url
+                url2: req.body.blog_url,
+                age: user_age,
+                city: user_city,
+                phone: user_phone
               },{
                 where: {
                   userId: UserId
