@@ -117,10 +117,6 @@ router.get('/logout', function(req, res){
 });
 
 router.get('/blogPost', Auth.isLoggedIn, function(req, res){
-
-
-
-
 	res.render('blog.html');
 });
 router.post('/blogPost', Auth.isLoggedIn, UserController.postBlog);
