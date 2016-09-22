@@ -283,7 +283,8 @@
                       console.log('------------------ ', data);
                       console.log('data:-- ', JSON.stringify(data));
                       if(data.code == 200){
-                          var Message = data.message;
+                          // var Message = data.message;
+
                           document.getElementById("submit_popup").innerHTML =
                           '<p class="succe_txt">Your Blog is uploaded Sucessfully. <a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a></p>';
                           //alert('uploaded');
