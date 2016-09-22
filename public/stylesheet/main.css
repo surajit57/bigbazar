@@ -989,7 +989,7 @@ padding: 39px 0 !important;
     background-size: cover;
 }
 .opt-bg{
-    background: rgba(255,255,255,0.5);
+    background: rgba(16,49,87,0.5);float: left;width: 100%;
 }
 .blog-section {
     float: left; width: 100%; background: url(../images/blogbg.jpg);
@@ -1012,7 +1012,7 @@ padding: 39px 0 !important;
     padding-left: 30px; margin-top: 30px;
 }
 .crusader-section h3{
-    color: #000;font-size: 34px;/*width: 330px;*/
+    /*color: #000;*/ color: #fff; font-size: 34px;/*width: 330px;*/
     padding-left: 10px;text-align: center;
     font-weight: bold;text-transform: uppercase;
     text-shadow: 3px 3px 15px #504545;
@@ -1021,14 +1021,14 @@ padding: 39px 0 !important;
     float: left;width: 100%;height: auto;
 }
 .num-txt-section span{
-    color: #103157;padding-left: 10px;float: left;
+    /*color: #103157;*/ color: #ff4747; padding-left: 10px;float: left;
     width: 100%;font-size: 18px;text-transform: capitalize;
     font-weight: bold;
 }
 .numder-section {
     float: left;width: 31%;padding: 10px 0px;
-    color: #fff;color: #000;
-    font-weight: 700;
+    color: #fff;/*color: #000;*/
+    font-weight: 500;
 }
 .numder-section img {
     width: 58px;float: left;margin-right: 20px;
@@ -1053,7 +1053,7 @@ padding: 39px 0 !important;
     border: 1px solid #CCC;
 }
 .txt-submit{
-    margin-top: 0px;font-size: 28px;color: #000;
+    margin-top: 0px;font-size: 28px;/*color: #000;*/ color: #fff;
     text-transform: uppercase;font-weight: 600;
     text-shadow: 3px 3px 15px #6f6f6f;
 }
