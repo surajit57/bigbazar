@@ -84,6 +84,7 @@ UserController.retrievePassword = function(req, res, next){
       })
     },
     function(token, user, done) {
+      console.log('');
 
       console.log('email to be setn:-- ', user.email, 'headers:-- ',req.headers.host, 'token:-- ', token);
       transporter.sendMail({
@@ -91,7 +92,7 @@ UserController.retrievePassword = function(req, res, next){
           to: user.email,
           text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
             'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-            'http://' + req.headers.host + '/users/reset/' + token + '\n\n' +
+            'http://fbbblogstar.in/users/reset/' + token + '\n\n' +
             'If you did not request this, please ignore this email and your password will remain unchanged.\n',
           subject: 'BigBazaar Reset Password Link'
           // html: html_text
