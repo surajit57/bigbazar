@@ -104,7 +104,7 @@ UserController.retrievePassword = function(req, res, next){
           			return res.render('newuserLogin.html',{});
            } else {
                 console.log('E-Message sent');
-                req.flash('info', 'Email Successfully send to ypur mail id.');
+                req.flash('info', 'Email Successfully send to your mail id.');
           			return res.render('newuserLogin.html',{});
            }
         });
