@@ -30,7 +30,8 @@ router.post('/signup', passport.authenticate('local-signup', {failureRedirect: '
 router.get('/login', function(req, res){
 	// req.flash('info', 'Welcome:------------------------------------------');
 	// res.render('userLogin.html');
-	res.render('newuserLogin.html');
+	// res.render('newuserLogin.html');
+	res.redirect('/');
 });
 
 router.get('/forgot', UserController.forgotPassword);
@@ -71,7 +72,7 @@ router.get('/logout', function(req, res){
         req.session = null;
 
         res.clearCookie('express.sid', { path: '/' });
-        res.redirect('/users/login');
+        res.redirect('/');
 
     });
 });
