@@ -133,9 +133,9 @@ margin-top:10px;
 	color:#ff5203 !important;
 }
 .ptxt{
-	  font-size:10px !important;
-	  color:#333 !important
-	  }
+	font-size:10px !important;color:#333 !important;
+    margin-bottom: 0px;margin-top: 4px;
+}
 	  .ptxts{
 	  font-size:9px !important;
 	  padding-top:15px;
