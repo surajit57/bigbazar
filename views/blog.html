@@ -256,12 +256,17 @@
 
       function submitBlog(){
         var urlVal = document.getElementById("blog_url").value;
-        if(validateURL(urlVal)){
-            var age = document.getElementById("ageSelect").value;
-            var city = document.getElementById("citySelect").value;
-            var name= document.getElementById("userName").value;
-            var newEmail= document.getElementById("newEmail").value;
-            var phone = document.getElementById("phone").value;
+        var age = document.getElementById("ageSelect").value;
+        var city = document.getElementById("citySelect").value;
+        var name= document.getElementById("userName").value;
+        var newEmail= document.getElementById("newEmail").value;
+        var phone = document.getElementById("phone").value;
+
+        var filter = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
+        if(validateURL(urlVal) && filter.test(newEmail)){
+
+
+
             $.post( "/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone })
                     .done(function( data ) {
                       console.log('------------------ ', data);
@@ -270,6 +275,7 @@
                           var Message = data.message;
                           document.getElementById('popDiv').innerHTML =
                           "Your Blog is uploaded Sucessfully. <a href='' onClick='hide('popDiv')''><i class='fa fa-close f-alert'></i></a>";
+                          alert('uploaded');
                           pop('popDiv');
                           // window.location = "/users/home";
                       }
@@ -278,6 +284,7 @@
                           console.log('errorMessage:- ',errorMessage);
                           document.getElementById('popDiverror').innerHTML =
                            "Blog is already uploaded for current round. <a href='' onClick='hide('popDiverror')''><i class='fa fa-close f-alert'></i></a>";
+                           alert('not uploaded');
                           pop('popDiverror');
                       }
                       else{
@@ -286,6 +293,9 @@
                           pop('popDiverror');
                       }
                     });
+        }
+        else if(!filter.test(newEmail)){
+          alert('Enter a valid email address');
         }
       else{
         document.getElementById('popDiverror').innerHTML = "Input Blog Url is not valid. <a href='' onClick='hide('popDiverror')''><i class='fa fa-close f-alert'></i></a>";
