@@ -22,7 +22,7 @@ function send_mail(email){
       to: email,
       bcc: 'shashidhar@teampumpkin.com',
       text: 'Authenticated with OAuth2',
-      subject: 'BigBazaar',
+      subject: 'fbb',
       html: html_text
     }, function(error, response) {
        if (error) {
@@ -404,6 +404,7 @@ UserController.postBlog = function(req,res){
   var user_city = req.body.city;
   var user_name = req.body.Blogusername;
   var user_phone = req.body.phone;
+
   var blog_email = req.body.email;
 
   Events.findOne({

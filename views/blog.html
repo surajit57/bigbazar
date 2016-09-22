@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>fbb Blog Star</title>
+
     <!-- Bootstrap -->
     <link href="../stylesheet/bootstrap.min.css" rel="stylesheet" />
     <link href="../stylesheet/layout.min.css" rel="stylesheet" />
@@ -283,7 +284,8 @@
                       console.log('------------------ ', data);
                       console.log('data:-- ', JSON.stringify(data));
                       if(data.code == 200){
-                          var Message = data.message;
+                          // var Message = data.message;
+
                           document.getElementById("submit_popup").innerHTML =
                           '<p class="succe_txt">Your Blog is uploaded Sucessfully. <a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a></p>';
                           //alert('uploaded');
@@ -331,7 +333,7 @@
   return urlregex.test(textval);
 }
 
- 
+
     </script>
 </body>
 
