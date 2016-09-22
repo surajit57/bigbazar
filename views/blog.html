@@ -193,7 +193,7 @@
                             <% if (locals.messages.info) { %>
                               <button type="button" onclick="submitBlog()" class="btn btn-primary" id="submit-form" disabled>Blog Already Added</button>
                               <% } else { %>
-                                <button type="button" onclick="submitBlog()" class="btn btn-primary" id="submit-form">Submit</button>
+                                <button type="button" onclick="submitBlog()" class="btn btn-primary" id="submit-form" data-toggle="modal" data-target="#thanku">Submit</button>
                                 <% } %>
                           </div>
                       </div>
@@ -222,6 +222,20 @@
                 </div>
                 <div class="modal-body">
                   <p>Thanks for your Submission</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="thanku" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <div class="txt_thanku">
+                    <h1>Thanks for your Submission</h1>
+                  </div>
                 </div>
             </div>
         </div>

@@ -1120,6 +1120,28 @@ padding: 39px 0 !important;
 .btn-txt:hover{
     background-color: transparent;color: #ffa800 !important;
 }
+#thanku{
+
+}
+#thanku .modal-dialog{
+    border-radius: 0px;margin: 100px auto;
+}
+#thanku .modal-content{
+    border-radius: 0px;
+}
+#thanku .modal-body{
+    padding: 20px;background: #103157;color: #fff;
+}
+#thanku .modal-body .close{
+    opacity: 1; color: #fff;
+}
+.txt_thanku {
+    text-align: center;
+}
+.txt_thanku h1{
+    padding: 150px 0px;position: relative;z-index: 1;
+    text-transform: capitalize;
+}
 @media screen and (max-width:1920px) and (min-width:1200px){}
 @media screen and (max-width:1199px) and (min-width:992px){
     .numder-section img{
