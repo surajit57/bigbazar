@@ -988,6 +988,23 @@ padding: 39px 0 !important;
     -moz-background-size: cover;-o-background-size: cover;
     background-size: cover;
 }
+#submit_popup .error-txt{
+    right: 0;top: 20px;padding: 20px 20px;
+    background: rgba(255,71,71,0.6);z-index: 1;
+    position: absolute;color: #fff;text-transform: capitalize;    
+    margin-bottom: 0px;
+}
+#submit_popup .succe_txt{
+    right: 0;top: 20px;padding: 20px 20px;
+    background: rgba(38, 144, 53, 0.6);z-index: 1;
+    position: absolute;color: #fff;text-transform: capitalize;    
+    margin-bottom: 0px;
+}
+.error-txt a{
+    cursor: pointer;font-size: 16px;font-weight: bold;
+    margin-left: 15px;text-decoration: none;
+    color: #fff;
+}
 .opt-bg{
     background: rgba(16,49,87,0.5);float: left;width: 100%;
 }

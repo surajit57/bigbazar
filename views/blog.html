@@ -57,6 +57,8 @@
 </head>
 <body>
   <div class="full_width_bg index submit-blog ">
+    <div id="submit_popup">
+      </div>
       <div class="row" style="margin:0px;">
           <div class="header_section">
               <div class="sant">
@@ -272,46 +274,44 @@
                       console.log('data:-- ', JSON.stringify(data));
                       if(data.code == 200){
                           var Message = data.message;
-                          document.getElementById('popDiv').innerHTML =
-                          "Your Blog is uploaded Sucessfully. <a href='' onClick='hide('popDiv')''><i class='fa fa-close f-alert'></i></a>";
-                          alert('uploaded');
-                          pop('popDiv');
+                          document.getElementById("submit_popup").innerHTML =
+                          '<p class="succe_txt">Your Blog is uploaded Sucessfully. <a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a></p>';
+                          //alert('uploaded');
+                          //pop('popDiv');
                           // window.location = "/users/home";
                       }
                       else if(data.code == 100){
                           var errorMessage = data.message;
                           console.log('errorMessage:- ',errorMessage);
-                          document.getElementById('popDiverror').innerHTML =
-                           "Blog is already uploaded for current round. <a href='' onClick='hide('popDiverror')''><i class='fa fa-close f-alert'></i></a>";
-                           alert('not uploaded');
-                          pop('popDiverror');
+                          document.getElementById("submit_popup").innerHTML =
+                           '<p class="error-txt">Blog is already uploaded for current round. <a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a></p>';
+                           //alert('not uploaded');
+                          // pop('popDiverror');
                       }
                       else{
                           var errorMessage = data.message;
-                          document.getElementById('popDiverror').innerHTML = "Technical Error. Please try after some time. <a href='' onClick='hide('popDiverror')''><i class='fa fa-close f-alert'></i></a>";
-                          pop('popDiverror');
+                          document.getElementById("submit_popup").innerHTML = '<p class="error-txt">Technical Error. Please try after some time.<a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a>';
+                          // pop('popDiverror');
                       }
                     });
         }
         else if (name.length == 0) {
-          alert('Name cannot be empty');
+          document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Name cannot be empty <a href="" onClick="hide("submit_popup")">&times;</a></p>';
         }
         else if (!(phoneNum.length > 6 && phoneNum.length < 11)) {
-          alert('Enter a valid phone number');
+          document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Enter a valid phone number <a href="" onClick="hide("submit_popup")">&times;</a></p>';
         }
         else if (age == 0) {
-          alert('Please enter age');
+          document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Enter your age <a href="" onClick="hide("submit_popup")">&times;</a></p>';
         }
         else if (city == 0) {
-          alert('Please enter your city');
+          document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Enter your city <a href="" onClick="hide("submit_popup")">&times;</a></p>';
         }
         else if(!filter.test(newEmail)){
-          alert('Enter a valid email address');
+          document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Enter a valid Email <a href="" onClick="hide("submit_popup")">&times;</a></p>';
         }
       else{
-        alert('Input Blog Url is not valid');
-        document.getElementById('popDiverror').innerHTML = "Input Blog Url is not valid. <a href='' onClick='hide('popDiverror')''><i class='fa fa-close f-alert'></i></a>";
-        pop('popDiverror');
+        document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Input Blog Url is not valid. <a href="" onClick="hide("submit_popup")">&times;</a></p>';
       }
 
        }
@@ -320,6 +320,8 @@
   var urlregex = new RegExp( "^(http|https|ftp)\://([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(/($|[a-zA-Z0-9\.\,\?\'\\\+&amp;%\$#\=~_\-]+))*$");
   return urlregex.test(textval);
 }
+
+ 
     </script>
 </body>
 
