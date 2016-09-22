@@ -126,37 +126,29 @@ margin-top:10px;
 
 }
 
-.ctrl{
-
-	text-align:center;
-	font-size:11px;
-	color:#ff5203 !important;
+.ctrl {
+    text-align:center;font-size: 16px;color: #f77400 !important;
+    font-weight: bold;text-transform: capitalize;
 }
 .ptxt{
 	font-size:10px !important;color:#333 !important;
     margin-bottom: 0px;margin-top: 4px;
 }
-	  .ptxts{
-	  font-size:9px !important;
-	  padding-top:15px;
-	  color:#333 !important
-	  }
-	.panel.panel-info {
+.ptxts{
+	font-size:9px !important;padding-top:15px;color:#333 !important
+}
+.panel.panel-info {
     width: 300px !important;
 }
 .panel{
-border-radius: 23px !important;
+    border-radius: 23px !important;
 }
-
 h1.member {
     padding-left: 39px;
 }
 .fb{
-
-color:#ffffff !important;
+    color:#ffffff !important;
 }
-
-
 button.btn.btn-default.btn-block {
     /* color: #fff; */
     /* background-color: #39b3d7; */
@@ -184,4 +176,18 @@ button.btn.btn-default.btn-block {
     background: rgba(38, 144, 53, 0.57);color: #fff;font-size: 16px;
     text-transform: capitalize;
 }
-/* NEWUSERLOGIN START END*/
+#login-form-link, #register-form-link {
+    text-decoration: none;
+}
+
+/* NEWUSERLOGIN CSS END*/
+/* RESET CSS START*/
+.reset_Pwd {
+    float: left;
+    width: 100%;
+    padding: 153px 0px 0px;
+}
+.reset_form{
+    padding: 10px 0px;
+}
+/* RESET CSS END */

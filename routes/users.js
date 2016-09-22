@@ -57,6 +57,10 @@ router.get('/reset/:token', function(req, res) {
 		}
 	})
 });
+router.get('/reset1',  function(req, res){
+	res.render('reset1.html');
+	
+});
 
 router.post('/reset/:token', UserController.resetPassword);
 

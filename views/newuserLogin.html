@@ -1,87 +1,69 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Fbb Blog Star</title>
+      <title>fbb Blog Star</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" href="../stylesheet/bootstrap.min.css">
       <link rel="stylesheet" href="../stylesheet/newLoginStyle.css">
       <link rel="stylesheet" href="../stylesheet/responsive.css">
       <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
-	  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-
-	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <style>
-      @media only screen and ( max-width: 767px ) {
-      h1.member {
-         padding-left: 73px;
-         display: none;
-      }
-      body{
-
-        background-image: url("../images/mobiler.png")!important;
-        background-size: cover !important;
-      }
-      .socialbtn2 {
-        margin-left:58px;
-        margin-top: 126px;
-         position: absolute;
-      }
-        #loginbox {
-           width: 227px !important;
-            padding-top: 172px;
-           padding-left: 40px;
-        }
-        .logo, .banner_home {
-           width: 60%;
-           padding-top: 33px;
-           padding-left: 20px;
-        }
-        .panel.panel-info {
-           width: 278px !important;
-        }
-      }
-</style>
+	    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <link rel="shortcut icon" href="../images/favicon.png" />
+      <style>
+        @media only screen and ( max-width: 767px ) {
+            h1.member {
+              padding-left: 73px;display: none;
+            }
+            body{
+              background-image: url("../images/mobiler.png")!important;
+              background-size: cover !important;
+            }
+            .socialbtn2 {
+              margin-left:58px;margin-top: 126px;position: absolute;
+            }
+            #loginbox {
+              width: 227px !important;padding-top: 172px;padding-left: 40px;
+            }
+            .logo, .banner_home {
+              width: 60%;padding-top: 33px;padding-left: 20px;
+            }
+            .panel.panel-info {
+              width: 278px !important;
+            }
+          }
+      </style>
    </head>
    <body style="background-image:url(../images/loginImage.png);background-repeat:no-repeat;background-size:cover">
-   <div class="header">
-
-      <div class="container-fluid">
-      	<div class="row" >
-      		<div class="col-sm-3">
-
-      			<!-- <a href="#contact_form"><img src="../images/Logo1.png" alt="logo" class="logo"> </a> -->
-			</div><!--col-sm-3-->
-			<div class="col-sm-9">
-
-
-			</div> <!--col-sm-9-->
-		</div><!--row-->
-
-      </div><!--container-->
-	  </div>
-	  <div class="container">
-	  <div class="row">
-	  <div class="col-md-4" style="margin-top: 10%">
-      <h1 class="member">Member Login</h1>
-
-    </div>
-	  <div class="col-md-4"></div>
-	  <div class="col-md-4">
-  </div>
-	  </div>
-
-
-
-	  <div class="row">
-	  <div class="col-md-4"></div>
-	  <div class="col-md-4"></div>
-	  <div class="col-md-4">
-	  </div>
-	 </div>
-
-    <div class="popup_section">
+      <div class="header">
+        <div class="container-fluid">
+          <div class="row" >
+            <div class="col-sm-3">
+              <!-- <a href="#contact_form">
+                <img src="../images/Logo1.png" alt="logo" class="logo">
+                </a> -->
+              </div>
+              <div class="col-sm-9">
+              </div>
+            </div>
+          </div>
+	    </div>
+	    <div class="container">
+	      <div class="row">
+	        <div class="col-md-4" style="margin-top: 10%">
+            <h1 class="member">Member Login</h1>
+          </div>
+	        <div class="col-md-4"></div>
+	        <div class="col-md-4"></div>
+	    </div>
+	    <div class="row">
+	      <div class="col-md-4"></div>
+	      <div class="col-md-4"></div>
+	      <div class="col-md-4"></div>
+	    </div>
+      <div class="popup_section">
         <div class="txt_popup">
               <% if (locals.messages.error) { %>
               <p class="red_txt"> <%= locals.messages.error %> </p>
@@ -90,12 +72,13 @@
               <% } %>
         </div>
     </div>
-
-
-	 <div class="row">
-	  <div class="col-md-4">
-      <div class="socialbtn2"><a href="/users/auth/facebook" class="bt2"><p class="fb">Log in with Facebook</p></a> </div>
-
+	  <div class="row">
+	    <div class="col-md-4">
+        <div class="socialbtn2">
+          <a href="/users/auth/facebook" class="bt2">
+            <p class="fb">Log in with Facebook</p>
+          </a>
+        </div>
     </div>
 	  <div class="col-md-4"></div>
 	  <div class="col-md-4">
@@ -104,193 +87,153 @@
       </div> -->
     </div>
 	 </div>
-
 	 <div class="row">
 	  <div class="col-md-4">
-
       <div id="loginbox">
           <div class="panel panel-info" >
               <div class="panel-body">
-<form  role="form" class="frm" id="register-form" role="form" style="display: block;" action="/login" method="POST" onsubmit="return validateSignInForm();">
-
-    <div style="margin-bottom: 10px"  class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <!-- <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username"> -->
-      <input id="login-username" type="email" name="email" class="form-control" id="" placeholder="username">
-    </div>
-
-    <div style="margin-bottom: 10px" class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <!-- <input id="login-password" type="password" class="form-control" name="password" placeholder="Password"> -->
-      <input id="login-password" type="password" name="password" class="form-control" id="signInPass" placeholder="Password">
-    </div>
-  <div class="row">
-      <div class="col-md-6">
-        <div class="checkbox">
-          <label>
-            <input  type="checkbox" name="remember" value="1"> <p class="ptxt">Remember me</p>
-          </label>
+                <form  role="form" class="frm" id="register-form" role="form" style="display: block;" action="/login" method="POST" onsubmit="return validateSignInForm();">
+                  <div style="margin-bottom: 10px" class="input-group">
+                    <span class="input-group-addon">
+                      <i class="glyphicon glyphicon-user"></i>
+                    </span>
+                    <!-- <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username"> -->
+                    <input id="login-username" type="email" name="email" class="form-control" id="" placeholder="username">
+                  </div>
+                  <div style="margin-bottom: 10px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <!-- <input id="login-password" type="password" class="form-control" name="password" placeholder="Password"> -->
+                    <input id="login-password" type="password" name="password" class="form-control" id="signInPass" placeholder="Password">
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                        <div class="checkbox">
+                          <label>
+                            <input  type="checkbox" name="remember" value="1"> <p class="ptxt">Remember me</p>
+                          </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label>
+                      <!-- <a href="#"><p class="ptxts">Forgot password?</p></a> -->
+                            <a href="#" data-toggle="modal" data-target="#forgotpassword"><p class="ptxts">Forgot password?</p></a>
+                      </label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <!-- <div class="logd"> -->
+                      <!-- <a href="#" class="logins" > -->
+                        <button type="submit" class="btn btn-default btn-block"><p class="logtxt">Log in</p></button>
+                        <!-- </a> -->
+                      <!-- </div> -->
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 mrgall">
+                    <a href="#" id="login-form-link">
+                      <p class="ctrl">Create new account<p>
+                    </a>
+                  </div>
+                </div>
+            </form>
+            <form  role="form" class="frm" id="login-form" role="form" style="display: none;" method="POST" action="/users/signup" onsubmit="return validateForm();">
+              <div style="margin-bottom: 10px"  class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <!-- <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username"> -->
+                <input id="login-username" type="text" name="name" class="form-control" placeholder="Full Name">
+              </div>
+              <div style="margin-bottom: 10px"  class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+            <!-- <input id="login-username" type="text" class="form-control" name="email" value="" placeholder="Email"> -->
+                <input id="login-username" type="email" name="email" class="form-control" placeholder="Email address">
+              </div>
+              <div style="margin-bottom: 10px" class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <!-- <input id="login-password" type="password" class="form-control" name="password" placeholder="Password"> -->
+                <input type="password" name="password" class="form-control" id="pass1" placeholder="Password">
+              </div>
+              <div id="">
+                <label style="display: none;color: red; font-size: 10px;" id="error1">Password should be atleast 6 character long</label>
+              </div>
+              <div style="margin-bottom: 10px" class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <!-- <input id="login-password" type="password" class="form-control" name="password1" placeholder="Re-type Password"> -->
+                  <input type="password" name="confirmPassword" class="form-control" id="cpass1" placeholder="Re-type Password">
+              </div>
+              <div id="">
+                <label style="display: none;color: red; font-size: 10px;" id="error2">Password doesn't matched</label>
+              </div>
+              <div class="row">
+                <!-- Button -->
+                  <div class="col-md-12">
+                    <!-- <div class="logd"> -->
+                        <!-- <a href="#" class="logins" > -->
+                            <!-- <p class="logtxt">Submit</p> -->
+                                  <button type="submit" class="btn btn-default btn-block">Submit</button>
+                        <!-- </a> -->
+                    <!-- </div> -->
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 mrgall"> <a href="#" id="register-form-link"><p class="ctrl">Sign In<p></a></div>
+            </div>
+          </form>
+          </div>
         </div>
-      </div>
-
-      <div class="col-md-6">
-        <label>
-          <!-- <a href="#"><p class="ptxts">Forgot password?</p></a> -->
-          <a href="#" data-toggle="modal" data-target="#forgotpassword"><p class="ptxts">Forgot password?</p></a>
-        </label>
-      </div>
-
-  </div>
-
-<div class="row">
-<div class="col-md-12">
-  <!-- <div class="logd"> -->
-    <!-- <a href="#" class="logins" > -->
-    <button type="submit" class="btn btn-default btn-block"><p class="logtxt">Log in</p></button>
-    <!-- </a> -->
-  <!-- </div> -->
-
-</div>
-</div>
-
-<div class="row">
-
-<div class="col-md-12 mrgall"> <a href="#" id="login-form-link"><p class="ctrl">Create new account<p></a></div>
-
-</div>
-</form>
-
-<form  role="form" class="frm" id="login-form" role="form" style="display: none;" method="POST" action="/users/signup" onsubmit="return validateForm();">
-
-  <div style="margin-bottom: 10px"  class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <!-- <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username"> -->
-    <input id="login-username" type="text" name="name" class="form-control" placeholder="Full Name">
-  </div>
-
-  <div style="margin-bottom: 10px"  class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-    <!-- <input id="login-username" type="text" class="form-control" name="email" value="" placeholder="Email"> -->
-    <input id="login-username" type="email" name="email" class="form-control" placeholder="Email address">
-  </div>
-
-
-  <div style="margin-bottom: 10px" class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-    <!-- <input id="login-password" type="password" class="form-control" name="password" placeholder="Password"> -->
-    <input type="password" name="password" class="form-control" id="pass1" placeholder="Password">
-  </div>
-
-  <div id="">
-    <label style="display: none;color: red; font-size: 10px;" id="error1">Password should be atleast 6 character long</label>
-  </div>
-
-  <div style="margin-bottom: 10px" class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-    <!-- <input id="login-password" type="password" class="form-control" name="password1" placeholder="Re-type Password"> -->
-    <input type="password" name="confirmPassword" class="form-control" id="cpass1" placeholder="Re-type Password">
-  </div>
-
-  <div id="">
-    <label style="display: none;color: red; font-size: 10px;" id="error2">Password doesn't matched</label>
-  </div>
-
-<div class="row">
-<!-- Button -->
-
-  <div class="col-md-12">
-    <!-- <div class="logd"> -->
-       <!-- <a href="#" class="logins" > -->
-         <!-- <p class="logtxt">Submit</p> -->
-         <button type="submit" class="btn btn-default btn-block">Submit</button>
-       <!-- </a> -->
-    <!-- </div> -->
-  </div>
-</div>
-  <div class="row">
-    <div class="col-md-12 mrgall"> <a href="#" id="register-form-link"><p class="ctrl">Sign In<p></a></div>
-  </div>
-
-</form>
-
-
-
-
-
-              </div>   <!-- panel-body -->
-           </div>    <!-- panel panel-info -->
-      </div>  <!-- loginbox -->
-
+      </div> 
     </div>
 	  <div class="col-md-4"></div>
-	  <div class="col-md-4">
-
-
-
-
-
-
-
-	  </div>
-	 </div><!-- End Row -->
-
-   <div class="modal fade" id="forgotpassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <!-- <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-          </div> -->
-        <div class="modal-body">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <form action="/users/forgot" method="POST">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email</label>
-              <input type="email" name="email" class="form-control" id="" placeholder="">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
+	  <div class="col-md-4"></div>
+    </div><!-- End Row -->
+    <div class="modal fade" id="forgotpassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <!-- <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div> -->
+              <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <form action="/users/forgot" method="POST">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="email" name="email" class="form-control" id="" placeholder="">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form>
+              </div>
+          <!-- <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+              </div> -->
+          </div>
         </div>
-        <!-- <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div> -->
       </div>
-    </div>
-  </div>
-
-	  </div><!--End container -->
-
+    </div><!--End container -->
   	<!-- <script src="../js/bootstrap.min.js"></script> -->
   	<script src="../js/bootstrap.min.js"></script>
-	<script>
-	$(function() {
-
-	$('#register-form-link').click(function(e) {
-		$("#register-form").delay(100).fadeIn(100);
- 		$("#login-form").fadeOut(100);
-		$('#login-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-	});
-
-    $('#login-form-link').click(function(e) {
-		$("#login-form").delay(100).fadeIn(100);
- 		$("#register-form").fadeOut(100);
-		$('#register-form-link').removeClass('active');
-		$(this).addClass('active');
-		e.preventDefault();
-	});
-
-
-});
-</script>
-
-<script type="text/javascript">
-
-    function validateForm()
-      {
-
+	  <script>
+	    $(function() {
+	      $('#register-form-link').click(function(e) {
+		    $("#register-form").delay(100).fadeIn(100);
+ 		    $("#login-form").fadeOut(100);
+		    $('#login-form-link').removeClass('active');
+		    $(this).addClass('active');
+		    e.preventDefault();
+	    });
+      $('#login-form-link').click(function(e) {
+		    $("#login-form").delay(100).fadeIn(100);
+ 		    $("#register-form").fadeOut(100);
+		    $('#register-form-link').removeClass('active');
+		    $(this).addClass('active');
+		    e.preventDefault();
+	    });
+    });
+    </script>
+    <script type="text/javascript">
+      function validateForm()
+        {
           var pass1 = $("#pass1").val();
           var cpass1 = $("#cpass1").val();
           if (pass1.length < 6) {
@@ -304,10 +247,7 @@
           }
         return false;
       }
-
-
-
-function validateSignInForm()
+      function validateSignInForm()
       {
           var signInPass = $("#signInPass").val();
           if (signInPass.length < 6) {

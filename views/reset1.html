@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>fbb Blog Star</title>
+    <link rel="shortcut icon" href="../images/favicon.png" />
+    <link rel="stylesheet" href="../stylesheet/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheet/newLoginStyle.css">
+    <link rel="stylesheet" href="../stylesheet/responsive.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+	  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="../images/favicon.png" />
+  </head>
+  <body style="background-image:url(../images/loginImage.png);background-repeat:no-repeat;background-size:cover">
+        <div class="header">
+            <div class="container">
+      	        <div class="row" style="margin: 0px;">
+                    <div class="col-md-4">
+                        <div class="reset_Pwd">
+                            <h1 class="member">Reset Password</h1>
+                            <div id="loginbox">
+                                <div class="panel panel-info">
+                                    <div class="panel-body">
+                                    <form class="reset_form" action="/users/reset/"  method="post" onsubmit="return validatePass()">
+                                        <div class="input-group" style="margin-bottom: 10px">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                            <input type="text" name="password" id="pass" class="form-control" placeholder="newPassword">
+                                        </div>
+                                        <div class="input-group" style="margin-bottom: 10px">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                            <input type="text" name="confirmPassword" id="pass1" class="form-control" placeholder="confirmPassword">
+                                        </div>
+                                        <button type="submit" name="reset" class="btn btn-default btn-block">Reset</button>
+                                    </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+      	        </div>
+            </div>
+        </div>
+  </body>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript">
+  function validatePass(){
+    var pass = document.getElementById('pass').value;
+    var pass1 = document.getElementById('pass1').value;
+    if(pass.length == pass1.length || pass.length >= 6){
+      return true;
+    }
+    else{
+      alert('Password should be same and atleast 6 characters long.');
+      return false;
+    }
+  }
+  </script>
+</html>
