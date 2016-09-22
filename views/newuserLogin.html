@@ -81,11 +81,16 @@
 	  </div>
 	 </div>
 
-   <% if (locals.messages.error) { %>
-     <p> <%= locals.messages.error %> </p>
-     <% } else if(locals.messages.info) { %>
-        <p> <%= locals.messages.info %> </p>
-       <% } %>
+    <div class="popup_section">
+        <div class="txt_popup">
+              <% if (locals.messages.error) { %>
+              <p> <%= locals.messages.error %> </p>
+              <% } else if(locals.messages.info) { %>
+              <p> <%= locals.messages.info %> </p>
+              <% } %>
+        </div>
+    </div>
+
 
 	 <div class="row">
 	  <div class="col-md-4">

@@ -166,3 +166,14 @@ button.btn.btn-default.btn-block {
     border-radius: 0px !important;
     color: #ffffff !important;
 }
+/* NEWUSERLOGIN START CSS*/
+.popup_section{
+    position: absolute;z-index: 1;right: 0px;
+    top: 20px;
+}
+.txt_popup {
+    width: auto;float: left;padding: 20px 20px;
+    background: rgba(255, 71, 71, 0.57);color: #fff;font-size: 16px;
+    text-transform: capitalize;
+}
+/* NEWUSERLOGIN START END*/
