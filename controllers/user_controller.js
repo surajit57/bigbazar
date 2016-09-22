@@ -404,6 +404,7 @@ UserController.postBlog = function(req,res){
   var user_city = req.body.city;
   var user_name = req.body.Blogusername;
   var user_phone = req.body.phone;
+
   var blog_email = req.body.email;
 
   Events.findOne({
