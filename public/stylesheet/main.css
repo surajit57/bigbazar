@@ -385,7 +385,7 @@ body{
 .pr-side-inp
 {
     height: 50px;
-    margin-bottom: 5px;
+    margin-bottom: 5px;display: block !important;
 }
 .pr-side-inp-f
 {
