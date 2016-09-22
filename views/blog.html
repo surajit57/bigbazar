@@ -263,10 +263,9 @@
         var phone = document.getElementById("phone").value;
 
         var filter = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
-        if(validateURL(urlVal) && filter.test(newEmail)){
+        var phoneNum = phone.replace(/[^\d]/g, '');
 
-
-
+        if(validateURL(urlVal) && filter.test(newEmail) && name.length !=0 && phoneNum.length > 6 && phoneNum.length < 11 && city !=0 && age !=0){
             $.post( "/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone })
                     .done(function( data ) {
                       console.log('------------------ ', data);
@@ -294,10 +293,23 @@
                       }
                     });
         }
+        else if (name.length == 0) {
+          alert('Name cannot be empty');
+        }
+        else if (!(phoneNum.length > 6 && phoneNum.length < 11)) {
+          alert('Enter a valid phone number');
+        }
+        else if (age == 0) {
+          alert('Please enter age');
+        }
+        else if (city == 0) {
+          alert('Please enter your city');
+        }
         else if(!filter.test(newEmail)){
           alert('Enter a valid email address');
         }
       else{
+        alert('Input Blog Url is not valid');
         document.getElementById('popDiverror').innerHTML = "Input Blog Url is not valid. <a href='' onClick='hide('popDiverror')''><i class='fa fa-close f-alert'></i></a>";
         pop('popDiverror');
       }
