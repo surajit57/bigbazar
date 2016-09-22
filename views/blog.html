@@ -71,6 +71,16 @@
                   <!--<div class="pull-right text-center">-->
                       <div class="col-xs-12 col-sm-9 col-md-9">
                           <div class="menu_section">
+                              <div class="tp-a-hov">
+                                <!-- social Share -->
+                                <i class="fa fa-facebook tp-mar20 sty-txt" onclick="fbShare()"></i>
+                                <a class="tp-mar20 sty-txt" href="https://twitter.com/intent/tweet?text=Hey Guys join fbb Blog Star campaign and %20world">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                              <i class="fa fa-linkedin tp-mar20 sty-txt" onclick="shareContent()"></i>
+                              <!-- End of social Share -->
+                            </div>
+                            <div class="btn_menu">
                                <button type="button" onclick="window.location = '/users/list'" class="btn-txt">
                                     <i class="fa fa-rss sub-fa" title="Explore Bloggers"></i><b class="xs_hideen">EXPLORE BLOGGERS</b>
                               </button>
@@ -80,6 +90,7 @@
                               <button onclick="logout()" type="button" class="btn-txt">
                                   <i class="fa fa-lock sub-fa" title="Sign Out"></i><b class="xs_hideen">SIGN OUT</b>
                               </button>
+                            </div>
                         </div>
                     </div>
                 <!--</div>-->
@@ -193,7 +204,7 @@
                             <% if (locals.messages.info) { %>
                               <button type="button" onclick="submitBlog()" class="btn btn-primary" id="submit-form" disabled>Blog Already Added</button>
                               <% } else { %>
-                                <button type="button" onclick="submitBlog()" class="btn btn-primary" id="submit-form" data-toggle="modal" data-target="#thanku">Submit</button>
+                                <button type="button" onclick="submitBlog()" class="btn btn-primary" id="submit-form">Submit</button>
                                 <% } %>
                           </div>
                       </div>
@@ -227,7 +238,7 @@
         </div>
     </div>
     <!-- Modal -->
-    <div class="modal fade" id="thanku" role="dialog">
+    <!--<div class="modal fade" id="thanku" role="dialog">
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
@@ -239,7 +250,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!-- Modal -->
     <div class="modal fade error" id="errorModal" role="dialog">
         <div class="modal-dialog">
