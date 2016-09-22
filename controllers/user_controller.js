@@ -11,18 +11,15 @@ var Promise = require('bluebird');
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 
-// var transporter = nodemailer.createTransport(
-//     smtpTransport('smtps://hemant.singh@teampumpkin.com:admin@4321@smtp.gmail.com')
-// );
 var transporter = nodemailer.createTransport(
     smtpTransport('smtps://cheers@fbbblogstar.in:star@6204@smtp.gmail.com')
 );
+
 var html_text = '<p><b>Thanks your blog sucessfully uploaded.</b></p>';
 function send_mail(email){
   transporter.sendMail({
       from: 'cheers@fbbblogstar.in',
       to: email,
-      // bcc: 'hemant_nagarkoti@yahoo.com',
       bcc: 'shashidhar@teampumpkin.com',
       text: 'Authenticated with OAuth2',
       subject: 'BigBazaar',

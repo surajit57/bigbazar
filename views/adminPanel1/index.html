@@ -13,7 +13,7 @@
     <link href="../../stylesheet/layout.min.css" rel="stylesheet" type="text/css" />
     <link href="../../stylesheet/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
     <link href="../../stylesheet/custom.min.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="../images/favicon.ico" /> 
+    <link rel="shortcut icon" href="../images/favicon.ico" />
 
     <script src="../../js/jquery.min.js" type="text/javascript"></script>
     <style>
@@ -83,20 +83,20 @@
                         <img src="../../images/bigbazaar_lg.jpg" alt="logo" class="logo-default" style="width:100%;height:70px;margin: 15px 0px 0px 0px;" /> </a>
                     <div class="menu-toggler sidebar-toggler"> </div>
                 </div>
-                
+
                 <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
                 <div class="top-menu">
                     <div class="pull-right">
                         <div class="add-button" style="margin-top: 4px;">
                           <button type="button" onclick="logout()" class="btn btn-default" style="background: transparent; border: transparent;color: #fff;"><i class="fa fa-lock" style="border-radius: 50%;padding: 4px 7px;background: #000;border: 2px solid #fff;"></i>&nbsp;&nbsp;SIGN OUT</button>
                       </div>
-                    </div><!--pull-right-->    
-                       
+                    </div><!--pull-right-->
+
                 </div>
             </div>
         </div>
 
-         
+
 
         <div class="clearfix"> </div>
         <div class="page-container">
@@ -160,6 +160,10 @@
                                                 <tr>
                                                     <th>Author Name</th>
                                                     <th>Email Id</th>
+                                                    <th>Blog UsesName</th>
+                                                    <th>Blog Email</th>
+                                                    <th>Age</th>
+                                                    <th>City</th>
                                                     <th>Round 1 Blog Url</th>
                                                     <th>Round 2 Blog Url</th>
                                                     <th>Round 3 Blog Url</th>
@@ -173,7 +177,12 @@
                                                 <tr>
 
                                                    <td><input type="checkbox" class="top100 checkTab" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
+
                                                    <td><%= blogs[i].user.email %></td>
+                                                   <td><%= blogs[i].user.blogUserName %></td>
+                                                   <td><%= blogs[i].user.blogEmail %></td>
+                                                   <td><%= blogs[i].user.age %></td>
+                                                   <td><%= blogs[i].user.city %></td>
                                                    <td><%= blogs[i].url %></td>
                                                    <td><%= blogs[i].url1 %></td>
                                                    <td><%= blogs[i].url2 %></td>
@@ -189,7 +198,7 @@
                                                     </td>
                                                 </tr>
                                                  <% } %>
-                                                  
+
                                             </tbody>
                                         </table>
                                         <div class="nextLevel">
@@ -227,6 +236,10 @@
                                                 <tr>
                                                     <th>Author Name</th>
                                                     <th>Email Id</th>
+                                                    <th>Blog UsesName</th>
+                                                    <th>Blog Email</th>
+                                                    <th>Age</th>
+                                                    <th>City</th>
                                                     <th>Round 1 Blog Url</th>
                                                     <th>Round 2 Blog Url</th>
                                                     <th>Round 3 Blog Url</th>
@@ -242,6 +255,10 @@
 
                                                         <td><input type="checkbox" class="top15 checksecond" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
+                                                        <td><%= blogs[i].user.blogUserName %></td>
+                                                        <td><%= blogs[i].user.blogEmail %></td>
+                                                        <td><%= blogs[i].user.age %></td>
+                                                        <td><%= blogs[i].user.city %></td>
                                                         <td><%= blogs[i].url %></td>
                                                         <td><%= blogs[i].url1 %></td>
                                                         <td><%= blogs[i].url2 %></td>
@@ -257,7 +274,7 @@
                                                         </td>
                                                     </tr>
                                                      <% } else { %>  <% } %>
-                                                   
+
                                                  <% } %>
                                             </tbody>
                                         </table>
@@ -266,7 +283,7 @@
                                         </div>
                                         <div class="previewLevel">
                                             <button onclick="unSelectFrom100()" class="preview_button" "><i class="fa fa-chevron-left"></i> Select For Preview Round</button>
-                                        </div>                                        
+                                        </div>
                                     </div>
                                     <div class="previewnext">
                                         <nav>
@@ -299,6 +316,10 @@
                                                 <tr>
                                                     <th>Author Name</th>
                                                     <th>Email Id</th>
+                                                    <th>Blog UsesName</th>
+                                                    <th>Blog Email</th>
+                                                    <th>Age</th>
+                                                    <th>City</th>
                                                     <th>Round 1 Blog Url</th>
                                                     <th>Round 2 Blog Url</th>
                                                     <th>Round 3 Blog Url</th>
@@ -314,6 +335,10 @@
 
                                                         <td><input type="checkbox" class="top15 checkthird" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
+                                                        <td><%= blogs[i].user.blogUserName %></td>
+                                                        <td><%= blogs[i].user.blogEmail %></td>
+                                                        <td><%= blogs[i].user.age %></td>
+                                                        <td><%= blogs[i].user.city %></td>
                                                         <td><%= blogs[i].url %></td>
                                                         <td><%= blogs[i].url1 %></td>
                                                         <td><%= blogs[i].url2 %></td>
@@ -329,7 +354,7 @@
                                                         </td>
                                                     </tr>
                                                      <% } else { %>  <% } %>
-                                                   
+
                                                  <% } %>
                                             </tbody>
                                         </table>
@@ -338,7 +363,7 @@
                                         </div>
                                         <div class="previewLevel">
                                             <button onclick="unSelectFrom15()" class="preview_button" "><i class="fa fa-chevron-left"></i> Select For Preview Round</button>
-                                        </div> 
+                                        </div>
                                     </div><!-- box-body -->
                                     <div class="previewnext">
                                         <nav>
@@ -371,6 +396,10 @@
                                                 <tr>
                                                     <th>Author Name</th>
                                                     <th>Email Id</th>
+                                                    <th>Blog UsesName</th>
+                                                    <th>Blog Email</th>
+                                                    <th>Age</th>
+                                                    <th>City</th>
                                                     <th>Round 1 Blog Url</th>
                                                     <th>Round 2 Blog Url</th>
                                                     <th>Round 3 Blog Url</th>
@@ -386,6 +415,10 @@
 
                                                         <td><input type="checkbox" class="winners checkfourth" value='<%= blogs[i].user.id %>' > <%= blogs[i].user.name %> </td>
                                                         <td><%= blogs[i].user.email %></td>
+                                                        <th>Blog UsesName</th>
+                                                        <th>Blog Email</th>
+                                                        <th>Age</th>
+                                                        <th>City</th>
                                                         <td><%= blogs[i].url %></td>
                                                         <td><%= blogs[i].url1 %></td>
                                                         <td><%= blogs[i].url2 %></td>
@@ -401,13 +434,13 @@
                                                         </td>
                                                     </tr>
                                                      <% } else { %>  <% } %>
-                                                   
+
                                                  <% } %>
                                             </tbody>
                                         </table>
                                         <div class="previewLevel">
                                             <button onclick="unSelectFrom3()" class="preview_button" "><i class="fa fa-chevron-left"></i> Change Winners</button>
-                                        </div> 
+                                        </div>
                                     </div><!-- box-body -->
                                     <div class="previewnext">
                                         <nav>
@@ -440,7 +473,7 @@
                 <i class="icon-arrow-up"></i>
             </div>
         </div>
-    
+
     <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
     <script src="../../js/app.min.js" type="text/javascript"></script>
     <script src="../../js/layout.min.js" type="text/javascript"></script>
@@ -467,19 +500,19 @@
                   .done(function( data ) {
                     if(data.code == 200){
                     console.log('data:_-- ',JSON.stringify(data));
-                        document.getElementById('popDiv').innerHTML = 
+                        document.getElementById('popDiv').innerHTML =
                           "Selected Users are sucessfully moved to next round. <a href='' onClick='hide('popDiv')''>Close</a>";
                         pop('popDiv');
-                         
+
                     }
                     else{
-                        document.getElementById('popDiverror').innerHTML = 
+                        document.getElementById('popDiverror').innerHTML =
                           "Technical Error Please try after some time. <a href='' onclick='hide('popDiverror')'>Close</a> ";
                         pop('popDiverror');
                     }
                   });
             }else{
-                document.getElementById('popDiverror').innerHTML = 
+                document.getElementById('popDiverror').innerHTML =
                           "Please select atleast one user. <a href='' onclick='hide('popDiverror')'>Close</a> ";
                         pop('popDiverror');
             }
@@ -493,18 +526,18 @@
                 $.post( "/admin/unselect-for-100", {"userIds": JSON.stringify(values)})
                   .done(function( data ) {
                     if(data.code == 200){
-                        document.getElementById('popDiv').innerHTML = 
+                        document.getElementById('popDiv').innerHTML =
                         "Selected Users are sucessfully re-moved from this round. <a href='' onclick='hide('popDiv')' >Close</a>";
                         pop('popDiv');
                     }
                     else{
-                         document.getElementById('popDiverror').innerHTML = 
+                         document.getElementById('popDiverror').innerHTML =
                           "Technical Error Please try after some time. <a href='' onclick='hide('popDiverror')'>Close</a> ";
                         pop('popDiverror');
                     }
                   });
             }else{
-                document.getElementById('popDiverror').innerHTML = 
+                document.getElementById('popDiverror').innerHTML =
                           "Please select atleast one user. <a href='' onclick='hide('popDiverror')'>Close</a> ";
                         pop('popDiverror');
             }
@@ -520,18 +553,18 @@
                 $.post( "/admin/select-for-15", {"userIds": JSON.stringify(values)})
                   .done(function( data ) {
                     if(data.code == 200){
-                        document.getElementById('popDiv').innerHTML = 
+                        document.getElementById('popDiv').innerHTML =
                         "Selected Users are sucessfully moved to next round. <a href='' onclick='hide('popDiv')' >Close</a>";
                         pop('popDiv');
                     }
                     else{
-                         document.getElementById('popDiverror').innerHTML = 
+                         document.getElementById('popDiverror').innerHTML =
                           "Technical Error Please try after some time. <a href='' onclick='hide('popDiverror')'>Close</a> ";
                         pop('popDiverror');
                     }
                   });
             }else{
-                document.getElementById('popDiverror').innerHTML = 
+                document.getElementById('popDiverror').innerHTML =
                           "Please select atleast one user. <a href='' onclick='hide('popDiverror')'>Close</a> ";
                         pop('popDiverror');
             }
@@ -547,18 +580,18 @@
                 $.post( "/admin/unselect-for-15", {"userIds": JSON.stringify(values)})
                   .done(function( data ) {
                     if(data.code == 200){
-                        document.getElementById('popDiv').innerHTML = 
+                        document.getElementById('popDiv').innerHTML =
                         "Selected Users are sucessfully re-moved from this round. <a href='' onclick='hide('popDiv')' >Close</a>";
                         pop('popDiv');
                     }
                     else{
-                        document.getElementById('popDiverror').innerHTML = 
+                        document.getElementById('popDiverror').innerHTML =
                           "Technical Error Please try after some time. <a href='' onclick='hide('popDiverror')'>Close</a> ";
                         pop('popDiverror');
                     }
                   });
             }else{
-                document.getElementById('popDiverror').innerHTML = 
+                document.getElementById('popDiverror').innerHTML =
                           "Please select atleast one user. <a href='' onclick='hide('popDiverror')'>Close</a> ";
                         pop('popDiverror');
             }
@@ -572,18 +605,18 @@
                 $.post( "/admin/select-for-3", {"userIds": JSON.stringify(values)})
                   .done(function( data ) {
                     if(data.code == 200){
-                       document.getElementById('popDiv').innerHTML = 
+                       document.getElementById('popDiv').innerHTML =
                         "Selected Users are sucessfully moved to next round. <a href='' onclick='hide('popDiv')' >Close</a>";
                         pop('popDiv');
                     }
                     else{
-                        document.getElementById('popDiverror').innerHTML = 
+                        document.getElementById('popDiverror').innerHTML =
                           "Technical Error Please try after some time. <a href='' onclick='hide('popDiverror')'>Close</a> ";
                         pop('popDiverror');
                     }
                   });
             }else{
-                document.getElementById('popDiverror').innerHTML = 
+                document.getElementById('popDiverror').innerHTML =
                           "Please select atleast one user. <a href='' onclick='hide('popDiverror')'>Close</a> ";
                         pop('popDiverror');
             }
@@ -594,22 +627,22 @@
               return this.value;
             }).get();
             if(values.length){
-                
+
                 $.post( "/admin/unselect-for-3", {"userIds": JSON.stringify(values)})
                   .done(function( data ) {
                     if(data.code == 200){
-                        document.getElementById('popDiv').innerHTML = 
+                        document.getElementById('popDiv').innerHTML =
                         "Selected Users are sucessfully re-moved from this round. <a href='' onclick='hide('popDiv')' >Close</a>";
                         pop('popDiv');
                     }
                     else{
-                        document.getElementById('popDiverror').innerHTML = 
+                        document.getElementById('popDiverror').innerHTML =
                           "Technical Error Please try after some time. <a href='' onclick='hide('popDiverror')'>Close</a> ";
                         pop('popDiverror');
                     }
                   });
             }else{
-                document.getElementById('popDiverror').innerHTML = 
+                document.getElementById('popDiverror').innerHTML =
                           "Please select atleast one user. <a href='' onclick='hide('popDiverror')'>Close</a> ";
                         pop('popDiverror');
             }
