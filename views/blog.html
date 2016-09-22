@@ -57,6 +57,50 @@
     </script>
 </head>
 <body>
+  <script>
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1569759199992980',
+    xfbml      : true,
+    version    : 'v2.7'
+  });
+};
+
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+
+
+function fbShare(){
+  console.log('Share clicked');
+  FB.ui(
+  {
+      method: 'feed',
+      name: "Celebrate the fbb Blog Star Contest",
+      link: 'http://private.fbbblogstar.in/users/list',
+      picture: "https://indiadesire.com/images/Big-Bazaar-Stores16052015.jpg",
+      caption: "fbb Blog Star Contest",
+      description: 'Share a message to show your blogs posted to fbb Blog Star Contest',
+      message: ''
+  });
+}
+
+
+
+function shareContent() {
+// body...
+
+var url = "http://104.236.84.1:3000/users/list";
+var title = "fbb Blog Star";
+var text = "Hi, guys please found my blog at fbb Blog Star contest.";
+window.open('http://www.linkedin.com/shareArticle?mini=true&title=" '+title+' "&text="' +text+ '"&url='+encodeURIComponent(url), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+
+}
+</script>
   <div class="full_width_bg index submit-blog ">
     <div id="submit_popup">
       </div>
