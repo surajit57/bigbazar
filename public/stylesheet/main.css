@@ -1388,4 +1388,35 @@ padding: 39px 0 !important;
     padding: 0px 4px;color: #fff;position: absolute;right: -9px;
     top: -2px;
 }
+@media screen and (max-width:767px) and (min-width:481px){
+    .logo-img{
+        display: block;margin: 0px auto;
+    }
+    .blog-contant{
+        width: 100%;
+    }
+}
+@media screen and (max-width:480px) and (min-width:1px){
+    .logo-img{
+        display: block;margin: 0px auto;
+    }
+    .blog-contant{
+        width: 100%;
+    }
+    .txt-blogsect{
+        margin-bottom: 0px;
+    }
+    .blog-contant > center > .videosection > video{
+        width: 100% !important;height: 225px !important;
+    }
+    .title-blogsect{
+        font-size: 22px; line-height: 30px;
+    }
+    .num-blogsect{
+        display: block;
+    }    
+    .num-blogsect li{
+        width: 100%;
+    }
+}
 /* HOME START CSS */
