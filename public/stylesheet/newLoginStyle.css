@@ -185,7 +185,7 @@ button.btn.btn-default.btn-block {
 .reset_section {
     float: left;margin: 0px;width: 100%;
     height: auto;min-height: 662px;padding: 150px 0px 0px;
-    background-image: url(../images/blogbg.jpg);background-repeat: no-repeat;background-size: 100% 100%;
+    background-image: url(../images/login.jpg);background-repeat: no-repeat;background-size: 100% 100%;
 }
 .reset_Pwd {
     float: left;width: 100%;height: auto;
@@ -227,7 +227,62 @@ button.btn.btn-default.btn-block {
         min-height: 675px;
     }
     .reset.reset-info{
-        width: 260px !important;
+        width: 250px !important;
+    }
+}
+/* RESET CSS END */
+/* LOGIN CSS START*/
+.login_section {
+    float: left;margin: 0px;width: 100%;
+    height: auto;min-height: 662px;padding: 150px 0px 0px;
+    background-image: url(../images/login.jpg);background-repeat: no-repeat;background-size: 100% 100%;
+}
+.login_Pwd {
+    float: left;width: 100%;height: auto;
+}
+.socialicon-btn {
+    width: 238px;padding: 10px 0px;color: #fff;
+    background-color: #5bc0de;border-color: #46b8da;text-align: center;
+    display: block;margin: 0px auto;margin-bottom: 15px;
+}
+.socialicon-btn a p{
+    margin-bottom: 0px;
+}
+.login-title{
+    text-align: center;
+}
+#login_box {
+    float: left;width: 100%;height: auto;
+}
+.login.login-info {
+    width: 300px !important;display: block;margin: 0px auto;
+    background-color: #fff;border: 1px solid transparent;border-radius: 23px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.login-body {
+    padding: 15px;
+}
+.login_form{
+    padding: 10px 0px;
+}
+@media screen and (max-width:1920px) and (min-width:1200px){}
+@media screen and (max-width:1199px) and (min-width:992px){   
+    .login_section{
+        min-height: 675px;
+    }
+}
+@media screen and (max-width:991px) and (min-width:768px){
+    .login_section{
+        min-height: 929px;
+    }
+}
+@media screen and (max-width:767px) and (min-width:481px){}
+@media screen and (max-width:480px) and (min-width:1px){
+    .login_section{
+        min-height: 675px;
+    }
+    .login.login-info{
+        width: 250px !important;
     }
 }
 /* RESET CSS END */
