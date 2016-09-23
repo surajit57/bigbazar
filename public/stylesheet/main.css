@@ -1289,3 +1289,103 @@ padding: 39px 0 !important;
     }
 }
 /* BLOG START CSS */
+/* HOMEBLOG START CSS */
+.blog_header {
+    background: #103157;float: left;width: 100%;
+    height: auto;
+}
+.blog-part {
+    float: left;width: 100%;
+}
+.logo-anchor {
+    float: left;width: 100%;height: auto;
+}
+.logo-img {
+    width: 100px;padding: 10px 0px;height: auto;
+}
+.social-icon-fav {
+    text-align: right;width: auto;float: right;
+    padding: 10px 0px;color: #fff;
+}
+.social-fav {
+    float: left;width: auto;margin: 9px 0px;
+}
+.icon-fav {
+    font-size: 20px !important;color: #ffa800;cursor: pointer;
+    text-decoration: none !important;padding: 0px 8px;
+}
+.icon-fav:hover{
+    color: #ffa800;
+}
+.btn_nav {
+    float: left;width: auto;margin: 11px 11px;
+}
+.button-txt {
+    background: transparent;border: none;
+}
+.button-txt :focus{
+    border: none;
+}
+.icon-fa {
+    background: #ffa800;border-radius: 50%;padding: 3px 6px;
+    font-size: 16px !important;
+}
+.main-section {
+    float: left;width: 100%;height: auto;
+    background: url(../images/blogbg.jpg);background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.blog-contant {
+    width: 700px;display: block;margin: 0px auto; 
+    color: #fff;font-weight: 500;
+}
+.txt-blogsect{
+    float: left;width: 100%;margin: 30px 0px;
+    font-size: 15px;
+}
+.title-blogsect{
+    text-shadow: 3px 3px 15px #000;font-size: 28px;margin: 40px 0px;
+    float: left;width: 100%;
+}
+.num-blogsect {
+    padding-left: 0px;float: left;width: 100%;
+    display: inline-flex;padding-top: 30px;
+}
+.num-blogsect li{
+    float: left;width: 33%;list-style: none;padding: 0px 15px;
+}
+.num-blogsect li img{
+    display: block;margin: 0px auto;width: 50px;
+    height: auto;
+}
+.num-blogsect li span{
+    float: left;width: 100%;padding: 20px 0px;
+    font-size: 14px;
+}
+.btn-blog {
+    background: #1b3f7b;color: #fff;border: 1px solid #2e6da4;
+    padding: 10px 40px;margin: 30px 0px;
+}
+.footerblog-sect{
+    float: left; width: 100%; height: auto;
+    background:#0e264e; padding: 10px 0px
+}
+.footerblog-sect p{
+    margin-bottom: 0px; color: #fff;
+}
+.blog-popup .modal-dialog .modal-content{
+    float: left; width: 100%; height: auto;
+    background: url(../../images/blogbg.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.blog-popup .modal-dialog .modal-content .modal-body{
+    float: left; width: 100%; height: auto;
+    background: rgba(16,49,87,0.5);
+}
+.blog-popup .modal-dialog .modal-content .modal-body .close{
+    opacity: 1;background: #ff4747;border-radius: 50%;
+    padding: 0px 4px;color: #fff;position: absolute;right: -9px;
+    top: -2px;
+}
+/* HOME START CSS */

@@ -16,6 +16,14 @@ router.get('/home', Auth.isLoggedIn , function(req, res){
 	var UserData = req.user;
 	req.flash('info', req.user.isBlogAdded)
 	res.render('blog.html', {data: UserData });
+	
+});
+
+router.get('/home/new', Auth.isLoggedIn , function(req, res){
+	var UserData = req.user;
+	req.flash('info', req.user.isBlogAdded)
+	res.render('homeBlog.html', {data: UserData });
+	
 });
 
 router.get( '/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
@@ -86,6 +94,7 @@ router.get('/logout', function(req, res){
 
 router.get('/blogPost', Auth.isLoggedIn, function(req, res){
 	res.render('blog.html');
+	// res.render('homeBlog.html');
 });
 router.post('/blogPost', Auth.isLoggedIn, UserController.postBlog);
 // router.get('/blogPost1', Auth.isLoggedIn, UserController.postBlog);

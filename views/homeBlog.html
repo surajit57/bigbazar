@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>fbb Blog Star</title>
+        <link rel="shortcut icon" href="../../images/favicon.png"/>
+        <link href="../../stylesheet/bootstrap.min.css" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,100" rel="stylesheet" type="text/css"/>
+        <link href="../../stylesheet/main.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="blog_header">
+            <div class="container">
+                <div class="row" style="margin:0px;">
+                    <div class="blog-part">
+                        <div class="col-xs-12 col-sm-3 col-md-3">
+                            <a href="/users/home" target="_blank" class="logo-anchor" title="fbb BlogStart">
+                                <img src="../../images/Logo1.png"  class="logo-img">
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-9 col-md-9">
+                            <div class="social-icon-fav">
+                                <div class="social-fav">
+                                    <!-- social Share -->
+                                    <i class="fa fa-facebook icon-fav" onclick="fbShare()" title="Facebook"></i>
+                                    <a class="icon-fav" href="https://twitter.com/intent/tweet?text=Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! http://private.fbbblogstar.in/users/list">
+                                        <i class="fa fa-twitter" title="Twitter"></i>
+                                    </a>
+                                    <i class="fa fa-linkedin icon-fav" onclick="shareContent()" title="LinkedIn"></i>
+                                    <!-- End of social Share -->
+                                </div>
+                                <div class="btn_nav">
+                                    <button type="button" onclick="window.location = '/users/list'" class="button-txt">
+                                        <i class="fa fa-rss icon-fa" title="ExploreBloggers"></i>
+                                        <b class="xs_hideen hidden">EXPLORE BLOGGERS</b>
+                                    </button>
+                                    <button type="button" onclick="window.location = '/users/profile'" class="button-txt">
+                                        <i class="fa fa-cog icon-fa" title="Settings"></i>
+                                        <b class="xs_hideen hidden">SETTINGS</b>
+                                    </button>
+                                    <button onclick="logout()" type="button" class="button-txt">
+                                        <i class="fa fa-lock icon-fa" title="SignOut"></i>
+                                        <b class="xs_hideen hidden">SIGN OUT</b>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-section">
+            <div class="opt-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="blog-contant">
+                                <center>
+                                    <p class="txt-blogsect">Lorem Ipsum is simply dummy text of the printing and 
+                                    typesetting industry. Lorem Ipsum has been the industry's 
+                                    standard dummy text ever since the 1500s, when an 
+                                    unknown printer took a galley of type and scrambled 
+                                    it to make a type specimen book. 
+                                    </p>
+                                    <div class="videosection" style="margin-top: 18px;">
+                                        <video width="75%" height="300" controls="">
+                                            <source src="../../images/LogoFinalEdited.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <p class="txt-blogsect">It has survived not only five centuries, but also the 
+                                    leap into electronic typesetting, remaining essentially unchanged.
+                                    </p>
+                                    <h3 class="title-blogsect">GOT THE NERVE TO BE A DIGITAL CRUSADER</h3>
+                                    <ul class="num-blogsect">
+                                        <li>
+                                            <img src="../../images/numone.png" alt="" />
+                                            <span>Select any fit from http://boldissexy.in/ , 
+                                            Mention the fbb fit name of the denims you are 
+                                            wearing and style % different looks of yourself 
+                                            wearing the same denims
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <img src="../../images/numtwo.png" alt="" />
+                                            <span>Top 100 participants receive fbb GIFT 
+                                            Vouchers and writ on a new Topic. FInal 30 to 
+                                            be selected by a panel of judges led by 
+                                            <b>VRAUN DHAWAN</b>
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <img src="../../images/numthree.png" alt="" />
+                                            <span>Top 30 WInners to fly down to Mumbai for an 
+                                            exclusive events as they get awarded the Annual 
+                                            Contract for Fbb and Entry into the fbb elite club
+                                            </span>
+                                        </li>
+                                    </ul>
+                                    <button class="btn-blog" title="Submit Your Blog" data-toggle="modal" data-target="#myModal">SUBMIT YOUR BLOG</button>
+                                    <div class="modal fade blog-popup" id="myModal" role="dialog">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <div class="form-section">
+                                                        <form>
+                                                            <h3 class="txt-submit">Submit Your Blog<h3>
+                                                            <div class="form-group">
+                                                                <input type="text" name="name" id="userName" class="form-control" placeholder="Name">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone">
+                                                            </div>
+                                                            <div class="form-group col-md-6 select-dropleft">
+                                                                <select class="form-control" id="ageSelect">
+                                                                    <option value="0">Age</option>
+                                                                    <option value="18-20">18-20</option>
+                                                                    <option value="21-25">21-25</option>
+                                                                    <option value="26-30">26-30</option>
+                                                                    <option value="31-35">31-35</option>
+                                                                    <option value="36-40">36-40</option>
+                                                                    <option value="41-45">41-45</option>
+                                                                    <option value="46-50">46-50</option>
+                                                                    <option value="51-55">51-55</option>
+                                                                    <option value="56-60">56-60</option>
+                                                                    <option value="61-65">61-65</option>
+                                                                    <option value="66-70">66-70</option>
+                                                                    <option value="71-75">71-75</option>
+                                                                    <option value="76-80">76-80</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group col-md-6 select-dropright">
+                                                                    <input type="text" name="city" id="citySelect" class="form-control" placeholder="City">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="email" id="newEmail" class="form-control" placeholder="E-mail">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" id="blog_url" name="blog_url" class="form-control" placeholder="Web Url">
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="offset">
+                                                                        <button type="button" class="btn btn-primary" id="submit-form">Submit</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footerblog-sect">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p title="Copyright © 2016 Big Bazzer. All rights reserved.">Copyright © 2016 Big Bazzer. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    </body>
+</html>
