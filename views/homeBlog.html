@@ -57,8 +57,8 @@
       {
           method: 'feed',
           name: "Celebrate the fbb Blog Star Contest",
-          link: 'http://private.fbbblogstar.in/users/list',
-          picture: "http://private.fbbblogstar.in/images/blogStar.png",
+          link: 'http://www.fbbindia.in/blogstar/users/list',
+          picture: "http://www.fbbindia.in/blogstar/images/blogStar.png",
           caption: "fbb Blog Star Contest",
           description: 'Hi Guys, I am participating in the #BlogStar contest. Click here to read my blog if you like it support me by sharing it! ',
           message: ''
@@ -70,7 +70,7 @@
     function shareContent() {
     // body...
 
-    var url = "http://private.fbbblogstar.in/users/list";
+    var url = "http://www.fbbindia.in/blogstar/users/list";
     var title = "fbb Blog Star";
     var text = "Hi Guys, I am participating in the #BlogStar contest. Click here to read my blog if you like it support me by sharing it!";
     window.open('http://www.linkedin.com/shareArticle?mini=true&title=" '+title+' "&text="' +text+ '"&url='+encodeURIComponent(url), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
@@ -239,7 +239,7 @@
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="/blogstar/js/bootstrap.min.js"></script>
+        <script src="<%=mountPath %>/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             function logout(){
                $.get( "/blogstar/users/logout", { })
