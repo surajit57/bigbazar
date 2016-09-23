@@ -82,7 +82,7 @@
                 <div class="row" style="margin:0px;">
                     <div class="blog-part">
                         <div class="col-xs-12 col-sm-3 col-md-3">
-                            <a href="/users/home" target="_blank" class="logo-anchor" title="fbb BlogStart">
+                            <a href="/blogstar/users/home" target="_blank" class="logo-anchor" title="fbb BlogStart">
                                 <img src="<%= mountPath %>/images/Logo1.png"  class="logo-img">
                             </a>
                         </div>
@@ -98,11 +98,11 @@
                                     <!-- End of social Share -->
                                 </div>
                                 <div class="btn_nav">
-                                    <button type="button" onclick="window.location = '/users/list'" class="button-txt">
+                                    <button type="button" onclick="window.location = '/blogstar/users/list'" class="button-txt">
                                         <i class="fa fa-rss icon-fa" title="ExploreBloggers"></i>
                                         <b class="xs_hideen hidden">EXPLORE BLOGGERS</b>
                                     </button>
-                                    <button type="button" onclick="window.location = '/users/profile'" class="button-txt">
+                                    <button type="button" onclick="window.location = '/blogstar/users/profile'" class="button-txt">
                                         <i class="fa fa-cog icon-fa" title="Settings"></i>
                                         <b class="xs_hideen hidden">SETTINGS</b>
                                     </button>
@@ -239,10 +239,10 @@
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="../../js/bootstrap.min.js"></script>
+        <script src="./blogstar/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             function logout(){
-               $.get( "/users/logout", { })
+               $.get( "/blogstar/users/logout", { })
                         .done(function( data ) {
                           window.location = "/users/login"
                         });
@@ -262,7 +262,7 @@
               var phoneNum = phone.replace(/[^\d]/g, '');
 
               if(validateURL(urlVal) && filter.test(newEmail) && name.length !=0 && phoneNum.length > 6 && phoneNum.length < 11 && city.length !=0 && age !=0){
-                  $.post( "/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone })
+                  $.post( "/blogstar/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone })
                           .done(function( data ) {
                             console.log('------------------ ', data);
                             console.log('data:-- ', JSON.stringify(data));

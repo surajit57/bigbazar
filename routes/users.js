@@ -87,7 +87,7 @@ router.get('/logout', function(req, res){
         req.session = null;
 
         res.clearCookie('express.sid', { path: '/' });
-        res.redirect('/blogstar');
+        res.redirect('/blogstar/');
 
     });
 });
