@@ -29,17 +29,17 @@ router.get('/home', Auth.isLoggedIn , function(req, res){
 router.get( '/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 router.get( '/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/users/login' }), (req, res) => {
   //  res.apiSuccess( { $redirect : '/#/do-login' }, 'Authenticated with Facebook' );
-	res.redirect('/users/home');
+	res.redirect('/blogstar/users/home');
  });
 
 router.get('/signup' , UserController.getSignupPage);
-router.post('/signup', passport.authenticate('local-signup', {failureRedirect: '/users/login' , successRedirect:'/users/home'}));
+router.post('/signup', passport.authenticate('local-signup', {failureRedirect: '/blogstar/users/login' , successRedirect:'/blogstar/users/home'}));
 
 router.get('/login', function(req, res){
 	// req.flash('info', 'Welcome:------------------------------------------');
 	// res.render('userLogin.html');
 	// res.render('newuserLogin.html');
-	res.redirect('/blogstar');
+	res.redirect('/blogstar/');
 });
 
 router.get('/forgot', UserController.forgotPassword);
