@@ -246,7 +246,9 @@
                           window.location = "/users/login"
                         });
             }
-
+                function reload(){
+                    alert('reload called');
+                }
             function submitBlog(){
               var urlVal = document.getElementById("blog_url").value;
               var age = document.getElementById("ageSelect").value;
@@ -266,7 +268,7 @@
                             if(data.code == 200){
                                 // var Message = data.message;
                                 // alert("succes");
-                                document.getElementById('thanku_msg').innerHTML = "<p class='succes_msg'>Your Blog is uploaded Sucessfully.</p>";
+                                document.getElementById('thanku_msg').innerHTML = "<p class='succes_msg'>Your Blog is uploaded Sucessfully.<span class='colse_msg' onClick='reload();'><i class='fa fa-close f-alert'></i></span></p>";
                                 // document.getElementById("submit_popup").innerHTML =
                                 // '<p class="succe_txt">Your Blog is uploaded Sucessfully. <a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a></p>';
                                 //alert('uploaded');
@@ -277,7 +279,7 @@
                                 var errorMessage = data.message;
                                 console.log('errorMessage:- ',errorMessage);
                                 // alert(" Blog is already uploaded Error Code 100");
-                                document.getElementById('thanku_msg').innerHTML = "<p class='error_msg'>Blog is already uploaded for current round.</p>";
+                                document.getElementById('thanku_msg').innerHTML = "<p class='error_msg'>Blog is already uploaded for current round.<span class='colse_msg' onClick='reload();'><i class='fa fa-close f-alert'></i></span></p>";
                                 // document.getElementById("submit_popup").innerHTML =
                                 //  '<p class="error-txt">Blog is already uploaded for current round. <a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a></p>';
                                  //alert('not uploaded');
