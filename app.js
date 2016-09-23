@@ -31,6 +31,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -87,5 +88,16 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.locals.title = 'My App';
+app.locals.mountPath = '/blogstar';
+// app.locals({
+//     site: {
+//         mountPath: '/blogstar',
+//     },
+//     author: {
+//         name: 'Hemant Nagarkoti',
+//         contact: 'hemant_nagarkoti@yahoo.com'
+//     }
+// });
 
 module.exports = app;

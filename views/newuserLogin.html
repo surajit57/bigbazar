@@ -3,9 +3,9 @@
    <head>
       <title>fbb Blog Star</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="../stylesheet/bootstrap.min.css">
-      <link rel="stylesheet" href="../stylesheet/newLoginStyle.css">
-      <link rel="stylesheet" href="../stylesheet/responsive.css">
+      <link rel="stylesheet" href="<%= mountPath %>/stylesheet/bootstrap.min.css">
+      <link rel="stylesheet" href="<%= mountPath %>/stylesheet/newLoginStyle.css">
+      <link rel="stylesheet" href="<%= mountPath %>/stylesheet/responsive.css">
       <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900' rel='stylesheet' type='text/css'>
       <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
 	    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -126,7 +126,7 @@
                       </form>
                     </div>
                   </div>
-                </div> 
+                </div>
               </div>
 	          </div>
             <div class="modal fade" id="forgotpassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -155,7 +155,7 @@
               </div>
             </div><!--End container -->
   	    <!--<script src="../js/bootstrap.min.js"></script>-->
-  	        <script src="../js/bootstrap.min.js"></script>
+  	        <script src="<%= mountPath %>/js/bootstrap.min.js"></script>
 	          <script>
 	              $(function() {
 	                $('#register-form-link').click(function(e) {
