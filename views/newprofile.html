@@ -325,7 +325,10 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                                                             <input type="text" id="city" name="city" placeholder="City/Location" class="form-control pr-side-inp" value="<%= userInfo.userInfo.city %>"
                                                             />
                                                         </div>
-
+                                                        <div class="form-group">
+                                                            <label class="control-label pr-side-inp-la uppercase">Phone</label>
+                                                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone" value="<%= userInfo.userInfo.phone %>">
+                                                        </div>
                                                         <div style="float:left">
 
                                                             <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
@@ -645,6 +648,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                   var email = document.getElementById('UserEmail').value;
                   var age = document.getElementById('ageSelect').value;
                   var city = document.getElementById('city').value;
+                  var phone = document.getElementById('phone').value;
                   var json = {
                     "name": name,
                     "email": email,
@@ -652,7 +656,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                     "city": city
                   }
                   console.log('name:- ', name, 'email:- ',email);
-                $.post("/users/profile/email", {"name": name, "email": email, "age": age, "city": city})
+                $.post("/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone})
                     .done(function( data ) {
                       if(data.code == 200){
                           var Message = data.message;
