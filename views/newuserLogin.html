@@ -30,14 +30,14 @@
               <div class="login_Pwd">
                   <h1 class="login-title">Member Login</h1>
                   <div class="socialicon-btn">
-                      <a href="/users/auth/facebook" class="bt2">
+                      <a href="<%= mountPath %>/users/auth/facebook" class="bt2">
                         <p class="fb">Log in with Facebook</p>
                       </a>
                   </div>
                   <div id="login_box">
                       <div class="login login-info" >
                           <div class="login-body">
-                              <form role="form" class="frm" id="register-form" role="form" style="display: block;" action="/login" method="POST" onsubmit="return validateSignInForm();">
+                              <form role="form" class="frm" id="register-form" role="form" style="display: block;" action="<%= mountPath %>/login" method="POST" onsubmit="return validateSignInForm();">
                                   <div style="margin-bottom: 10px" class="input-group">
                                       <span class="input-group-addon">
                                           <i class="glyphicon glyphicon-user"></i>
