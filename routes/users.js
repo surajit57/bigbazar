@@ -29,7 +29,7 @@ router.get('/home', Auth.isLoggedIn , function(req, res){
 router.get( '/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 router.get( '/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/blogstar/users/login' }), (req, res) => {
   //  res.apiSuccess( { $redirect : '/#/do-login' }, 'Authenticated with Facebook' );
-	res.redirect('/blogstar/blogstar/users/home');
+	res.redirect('/blogstar/users/home');
  });
 
 router.get('/signup' , UserController.getSignupPage);
