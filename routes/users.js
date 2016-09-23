@@ -15,15 +15,15 @@ var User = models.user;
 router.get('/home', Auth.isLoggedIn , function(req, res){
 	var UserData = req.user;
 	req.flash('info', req.user.isBlogAdded)
-	res.render('blog.html', {data: UserData });
-	
+	// res.render('blog.html', {data: UserData });
+	res.render('homeBlog.html', {data: UserData });
 });
 
 router.get('/home/new', Auth.isLoggedIn , function(req, res){
 	var UserData = req.user;
 	req.flash('info', req.user.isBlogAdded)
 	res.render('homeBlog.html', {data: UserData });
-	
+
 });
 
 router.get( '/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));

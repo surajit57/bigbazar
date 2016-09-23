@@ -15,8 +15,68 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript">
+          function pop(div) {
+            document.getElementById(div).style.display = 'block';
+            // alert('pop');
+          }
+          function hide(div) {
+            document.getElementById(div).style.display = 'none';
+          }
+          //To detect escape button
+          document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            if (evt.keyCode == 27) {
+              hide('popDiv');
+            }
+          };
+        </script>
     </head>
     <body>
+      <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1569759199992980',
+        xfbml      : true,
+        version    : 'v2.7'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+
+
+    function fbShare(){
+      console.log('Share clicked');
+      FB.ui(
+      {
+          method: 'feed',
+          name: "Celebrate the fbb Blog Star Contest",
+          link: 'http://private.fbbblogstar.in/users/list',
+          picture: "http://private.fbbblogstar.in/images/blogStar.png",
+          caption: "fbb Blog Star Contest",
+          description: 'Hi Guys, I am participating in the #BlogStar contest. Click here to read my blog if you like it support me by sharing it! ',
+          message: ''
+      });
+    }
+
+
+
+    function shareContent() {
+    // body...
+
+    var url = "http://private.fbbblogstar.in/users/list";
+    var title = "fbb Blog Star";
+    var text = "Hi Guys, I am participating in the #BlogStar contest. Click here to read my blog if you like it support me by sharing it!";
+    window.open('http://www.linkedin.com/shareArticle?mini=true&title=" '+title+' "&text="' +text+ '"&url='+encodeURIComponent(url), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+
+    }
+    </script>
         <div class="blog_header">
             <div class="container">
                 <div class="row" style="margin:0px;">
@@ -64,91 +124,94 @@
                         <div class="col-md-12">
                             <div class="blog-contant">
                                 <center>
-                                    <p class="txt-blogsect">Lorem Ipsum is simply dummy text of the printing and 
-                                    typesetting industry. Lorem Ipsum has been the industry's 
-                                    standard dummy text ever since the 1500s, when an 
-                                    unknown printer took a galley of type and scrambled 
-                                    it to make a type specimen book. 
+                                    <p class="txt-blogsect">Lorem Ipsum is simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum has been the industry's
+                                    standard dummy text ever since the 1500s, when an
+                                    unknown printer took a galley of type and scrambled
+                                    it to make a type specimen book.
                                     </p>
                                     <div class="videosection" style="margin-top: 18px;">
                                         <video width="75%" height="300" controls="">
                                             <source src="../../images/LogoFinalEdited.mp4" type="video/mp4">
                                         </video>
                                     </div>
-                                    <p class="txt-blogsect">It has survived not only five centuries, but also the 
+                                    <p class="txt-blogsect">It has survived not only five centuries, but also the
                                     leap into electronic typesetting, remaining essentially unchanged.
                                     </p>
                                     <h3 class="title-blogsect">GOT THE NERVE TO BE A DIGITAL CRUSADER</h3>
                                     <ul class="num-blogsect">
                                         <li>
                                             <img src="../../images/numone.png" alt="" />
-                                            <span>Select any fit from http://boldissexy.in/ , 
-                                            Mention the fbb fit name of the denims you are 
-                                            wearing and style % different looks of yourself 
+                                            <span>Select any fit from http://boldissexy.in/ ,
+                                            Mention the fbb fit name of the denims you are
+                                            wearing and style % different looks of yourself
                                             wearing the same denims
                                             </span>
                                         </li>
                                         <li>
                                             <img src="../../images/numtwo.png" alt="" />
-                                            <span>Top 100 participants receive fbb GIFT 
-                                            Vouchers and writ on a new Topic. FInal 30 to 
-                                            be selected by a panel of judges led by 
+                                            <span>Top 100 participants receive fbb GIFT
+                                            Vouchers and writ on a new Topic. FInal 30 to
+                                            be selected by a panel of judges led by
                                             <b>VRAUN DHAWAN</b>
                                             </span>
                                         </li>
                                         <li>
                                             <img src="../../images/numthree.png" alt="" />
-                                            <span>Top 30 WInners to fly down to Mumbai for an 
-                                            exclusive events as they get awarded the Annual 
+                                            <span>Top 30 WInners to fly down to Mumbai for an
+                                            exclusive events as they get awarded the Annual
                                             Contract for Fbb and Entry into the fbb elite club
                                             </span>
                                         </li>
                                     </ul>
                                     <button class="btn-blog" title="Submit Your Blog" data-toggle="modal" data-target="#myModal">SUBMIT YOUR BLOG</button>
                                     <div class="modal fade blog-popup" id="myModal" role="dialog">
+                                      <div class="thanku_msg" id="thanku_msg">
+                                      </div>
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-body">
                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                     <div class="form-section">
                                                         <form>
+
                                                             <h3 class="txt-submit">Submit Your Blog<h3>
                                                             <div class="form-group">
-                                                                <input type="text" name="name" id="userName" class="form-control" placeholder="Name">
+                                                                <input type="text" name="name" id="userName" class="form-control" placeholder="Name" onchange="displayNormal('userName');">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone">
+                                                                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone" onchange="displayNormal('phone');">
                                                             </div>
                                                             <div class="form-group col-md-6 select-dropleft">
-                                                                <select class="form-control" id="ageSelect">
-                                                                    <option value="0">Age</option>
-                                                                    <option value="18-20">18-20</option>
-                                                                    <option value="21-25">21-25</option>
-                                                                    <option value="26-30">26-30</option>
-                                                                    <option value="31-35">31-35</option>
-                                                                    <option value="36-40">36-40</option>
-                                                                    <option value="41-45">41-45</option>
-                                                                    <option value="46-50">46-50</option>
-                                                                    <option value="51-55">51-55</option>
-                                                                    <option value="56-60">56-60</option>
-                                                                    <option value="61-65">61-65</option>
-                                                                    <option value="66-70">66-70</option>
-                                                                    <option value="71-75">71-75</option>
-                                                                    <option value="76-80">76-80</option>
-                                                                </select>
+                                                              <select class="form-control" id="ageSelect" onchange="displayNormal('ageSelect');">
+                                                                <option value="0">Age</option>
+                                                                <option value="18-20">18-20</option>
+                                                                <option value="21-25">21-25</option>
+                                                                <option value="26-30">26-30</option>
+                                                                <option value="31-35">31-35</option>
+                                                                <option value="36-40">36-40</option>
+                                                                <option value="41-45">41-45</option>
+                                                                <option value="46-50">46-50</option>
+                                                                <option value="51-55">51-55</option>
+                                                                <option value="56-60">56-60</option>
+                                                                <option value="61-65">61-65</option>
+                                                                <option value="66-70">66-70</option>
+                                                                <option value="71-75">71-75</option>
+                                                                <option value="76-80">76-80</option>
+                                                              </select>
                                                             </div>
                                                             <div class="form-group col-md-6 select-dropright">
-                                                                    <input type="text" name="city" id="citySelect" class="form-control" placeholder="City">
+                                                                    <input type="text" name="city" id="citySelect" class="form-control" placeholder="City" onchange="displayNormal('citySelect');">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="email" id="newEmail" class="form-control" placeholder="E-mail">
+                                                                <input type="email" id="newEmail" class="form-control" placeholder="E-mail" onchange="displayNormal('newEmail');">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="text" id="blog_url" name="blog_url" class="form-control" placeholder="Web Url">
+                                                                <input type="text" id="blog_url" name="blog_url" class="form-control" placeholder="Web Url" onchange="displayNormal('blog_url');">
                                                             </div>
                                                             <div class="form-group row">
                                                                 <div class="offset">
-                                                                        <button type="button" class="btn btn-primary" id="submit-form">Submit</button>
+                                                                        <button type="button" onclick="submitBlog()" class="btn btn-primary" id="submit-form">Submit</button>
                                                                 </div>
                                                             </div>
                                                         </form>
@@ -174,7 +237,101 @@
                 </div>
             </div>
         </div>
-        <script src="../../js/bootstrap.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="../../js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            function logout(){
+               $.get( "/users/logout", { })
+                        .done(function( data ) {
+                          window.location = "/users/login"
+                        });
+            }
+
+            function submitBlog(){
+              var urlVal = document.getElementById("blog_url").value;
+              var age = document.getElementById("ageSelect").value;
+              var city = document.getElementById("citySelect").value;
+              var name= document.getElementById("userName").value;
+              var newEmail= document.getElementById("newEmail").value;
+              var phone = document.getElementById("phone").value;
+              console.log('urlVal:- ',urlVal, 'age:- ',age, 'city:- ',city, 'name',name, 'newEmail:- ',newEmail, 'phone',phone);
+              var filter = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
+              var phoneNum = phone.replace(/[^\d]/g, '');
+
+              if(validateURL(urlVal) && filter.test(newEmail) && name.length !=0 && phoneNum.length > 6 && phoneNum.length < 11 && city.length !=0 && age !=0){
+                  $.post( "/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone })
+                          .done(function( data ) {
+                            console.log('------------------ ', data);
+                            console.log('data:-- ', JSON.stringify(data));
+                            if(data.code == 200){
+                                // var Message = data.message;
+                                // alert("succes");
+                                document.getElementById('thanku_msg').innerHTML = "<p class='succes_msg'>Your Blog is uploaded Sucessfully.</p>";
+                                // document.getElementById("submit_popup").innerHTML =
+                                // '<p class="succe_txt">Your Blog is uploaded Sucessfully. <a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a></p>';
+                                //alert('uploaded');
+                                //pop('popDiv');
+                                // window.location = "/users/home";
+                            }
+                            else if(data.code == 100){
+                                var errorMessage = data.message;
+                                console.log('errorMessage:- ',errorMessage);
+                                // alert(" Blog is already uploaded Error Code 100");
+                                document.getElementById('thanku_msg').innerHTML = "<p class='error_msg'>Blog is already uploaded for current round.</p>";
+                                // document.getElementById("submit_popup").innerHTML =
+                                //  '<p class="error-txt">Blog is already uploaded for current round. <a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a></p>';
+                                 //alert('not uploaded');
+                                // pop('popDiverror');
+                            }
+                            else{
+                              alert('technical error');
+                                var errorMessage = data.message;
+                                document.getElementById("submit_popup").innerHTML = '<p class="error-txt">Technical Error. Please try after some time.<a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a>';
+                                // pop('popDiverror');
+                            }
+                          });
+              }
+              else if (name.length == 0) {
+                // alert('Name cnnot be empty');
+                document.getElementById('userName').style.border = "1px solid red";
+                // document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Name cannot be empty <a href="" onClick="hide("submit_popup")">&times;</a></p>';
+              }
+              else if (!(phoneNum.length > 6 && phoneNum.length < 11)) {
+                document.getElementById('phone').style.border = "1px solid red";
+                // document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Enter a valid phone number <a href="" onClick="hide("submit_popup")">&times;</a></p>';
+              }
+              else if (age == 0) {
+                document.getElementById('ageSelect').style.border = "1px solid red";
+                // document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Enter your age <a href="" onClick="hide("submit_popup")">&times;</a></p>';
+              }
+              else if (city.length == 0) {
+                document.getElementById('citySelect').style.border = "1px solid red";
+                // document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Enter your city <a href="" onClick="hide("submit_popup")">&times;</a></p>';
+              }
+              else if(!filter.test(newEmail)){
+                document.getElementById('newEmail').style.border = "1px solid red";
+                // document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Enter a valid Email <a href="" onClick="hide("submit_popup")">&times;</a></p>';
+              }
+            else{
+              document.getElementById('blog_url').style.border = "1px solid red";
+              // document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Input Blog Url is not valid. <a href="" onClick="hide("submit_popup")">&times;</a></p>';
+            }
+
+             }
+
+             function validateURL(textval) {
+        var urlregex = new RegExp( "^(http|https|ftp)\://([a-zA-Z0-9\.\-]+(\:[a-zA-Z0-9\.&amp;%\$\-]+)*@)*((25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])|([a-zA-Z0-9\-]+\.)*[a-zA-Z0-9\-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(\:[0-9]+)*(/($|[a-zA-Z0-9\.\,\?\'\\\+&amp;%\$#\=~_\-]+))*$");
+        return urlregex.test(textval);
+      }
+
+
+  function displayNormal(id){
+    var len = document.getElementById(id).value;
+    if(len.length){
+      document.getElementById(id).style.border = "1px solid #ccc";
+    }
+  }
+
+          </script>
     </body>
 </html>
