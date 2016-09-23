@@ -51,7 +51,7 @@
   function validatePass(){
     var pass = document.getElementById('pass').value;
     var pass1 = document.getElementById('pass1').value;
-    if(pass.length == pass1.length || pass.length >= 6){
+    if(pass.length == pass1.length && pass.length >= 6 ){
       return true;
     }
     else{
