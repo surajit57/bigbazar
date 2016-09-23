@@ -48,7 +48,10 @@ router.get('/reset/:token', function(req, res) {
 	}).then(function(user){
 		if(user){
 			// console.log('user for retrieve pass', user);
-			res.render('reset.html', {
+			// res.render('reset.html', {
+			// 	user: user
+			// });
+			res.render('reset1.html', {
 				user: user
 			});
 		}else{
@@ -58,10 +61,10 @@ router.get('/reset/:token', function(req, res) {
 		}
 	})
 });
-router.get('/reset1',  function(req, res){
-	res.render('reset1.html');
-	
-});
+// router.get('/reset1',  function(req, res){
+// 	res.render('reset1.html');
+//
+// });
 
 router.post('/reset/:token', UserController.resetPassword);
 
