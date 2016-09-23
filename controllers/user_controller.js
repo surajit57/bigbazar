@@ -203,11 +203,15 @@ UserController.getProfile = function(req, res){
 }
 
 UserController.saveNameEmailProfile = function(req, res){
-  console.log('name:---------------- ', req.body.name);
-  console.log('email:-------------------------------- ', req.body.email);
+  // console.log('name:---------------- ', req.body.name);
+  // console.log('email:-------------------------------- ', req.body.email);
+  console.log('age:--------------- ', req.body);
     var user = User.update({
       name: req.body.name,
-      email: req.body.email
+      email: req.body.email,
+      age: req.body.age,
+      city: req.body.city,
+      phone: req.body.phone
     },{
       where: {
         id: req.user.id

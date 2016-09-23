@@ -303,22 +303,20 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                                                         </div>
                                                         <div class="form-group">
                                                           <label class="control-label pr-side-inp-la uppercase">Age</label>
-                                                          <input type="text" id="age" name="age" placeholder="Age" class="form-control pr-side-inp" value="<%= userInfo.userInfo.age %>">
-                                                        <select class="form-control" id="ageSelect">
-                                                          <option value="0">Age</option>
-                                                          <option value="18-20">18-20</option>
-                                                          <option value="21-25">21-25</option>
-                                                          <option value="26-30">26-30</option>
-                                                          <option value="31-35">31-35</option>
-                                                          <option value="36-40">36-40</option>
-                                                          <option value="41-45">41-45</option>
-                                                          <option value="46-50">46-50</option>
-                                                          <option value="51-55">51-55</option>
-                                                          <option value="56-60">56-60</option>
-                                                          <option value="61-65">61-65</option>
-                                                          <option value="66-70">66-70</option>
-                                                          <option value="71-75">71-75</option>
-                                                          <option value="76-80">76-80</option>
+                                                        <select class="form-control"id="ageSelect">
+                                                          <option <% if (userInfo.userInfo.age == null || userInfo.userInfo.age =="") { %> selected <% }else { %> <% } %>  value="0">Age</option>
+                                                          <option <% if (userInfo.userInfo.age == "18-20") { %> selected <% }else { %> <% } %> value="18-20">18-20</option>
+                                                          <option <% if (userInfo.userInfo.age == "26-30") { %> selected <% }else { %> <% } %> value="26-30">26-30</option>
+                                                          <option <% if (userInfo.userInfo.age == "31-35") { %> selected <% }else { %> <% } %> value="31-35">31-35</option>
+                                                          <option <% if (userInfo.userInfo.age == "36-40") { %> selected <% }else { %> <% } %> value="36-40">36-40</option>
+                                                          <option <% if (userInfo.userInfo.age == "41-45") { %> selected <% }else { %> <% } %> value="41-45">41-45</option>
+                                                          <option <% if (userInfo.userInfo.age == "46-45") { %> selected <% }else { %> <% } %> value="46-50">46-50</option>
+                                                          <option <% if (userInfo.userInfo.age == "51-55") { %> selected <% }else { %> <% } %> value="51-55">51-55</option>
+                                                          <option <% if (userInfo.userInfo.age == "56-60") { %> selected <% }else { %> <% } %> value="56-60">56-60</option>
+                                                          <option <% if (userInfo.userInfo.age == "61-65") { %> selected <% }else { %> <% } %> value="61-65">61-65</option>
+                                                          <option <% if (userInfo.userInfo.age == "66-70") { %> selected <% }else { %> <% } %> value="66-70">66-70</option>
+                                                          <option <% if (userInfo.userInfo.age == "71-75") { %> selected <% }else { %> <% } %> value="71-75">71-75</option>
+                                                          <option <% if (userInfo.userInfo.age == "76-80") { %> selected <% }else { %> <% } %> value="76-80">76-80</option>
                                                         </select>
                                                         </div>
 
@@ -327,7 +325,10 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                                                             <input type="text" id="city" name="city" placeholder="City/Location" class="form-control pr-side-inp" value="<%= userInfo.userInfo.city %>"
                                                             />
                                                         </div>
-
+                                                        <div class="form-group">
+                                                            <label class="control-label pr-side-inp-la uppercase">Phone</label>
+                                                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone" value="<%= userInfo.userInfo.phone %>">
+                                                        </div>
                                                         <div style="float:left">
 
                                                             <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
@@ -645,12 +646,17 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                   console.log('button clicked');
                   var name = document.getElementById('UserName').value;
                   var email = document.getElementById('UserEmail').value;
+                  var age = document.getElementById('ageSelect').value;
+                  var city = document.getElementById('city').value;
+                  var phone = document.getElementById('phone').value;
                   var json = {
                     "name": name,
-                    "email": email
+                    "email": email,
+                    "age": age,
+                    "city": city
                   }
                   console.log('name:- ', name, 'email:- ',email);
-                $.post("/users/profile/email", {"name": name, "email": email})
+                $.post("/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone})
                     .done(function( data ) {
                       if(data.code == 200){
                           var Message = data.message;
@@ -715,8 +721,12 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                     });
                   }
                 }
-
-
+                // var ageVal = "<%= userInfo.userInfo.age %>"
+                // if(ageVal){
+                //   alert(ageVal);
+                //
+                //   document.getElementById('ageSelect').innerHTML = '<option value="0">Age</option><option value="18-20">18-20</option><option value="21-25">21-25</option><option value="26-30">26-30</option><option value="31-35">31-35</option><option value="36-40">36-40</option> <option value="41-45">41-45</option> <option value="46-50">46-50</option> <option value="51-55">51-55</option>       <option value="56-60">56-60</option><option value="61-65">61-65</option><option value="66-70">66-70</option><option value="71-75">71-75</option><option value="76-80">76-80</option>'
+                // }
 
         </script>
 </body>
