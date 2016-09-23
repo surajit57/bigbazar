@@ -61,18 +61,17 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
 
-
       function fbShare(){
         console.log('Share clicked');
         FB.ui(
         {
             method: 'feed',
-            name: "Celebrate the BigBazar Contest",
-            link: 'http://104.236.84.1:3000/users/list',
-            picture: "https://indiadesire.com/images/Big-Bazaar-Stores16052015.jpg",
-            caption: "BigBazar Contest",
-            description: 'Share a message to show your blogs posted to BiBazar Contest',
-            message: 'Hello'
+            name: "Celebrate the fbb Blog Star Contest",
+            link: 'http://private.fbbblogstar.in/users/list',
+            picture: "http://private.fbbblogstar.in/images/blogStar.png",
+            caption: "fbb Blog Star Contest",
+            description: 'Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! ',
+            message: 'Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! '
         });
       }
 
@@ -86,9 +85,9 @@ $(document).ready(function(){
 function shareContent() {
   // body...
 
-var url = "http://104.236.84.1:3000/users/list";
-var title = "BigBazar Sabse Sasta Aur Sabse aaccha.";
-var text = "Hi, guys please found my blog at BigBazar contest.";
+var url = "http://private.fbbblogstar.in/users/list";
+var title = "fbb Blog Star";
+var text = "Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it!";
   window.open('http://www.linkedin.com/shareArticle?mini=true&title=" '+title+' "&text="' +text+ '"&url='+encodeURIComponent(url), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
 
 }
@@ -107,7 +106,7 @@ var text = "Hi, guys please found my blog at BigBazar contest.";
                     <div class="add-button tp-mar20-20 tp-a-hov ">
                         <!-- social Share -->
                         <i class="fa fa-facebook tp-mar20" onclick="fbShare()"></i>
-                        <a class="tp-mar20" href="https://twitter.com/intent/tweet?text=Hey Guys join BigBazar campaign and %20world">
+                        <a class="tp-mar20" href="https://twitter.com/intent/tweet?text=Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! http://private.fbbblogstar.in/users/list ">
                             <i class="fa fa-twitter"></i>
                         </a>
                         <i class="fa fa-linkedin tp-mar20" onclick="shareContent()"></i>
