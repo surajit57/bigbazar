@@ -19,12 +19,12 @@ router.get('/home', Auth.isLoggedIn , function(req, res){
 	res.render('homeBlog.html', {data: UserData });
 });
 
-router.get('/home/new', Auth.isLoggedIn , function(req, res){
-	var UserData = req.user;
-	req.flash('info', req.user.isBlogAdded)
-	res.render('homeBlog.html', {data: UserData });
-
-});
+// router.get('/home/new', Auth.isLoggedIn , function(req, res){
+// 	var UserData = req.user;
+// 	req.flash('info', req.user.isBlogAdded)
+// 	res.render('homeBlog.html', {data: UserData });
+//
+// });
 
 router.get( '/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 router.get( '/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/users/login' }), (req, res) => {

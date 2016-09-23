@@ -13,6 +13,7 @@ router.get('/', function(req, res, next) {
 	if(req.user){
 		res.redirect('/users/home');
 	}
+	console.log('coming here ...................');
 	res.render('newuserLogin.html');
 });
 

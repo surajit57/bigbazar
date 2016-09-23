@@ -88,7 +88,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.locals.title = 'My App';
+
 app.locals.mountPath = '/blogstar';
 // app.locals({
 //     site: {
