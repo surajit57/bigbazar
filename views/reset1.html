@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>fbb Blog Star</title>
-    <link rel="shortcut icon" href="../images/favicon.png" />
-    <link rel="stylesheet" href="../stylesheet/bootstrap.min.css">
-    <link rel="stylesheet" href="../stylesheet/newLoginStyle.css">
-    <link rel="stylesheet" href="../stylesheet/responsive.css">
+    <link rel="shortcut icon" href="../../images/favicon.png" />
+    <link rel="stylesheet" href="../../../stylesheet/bootstrap.min.css">
+    <link rel="stylesheet" href="../../stylesheet/newLoginStyle.css">
+    <link rel="stylesheet" href="../../stylesheet/responsive.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600,700,900' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
 	  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -25,7 +25,7 @@
                         <div id="resetbox">
                             <div class="reset reset-info">
                                 <div class="reset-body">
-                                    <form class="reset_form" action="/users/reset/"  method="post" onsubmit="return validatePass()">
+                                    <form class="reset_form" action="/users/reset/<%= user.resetPasswordToken %>"  method="post" onsubmit="return validatePass()">
                                         <div class="input-group" style="margin-bottom: 10px">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                             <input type="text" name="password" id="pass" class="form-control" placeholder="newPassword">
@@ -40,12 +40,12 @@
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
       	    </div>
         </div>
     </div>
   </body>
-  <script src="../js/bootstrap.min.js"></script>
+  <!-- <script src="../../js/bootstrap.min.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script type="text/javascript">
   function validatePass(){
