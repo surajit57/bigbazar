@@ -242,9 +242,9 @@
         <script src="<%=mountPath %>/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             function logout(){
-               $.get( "<%= mountPath>/users/logout", { })
+               $.get( "<%= mountPath %>/users/logout", { })
                         .done(function( data ) {
-                          window.location = "<%= mountPath>/users/login"
+                          window.location = "<%= mountPath %>/users/login"
                         });
             }
                 function reload(){
