@@ -286,3 +286,9 @@ button.btn.btn-default.btn-block {
     }
 }
 /* RESET CSS END */
+/* ERROR CSS START */
+.invalid_msg{
+    font-size: 20px;text-align: center;margin: 20px 0px;
+    color: #ff4747;line-height: 30px;text-transform: capitalize;
+}
+/* ERROR CSS END */
