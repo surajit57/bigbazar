@@ -79,7 +79,7 @@ UserController.retrievePassword = function(req, res, next){
           })
         }else{
           req.flash('error', 'No account with that email address exists.');
-          return res.redirect('/users/login');
+          return res.redirect('/blogstar/users/login');
         }
       })
     },
@@ -112,7 +112,7 @@ UserController.retrievePassword = function(req, res, next){
   ], function(err) {
     console.log('err fun');
     if (err) return next(err);
-    res.redirect('/users/forgot');
+    res.redirect('/blogstar/users/forgot');
   });
 }
 
@@ -151,7 +151,7 @@ UserController.resetPassword = function(req, res){
          }else{
            req.flash('error', 'No account with that email address exists.');
            console.log('first else');
-           return res.redirect('/users/login');
+           return res.redirect('/blogstar/users/login');
          }
        })
     },
@@ -172,14 +172,14 @@ UserController.resetPassword = function(req, res){
                 console.log('E-Message sent');
                 req.flash('info', 'Success! Your password has been changed.');
                 // res.render('newuserLogin.html');
-                res.redirect('/users/login');
+                res.redirect('/blogstar/users/login');
            }
         });
 
     }
   ], function(err) {
     console.log('Last error');
-    res.redirect('/');
+    res.redirect('/blogstar/');
   });
 }
 
@@ -337,7 +337,7 @@ function updateRound1Blog(req, res){
       }
     }).then(function(blog){
       console.log('Blog 1 url Successfully added');
-      res.redirect('/users/profile');
+      res.redirect('/blogstar/users/profile');
     })
 }
 
@@ -350,7 +350,7 @@ function updateRound2Blog(req, res){
       }
     }).then(function(blog){
       console.log('Blog 2 url Successfully added');
-      res.redirect('/users/profile');
+      res.redirect('/blogstar/users/profile');
     })
 }
 
@@ -363,7 +363,7 @@ function updateRound3Blog(req, res){
       }
     }).then(function(blog){
       console.log('Blog 3 url Successfully added');
-      res.redirect('/users/profile');
+      res.redirect('/blogstar/users/profile');
     })
 }
 
@@ -504,7 +504,7 @@ function addRound1(UserId, url, req, res, user_age, user_city, user_phone, blog_
               });
               blog.save().then(function(blog){
                 console.log('Success:-- ', blog);
-                if(!blog) return res.redirect('/users/home');
+                if(!blog) return res.redirect('/blogstar/users/home');
                     console.log('blog created');
                     User.update({
                       isRound1BlogAdded: 1,
@@ -574,7 +574,7 @@ function addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_
               .then(function(blog){
                 console.log('blog:------------- ',blog);
 
-                if(!blog) return res.redirect('/users/home');
+                if(!blog) return res.redirect('/blogstar/users/home');
                     console.log('blog created');
                     User.update({
                       isRound2BlogAdded: 1,
@@ -644,7 +644,7 @@ function addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_
                 }
               })
               .then(function(blog){
-                if(!blog) return res.redirect('/users/home');
+                if(!blog) return res.redirect('/blogstar/users/home');
                     console.log('blog created');
                     User.update({
                       isRound3BlogAdded: 1

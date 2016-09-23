@@ -9,7 +9,7 @@
               <div class="flash"><%= locals.messages.info %></div>
             <% } %>
 
-<form method="post" action="/admin/events">
+<form method="post" action="<%= mountPath %>/admin/events">
   <label>Round No</label>
   <input type="number" name="roundNo">
   <label>Start Date</label>
