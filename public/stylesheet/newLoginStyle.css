@@ -182,12 +182,52 @@ button.btn.btn-default.btn-block {
 
 /* NEWUSERLOGIN CSS END*/
 /* RESET CSS START*/
+.reset_section {
+    float: left;margin: 0px;width: 100%;
+    height: auto;min-height: 662px;padding: 150px 0px 0px;
+    background-image: url(../images/blogbg.jpg);background-repeat: no-repeat;background-size: 100% 100%;
+}
 .reset_Pwd {
-    float: left;
-    width: 100%;
-    padding: 153px 0px 0px;
+    float: left;width: 100%;height: auto;
+}
+.reset-title{
+    text-align: center;
+}
+#resetbox {
+    float: left;width: 100%;height: auto;
+}
+.reset.reset-info {
+    width: 300px !important;display: block;margin: 0px auto;
+    background-color: #fff;border: 1px solid transparent;border-radius: 23px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.reset-body {
+    padding: 15px;
 }
 .reset_form{
     padding: 10px 0px;
+}
+@media screen and (max-width:1920px) and (min-width:1200px){}
+@media screen and (max-width:1199px) and (min-width:992px){
+    .reset_section{
+        background-size: 100% 100%;
+    }    
+    .reset_section{
+        min-height: 675px;
+    }
+}
+@media screen and (max-width:991px) and (min-width:768px){
+    .reset_section{
+        min-height: 929px;
+    }
+}
+@media screen and (max-width:767px) and (min-width:481px){}
+@media screen and (max-width:480px) and (min-width:1px){
+    .reset_section{
+        min-height: 675px;
+    }
+    .reset.reset-info{
+        width: 260px !important;
+    }
 }
 /* RESET CSS END */

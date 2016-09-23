@@ -15,16 +15,16 @@
 	  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="shortcut icon" href="../images/favicon.png" />
   </head>
-  <body style="background-image:url(../images/loginImage.png);background-repeat:no-repeat;background-size:100%">
-        <div class="header">
-            <div class="container">
-      	        <div class="row" style="margin: 0px;">
-                    <div class="col-md-4">
-                        <div class="reset_Pwd">
-                            <h1 class="member">Reset Password</h1>
-                            <div id="loginbox">
-                                <div class="panel panel-info">
-                                    <div class="panel-body">
+  <body>
+    <div class="reset_section">
+        <div class="container">
+      	    <div class="row" style="margin: 0px;">
+                <div class="col-sm-5 col-md-4">
+                    <div class="reset_Pwd">
+                        <h1 class="reset-title">Reset Password</h1>
+                        <div id="resetbox">
+                            <div class="reset reset-info">
+                                <div class="reset-body">
                                     <form class="reset_form" action="/users/reset/"  method="post" onsubmit="return validatePass()">
                                         <div class="input-group" style="margin-bottom: 10px">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -36,14 +36,14 @@
                                         </div>
                                         <button type="submit" name="reset" class="btn btn-default btn-block">Reset</button>
                                     </form>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div> 
-      	        </div>
-            </div>
+                    </div>
+                </div> 
+      	    </div>
         </div>
+    </div>
   </body>
   <script src="../js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
