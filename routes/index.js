@@ -14,6 +14,7 @@ router.get('/', function(req, res, next) {
 		res.redirect('/users/home');
 	}
 	console.log('coming here ...................');
+
 	res.render('newuserLogin.html');
 });
 

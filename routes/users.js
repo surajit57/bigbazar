@@ -39,7 +39,7 @@ router.get('/login', function(req, res){
 	// req.flash('info', 'Welcome:------------------------------------------');
 	// res.render('userLogin.html');
 	// res.render('newuserLogin.html');
-	res.redirect('/');
+	res.redirect('/blogstar');
 });
 
 router.get('/forgot', UserController.forgotPassword);
