@@ -303,7 +303,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                                                         </div>
                                                         <div class="form-group">
                                                           <label class="control-label pr-side-inp-la uppercase">Age</label>
-                                                        <select class="form-control" id="ageSelect">
+                                                        <select class="form-control"id="ageSelect">
                                                           <option <% if (userInfo.userInfo.age == null || userInfo.userInfo.age =="") { %> selected <% }else { %> <% } %>  value="0">Age</option>
                                                           <option <% if (userInfo.userInfo.age == "18-20") { %> selected <% }else { %> <% } %> value="18-20">18-20</option>
                                                           <option <% if (userInfo.userInfo.age == "26-30") { %> selected <% }else { %> <% } %> value="26-30">26-30</option>
@@ -643,12 +643,16 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                   console.log('button clicked');
                   var name = document.getElementById('UserName').value;
                   var email = document.getElementById('UserEmail').value;
+                  var age = document.getElementById('ageSelect').value;
+                  var city = document.getElementById('city').value;
                   var json = {
                     "name": name,
-                    "email": email
+                    "email": email,
+                    "age": age,
+                    "city": city
                   }
                   console.log('name:- ', name, 'email:- ',email);
-                $.post("/users/profile/email", {"name": name, "email": email})
+                $.post("/users/profile/email", {"name": name, "email": email, "age": age, "city": city})
                     .done(function( data ) {
                       if(data.code == 200){
                           var Message = data.message;
