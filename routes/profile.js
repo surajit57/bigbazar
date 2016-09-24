@@ -32,7 +32,7 @@ router.post('/upload',Auth.isLoggedIn, type, function (req, res) {
               console.log('req.user:- ',req.user);
 
               var user = User.update({
-                  imageUrl: 'http://private.fbbblogstar.in/profile/'+req.file.filename,
+                  imageUrl: 'http://www.fbbindia.in/blogstar/profile/'+req.file.filename,
                 },{
                   where: {
                     id: req.user.id
@@ -40,7 +40,7 @@ router.post('/upload',Auth.isLoggedIn, type, function (req, res) {
                 }).then(function(val){
                   console.log('val:-- ',val);
                   req.flash('info', 'Image Uploaded');
-                  res.redirect('/users/profile');
+                  res.redirect('/blogstar/users/profile');
                 })
       }
       else{
