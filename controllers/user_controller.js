@@ -687,7 +687,7 @@ UserController.getAdminSignupPage = function(req, res){
 UserController.getAllBlogs = function(req, res){
     Blog.findAll({include:[{ model: models.user }]}).then(function(allblogs) {
       console.log('allblogs:- ',allblogs.length);
-    res.render('/blogstar/adminPanel1/index.html', {blogs: allblogs});
+    res.render('adminPanel1/index.html', {blogs: allblogs});
   });
 }
 
