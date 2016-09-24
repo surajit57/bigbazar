@@ -16,22 +16,22 @@ require('../lib/passport.js')(passport);
 router.get('/home', Auth.isAdminLogin, function(req, res){
 	// res.render('adminPanel1/index.html');
 	console.log('coming here');
-	res.redirect('/admin/allBlogs');
+	res.redirect('/blogstar/admin/allBlogs');
 });
 
 router.get('/login', function(req, res){
-	res.render('adminPanel1/signin.html');
+	res.render('/blogstar/adminPanel1/signin.html');
 });
 
 router.get('/signup' , UserController.getAdminSignupPage)
-router.post('/signup', passport.authenticate('local-admin-signup', {failureRedirect: '/admin/signup' , successRedirect:'/admin/home'}));
+router.post('/signup', passport.authenticate('local-admin-signup', {failureRedirect: '/blogstar/admin/signup' , successRedirect:'/blogstar/admin/home'}));
 
 router.get('/logout', function(req, res){
 		req.session.destroy(function(){
         req.session = null;
 
         res.clearCookie('express.sid', { path: '/' });
-        res.redirect('/admin/login');
+        res.redirect('/blogstar/admin/login');
 
     });
 })
