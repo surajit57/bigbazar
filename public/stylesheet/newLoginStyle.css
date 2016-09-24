@@ -185,7 +185,7 @@ button.btn.btn-default.btn-block {
 .reset_section {
     float: left;margin: 0px;width: 100%;
     height: auto;min-height: 662px;padding: 150px 0px 0px;
-    background-image: url(../images/login.jpg);background-repeat: no-repeat;background-size: 100% 100%;
+    background-image: url(/blogstar/images/login.jpg);background-repeat: no-repeat;background-size: 100% 100%;
 }
 .reset_Pwd {
     float: left;width: 100%;height: auto;
@@ -211,7 +211,7 @@ button.btn.btn-default.btn-block {
 @media screen and (max-width:1199px) and (min-width:992px){
     .reset_section{
         background-size: 100% 100%;
-    }    
+    }
     .reset_section{
         min-height: 675px;
     }
@@ -235,7 +235,7 @@ button.btn.btn-default.btn-block {
 .login_section {
     float: left;margin: 0px;width: 100%;
     height: auto;min-height: 662px;padding: 150px 0px 0px;
-    background-image: url(../images/login.jpg);background-repeat: no-repeat;background-size: 100% 100%;
+    background-image: url(/blogstar/images/login.jpg);background-repeat: no-repeat;background-size: 100% 100%;
 }
 .login_Pwd {
     float: left;width: 100%;height: auto;
@@ -266,7 +266,7 @@ button.btn.btn-default.btn-block {
     padding: 10px 0px;
 }
 @media screen and (max-width:1920px) and (min-width:1200px){}
-@media screen and (max-width:1199px) and (min-width:992px){   
+@media screen and (max-width:1199px) and (min-width:992px){
     .login_section{
         min-height: 675px;
     }

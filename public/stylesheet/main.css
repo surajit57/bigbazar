@@ -188,7 +188,7 @@ body{font-family: 'Roboto', sans-serif; }
 @media screen and (max-width: 767px){
 body{
 
-  background-image: url("../images/mobiler.png")!important;
+  background-image: url("/blogstar/images/mobiler.png")!important;
   background-size: cover !important;
 }
     .full-width-bg{

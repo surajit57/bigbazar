@@ -221,7 +221,7 @@ form {
 /*List Page css start*/
 
 .background {
-	background: url(../../images/bg-banner.png);
+	background: url(/blogstar/images/bg-banner.png);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	float: left;
@@ -264,7 +264,7 @@ form {
 	width: 250px;
 	background: #3b4658;
 	border-radius: 5px;
-	
+
 }
 .ic_us{
 padding: 15px 30px;
@@ -318,7 +318,7 @@ font-size: 22px;
     line-height: 2em;
         color: #fff;
         letter-spacing: 0.5px;
-    
+
 }
 
 .col-item .price h5
@@ -388,7 +388,7 @@ font-size: 22px;
 {
     width: 30%;
     float: left;
-  
+
 }
 
 /* CARD */
@@ -443,7 +443,7 @@ font-size: 22px;
 	color: #fff;
 	font-weight: bold;
 	border-top: 0.8px solid #fff;
-	
+
 }
 
 .number {
@@ -515,7 +515,7 @@ font-size: 22px;
 		padding: 0px 11px;
 	}
 	.logo::before {
-		background: url(../../images/arrow.png);
+		background: url(/blogstar/images/arrow.png);
 		content: " ";
 		position: absolute;
 		z-index: 0;
