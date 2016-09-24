@@ -681,7 +681,7 @@ function addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_
 }
 
 UserController.getAdminSignupPage = function(req, res){
-  res.render('/blogstar/adminPanel1/signup.html');
+  res.render('adminPanel1/signup.html');
 }
 
 UserController.getAllBlogs = function(req, res){
