@@ -20,7 +20,7 @@ router.get('/home', Auth.isAdminLogin, function(req, res){
 });
 
 router.get('/login', function(req, res){
-	res.render('/adminPanel1/signin.html');
+	res.render('adminPanel1/signin.html');
 });
 
 router.get('/signup' , UserController.getAdminSignupPage)
