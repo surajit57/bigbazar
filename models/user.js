@@ -62,6 +62,12 @@ module.exports = function(sequelize, DataTypes) {
     },
     blogUserName: {
       type: DataTypes.STRING
+    },
+    hobbies: {
+      type: DataTypes.STRING
+    },
+    bio: {
+      type: DataTypes.STRING
     }
   }, {
     classMethods: {

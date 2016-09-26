@@ -408,8 +408,9 @@ UserController.postBlog = function(req,res){
   var user_city = req.body.city;
   var user_name = req.body.Blogusername;
   var user_phone = req.body.phone;
-
   var blog_email = req.body.email;
+  var blog_title = req.body.blog_title;
+  var blog_desc = req.body.blog_desc;
 
   Events.findOne({
     where: {
@@ -421,7 +422,7 @@ UserController.postBlog = function(req,res){
     if(!roundCheck1.roundBlocked){
       console.log('update round 1');
       console.log('addRound1 fun');
-      addRound1(UserId,url, req, res, user_age, user_city, user_phone, blog_email, user_name);
+      addRound1(UserId,url, req, res, user_age, user_city, user_phone, blog_email, user_name, blog_title, blog_desc);
     }
     else{
       Events.findOne({
@@ -441,7 +442,7 @@ UserController.postBlog = function(req,res){
 
             if(response.isUnder100){
               console.log('addRound2 fun');
-              addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name);
+              addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name, blog_title, blog_desc);
             }else{
               console.log('He is not eligible for top 100 round');
             }
@@ -464,7 +465,7 @@ UserController.postBlog = function(req,res){
                 console.log('response:- ', response.isUnder15);
                 if(response.isUnder15){
                   console.log('addRound3 fun');
-                  addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name);
+                  addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name, blog_title, blog_desc);
                 }else{
                   console.log('He is not eligible for top 15 round');
                 }
@@ -483,7 +484,7 @@ UserController.postBlog = function(req,res){
 
 };
 
-function addRound1(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name){
+function addRound1(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name, blog_title, blog_desc){
   console.log('updateRound1 fun');
   var UserId = UserId;
   var url = url;
@@ -500,7 +501,9 @@ function addRound1(UserId, url, req, res, user_age, user_city, user_phone, blog_
             console.log('coominggg hereerre');
               var blog = Blog.build({
                 url: req.body.blog_url,
-                userId: req.user.id
+                userId: req.user.id,
+                blog_title: blog_title,
+                blog_desc: blog_desc
               });
               blog.save().then(function(blog){
                 console.log('Success:-- ', blog);
@@ -547,7 +550,7 @@ function addRound1(UserId, url, req, res, user_age, user_city, user_phone, blog_
         })
 }
 
-function addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name){
+function addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name, blog_title, blog_desc){
   console.log('updateRound2 fun');
   User.findOne({
         where: {
@@ -565,7 +568,8 @@ function addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_
               // blog.save()
               Blog.update({
                 url1: req.body.blog_url,
-
+                blog_title: blog_title,
+                blog_desc: blog_desc
               },{
                 where: {
                   userId: UserId
@@ -615,7 +619,7 @@ function addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_
 }
 
 
-function addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name){
+function addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name, blog_title, blog_desc){
   console.log('updateRound3 fun');
   User.findOne({
         where: {
@@ -647,7 +651,9 @@ function addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_
                 if(!blog) return res.siteRediret('/users/home');
                     console.log('blog created');
                     User.update({
-                      isRound3BlogAdded: 1
+                      isRound3BlogAdded: 1,
+                      blog_title: blog_title,
+                      blog_desc: blog_desc
                     },{
                       where: {
                         id: req.user.id

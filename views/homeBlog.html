@@ -268,7 +268,7 @@
               var phoneNum = phone.replace(/[^\d]/g, '');
 
               if(validateURL(urlVal) && filter.test(newEmail) && name.length !=0 && phoneNum.length > 6 && phoneNum.length < 11 && city.length !=0 && age !=0){
-                  $.post( "<%= mountPath %>/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone })
+                  $.post( "<%= mountPath %>/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone, "blog_title": "I am Blog Title", "blog_desc": "I am Blog Description" })
                           .done(function( data ) {
                             console.log('------------------ ', data);
                             console.log('data:-- ', JSON.stringify(data));
