@@ -629,7 +629,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
             function logout(){
              $.get( "<%= mountPath %>/logout", { })
                       .done(function( data ) {
-                        window.location = "/users/login"
+                        window.location = "<%= mountPath %>/users/login"
                       });
             }
 
