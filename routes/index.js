@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 	// console.log('user:------------ ',req.user.id);
 
 	if(req.user){
-		res.redirect('/users/home');
+		res.siteRediret('/users/home');
 	}
 
 	res.render('newuserLogin.html');
@@ -20,15 +20,15 @@ router.get('/', function(req, res, next) {
 
 router.post('/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/users/login'}),function(req, res){
 	if(req.user.isAdmin){
-		return res.redirect('/admin/home');
+		return res.siteRediret('/admin/home');
 	}
-	return res.redirect('/users/home')
+	return res.siteRediret('/users/home')
 });
 
-router.post('/admin/login', passport.authenticate('local-login', {failureRedirect: '/blogsta/admin/login'}),function(req, res){
+router.post('/admin/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/admin/login'}),function(req, res){
 	// if(req.user.isAdmin){
 
-		return res.redirect('/admin/home');
+		return res.siteRediret('/admin/home');
 	// }
 	// return res.redirect('/users/home')
 });
@@ -36,7 +36,7 @@ router.post('/admin/login', passport.authenticate('local-login', {failureRedirec
 router.get('/logout', function(req, res){
 	 req.logout();
 	req.flash('success', "<div class='container'>You are now logged out</div>");
-  	return res.redirect('/users/login');
+  	return res.siteRediret('/users/login');
 })
 
 module.exports = router;
