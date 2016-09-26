@@ -211,7 +211,9 @@ UserController.saveNameEmailProfile = function(req, res){
       email: req.body.email,
       age: req.body.age,
       city: req.body.city,
-      phone: req.body.phone
+      phone: req.body.phone,
+      hobbies: req.body.hobbies || "",
+      bio: req.body.bio || ""
     },{
       where: {
         id: req.user.id

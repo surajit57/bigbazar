@@ -655,7 +655,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                     "city": city
                   }
                   console.log('name:- ', name, 'email:- ',email);
-                $.post("<%= mountPath %>/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone})
+                $.post("<%= mountPath %>/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone, "hobbies": "Cricket, Bolly Ball", "bio": "I am killer"})
                     .done(function( data ) {
                       if(data.code == 200){
                           var Message = data.message;
