@@ -1297,6 +1297,9 @@ padding: 39px 0 !important;
 .blog-part {
     float: left;width: 100%;
 }
+.xs_hideen{
+    font-size: 12px;
+}
 .logo-anchor {
     float: left;width: 100%;height: auto;
 }
