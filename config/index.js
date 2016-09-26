@@ -10,6 +10,7 @@ var _ = require('lodash'),
     cookieName: 'xxyyzz.sid',
     cookieSecret: 'F#JKLn&()yHIO$%900nsd',
     siteRoot: '/blogstar',
+    // localsiteRoot: "/",
     localsiteRoot: null,
     fbLogin:{
       appId: "1569759199992980",

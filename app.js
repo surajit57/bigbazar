@@ -110,14 +110,7 @@ app.use(function(req, res, next){
 
 // app.locals.mountPath = 'http://www.fbbindia.in/blogstar';
 app.locals.mountPath = '/blogstar';
-// app.locals({
-//     site: {
-//         mountPath: '/blogstar',
-//     },
-//     author: {
-//         name: 'Hemant Nagarkoti',
-//         contact: 'hemant_nagarkoti@yahoo.com'
-//     }
-// });
+// app.locals.mountPath = '../../';
+
 
 module.exports = app;
