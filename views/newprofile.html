@@ -205,7 +205,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active">
-                            <a href="/blogstar/users/list" class=" fnt-13"> Explore Bloggers </a></li>
+                            <a href="<%= mountPath %>/users/list" class=" fnt-13"> Explore Bloggers </a></li>
 
                         <!--<li role="presentation"><a href="#top100" aria-controls="profile" role="tab" data-toggle="tab">Top 100 </a></li>-->
                     </ul>
@@ -331,7 +331,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                                                         </div>
                                                         <div style="float:left">
 
-                                                            <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
+                                                            <input type="button" onclick="window.location = '<%= mountPath %>/users/home'" class="btn pr-side-btn2" value="Cancel" />
                                                             <input type="button" onclick="saveUserNameEmail()" value="Save Changes" class="btn pr-side-btn1" />
                                                         </div>
                                                     </form>
@@ -339,7 +339,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                                                 <!--tab_1_1-->
 
                                                 <div class="tab-pane" id="tab_1_2">
-                                                    <form method="post" enctype="multipart/form-data" action="/users/profile/upload" role="form">
+                                                    <form method="post" enctype="multipart/form-data" action="<%= mountPath %>/users/profile/upload" role="form">
                                                         <div class="form-group">
                                                             <div class="fileinput fileinput-new" data-provides="fileinput">
                                                                 <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
@@ -390,7 +390,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                                                 </div>
                                                 <!--tab_1_3-->
                                                 <div class="tab-pane" id="tab_1_4">
-                                                    <form role="form" method="post" action="/users/profile">
+                                                    <form role="form" method="post" action="<%= mountPath %>/users/profile">
 
                                                         <div class="form-group" style="display: none;">
                                                             <label class="control-label">Name</label>
@@ -592,7 +592,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                                                         </div>
                                                         <div style="float:left">
 
-                                                            <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
+                                                            <input type="button" onclick="window.location = '<%= mountPath %>/users/home'" class="btn pr-side-btn2" value="Cancel" />
                                                             <input type="submit" value="Submit" class="btn pr-side-btn1" />
                                                         </div>
                                                     </form>
@@ -627,14 +627,14 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
     <script type="text/javascript">
 
             function logout(){
-             $.get( "/logout", { })
+             $.get( "<%= mountPath %>/logout", { })
                       .done(function( data ) {
                         window.location = "/users/login"
                       });
             }
 
             function saveUserDetail(){
-                $.get( "/users/profile", { })
+                $.get( "<%= mountPath %>/users/profile", { })
                       .done(function( data ) {
                         // alert('saveUserDetail done', data.code);
                         window.location = "/users/login"
@@ -655,7 +655,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                     "city": city
                   }
                   console.log('name:- ', name, 'email:- ',email);
-                $.post("/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone})
+                $.post("<%= mountPath %>/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone})
                     .done(function( data ) {
                       if(data.code == 200){
                           var Message = data.message;
@@ -698,7 +698,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                     pop('popDiverror');
                   }
                   else{
-                      $.post("/users/profile/updatepassword", {"currentPassword": oldPasswordField, "newPassword": newPasswordField, "confirmPassword": confirmPasswordField})
+                      $.post("<%= mountPath %>/users/profile/updatepassword", {"currentPassword": oldPasswordField, "newPassword": newPasswordField, "confirmPassword": confirmPasswordField})
                     .done(function( data ) {
                       if(data.code == 200){
                         console.log('data:- ',JSON.stringify(data));
