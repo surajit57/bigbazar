@@ -106,6 +106,14 @@
                                         <i class="fa fa-cog icon-fa" title="Settings"></i>
                                         <b class="xs_hideen">SETTINGS</b>
                                     </button>
+                                    <button type="button" class="button-txt">
+                                      <% if(data.imageUrl) { %>
+                                        <image src="<%= data.imageUrl %>" style="width: 30px; height: 30px; border-radius: 15px;"/>
+                                        <% }  else {%>
+                                          <image src="http://www.fbbindia.in/blogstar/images/profile_user.png" style="width: 30px; height: 30px; border-radius: 15px;"/>
+                                          <% } %>
+                                        <b><%= data.name %> </b>
+                                    </button>
                                     <button onclick="logout()" type="button" class="button-txt">
                                         <i class="fa fa-lock icon-fa" title="SignOut"></i>
                                         <b class="xs_hideen">SIGN OUT</b>
