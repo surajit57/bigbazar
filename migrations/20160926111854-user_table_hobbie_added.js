@@ -9,30 +9,12 @@ module.exports = {
       Example:
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
-    return queryInterface.addColumn('users', 'age',{
+    return queryInterface.addColumn('users', 'hobbies',{
       type: Sequelize.STRING,
       allowNull: true
     })
     .then(function(){
-      return queryInterface.addColumn('users', 'city',{
-        type: Sequelize.STRING,
-        allowNull: true
-      })
-    })
-    .then(function(){
-      return queryInterface.addColumn('users', 'resetPasswordToken',{
-        type: Sequelize.STRING,
-        allowNull: true
-      })
-    })
-    .then(function(){
-      return queryInterface.addColumn('users', 'resetPasswordExpires',{
-        type: Sequelize.DATE,
-        allowNull: true
-      })
-    })
-    .then(function(){
-      return queryInterface.addColumn('users', 'blogEmail',{
+      return queryInterface.addColumn('users', 'bio',{
         type: Sequelize.STRING,
         allowNull: true
       })
@@ -47,6 +29,9 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
-    return queryInterface.removeColumn('users', 'blogUserName')
+    return queryInterface.removeColumn('users', 'hobbies')
+    .then(function(){
+      return queryInterface.removeColumn('users', 'bio')
+    })
   }
 };

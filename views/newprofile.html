@@ -635,7 +635,7 @@
             function logout(){
              $.get( "<%= mountPath %>/logout", { })
                       .done(function( data ) {
-                        window.location = "/users/login"
+                        window.location = "<%= mountPath %>/users/login"
                       });
             }
             function saveUserDetail(){
@@ -659,7 +659,7 @@
                     "city": city
                   }
                   console.log('name:- ', name, 'email:- ',email);
-                $.post("<%= mountPath %>/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone})
+                $.post("<%= mountPath %>/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone, "hobbies": "Cricket, Bolly Ball", "bio": "I am killer"})
                     .done(function( data ) {
                       if(data.code == 200){
                           var Message = data.message;

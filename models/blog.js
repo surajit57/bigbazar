@@ -3,7 +3,9 @@ module.exports = function(sequelize, DataTypes) {
   var Blog = sequelize.define('blog', {
     url: DataTypes.STRING,
     url1: DataTypes.STRING,
-    url2: DataTypes.STRING
+    url2: DataTypes.STRING,
+    blog_title: DataTypes.STRING,
+    blog_desc: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {

@@ -106,6 +106,14 @@
                                         <i class="fa fa-cog icon-fa" title="Settings"></i>
                                         <b class="xs_hideen">SETTINGS</b>
                                     </button>
+                                    <button type="button" class="button-txt">
+                                      <% if(data.imageUrl) { %>
+                                        <image src="<%= data.imageUrl %>" style="width: 30px; height: 30px; border-radius: 15px;"/>
+                                        <% }  else {%>
+                                          <image src="http://www.fbbindia.in/blogstar/images/profile_user.png" style="width: 30px; height: 30px; border-radius: 15px;"/>
+                                          <% } %>
+                                        <b><%= data.name %> </b>
+                                    </button>
                                     <button onclick="logout()" type="button" class="button-txt">
                                         <i class="fa fa-lock icon-fa" title="SignOut"></i>
                                         <b class="xs_hideen">SIGN OUT</b>
@@ -125,8 +133,9 @@
                             <div class="blog-contant">
                                 <center>
 
-                                    <p class="txt-blogsect">Not sure about how to create your first blog? The below video will guide you!
+                                    <p class="txt-blogsect">Not sure about how to create your first blog?
                                     </p>
+                                    <p class="txt_title"> The below video will guide you!</p>
                                     <div class="videosection" style="margin-top: 18px;">
                                         <video width="75%" height="300" controls="">
                                             <source src="<%= mountPath %>/images/LogoFinalEdited.mp4" type="video/mp4">
@@ -204,7 +213,13 @@
                                                                 <input type="email" id="newEmail" class="form-control" placeholder="E-mail" onchange="displayNormal('newEmail');">
                                                             </div>
                                                             <div class="form-group">
-                                                                <input type="text" id="blog_url" name="blog_url" class="form-control" placeholder="Web Url" onchange="displayNormal('blog_url');">
+                                                                <input type="text" id="blog_title" name="blog_title" class="form-control" placeholder="Blog Title" onchange="displayNormal('blog_title');">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" id="blog_url" name="blog_url" class="form-control" placeholder="Blog Url" onchange="displayNormal('blog_url');">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input type="text" id="blog_desc" name="blog_desc" class="form-control" placeholder="Blog Description" onchange="displayNormal('blog_desc');">
                                                             </div>
                                                             <div class="form-group row">
                                                                 <div class="offset">
@@ -254,12 +269,14 @@
               var name= document.getElementById("userName").value;
               var newEmail= document.getElementById("newEmail").value;
               var phone = document.getElementById("phone").value;
+              var blog_title = document.getElementById("blog_title").value;
+              var blog_desc = document.getElementById("blog_desc").value;
               console.log('urlVal:- ',urlVal, 'age:- ',age, 'city:- ',city, 'name',name, 'newEmail:- ',newEmail, 'phone',phone);
               var filter = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
               var phoneNum = phone.replace(/[^\d]/g, '');
 
-              if(validateURL(urlVal) && filter.test(newEmail) && name.length !=0 && phoneNum.length > 6 && phoneNum.length < 11 && city.length !=0 && age !=0){
-                  $.post( "<%= mountPath %>/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone })
+              if(validateURL(urlVal) && filter.test(newEmail) && name.length !=0 && phoneNum.length > 6 && phoneNum.length < 11 && city.length !=0 && age !=0 && blog_desc.length !=0 && blog_title.length !=0){
+                  $.post( "<%= mountPath %>/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone, "blog_title": "I am Blog Title", "blog_desc": "I am Blog Description" })
                           .done(function( data ) {
                             console.log('------------------ ', data);
                             console.log('data:-- ', JSON.stringify(data));
@@ -312,10 +329,19 @@
                 document.getElementById('newEmail').style.border = "1px solid red";
                 // document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Enter a valid Email <a href="" onClick="hide("submit_popup")">&times;</a></p>';
               }
+              else if (blog_title.length == 0) {
+                document.getElementById('citySelect').style.border = "1px solid red";
+                // document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Enter your city <a href="" onClick="hide("submit_popup")">&times;</a></p>';
+              }
+              else if (blog_desc.length == 0) {
+                document.getElementById('citySelect').style.border = "1px solid red";
+                // document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Enter your city <a href="" onClick="hide("submit_popup")">&times;</a></p>';
+              }
             else{
               document.getElementById('blog_url').style.border = "1px solid red";
               // document.getElementById('submit_popup').innerHTML= '<p class="error-txt">Input Blog Url is not valid. <a href="" onClick="hide("submit_popup")">&times;</a></p>';
             }
+
 
              }
 
