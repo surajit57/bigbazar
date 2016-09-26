@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
     blog_title1: DataTypes.STRING,
     blog_desc1: DataTypes.STRING,
     blog_title2: DataTypes.STRING,
-    blog_des2c: DataTypes.STRING
+    blog_desc2: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
