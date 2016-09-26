@@ -419,10 +419,10 @@ UserController.postBlog = function(req,res){
   var blog_email = req.body.email;
   var blog_title = req.body.blog_title;
   var blog_desc = req.body.blog_desc;
-  var blog_title1 = req.body.blog_title1;
-  var blog_desc1 = req.body.blog_desc1;
-  var blog_title2 = req.body.blog_title2;
-  var blog_desc2 = req.body.blog_desc2;
+  // var blog_title1 = req.body.blog_title1;
+  // var blog_desc1 = req.body.blog_desc1;
+  // var blog_title2 = req.body.blog_title2;
+  // var blog_desc2 = req.body.blog_desc2;
 
   Events.findOne({
     where: {
@@ -454,7 +454,7 @@ UserController.postBlog = function(req,res){
 
             if(response.isUnder100){
               console.log('addRound2 fun');
-              addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name, blog_title1, blog_desc1);
+              addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name, blog_title, blog_desc);
             }else{
               console.log('He is not eligible for top 100 round');
             }
@@ -477,7 +477,7 @@ UserController.postBlog = function(req,res){
                 console.log('response:- ', response.isUnder15);
                 if(response.isUnder15){
                   console.log('addRound3 fun');
-                  addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name, blog_title2, blog_desc2);
+                  addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_email, user_name, blog_title, blog_desc);
                 }else{
                   console.log('He is not eligible for top 15 round');
                 }
@@ -580,8 +580,8 @@ function addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_
               // blog.save()
               Blog.update({
                 url1: req.body.blog_url,
-                blog_title1: blog_title,
-                blog_desc2: blog_desc
+                blog_title: blog_title,
+                blog_desc: blog_desc
               },{
                 where: {
                   userId: UserId
@@ -664,8 +664,8 @@ function addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_
                     console.log('blog created');
                     User.update({
                       isRound3BlogAdded: 1,
-                      blog_title2: blog_title,
-                      blog_desc2: blog_desc
+                      blog_title: blog_title,
+                      blog_desc: blog_desc
                     },{
                       where: {
                         id: req.user.id
