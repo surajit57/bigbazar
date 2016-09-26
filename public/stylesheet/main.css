@@ -1230,6 +1230,9 @@ padding: 39px 0 !important;
     .blog-section{
         margin-top: 160px;
     }
+    .xs_hideen{
+        display: none;
+    }
 }
 @media screen and (max-width:480px) and (min-width:1px){
     .numder-section{
