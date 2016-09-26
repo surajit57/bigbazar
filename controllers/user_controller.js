@@ -196,6 +196,7 @@ UserController.getProfile = function(req, res){
         blogDetail: blogDetail,
         events: events
       }
+      console.log('userInfo in profile:-------------------- ', userInfo);
       return res.render('newprofile.html',{ userInfo: userInfo});
     })
 
