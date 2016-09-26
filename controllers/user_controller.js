@@ -213,7 +213,12 @@ UserController.saveNameEmailProfile = function(req, res){
       city: req.body.city,
       phone: req.body.phone,
       hobbies: req.body.hobbies || "",
-      bio: req.body.bio || ""
+      bio: req.body.bio || "",
+      faceBook_url: req.body.faceBook_url || " ",
+      twitter_url: req.body.twitter_url || " ",
+      instagram_url: req.body.instagram_url || " ",
+      youtube_url: req.body.youtube_url || " ",
+      snapchat_url: req.body.snapchat_url || " "
     },{
       where: {
         id: req.user.id
