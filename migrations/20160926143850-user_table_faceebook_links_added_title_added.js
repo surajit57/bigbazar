@@ -62,11 +62,3 @@ module.exports = {
     })
   }
 };
-
-
-module.exports = {
-up: function(queryInterface, Sequelize){
-
-},
-
-};
