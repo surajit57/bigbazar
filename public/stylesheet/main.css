@@ -128,7 +128,7 @@ body{font-family: 'Roboto', sans-serif; }
 }
 .btn-default:hover {
        background-color: transparent;
-       color:#ffa800 !important;
+       color:#fff !important;
 }
 
 .btn{
@@ -1441,3 +1441,8 @@ padding: 39px 0 !important;
     }
 }
 /* HOME START CSS */
+/* PROFILE CSS START */
+.mrg-tb {
+    margin: 10px 0px;
+}
+/* PROFILE CSS END */
