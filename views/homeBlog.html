@@ -245,7 +245,7 @@
               // alert('logout clicked');
                $.get( "<%= mountPath %>/users/logout", { })
                         .done(function( data ) {
-                          window.location = "/users/login"
+                          window.location = "<%= mountPath %>/users/login"
                         });
             }
                 function reload(){
