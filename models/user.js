@@ -69,11 +69,11 @@ module.exports = function(sequelize, DataTypes) {
     bio: {
       type: DataTypes.STRING
     },
-    faceBook_url: DataTypes.STRING,
-    twitter_url: DataTypes.STRING,
-    instagram_url: DataTypes.STRING,
-    youtube_url: DataTypes.STRING,
-    snapchat_url: DataTypes.STRING
+    // faceBook_url: DataTypes.STRING,
+    // twitter_url: DataTypes.STRING,
+    // instagram_url: DataTypes.STRING,
+    // youtube_url: DataTypes.STRING,
+    // snapchat_url: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
