@@ -331,19 +331,19 @@
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la uppercase">Socila Handles</label>
                                                             <div class="form-group">
-                                                            <input type="tel" name="facebook" id="facebook_url" class="form-control" placeholder="Facebook Url" value="<%= userInfo.userInfo.facebook_url %>">
+                                                            <input type="tel" name="facebook" id="facebook_url" class="form-control" placeholder="Facebook Url" value="">
                                                             </div>
                                                             <div class="form-group">
-                                                            <input type="tel" name="twitter" id="twitter_url" class="form-control" placeholder="Twitter Handle" value="<%= userInfo.userInfo.twitter_url %>">
+                                                            <input type="tel" name="twitter" id="twitter_url" class="form-control" placeholder="Twitter Handle" value=">">
                                                             </div>
                                                             <div class="form-group">
-                                                            <input type="tel" name="instagram" id="instagram_url" class="form-control" placeholder="Instagram User" value="<%= userInfo.userInfo.instagram_url %>">
+                                                            <input type="tel" name="instagram" id="instagram_url" class="form-control" placeholder="Instagram User" value="">
                                                             </div>
                                                             <div class="form-group">
-                                                            <input type="tel" name="youtube" id="youtube_url" class="form-control" placeholder="Youtube Url" value="<%= userInfo.userInfo.youtube_url %>">
+                                                            <input type="tel" name="youtube" id="youtube_url" class="form-control" placeholder="Youtube Url" value="">
                                                             </div>
                                                             <div class="form-group">
-                                                            <input type="tel" name="snapchat" id="snapchat_url" class="form-control" placeholder="Snapchat User" value="<%= userInfo.userInfo.snapchat_url %>">
+                                                            <input type="tel" name="snapchat" id="snapchat_url" class="form-control" placeholder="Snapchat User" value="">
                                                             </div>
                                                         </div>
                                                         <div style="float:left">
@@ -667,11 +667,11 @@
                   var phone = document.getElementById('phone').value;
                   var bio = document.getElementById('bio').value;
                   var hobby = document.getElementById('hobby').value;
-                  var facebook_url = document.getElementById('facebook_url').value;
-                  var twitter_url = document.getElementById('twitter_url').value;
-                  var instagram_url = document.getElementById('instagram_url').value;
-                  var youtube_url = document.getElementById('youtube_url').value;
-                  var snapchat_url = document.getElementById('snapchat_url').value;
+                  // var facebook_url = document.getElementById('facebook_url').value;
+                  // var twitter_url = document.getElementById('twitter_url').value;
+                  // var instagram_url = document.getElementById('instagram_url').value;
+                  // var youtube_url = document.getElementById('youtube_url').value;
+                  // var snapchat_url = document.getElementById('snapchat_url').value;
                   var json = {
                     "name": name,
                     "email": email,
@@ -679,7 +679,7 @@
                     "city": city
                   }
                   console.log('name:- ', name, 'email:- ',email);
-                $.post("<%= mountPath %>/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone, "hobbies": hobby, "bio": bio, "facebook_url": facebook_url, "twitter_url": twitter_url, "instagram_url": instagram_url, "youtube_url": youtube_url, "snapchat_url": snapchat_url})
+                $.post("<%= mountPath %>/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone, "hobbies": hobby, "bio": bio, "facebook_url": "facebook_url", "twitter_url": "twitter_url", "instagram_url": "instagram_url", "youtube_url": "youtube_url", "snapchat_url": "snapchat_url" })
                 // $.post("<%= mountPath %>/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone, "hobbies": hobby, "bio": bio})
                     .done(function( data ) {
                       if(data.code == 200){
