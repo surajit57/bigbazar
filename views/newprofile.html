@@ -160,7 +160,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
     <div class="page-header navbar navbar-fixed-top" style="background-color:#103157; color:#000; height:113px;box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.48);">
         <div class="page-header-inner ">
             <div class="page-logo">
-                <a href="/users/home">
+                <a href="<%= mountPath %>/users/home">
                     <!-- <img src="../../images/Logo1.png" alt="logo" class="logo-default fkword" style="width:200%; padding:36px 30px 0px 11px;margin-top: -26px; " /></a> -->
                     <img src="http://www.fbbindia.in/blogstar/images/Logo1.png" alt="logo" class="logo-default fkword" style="width:200px; " /></a>
                 <!--<div class="menu-toggler sidebar-toggler"> </div>-->
@@ -218,7 +218,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
             <div class="page-content" style="min-height:1200px">
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
-                        <li><a href="/blogstar/users/home">Home</a><i class="fa fa-circle"></i></li>
+                        <li><a href="<%= mountPath %>/users/home">Home</a><i class="fa fa-circle"></i></li>
 
                         <li><span>Settings</span></li>
 
@@ -360,7 +360,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
 
                                                         <div style="float:left">
 
-                                                            <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
+                                                            <input type="button" onclick="window.location = '<%= mountPath %>/users/home'" class="btn pr-side-btn2" value="Cancel" />
                                                             <input type="submit" value="Submit" class="btn pr-side-btn1" />
                                                         </div>
 
@@ -383,7 +383,7 @@ var text = "Hi, guys please found my blog at fbb Blog Star contest.";
                                                             <input type="password" id="confirmPasswordField" name="confirmPassword" class="form-control pr-side-inp">                                                            </div>
                                                         <div style="float:left">
 
-                                                            <input type="button" onclick="window.location = '/users/home'" class="btn pr-side-btn2" value="Cancel" />
+                                                            <input type="button" onclick="window.location = '<%= mountPath %>/users/home'" class="btn pr-side-btn2" value="Cancel" />
                                                             <input type="button" onclick="changePassword()" value="Change Password" class="btn pr-side-btn1" />
                                                         </div>
                                                     </form>
