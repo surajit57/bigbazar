@@ -679,7 +679,7 @@
                     "city": city
                   }
                   console.log('name:- ', name, 'email:- ',email);
-                $.post("<%= mountPath %>/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone, "hobbies": hobby, "bio": bio, "faceBook_url": "facebook_url", "twitter_url": "twitter_url", "instagram_url": "instagram_url", "youtube_url": "youtube_url", "snapchat_url": "snapchat_url" })
+                $.post("<%= mountPath %>/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone, "hobbies": hobby, "bio": bio, "faceBook_url": facebook_url, "twitter_url": twitter_url, "instagram_url": instagram_url, "youtube_url": youtube_url, "snapchat_url": snapchat_url })
                 // $.post("<%= mountPath %>/users/profile/email", {"name": name, "email": email, "age": age, "city": city, "phone": phone, "hobbies": hobby, "bio": bio})
                     .done(function( data ) {
                       if(data.code == 200){
