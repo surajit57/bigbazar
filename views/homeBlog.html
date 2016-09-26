@@ -98,11 +98,11 @@
                                     <!-- End of social Share -->
                                 </div>
                                 <div class="btn_nav">
-                                    <button type="button" onclick="window.location = '/blogstar/users/list'" class="button-txt">
+                                    <button type="button" onclick="window.location = '/users/list'" class="button-txt">
                                         <i class="fa fa-rss icon-fa" title="ExploreBloggers"></i>
                                         <b class="xs_hideen hidden">EXPLORE BLOGGERS</b>
                                     </button>
-                                    <button type="button" onclick="window.location = '/blogstar/users/profile'" class="button-txt">
+                                    <button type="button" onclick="window.location = '/users/profile'" class="button-txt">
                                         <i class="fa fa-cog icon-fa" title="Settings"></i>
                                         <b class="xs_hideen hidden">SETTINGS</b>
                                     </button>
@@ -242,13 +242,14 @@
         <script src="<%=mountPath %>/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             function logout(){
-               $.get( "<%= mountPath %>/users/logout", { })
+              // alert('logout clicked');
+               $.get( "/users/logout", { })
                         .done(function( data ) {
-                          window.location = "<%= mountPath %>/users/login"
+                          window.location = "/users/login"
                         });
             }
                 function reload(){
-                    window.location.href = '/blogstar/users/home';
+                    window.location.href = '/users/home';
                 }
             function submitBlog(){
               var urlVal = document.getElementById("blog_url").value;
@@ -262,7 +263,7 @@
               var phoneNum = phone.replace(/[^\d]/g, '');
 
               if(validateURL(urlVal) && filter.test(newEmail) && name.length !=0 && phoneNum.length > 6 && phoneNum.length < 11 && city.length !=0 && age !=0){
-                  $.post( "/blogstar/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone })
+                  $.post( "/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone })
                           .done(function( data ) {
                             console.log('------------------ ', data);
                             console.log('data:-- ', JSON.stringify(data));

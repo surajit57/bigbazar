@@ -12,26 +12,23 @@ router.get('/', function(req, res, next) {
 	// console.log('user:------------ ',req.user.id);
 
 	if(req.user){
-		res.redirect('/blogstar/users/home');
+		res.redirect('/users/home');
 	}
-	console.log('coming here ...................');
 
-	console.log('res val:-- ', res);
-	console.log('headers:-- ', req.headers.host);
 	res.render('newuserLogin.html');
 });
 
-router.post('/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/users/login'}),function(req, res){
+router.post('/login', passport.authenticate('local-login', {failureRedirect: '/users/login'}),function(req, res){
 	if(req.user.isAdmin){
-		return res.redirect('/blogstar/admin/home');
+		return res.redirect('/admin/home');
 	}
-	return res.redirect('/blogstar/users/home')
+	return res.redirect('/users/home')
 });
 
-router.post('/adminlogin', passport.authenticate('local-login', {failureRedirect: '/blogstar/admin/login'}),function(req, res){
+router.post('/admin/login', passport.authenticate('local-login', {failureRedirect: '/admin/login'}),function(req, res){
 	// if(req.user.isAdmin){
 
-		return res.redirect('/blogstar/admin/home');
+		return res.redirect('/admin/home');
 	// }
 	// return res.redirect('/users/home')
 });
@@ -39,7 +36,7 @@ router.post('/adminlogin', passport.authenticate('local-login', {failureRedirect
 router.get('/logout', function(req, res){
 	 req.logout();
 	req.flash('success', "<div class='container'>You are now logged out</div>");
-  	return res.redirect('/blogstar/users/login');
+  	return res.redirect('/users/login');
 })
 
 module.exports = router;

@@ -40,7 +40,7 @@ router.post('/upload',Auth.isLoggedIn, type, function (req, res) {
                 }).then(function(val){
                   console.log('val:-- ',val);
                   req.flash('info', 'Image Uploaded');
-                  res.redirect('/blogstar/users/profile');
+                  res.siteRediret('/users/profile');
                 })
       }
       else{

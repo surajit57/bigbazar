@@ -16,7 +16,7 @@ require('../lib/passport.js')(passport);
 router.get('/home', Auth.isAdminLogin, function(req, res){
 	// res.render('adminPanel1/index.html');
 	console.log('coming here');
-	res.redirect('/blogstar/admin/allBlogs');
+	res.siteRediret('/admin/allBlogs');
 });
 
 router.get('/login', function(req, res){
@@ -31,7 +31,7 @@ router.get('/logout', function(req, res){
         req.session = null;
 
         res.clearCookie('express.sid', { path: '/' });
-        res.redirect('/blogstar/admin/login');
+        res.siteRediret('/admin/login');
 
     });
 })

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+
 var passport = require('passport');
 var  UserController = require('../controllers/user_controller');
 
@@ -29,7 +30,7 @@ router.get('/home', Auth.isLoggedIn , function(req, res){
 router.get( '/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
 router.get( '/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/blogstar/users/login' }), (req, res) => {
   //  res.apiSuccess( { $redirect : '/#/do-login' }, 'Authenticated with Facebook' );
-	res.redirect('/blogstar/users/home');
+	res.siteRediret('/users/home');
  });
 
 router.get('/signup' , UserController.getSignupPage);
@@ -39,7 +40,8 @@ router.get('/login', function(req, res){
 	// req.flash('info', 'Welcome:------------------------------------------');
 	// res.render('userLogin.html');
 	// res.render('newuserLogin.html');
-	res.redirect('/blogstar/');
+	// console.log('mountPath:------------------',express.locals);
+	res.siteRediret('/');
 });
 
 router.get('/forgot', UserController.forgotPassword);
@@ -87,7 +89,7 @@ router.get('/logout', function(req, res){
         req.session = null;
 
         res.clearCookie('express.sid', { path: '/' });
-        res.redirect('/blogstar/');
+        res.siteRediret('/');
 
     });
 });

@@ -79,7 +79,7 @@ UserController.retrievePassword = function(req, res, next){
           })
         }else{
           req.flash('error', 'No account with that email address exists.');
-          return res.redirect('/blogstar/users/login');
+          return res.siteRediret('/users/login');
         }
       })
     },
@@ -99,7 +99,7 @@ UserController.retrievePassword = function(req, res, next){
         }, function(error, response) {
            if (error) {
                 console.log('error while sending mail:- ',error);
-                // res.redirect
+                // res.siteRediret
                 req.flash('error', 'Technical problem while sending mail. Please try after some time.');
           			return res.render('newuserLogin.html',{});
            } else {
@@ -112,7 +112,7 @@ UserController.retrievePassword = function(req, res, next){
   ], function(err) {
     console.log('err fun');
     if (err) return next(err);
-    res.redirect('/blogstar/users/forgot');
+    res.siteRediret('/users/forgot');
   });
 }
 
@@ -144,14 +144,14 @@ UserController.resetPassword = function(req, res){
              }
            }).then(function(userData) {
              console.log('usesr password changed:-- ', userData);
-              //  res.redirect('/users/login');
+              //  res.siteRediret('/users/login');
               // return true;
               done(err, user);
            })
          }else{
            req.flash('error', 'No account with that email address exists.');
            console.log('first else');
-           return res.redirect('/blogstar/users/login');
+           return res.siteRediret('/users/login');
          }
        })
     },
@@ -172,14 +172,14 @@ UserController.resetPassword = function(req, res){
                 console.log('E-Message sent');
                 req.flash('info', 'Success! Your password has been changed.');
                 // res.render('newuserLogin.html');
-                res.redirect('/blogstar/users/login');
+                res.siteRediret('/users/login');
            }
         });
 
     }
   ], function(err) {
     console.log('Last error');
-    res.redirect('/blogstar/');
+    res.siteRediret('/');
   });
 }
 
@@ -225,7 +225,7 @@ UserController.saveNameEmailProfile = function(req, res){
       else{
         res.json({code: 0, data: "Technical Error. Please Try after some time."});
       }
-      // res.redirect('/users/profile');
+      // res.siteRediret('/users/profile');
     })
 }
 
@@ -255,7 +255,7 @@ UserController.saveProfile = function(req, res){
                   //   userId: req.user.id
                   // });
                   // blog.save().then(function(blog){
-                  //   if(!blog) return res.redirect('/users/home');
+                  //   if(!blog) return res.siteRediret('/users/home');
                   //      return User.update({
                   //         isBlogAdded: 1
                   //       },{
@@ -272,7 +272,7 @@ UserController.saveProfile = function(req, res){
                   //           var email = userData.email;
                   //            console.log('email',email);
                   //           send_mail(email);
-                  //           return res.redirect('/users/profile')
+                  //           return res.siteRediret('/users/profile')
                   //         })
 
                   //       })
@@ -337,7 +337,7 @@ function updateRound1Blog(req, res){
       }
     }).then(function(blog){
       console.log('Blog 1 url Successfully added');
-      res.redirect('/blogstar/users/profile');
+      res.siteRediret('/users/profile');
     })
 }
 
@@ -350,7 +350,7 @@ function updateRound2Blog(req, res){
       }
     }).then(function(blog){
       console.log('Blog 2 url Successfully added');
-      res.redirect('/blogstar/users/profile');
+      res.siteRediret('/users/profile');
     })
 }
 
@@ -363,7 +363,7 @@ function updateRound3Blog(req, res){
       }
     }).then(function(blog){
       console.log('Blog 3 url Successfully added');
-      res.redirect('/blogstar/users/profile');
+      res.siteRediret('/users/profile');
     })
 }
 
@@ -504,7 +504,7 @@ function addRound1(UserId, url, req, res, user_age, user_city, user_phone, blog_
               });
               blog.save().then(function(blog){
                 console.log('Success:-- ', blog);
-                if(!blog) return res.redirect('/blogstar/users/home');
+                if(!blog) return res.siteRediret('/users/home');
                     console.log('blog created');
                     User.update({
                       isRound1BlogAdded: 1,
@@ -532,7 +532,7 @@ function addRound1(UserId, url, req, res, user_age, user_city, user_phone, blog_
                     .then(function(data){
                       console.log('sucessfully uploaded1');
                       return res.json({code: 200, message: "sucessfully uploaded"});
-                      // return res.redirect('/users/home')
+                      // return res.siteRediret('/users/home')
                     });
               });
             }
@@ -574,7 +574,7 @@ function addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_
               .then(function(blog){
                 console.log('blog:------------- ',blog);
 
-                if(!blog) return res.redirect('/blogstar/users/home');
+                if(!blog) return res.siteRediret('/users/home');
                     console.log('blog created');
                     User.update({
                       isRound2BlogAdded: 1,
@@ -600,7 +600,7 @@ function addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_
                     }).then(function(data){
                       console.log('sucessfully uploaded2');
                       return res.json({code: 200, message: "sucessfully uploaded"});
-                      // return res.redirect('/users/home')
+                      // return res.siteRediret('/users/home')
                     });
               });
             }
@@ -644,7 +644,7 @@ function addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_
                 }
               })
               .then(function(blog){
-                if(!blog) return res.redirect('/blogstar/users/home');
+                if(!blog) return res.siteRediret('/users/home');
                     console.log('blog created');
                     User.update({
                       isRound3BlogAdded: 1
@@ -665,7 +665,7 @@ function addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_
                     }).then(function(data){
                       console.log('coming sucessfully');
                       return res.json({code: 200, message: "sucessfully uploaded"});
-                      // return res.redirect('/users/home')
+                      // return res.siteRediret('/users/home')
                     });
               });
             }

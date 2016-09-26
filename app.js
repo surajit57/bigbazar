@@ -10,20 +10,31 @@ var expressValidator = require('express-validator');
 var session      = require('express-session');
 var MySQLStore = require('express-mysql-session')(session);
 
+
 var multer  = require('multer');
 var fs = require('fs');
+
+
 
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var admin = require('./routes/admin');
 var profile = require('./routes/profile');
+var siteAddons = require('./lib/site_addons');
 
 var config = require( './config' );
 config.db.user = config.db.username;
 
 var sessionStore = new MySQLStore( config.db );
 var app = express();
+siteAddons.setupCutomRedirect( app );
+// app.response._redirect = function(url){
+//   // console.log('url:-- ', url);
+//   var res = this;
+//   console.log('--------------------------------','/blogstar'+ url);
+//   return res.redirect('/blogstar'+ url);
+// }
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -88,7 +99,16 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.use(function(req, res, next){
+  res.on('finish', function(){
+    console.log("Finished " + res.headersSent); // for example
+    console.log("Finished " + res.statusCode);  // for example
+    // Do whatever you want
+  });
+  next();
+});
 
+// app.locals.mountPath = 'http://www.fbbindia.in/blogstar';
 app.locals.mountPath = '/blogstar';
 // app.locals({
 //     site: {

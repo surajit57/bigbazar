@@ -9,6 +9,8 @@ var _ = require('lodash'),
     SITE_ROOT: 'http://localhost:3001',
     cookieName: 'xxyyzz.sid',
     cookieSecret: 'F#JKLn&()yHIO$%900nsd',
+    siteRoot: '/blogstar',
+    localsiteRoot: null,
     fbLogin:{
       appId: "1569759199992980",
       appSecret:"a4667f29a5bb35c60f61d26df0cb25ca",
