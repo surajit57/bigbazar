@@ -221,13 +221,20 @@ button.btn.btn-default.btn-block {
         min-height: 929px;
     }
 }
-@media screen and (max-width:767px) and (min-width:481px){}
+@media screen and (max-width:767px) and (min-width:481px){
+    .reset_section{
+        background-size: 200% 100%;
+    }
+}
 @media screen and (max-width:480px) and (min-width:1px){
     .reset_section{
         min-height: 675px;
     }
     .reset.reset-info{
         width: 250px !important;
+    }
+    .reset_section{
+        background-size: 200% 100%;
     }
 }
 /* RESET CSS END */
@@ -290,13 +297,20 @@ button.btn.btn-default.btn-block {
         min-height: 929px;
     }
 }
-@media screen and (max-width:767px) and (min-width:481px){}
+@media screen and (max-width:767px) and (min-width:481px){
+    .login_section{
+        background-size: 200% 100%;
+    }
+}
 @media screen and (max-width:480px) and (min-width:1px){
     .login_section{
         min-height: 675px;
     }
     .login.login-info{
         width: 250px !important;
+    }
+    .login_section{
+        background-size: 200% 100%;
     }
 }
 /* RESET CSS END */

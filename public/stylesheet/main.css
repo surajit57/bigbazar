@@ -1302,6 +1302,9 @@ padding: 39px 0 !important;
 .xs_hideen{
     font-size: 12px;
 }
+.dp-down{
+    border-radius: 3px;top: 26px;min-width: 138px;
+}
 .logo-anchor {
     float: left;width: 100%;height: auto;
 }
@@ -1416,6 +1419,9 @@ padding: 39px 0 !important;
     cursor: pointer;
 }
 @media screen and (max-width:767px) and (min-width:481px){
+    .main-section{
+        background-size: 170% 100%;
+    }
     .logo-img{
         display: block;margin: 0px auto;
     }
@@ -1424,6 +1430,9 @@ padding: 39px 0 !important;
     }
 }
 @media screen and (max-width:480px) and (min-width:1px){
+    .main-section{
+        background-size: 200% 100%;
+    }
     .logo-img{
         display: block;margin: 0px auto;
     }
@@ -1431,7 +1440,7 @@ padding: 39px 0 !important;
         width: 100%;
     }
     .txt_title{
-        margin-bottom: 0px;
+        margin-bottom: 20px; font-size: 20px;
     }
     .blog-contant > center > .videosection > video{
         width: 100% !important;height: 225px !important;
@@ -1444,6 +1453,15 @@ padding: 39px 0 !important;
     }
     .num-blogsect li{
         width: 100%;
+    }
+    .dp-down{
+        min-width: 95px;font-size: 12px;
+    }
+    .btn_nav{
+        margin: 11px 3px;
+    }
+    .txt-blogsect{
+        font-size: 20px;
     }
 }
 /* HOME START CSS */
