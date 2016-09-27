@@ -960,12 +960,6 @@ body > div.page-header.navbar.navbar-fixed-top {
 
 }
 
-@media (max-width: 991px){
-   .page-sidebar .selected, .page-sidebar.navbar-collapse.collapse {
-    display: block !important;
-}
-
-}
 /* BLOG START CSS */
 .full_width_bg {
     width: 100%; height: auto;position: fixed;
@@ -1300,7 +1294,7 @@ body > div.page-header.navbar.navbar-fixed-top {
 }
 .profile_name{
     width: 25px;height: 25px;border-radius: 50% !important;
-    border: 2px solid #ffa800;
+    border: 3px solid #ffa800;
 }
 .dp-down{
     border-radius: 3px;top: 26px;min-width: 138px;
@@ -1491,10 +1485,14 @@ body > div.page-header.navbar.navbar-fixed-top {
 }
 /* PROFILE CSS END */
 /* USER CSS START*/
+.fix_user.page-sidebar-wrapper{
+    float: left;width: 100%;background: #fff;
+}
+.page-sidebar .selected, .page-sidebar.navbar-collapse.collapse{
+    display: block !important;
+}
 .page-sidebar-wrapper{
-    float: left;
-    width: 100%;
-    background: #fff;
+    width: 100%;background: #fff;
 }
  .page-content-white .page-bar{
      margin: 0px !important;
@@ -1506,28 +1504,42 @@ body > div.page-header.navbar.navbar-fixed-top {
     .page-content-wrapper .page-content {
         margin-left: 235px !important;
     }
-    .page-container{
+    .page-container.fix_user{
         margin-top: 80px !important;
     }
+    
 }
 @media screen and (max-width:991px) and (min-width:768px){
     .page-content-wrapper .page-content {
         margin-left: 235px !important;
         padding: 0px !important;
     }
-    .page-container{
+    .page-container.fix_user{
         margin-top: 80px !important;
     }
+    .tab_user{
+        float: left; width: 100%; margin-top: 20px;
+    }
+    .page-sidebar-wrapper{
+        float: left;width: 100%;background: #fff;
+    }
+    
 }
 @media screen and (max-width:767px) and (min-width:481px){
     .blog_header.navbar-fixed-top{
         position: static;
     }
-    .page-container{
+    .page-container.fix_user{
         margin-top: 0px !important;
     }
     .nav-tabs{
         height: auto;
+    }
+    .page-sidebar-wrapper{
+        float: left;width: 100%;background: #fff;
+    }
+    .topselecter >.nav-tabs>li{
+        float: none;display: block;margin: 5px auto;
     }
 }
 @media screen and (max-width:480px) and (min-width:1px){
@@ -1535,7 +1547,13 @@ body > div.page-header.navbar.navbar-fixed-top {
         position: static;
     }
     .nav-tabs{
-        height: auto;
+        height: auto; padding-top: 10px;
+    }
+    .page-sidebar-wrapper{
+        float: left;width: 100%;background: #fff;
+    }
+    .topselecter >.nav-tabs>li{
+        float: none;display: block;margin: 5px auto;
     }
 }
 /* USER CSS END */
