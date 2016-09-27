@@ -108,9 +108,9 @@
                                     </button>
                                     <span class="dropdown"><button type="button" class="dropdown-toggle button-txt" data-toggle="dropdown">
                                       <% if(data.imageUrl) { %>
-                                        <image src="<%= data.imageUrl %>" style="width: 35px; height: 35px; border-radius: 17px; border:2px solid #ffa800"/>
+                                        <image src="<%= data.imageUrl %>" class="profile_name" />
                                         <% }  else {%>
-                                          <image src="http://www.fbbindia.in/blogstar/images/profile_user.png" style="width: 25px; height: 25px; border-radius: 15px; border:2px solid #ffa800"/>
+                                          <image src="http://www.fbbindia.in/blogstar/images/profile_user.png" class="profile_name"/>
                                           <% } %>
                                         <b><%= data.name %> </b>
                                         </button>
@@ -137,7 +137,6 @@
                         <div class="col-md-12">
                             <div class="blog-contant">
                                 <center>
-
                                     <p class="txt-blogsect">Not sure about how to create your first blog?
                                     </p>
                                     <p class="txt_title"> The below video will guide you!</p>

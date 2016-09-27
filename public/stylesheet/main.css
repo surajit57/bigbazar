@@ -968,15 +968,6 @@ body > div.page-header.navbar.navbar-fixed-top {
 }
 
 }
-
-
-
-
-
-.page-container-bg-solid .page-bar .page-breadcrumb, .page-content-white .page-bar .page-breadcrumb {
-padding: 39px 0 !important;
-}
-
 /* BLOG START CSS */
 .full_width_bg {
     width: 100%; height: auto;position: fixed;
@@ -1172,6 +1163,12 @@ padding: 39px 0 !important;
     .numder-section p{
         width: 88%;padding-top: 10px;
     }
+    .xs_hideen{
+        font-size: 10px !important;
+    }
+    .btn_nav{
+        margin: 0px 0px !important;
+    }
 }
 @media screen and (max-width:767px) and (min-width:481px){
     .numder-section{
@@ -1299,6 +1296,10 @@ padding: 39px 0 !important;
 .blog-part {
     float: left;width: 100%;
 }
+.profile_name{
+    width: 25px;height: 25px;border-radius: 50% !important;
+    border: 2px solid #ffa800;
+}
 .xs_hideen{
     font-size: 12px;
 }
@@ -1313,10 +1314,10 @@ padding: 39px 0 !important;
 }
 .social-icon-fav {
     text-align: right;width: auto;float: right;
-    padding: 10px 0px;color: #fff;
+    padding: 10px 0px;color: #fff;margin: 15px 0px;
 }
 .social-fav {
-    float: left;width: auto;margin: 9px 0px;
+    float: left;width: auto;
 }
 .icon-fav {
     font-size: 20px !important;color: #ffa800;cursor: pointer;
@@ -1326,7 +1327,7 @@ padding: 39px 0 !important;
     color: #ffa800;
 }
 .btn_nav {
-    float: left;width: auto;margin: 11px 11px;
+    float: left;width: auto;margin: 0px 11px;
 }
 .button-txt {
     background: transparent;border: none;
@@ -1428,6 +1429,9 @@ padding: 39px 0 !important;
     .blog-contant{
         width: 100%;
     }
+    .social-icon-fav{
+        margin: 5px 0px;
+    }
 }
 @media screen and (max-width:480px) and (min-width:1px){
     .main-section{
@@ -1457,8 +1461,16 @@ padding: 39px 0 !important;
     .dp-down{
         min-width: 95px;font-size: 12px;
     }
+    .social-icon-fav{
+        float: none;margin: 0px 0px;
+    }
+    .social-fav{
+        float: none;display: block;margin: 0px auto;
+        text-align: center;
+    }
     .btn_nav{
-        margin: 11px 3px;
+        float: none;margin: 0px auto;display: block;
+        text-align: center;margin-top: 11px;
     }
     .txt-blogsect{
         font-size: 20px;
@@ -1470,3 +1482,52 @@ padding: 39px 0 !important;
     margin: 10px 0px;
 }
 /* PROFILE CSS END */
+/* USER CSS START*/
+.page-sidebar-wrapper{
+    float: left;
+    width: 100%;
+    background: #fff;
+}
+ .page-content-white .page-bar{
+     margin: 0px !important;
+ }
+.topselecter{
+    margin: 0px !important;
+}
+@media screen and (max-width:1199px) and (min-width:992px){
+    .page-content-wrapper .page-content {
+        margin-left: 235px !important;
+    }
+    .page-container{
+        margin-top: 80px !important;
+    }
+}
+@media screen and (max-width:991px) and (min-width:768px){
+    .page-content-wrapper .page-content {
+        margin-left: 235px !important;
+        padding: 0px !important;
+    }
+    .page-container{
+        margin-top: 80px !important;
+    }
+}
+@media screen and (max-width:767px) and (min-width:481px){
+    .blog_header.navbar-fixed-top{
+        position: static;
+    }
+    .page-container{
+        margin-top: 0px !important;
+    }
+    .nav-tabs{
+        height: auto;
+    }
+}
+@media screen and (max-width:480px) and (min-width:1px){
+    .blog_header.navbar-fixed-top{
+        position: static;
+    }
+    .nav-tabs{
+        height: auto;
+    }
+}
+/* USER CSS END */

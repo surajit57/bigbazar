@@ -1,70 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+    <head>
     <meta charset="utf-8" />
     <title>fbb Blog Star</title>
-
-    <meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html"
-    />
+    <meta property="og:url" content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html"/>
     <meta property="og:type" content="article" />
     <meta property="og:title" content="When Great Minds Don’t Think Alike" />
     <meta property="og:description" content="How much does culture influence creative thinking?" />
-    <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"
-    />
-
+    <meta property="og:image" content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg"/>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
-
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link href="http://52.35.82.113/dashboard/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet"
-        type="text/css" />
-    <link href="<%= mountPath%>/stylesheet/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="<%= mountPath%>/stylesheet/main.css" rel="stylesheet">
-    <link href="<%= mountPath%>/stylesheet/styleAdminNew.css" rel="stylesheet" type="text/css" />
-    <link href="<%= mountPath%>/stylesheet/layout.min.css" rel="stylesheet" type="text/css" />
-    <link href="<%= mountPath%>/stylesheet/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
-    <link href="<%= mountPath%>/stylesheet/custom.min.css" rel="stylesheet" type="text/css" />
-    <link href="<%= mountPath%>/stylesheet/profile.min.css" rel="stylesheet" type="text/css" />
-    <link href="<%= mountPath%>/stylesheet/components.min.css" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="../images/favicon.png" />
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link href="http://52.35.82.113/dashboard/theme/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="<%= mountPath%>/stylesheet/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<%= mountPath%>/stylesheet/styleAdminNew.css" rel="stylesheet" type="text/css"/>
+    <link href="<%= mountPath%>/stylesheet/layout.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<%= mountPath%>/stylesheet/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color"/>
+    <link href="<%= mountPath%>/stylesheet/custom.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<%= mountPath%>/stylesheet/profile.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<%= mountPath%>/stylesheet/components.min.css" rel="stylesheet" type="text/css"/>
+    <link href="<%= mountPath%>/stylesheet/main.css" rel="stylesheet"/>
+    <link rel="shortcut icon" href="../images/favicon.png"/>
     <script src="<%= mountPath%>/js/jquery.min.js" type="text/javascript"></script>
-
-
-
     <style>
         .disabledTab {
             pointer-events: none;
         }
     </style>
-
-</head>
-
-<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1569759199992980',
-          xfbml      : true,
-          version    : 'v2.7'
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-
-      function fbShare(){
-        console.log('Share clicked');
-        FB.ui(
-        {
+    </head>
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+        <script>
+            window.fbAsyncInit = function() {
+            FB.init({
+            appId      : '1569759199992980',
+            xfbml      : true,
+            version    : 'v2.7'
+            });
+         };
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        function fbShare(){
+            console.log('Share clicked');
+            FB.ui(
+            {
             method: 'feed',
             name: "Celebrate the fbb Blog Star Contest",
             link: 'http://www.fbbindia.in/blogstar/users/list',
@@ -72,74 +56,68 @@
             caption: "fbb Blog Star Contest",
             description: 'Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! ',
             message: 'Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! '
-        });
-      }
-
-$(document).ready(function(){
-    $('[data-toggle="tab"]').tab();
-});
-</script>
+            });
+        }
+    $(document).ready(function(){
+        $('[data-toggle="tab"]').tab();
+    });
+    </script>
     <script type="text/javascript">
-
-
-function shareContent() {
-  // body...
-
-var url = "http://www.fbbindia.in/blogstar/users/list";
-var title = "fbb Blog Star";
-var text = "Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it!";
-  window.open('http://www.linkedin.com/shareArticle?mini=true&title=" '+title+' "&text="' +text+ '"&url='+encodeURIComponent(url), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
-
-}
-
-</script>
-
-    <div class="page-header navbar navbar-fixed-top" style="background-color:#103157; color:#000; height:113px;    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.48);">
-        <div class="page-header-inner ">
-            <div class="page-logo">
-                <a href="<%= mountPath%>/users/login">
-                    <img src="<%= mountPath%>/images/Logo1.png" alt="logo" class="logo-default" style="width:100%; padding: 7px 60px 0px 0px;" /> </a>
-            </div>
-
-            <div class="top-menu tp-m">
-                <div class="pull-left">
-                    <div class="add-button tp-mar20-20 tp-a-hov ">
-                        <!-- social Share -->
-                        <i class="fa fa-facebook tp-mar20" onclick="fbShare()"></i>
-                        <a class="tp-mar20" href="https://twitter.com/intent/tweet?text=Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! http://private.fbbblogstar.in/users/list ">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                        <i class="fa fa-linkedin tp-mar20" onclick="shareContent()"></i>
-                        <!-- End of social Share -->
+    function shareContent() {
+        // body...
+        var url = "http://www.fbbindia.in/blogstar/users/list";
+        var title = "fbb Blog Star";
+        var text = "Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it!";
+            window.open('http://www.linkedin.com/shareArticle?mini=true&title=" '+title+' "&text="' +text+ '"&url='+encodeURIComponent(url), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
+        }
+    </script>
+        <div class="blog_header navbar-fixed-top">
+            <div class="container">
+                <div class="row" style="margin:0px;">
+                    <div class="blog-part">
+                        <div class="col-xs-12 col-sm-3 col-md-3">
+                            <a href="/blogstar/users/home" target="_blank" class="logo-anchor" title="fbb BlogStart">
+                                <img src="<%= mountPath %>/images/Logo1.png"  class="logo-img">
+                            </a>
+                        </div>
+                        <div class="col-xs-12 col-sm-9 col-md-9">
+                            <div class="social-icon-fav">
+                                <div class="social-fav">
+                                    <!-- social Share -->
+                                    <i class="fa fa-facebook icon-fav" onclick="fbShare()" title="Facebook"></i>
+                                    <a class="icon-fav" target="_blank" href="https://twitter.com/intent/tweet?text=Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! http://private.fbbblogstar.in/users/list">
+                                        <i class="fa fa-twitter" title="Twitter"></i>
+                                    </a>
+                                    <i class="fa fa-linkedin icon-fav" onclick="shareContent()" title="LinkedIn"></i>
+                                    <!-- End of social Share -->
+                                </div>
+                                <div class="btn_nav">
+                                    <button type="button" onclick="window.location = '<%= mountPath %>/users/list'" class="button-txt">
+                                        <i class="fa fa-rss icon-fa" title="ExploreBloggers"></i>
+                                        <b class="xs_hideen">EXPLORE BLOGGERS</b>
+                                    </button>
+                                    <button type="button" onclick="window.location = '<%= mountPath %>/users/profile'" class="button-txt">
+                                        <i class="fa fa-cog icon-fa" title="Settings"></i>
+                                        <b class="xs_hideen">SETTINGS</b>
+                                    </button>
+                                    <button type="button" onclick="window.location='<%= mountPath%>/users/home'" class="button-txt">
+                                        <i class="fa fa-location-arrow icon-fa" title="Submit Your Blog"></i>
+                                        <b class="xs_hideen">SUBMIT YOUR BLOG</b>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!--end pull-left-->
-
-                <!--pull-right-->
-                <div class="pull-right">
-
-                    <div class="add-button">
-                        <button type="button" onclick="window.location='<%= mountPath%>/users/home'" class="btn btn-default uppercase" style="position: relative;right:100px;top: 10px; color: white;">
-                        <i class="fa fa-user log-fa"></i>Submit Your Blog!</button>
-                    </div>
-
-                </div>
-                <!--pull-right-->
-
             </div>
         </div>
-    </div>
-
-    <div class="clearfix"> </div>
-
-    <div class="page-container">
-
-        <div class="page-sidebar-wrapper">
-            <div class="page-sidebar navbar-collapse collapse" style="background-color:#fff">
-                <div class="topselecter">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-
+        <div class="clearfix"> </div>
+        <div class="page-container" style="margin-top:80px;">
+            <div class="page-sidebar-wrapper">
+                 <div class="page-sidebar navbar-collapse collapse" style="background-color:#fff; display:block !important">
+                    <div class="topselecter">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a class=" fnt-14" href="#all" aria-controls="home" role="tab" data-toggle="tab">All Users </a></li>
                         <% if(!events[0].roundBlocked) { %>
                             <li role="presentation" class="disabled disabledTab"><a class=" fnt-14" href="#top100" aria-controls="profile" role="tab" data-toggle="tab">Top 100 </a></li>

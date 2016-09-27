@@ -156,7 +156,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-9 col-md-9">
                             <div class="social-icon-fav">
-                                <div class="social-fav" style="margin:13px 0px;">
+                                <div class="social-fav">
                                     <!-- social Share -->
                                     <i class="fa fa-facebook icon-fav" onclick="fbShare()" title="Facebook"></i>
                                     <a class="icon-fav" target="_blank" href="https://twitter.com/intent/tweet?text=Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! http://www.fbbindia.in/blogstar/users/list">
@@ -176,9 +176,9 @@
                                     </button>
                                     <span class="dropdown"><button type="button" class="dropdown-toggle button-txt" data-toggle="dropdown">
                                       <% if(userInfo.userInfo.imageUrl) { %>
-                                        <image src="<%= userInfo.userInfo.imageUrl %>" style="width: 35px; height: 35px; border-radius: 17px !important; border:2px solid #ffa800"/>
+                                        <image src="<%= userInfo.userInfo.imageUrl %>" class="profile_name"/>
                                         <% }  else {%>
-                                          <image src="http://www.fbbindia.in/blogstar/images/profile_user.png" style="width: 35px; height: 35px; border-radius: 17px !important; border:2px solid #ffa800"/>
+                                          <image src="http://www.fbbindia.in/blogstar/images/profile_user.png" class="profile_name"/>
                                           <% } %>
                                         <b><%= userInfo.userInfo.name %> </b>
                                         </button>
