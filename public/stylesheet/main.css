@@ -1111,8 +1111,12 @@ body > div.page-header.navbar.navbar-fixed-top {
 .btn-txt:hover{
     background-color: transparent;color: #ffa800 !important;
 }
+
 #thanku{
 
+}
+.xs_hideen{
+    font-size: 14px; font-weight: 400; 
 }
 #thanku .modal-dialog{
     border-radius: 0px;margin: 100px auto;
@@ -1316,7 +1320,16 @@ body > div.page-header.navbar.navbar-fixed-top {
 }
 .icon-fav {
     font-size: 20px !important;color: #ffa800;cursor: pointer;
-    text-decoration: none !important;padding: 0px 8px;
+    text-decoration: none !important;padding: 0px 5px;line-height: 20px !important;
+}
+.fa.fa-rss.icon-fa {
+    padding: 4px 6px;
+}
+.fa.fa-cog.icon-fa {
+    padding: 4px 5px;
+}
+.fa.fa-location-arrow.icon-fa {
+    padding: 3px 5px;
 }
 .icon-fav:hover{
     color: #ffa800;
