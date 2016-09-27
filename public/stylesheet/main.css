@@ -1,5 +1,3 @@
-
-
 body{font-family: 'Roboto', sans-serif; }
 
 
@@ -1299,9 +1297,6 @@ body > div.page-header.navbar.navbar-fixed-top {
 .profile_name{
     width: 25px;height: 25px;border-radius: 50% !important;
     border: 2px solid #ffa800;
-}
-.xs_hideen{
-    font-size: 12px;
 }
 .dp-down{
     border-radius: 3px;top: 26px;min-width: 138px;

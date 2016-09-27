@@ -318,32 +318,32 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la uppercase">Phone</label>
-                                                            <input type="tel" name="phone" id="phone" class="form-control" placeholder="Phone" value="<%= userInfo.userInfo.phone %>">
+                                                            <input type="tel" name="phone" id="phone" class="form-control pr-side-inp" placeholder="Phone" value="<%= userInfo.userInfo.phone %>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la uppercase">Hobby</label>
-                                                            <input type="tel" name="hobby" id="hobby" class="form-control" placeholder="Hobby" value="<%= userInfo.userInfo.hobbies %>">
+                                                            <input type="tel" name="hobby" id="hobby" class="form-control pr-side-inp" placeholder="Hobby" value="<%= userInfo.userInfo.hobbies %>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la uppercase">Bio</label>
-                                                            <input type="tel" name="bio" id="bio" class="form-control" placeholder="Bio" value="<%= userInfo.userInfo.bio %>">
+                                                            <input type="tel" name="bio" id="bio" class="form-control pr-side-inp" placeholder="Bio" value="<%= userInfo.userInfo.bio %>">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la uppercase">Socila Handles</label>
                                                             <div class="form-group">
-                                                            <input type="tel" name="facebook" id="facebook_url" class="form-control" placeholder="Facebook Url" value="<%= userInfo.userInfo.faceBook_url %>">
+                                                            <input type="tel" name="facebook" id="facebook_url" class="form-control pr-side-inp" placeholder="Facebook Url" value="<%= userInfo.userInfo.faceBook_url %>">
                                                             </div>
                                                             <div class="form-group">
-                                                            <input type="tel" name="twitter" id="twitter_url" class="form-control" placeholder="Twitter Handle" value="<%= userInfo.userInfo.twitter_url %>">
+                                                            <input type="tel" name="twitter" id="twitter_url" class="form-control pr-side-inp" placeholder="Twitter Handle" value="<%= userInfo.userInfo.twitter_url %>">
                                                             </div>
                                                             <div class="form-group">
-                                                            <input type="tel" name="instagram" id="instagram_url" class="form-control" placeholder="Instagram User" value="<%= userInfo.userInfo.instagram_url %>">
+                                                            <input type="tel" name="instagram" id="instagram_url" class="form-control pr-side-inp" placeholder="Instagram User" value="<%= userInfo.userInfo.instagram_url %>">
                                                             </div>
                                                             <div class="form-group">
-                                                            <input type="tel" name="youtube" id="youtube_url" class="form-control" placeholder="Youtube Url" value="<%= userInfo.userInfo.youtube_url %>">
+                                                            <input type="tel" name="youtube" id="youtube_url" class="form-control pr-side-inp" placeholder="Youtube Url" value="<%= userInfo.userInfo.youtube_url %>">
                                                             </div>
                                                             <div class="form-group">
-                                                            <input type="tel" name="snapchat" id="snapchat_url" class="form-control" placeholder="Snapchat User" value="<%= userInfo.userInfo.snapchat_url %>">
+                                                            <input type="tel" name="snapchat" id="snapchat_url" class="form-control pr-side-inp" placeholder="Snapchat User" value="<%= userInfo.userInfo.snapchat_url %>">
                                                             </div>
                                                         </div>
                                                         <div style="float:left">
@@ -415,19 +415,41 @@
                                                             <label class="control-label pr-side-inp-la mrg-tb">Round First Blog Link</label>
                                                                 <div style="display:flex">
                                                                     <label for="name" class="pr-side-lab-b">
-                                                                        <p class="text-info">Blog Title</p>
+                                                                        <% if (userInfo.blogDetail)
+                                                                            { %>
+                                                                            <p class="text-info"><%= userInfo.blogDetail.blog_title %></p>
+                                                                            <% } else { %>
+                                                                            <p class="text-info">Blog Title</p>
+                                                                        <% } %>
                                                                         <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                     </label>
                                                                     <!--<input type="text" class="edit-input" />-->
-                                                                    <input type="text" name="url" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.userInfo.blog_title %>">
+                                                                    <% if (userInfo.blogDetail)
+                                                                            { %>
+                                                                                <input type="text" name="blog_title" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.blog_title %>">
+                                                                            <% } else { %>
+                                                                            <input type="text" name="blog_title" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="">
+                                                                        <% } %>
+                                                                    
                                                                 </div>
                                                                 <div style="display:flex">
                                                                     <label for="name" class="pr-side-lab-b">
-                                                                        <p class="text-info">Blog Description</p>
+                                                                        <% if (userInfo.blogDetail)
+                                                                            { %>
+                                                                            <p class="text-info"><%= userInfo.blogDetail.blog_desc %></p>
+                                                                            <% } else { %>
+                                                                            <p class="text-info">Blog Description</p>
+                                                                        <% } %>
+                                                                        
                                                                         <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                     </label>
                                                                     <!--<input type="text" class="edit-input" />-->
-                                                                    <input type="text" name="url" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.userInfo.blog_desc %>">
+                                                                    <% if (userInfo.blogDetail)
+                                                                            { %>
+                                                                    <input type="text" name="blog_desc" placeholder="Blog Description" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.blog_desc %>">
+                                                                        <% } else { %>
+                                                                            <input type="text" name="blog_desc" placeholder="Blog Description" class="form-control pr-side-inp-b edit-input" value="">
+                                                                        <% } %>
                                                                 </div>
                                                             <% if (userInfo.blogDetail)
                                                                  { %>
@@ -476,19 +498,39 @@
                                                                 <label class="control-label pr-side-inp-la mrg-tb">Round Second Blog Link</label>
                                                                     <div style="display:flex">
                                                                     <label for="name" class="pr-side-lab-b">
-                                                                        <p class="text-info">Blog Title</p>
+                                                                        <% if (userInfo.blogDetail)
+                                                                            { %>
+                                                                            <p class="text-info"><%= userInfo.blogDetail.blog_title1 %></p>
+                                                                            <% } else { %>
+                                                                            <p class="text-info">Blog Title</p>
+                                                                        <% } %>
                                                                         <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                     </label>
                                                                     <!--<input type="text" class="edit-input" />-->
-                                                                    <input type="text" name="url" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.userInfo.blog_title1 %>">
+                                                                    <% if (userInfo.blogDetail)
+                                                                            { %>
+                                                                    <input type="text" name="blog_title1" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.blog_title1 %>">
+                                                                    <% } else { %>
+                                                                            <input type="text" name="blog_title1" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="">
+                                                                        <% } %>
                                                                 </div>
                                                                 <div style="display:flex">
                                                                     <label for="name" class="pr-side-lab-b">
+                                                                        <% if (userInfo.blogDetail)
+                                                                            { %>
+                                                                        <p class="text-info"><%= userInfo.blogDetail.blog_desc1 %></p>
+                                                                        <% } else { %>
                                                                         <p class="text-info">Blog Description</p>
+                                                                        <% } %>
                                                                         <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                     </label>
                                                                     <!--<input type="text" class="edit-input" />-->
-                                                                    <input type="text" name="url" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.userInfo.blog_desc2 %>">
+                                                                    <% if (userInfo.blogDetail)
+                                                                            { %>
+                                                                    <input type="text" name="blog_desc1" placeholder="Blog Description" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.blog_desc1 %>">
+                                                                    <% } else { %>
+                                                                        <input type="text" name="blog_desc1" placeholder="Blog Description" class="form-control pr-side-inp-b edit-input" value="">
+                                                                        <% } %>
                                                                 </div>
 
                                                                     <% if (userInfo.blogDetail) { %>
@@ -500,7 +542,7 @@
                                                                                     <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                                 </label>
                                                                                 <!--<input type="text" class="edit-input" />-->
-                                                                                <input type="text" name="url" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.url1 %>"
+                                                                                <input type="text" name="url1" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.url1 %>"
                                                                                                     disabled>
                                                                             </div>
                                                                             <!-- end edit box-->
@@ -548,20 +590,41 @@
                                                                                     <label class="control-label pr-side-inp-la mrg-tb">Round Third Blog Link</label>
                                                                                     <div style="display:flex">
                                                                                         <label for="name" class="pr-side-lab-b">
-                                                                                            <p class="text-info">Blog Title</p>
+                                                                                            <% if (userInfo.blogDetail)
+                                                                                                { %>
+                                                                                                <p class="text-info"><%= userInfo.blogDetail.blog_title2 %></p>
+                                                                                            <% } else { %>
+                                                                                                <p class="text-info">Blog Title</p>
+                                                                                            <% } %>
+                                                                                            
                                                                                             <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                                         </label>
                                                                                         <!--<input type="text" class="edit-input" />-->
-                                                                                        <input type="text" name="url" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.userInfo.blog_title2 %>">
+                                                                                        <% if (userInfo.blogDetail)
+                                                                                                { %>
+                                                                                                <input type="text" name="blog_title2" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.blog_title2 %>">
+                                                                                            <% } else { %>
+                                                                                                <input type="text" name="blog_title2" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="">
+                                                                                        <% } %>
                                                                                     </div>
                                                                                     <div style="display:flex">
                                                                                         <label for="name" class="pr-side-lab-b">
-                                                                                            <p class="text-info">Blog Description</p>
+                                                                                            <% if (userInfo.blogDetail)
+                                                                                                { %>
+                                                                                            <p class="text-info"><%= userInfo.blogDetail.blog_desc2 %></p>
+                                                                                            <% } else { %>
+                                                                                                <p class="text-info">Blog Description</p>
+                                                                                            <% } %>
                                                                                             <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                                         </label>
                                                                                         <!--<input type="text" class="edit-input" />-->
-                                                                                        <input type="text" name="url" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.userInfo.blog_desc2 %>">
-                                                             	                    </div>
+                                                                                        <% if (userInfo.blogDetail)
+                                                                                                { %>
+                                                                                        <input type="text" name="blog_desc2" placeholder="Blog Description" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.blog_desc2 %>">
+                                                             	                        <% } else { %>
+                                                                                                <input type="text" name="blog_desc2" placeholder="Blog Description" class="form-control pr-side-inp-b edit-input" value="">
+                                                                                            <% } %>
+                                                                                     </div>
                                                                                             <% if (userInfo.blogDetail) { %>
                                                                                                 <% if(userInfo.events[2].roundBlocked) { %>
                                                                                                 <!--edit box-->

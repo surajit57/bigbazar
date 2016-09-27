@@ -132,26 +132,21 @@
                                             <li role="presentation">
                                                 <a class=" fnt-14" href="#top50" aria-controls="messages" role="tab" data-toggle="tab">Top 15</a>
                                             </li>
-                                            <% } %>
-                                                <% if(!events[2].roundBlocked) { %>
-                                                    <li role="presentation" class="disabled disabledTab"><a class=" fnt-14" href="#top3" aria-controls="messages" role="tab" data-toggle="tab"
+                                        <% } %>
+                                    <% if(!events[2].roundBlocked) { %>
+                                        <li role="presentation" class="disabled disabledTab"><a class=" fnt-14" href="#top3" aria-controls="messages" role="tab" data-toggle="tab"
                                                             title="Top 15 is blocked">Top 3</a></li>
-                                                    <% } else {%>
-                                                        <li role="presentation"><a class=" fnt-14" href="#top3" aria-controls="messages" role="tab"
+                                <% } else {%>
+                            <li role="presentation"><a class=" fnt-14" href="#top3" aria-controls="messages" role="tab"
                                                                 data-toggle="tab">Top 3</a></li>
-                                                        <% } %>
-
+                        <% } %>
                     </ul>
-
-
                 </div>
             </div>
         </div>
         <!--page-sidebar-wrapper-->
-
         <div class="page-content-wrapper" style="background-color:#fff">
             <div class="page-content" style="min-height:1200px">
-
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
                         <li><a href="<%= mountPath %>/users/home">Home</a><i class="fa fa-circle"></i></li>
@@ -159,23 +154,14 @@
                     </ul>
                 </div>
                 <div class="row" style="margin: 0px">
-
                     <div class="col-md-12">
-
                         <!-- Tab panes -->
                         <div class="tab-content">
-
                             <div role="tabpanel" class="tab-pane active" id="all">
-
-
                                 <% for(var i=0; i<allUsers.length; i++) {%>
                                     <!-- CARD+S-->
-
                                     <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
-
-
                                         <!-- For First Blog Url -->
-
                                         <% if(allUsers[i].blogs[0].url) { %>
                                             <div class="col-sm-3" style="padding: 10px;">
                                                 <div class="col-item pr-card">
@@ -187,31 +173,27 @@
                                                                 <% }
                                                             else { %>
                                                                     <img src="<%= mountPath %>/images/profile_user.png" class="img-circle">
-                                                                    <% } %>
+                                                            <% } %>
                                                         </div>
                                                     </div>
                                                     <div class="separator clear-left"> </div>
                                                     <div class="info list-inf">
-
                                                         <h5>
                                                             <%= allUsers[i].name %>
                                                         </h5>
                                                         <span style="width: 18em;display: inline-flex;">
                                                                     Blog Url :
-                                                                 <span class="li-blg-tx">
+                                                                <span class="li-blg-tx">
                                                                      <a target="_blank" href="<%= allUsers[i].blogs[0].url %>"><%= allUsers[i].blogs[0].url %> </a>
                                                                 </span>
                                                         </span>
                                                     </div>
                                                     <div class="clearfix">
-
                                                     </div>
                                                 </div>
                                             </div>
-
                                             <% } %>
                                                 <!-- For First Blog Url -->
-
                                                 <!-- For Second Blog Url -->
                                                 <% if(allUsers[i].blogs[0].url1) { %>
                                                     <div class="col-sm-3" style="padding: 10px;">
@@ -223,7 +205,6 @@
                                                             </div>
                                                             <div class="separator clear-left"> </div>
                                                             <div class="info list-inf">
-
                                                                 <h5>
                                                                     <%= allUsers[i].name %>
                                                                 </h5>
@@ -233,18 +214,13 @@
                                                                      <a target="_blank" href="<%= allUsers[i].blogs[0].url1 %>"><%= allUsers[i].blogs[0].url1 %></a>
                                                                 </span>
                                                                 </span>
-
                                                             </div>
-
                                                             <div class="clearfix">
-
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                     <% } %>
                                                         <!-- For Second Blog Url -->
-
                                                         <!-- For Third Blog Url -->
                                                         <% if(allUsers[i].blogs[0].url2) { %>
                                                             <div class="col-sm-3" style="padding: 10px;">
@@ -265,40 +241,23 @@
                                                                  <span class="li-blg-tx">
                                                                      <a target="_blank" href="<%= allUsers[i].blogs[0].url2 %>"> <%= allUsers[i].blogs[0].url2 %> </a>
                                                                 </span>
-                                                                        </span>
-
-                                                                    </div>
-
-                                                                    <div class="clearfix">
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                            <% } %>
-                                                                <!-- For Third Blog Url -->
-
-
-
-                                                                <% } %>
-
-
-                                                                    <!-- END OF CARDS-->
-                                                                    <% } %>
-                                                                     </div>
-
-                            <div role="tabpanel" class="tab-pane" id="top100">
-
+                                                            </span>
+                                                        </div>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        <% } %>
+                                        <!-- For Third Blog Url -->
+                                    <% } %>
+                                <!-- END OF CARDS-->
+                            <% } %>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="top100">
                                 <% for(var i=0; i<allUsers.length; i++) {%>
                                     <!-- CARD+S-->
-
                                     <% if(allUsers[i].isUnder100) {%>
-
                                         <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
-
-
                                             <!-- For First Blog Url -->
-
                                             <% if(allUsers[i].blogs[0].url) { %>
                                                 <div class="col-sm-3" style="padding: 10px;">
                                                     <div class="col-item pr-card">
@@ -309,7 +268,6 @@
                                                         </div>
                                                         <div class="separator clear-left"> </div>
                                                         <div class="info list-inf">
-
                                                             <h5>
                                                                 <%= allUsers[i].name %>
                                                             </h5>
@@ -320,17 +278,11 @@
                                                                 </span>
                                                             </span>
                                                         </div>
-
-                                                        <div class="clearfix">
-
-
-                                                        </div>
+                                                        <div class="clearfix"></div>
                                                     </div>
                                                 </div>
-
                                                 <% } %>
                                                     <!-- For First Blog Url -->
-
                                                     <!-- For Second Blog Url -->
                                                     <% if(allUsers[i].blogs[0].url1) { %>
                                                         <div class="col-sm-3" style="padding: 10px;">
@@ -342,7 +294,6 @@
                                                                 </div>
                                                                 <div class="separator clear-left"> </div>
                                                                 <div class="info list-inf">
-
                                                                     <h5>
                                                                         <%= allUsers[i].name %>
                                                                     </h5>
@@ -351,109 +302,76 @@
                                                                  <span class="li-blg-tx">
                                                                     <a target="_blank" href="<%= allUsers[i].blogs[0].url1 %>"> <%= allUsers[i].blogs[0].url1 %></a>
                                                                 </span>
-                                                                    </span>
-                                                                </div>
-
-
-                                                                <div class="clearfix">
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <% } %>
-                                                            <!-- For Second Blog Url -->
-
-                                                            <!-- For Third Blog Url -->
-                                                            <% if(allUsers[i].blogs[0].url2) { %>
-                                                                <div class="col-sm-3" style="padding: 10px;">
-                                                                    <div class="col-item pr-card">
-                                                                        <div class="photo">
-                                                                            <div class="user_profile_image">
-                                                                                <img src="<%= mountPath %>/images/profile_user.png" class="img-circle">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="separator clear-left"> </div>
-                                                                        <div class="info list-inf">
-
-                                                                            <h5>
-                                                                                <%= allUsers[i].name %>
-                                                                            </h5>
-                                                                            <span style="width: 18em;display: inline-flex;">
-                                                                Blog Url :
-                                                                 <span class="li-blg-tx">
-                                                                   <a target="_blank" href="<%= allUsers[i].blogs[0].url2 %>">  <%= allUsers[i].blogs[0].url2 %> </a>
-                                                                </span>
-                                                                            </span>
-                                                                        </div>
-
-
-                                                                        <div class="clearfix">
-
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <% } %>
-                                                                    <!-- For Third Blog Url -->
-
-
-
-                                                                    <% } %>
-
-
-                                                                        <% } %>
-
-
-                                                                            <!-- END OF CARDS-->
-
-
-                                                                            <% } %>
-                            </div>
-                            <div role="tabpanel" class="tab-pane" id="top50">
-
-                                <% for(var i=0; i<allUsers.length; i++) {%>
-                                    <!-- CARD+S-->
-
-                                    <% if(allUsers[i].isUnder15) {%>
-
-                                        <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
-
-
-                                            <!-- For First Blog Url -->
-
-                                            <% if(allUsers[i].blogs[0].url) { %>
-                                                <div class="col-sm-3" style="padding: 10px;">
-                                                    <div class="col-item pr-card">
-                                                        <div class="photo">
-                                                            <div class="user_profile_image">
-                                                                <img src="<%= mountPath %>/images/profile_user.png" class="img-circle">
-                                                            </div>
-                                                        </div>
-                                                        <div class="separator clear-left"> </div>
-                                                        <div class="info list-inf">
-
-                                                            <h5>
-                                                                <%= allUsers[i].name %>
-                                                            </h5>
-                                                            <span style="width: 18em;display: inline-flex;">
-                                                                Blog Url :
-                                                                 <span class="li-blg-tx">
-                                                                   <a target="_blank" href="<%= allUsers[i].blogs[0].url %>">  <%= allUsers[i].blogs[0].url %> </a>
-                                                                </span>
                                                             </span>
                                                         </div>
-
-
-                                                        <div class="clearfix">
-
-                                                        </div>
-                                                    </div>
+                                                    <div class="clearfix"></div>
                                                 </div>
-
-                                                <% } %>
-                                                    <!-- For First Blog Url -->
-
-                                                    <!-- For Second Blog Url -->
+                                            </div>
+                                        <% } %>
+                                        <!-- For Second Blog Url -->
+                                    <!-- For Third Blog Url -->
+                                <% if(allUsers[i].blogs[0].url2) { %>
+                            <div class="col-sm-3" style="padding: 10px;">
+                                <div class="col-item pr-card">
+                                    <div class="photo">
+                                        <div class="user_profile_image">
+                                            <img src="<%= mountPath %>/images/profile_user.png" class="img-circle">
+                                        </div>
+                                    </div>
+                                    <div class="separator clear-left"></div>
+                                    <div class="info list-inf">
+                                        <h5>
+                                        <%= allUsers[i].name %>
+                                        </h5>
+                                        <span style="width: 18em;display: inline-flex;">
+                                            Blog Url :
+                                            <span class="li-blg-tx">
+                                                <a target="_blank" href="<%= allUsers[i].blogs[0].url2 %>">  <%= allUsers[i].blogs[0].url2 %> </a>
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <% } %>
+                            <!-- For Third Blog Url -->
+                        <% } %>
+                    <% } %>
+                    <!-- END OF CARDS-->
+                <% } %>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="top50">
+                <% for(var i=0; i<allUsers.length; i++) {%>
+                <!-- CARD+S-->
+                    <% if(allUsers[i].isUnder15) {%>
+                        <% for(var j=0; j< allUsers[i].blogs.length; j++) { %>
+                            <!-- For First Blog Url -->
+                                <% if(allUsers[i].blogs[0].url) { %>
+                                    <div class="col-sm-3" style="padding: 10px;">
+                                        <div class="col-item pr-card">
+                                            <div class="photo">
+                                                <div class="user_profile_image">
+                                                    <img src="<%= mountPath %>/images/profile_user.png" class="img-circle">
+                                                </div>
+                                            </div>
+                                            <div class="separator clear-left"> </div>
+                                            <div class="info list-inf">
+                                                <h5>
+                                                <%= allUsers[i].name %>
+                                                </h5>
+                                                <span style="width: 18em;display: inline-flex;">
+                                                    Blog Url :
+                                                    <span class="li-blg-tx">
+                                                        <a target="_blank" href="<%= allUsers[i].blogs[0].url %>">  <%= allUsers[i].blogs[0].url %> </a>
+                                                    </span>
+                                                </span>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                <% } %>
+                                <!-- For First Blog Url -->
+                            <!-- For Second Blog Url -->
                                                     <% if(allUsers[i].blogs[0].url1) { %>
                                                         <div class="col-sm-3" style="padding: 10px;">
                                                             <div class="col-item pr-card">

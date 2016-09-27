@@ -196,7 +196,7 @@ UserController.getProfile = function(req, res){
         blogDetail: blogDetail,
         events: events
       }
-      console.log('userInfo in profile:-------------------- ', userInfo);
+      console.log('userInfo in profile:-------------------- ', JSON.stringify(userInfo));
       return res.render('newprofile.html',{ userInfo: userInfo});
     })
 
@@ -338,39 +338,42 @@ UserController.saveProfile = function(req, res){
 
 function updateRound1Blog(req, res){
     Blog.update({
-      url: req.body.url
+      url: req.body.url,
+      blog_title: req.body.blog_title || null,
+      blog_desc: req.body.blog_desc || null
     },{
       where:{
         userId: req.user.id
       }
     }).then(function(blog){
-      console.log('Blog 1 url Successfully added');
       res.siteRediret('/users/profile');
     })
 }
 
 function updateRound2Blog(req, res){
     Blog.update({
-      url1: req.body.url1
+      url1: req.body.url1,
+      blog_title1: req.body.blog_title1 || null,
+      blog_desc2: req.body.blog_desc1 || null
     },{
       where:{
         userId: req.user.id
       }
     }).then(function(blog){
-      console.log('Blog 2 url Successfully added');
       res.siteRediret('/users/profile');
     })
 }
 
 function updateRound3Blog(req, res){
     Blog.update({
-      url2: req.body.url2
+      url2: req.body.url2,
+      blog_title2: req.body.blog_title2 || null,
+      blog_desc2: req.body.blog_desc2 || null
     },{
       where:{
         userId: req.user.id
       }
     }).then(function(blog){
-      console.log('Blog 3 url Successfully added');
       res.siteRediret('/users/profile');
     })
 }
@@ -704,7 +707,6 @@ UserController.getAdminSignupPage = function(req, res){
 
 UserController.getAllBlogs = function(req, res){
     Blog.findAll({include:[{ model: models.user }]}).then(function(allblogs) {
-      console.log('allblogs:- ',allblogs.length);
     res.render('adminPanel1/index.html', {blogs: allblogs});
   });
 }
