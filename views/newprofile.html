@@ -415,19 +415,19 @@
                                                             <label class="control-label pr-side-inp-la mrg-tb">Round First Blog Link</label>
                                                                 <div style="display:flex">
                                                                     <label for="name" class="pr-side-lab-b">
-                                                                        <p class="text-info">Blog Title</p>
+                                                                        <p class="text-info"><%= userInfo.blogDetail.blog_title %></p>
                                                                         <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                     </label>
                                                                     <!--<input type="text" class="edit-input" />-->
-                                                                    <input type="text" name="url" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.userInfo.blog_title %>">
+                                                                    <input type="text" name="blog_title" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.blog_title %>">
                                                                 </div>
                                                                 <div style="display:flex">
                                                                     <label for="name" class="pr-side-lab-b">
-                                                                        <p class="text-info">Blog Description</p>
+                                                                        <p class="text-info"><%= userInfo.blogDetail.blog_desc %></p>
                                                                         <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                     </label>
                                                                     <!--<input type="text" class="edit-input" />-->
-                                                                    <input type="text" name="url" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.userInfo.blog_desc %>">
+                                                                    <input type="text" name="blog_desc" placeholder="Blog Description" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.blog_desc %>">
                                                                 </div>
                                                             <% if (userInfo.blogDetail)
                                                                  { %>
@@ -476,19 +476,19 @@
                                                                 <label class="control-label pr-side-inp-la mrg-tb">Round Second Blog Link</label>
                                                                     <div style="display:flex">
                                                                     <label for="name" class="pr-side-lab-b">
-                                                                        <p class="text-info">Blog Title</p>
+                                                                        <p class="text-info"><%= userInfo.blogDetail.blog_title1 %></p>
                                                                         <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                     </label>
                                                                     <!--<input type="text" class="edit-input" />-->
-                                                                    <input type="text" name="url" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.userInfo.blog_title1 %>">
+                                                                    <input type="text" name="blog_title1" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.blog_title1 %>">
                                                                 </div>
                                                                 <div style="display:flex">
                                                                     <label for="name" class="pr-side-lab-b">
-                                                                        <p class="text-info">Blog Description</p>
+                                                                        <p class="text-info"><%= userInfo.blogDetail.blog_desc1 %></p>
                                                                         <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                     </label>
                                                                     <!--<input type="text" class="edit-input" />-->
-                                                                    <input type="text" name="url" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.userInfo.blog_desc2 %>">
+                                                                    <input type="text" name="blog_desc1" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.blog_desc1 %>">
                                                                 </div>
 
                                                                     <% if (userInfo.blogDetail) { %>
@@ -500,7 +500,7 @@
                                                                                     <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                                 </label>
                                                                                 <!--<input type="text" class="edit-input" />-->
-                                                                                <input type="text" name="url" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.url1 %>"
+                                                                                <input type="text" name="url1" placeholder="http://www.mywebsite.coms" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.url1 %>"
                                                                                                     disabled>
                                                                             </div>
                                                                             <!-- end edit box-->
@@ -548,19 +548,19 @@
                                                                                     <label class="control-label pr-side-inp-la mrg-tb">Round Third Blog Link</label>
                                                                                     <div style="display:flex">
                                                                                         <label for="name" class="pr-side-lab-b">
-                                                                                            <p class="text-info">Blog Title</p>
+                                                                                            <p class="text-info"><%= userInfo.blogDetail.blog_title2 %></p>
                                                                                             <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                                         </label>
                                                                                         <!--<input type="text" class="edit-input" />-->
-                                                                                        <input type="text" name="url" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.userInfo.blog_title2 %>">
+                                                                                        <input type="text" name="blog_title2" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.blog_title2 %>">
                                                                                     </div>
                                                                                     <div style="display:flex">
                                                                                         <label for="name" class="pr-side-lab-b">
-                                                                                            <p class="text-info">Blog Description</p>
+                                                                                            <p class="text-info"><%= userInfo.blogDetail.blog_desc2 %></p>
                                                                                             <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                                         </label>
                                                                                         <!--<input type="text" class="edit-input" />-->
-                                                                                        <input type="text" name="url" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.userInfo.blog_desc2 %>">
+                                                                                        <input type="text" name="blog_desc2" placeholder="Blog Description" class="form-control pr-side-inp-b edit-input" value="<%= userInfo.blogDetail.blog_desc2 %>">
                                                              	                    </div>
                                                                                             <% if (userInfo.blogDetail) { %>
                                                                                                 <% if(userInfo.events[2].roundBlocked) { %>
