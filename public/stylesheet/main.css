@@ -1110,7 +1110,7 @@ body > div.page-header.navbar.navbar-fixed-top {
 
 }
 .xs_hideen{
-    font-size: 14px; font-weight: 400; 
+    font-size: 14px; font-weight: 400;
 }
 #thanku .modal-dialog{
     border-radius: 0px;margin: 100px auto;
@@ -1507,11 +1507,17 @@ body > div.page-header.navbar.navbar-fixed-top {
     .page-container.fix_user{
         margin-top: 80px !important;
     }
-    
+
 }
 @media screen and (max-width:991px) and (min-width:768px){
+    .topselecter >.nav-tabs>li{
+          margin:0px 0px 6px !important;
+    }
+    .topselecter >.nav-tabs{
+      width: 189px !important;
+    }
     .page-content-wrapper .page-content {
-        margin-left: 235px !important;
+        margin-left: 187px !important;
         padding: 0px !important;
     }
     .page-container.fix_user{
@@ -1523,7 +1529,7 @@ body > div.page-header.navbar.navbar-fixed-top {
     .page-sidebar-wrapper{
         float: left;width: 100%;background: #fff;
     }
-    
+
 }
 @media screen and (max-width:767px) and (min-width:481px){
     .blog_header.navbar-fixed-top{
