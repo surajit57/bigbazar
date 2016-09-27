@@ -1319,7 +1319,7 @@ padding: 39px 0 !important;
     float: left;width: auto;margin: 9px 0px;
 }
 .icon-fav {
-    font-size: 20px !important;color: #ffa800;cursor: pointer;
+    font-size: 28px !important;color: #ffa800;cursor: pointer;
     text-decoration: none !important;padding: 0px 8px;
 }
 .icon-fav:hover{
@@ -1470,3 +1470,17 @@ padding: 39px 0 !important;
     margin: 10px 0px;
 }
 /* PROFILE CSS END */
+
+
+
+.icon-fa {
+    background: #ffa800;
+    border-radius: 50%;
+   padding: 4px 6px !important;
+    font-size: 24px !important;
+}
+
+
+[class*=" fa-"]:not(.fa-stack), [class*=" glyphicon-"], [class*=" icon-"], [class^=fa-]:not(.fa-stack), [class^=glyphicon-], [class^=icon-]{
+line-height: 25px !important;
+}
