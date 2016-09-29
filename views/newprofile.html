@@ -295,7 +295,8 @@
                                                         </div>
                                                         <div class="form-group">
                                                           <label class="control-label pr-side-inp-la uppercase">Age</label>
-                                                        <select class="form-control"id="ageSelect">
+
+                                                        <!-- <select class="form-control"id="ageSelect">
                                                           <option <% if (userInfo.userInfo.age == null || userInfo.userInfo.age =="") { %> selected <% }else { %> <% } %>  value="0">Age</option>
                                                           <option <% if (userInfo.userInfo.age == "18-20") { %> selected <% }else { %> <% } %> value="18-20">18-20</option>
                                                           <option <% if (userInfo.userInfo.age == "26-30") { %> selected <% }else { %> <% } %> value="26-30">26-30</option>
@@ -309,7 +310,8 @@
                                                           <option <% if (userInfo.userInfo.age == "66-70") { %> selected <% }else { %> <% } %> value="66-70">66-70</option>
                                                           <option <% if (userInfo.userInfo.age == "71-75") { %> selected <% }else { %> <% } %> value="71-75">71-75</option>
                                                           <option <% if (userInfo.userInfo.age == "76-80") { %> selected <% }else { %> <% } %> value="76-80">76-80</option>
-                                                        </select>
+                                                        </select> -->
+                                                        <input type="date" name="date" id="ageSelect" class="form-control" placeholder="" value="userInfo.userInfo.age">
                                                         </div>
                                                         <div class="form-group">
                                                             <label class="control-label pr-side-inp-la uppercase">City</label>
@@ -430,7 +432,7 @@
                                                                             <% } else { %>
                                                                             <input type="text" name="blog_title" placeholder="Blog Title" class="form-control pr-side-inp-b edit-input" value="">
                                                                         <% } %>
-                                                                    
+
                                                                 </div>
                                                                 <div style="display:flex">
                                                                     <label for="name" class="pr-side-lab-b">
@@ -440,7 +442,7 @@
                                                                             <% } else { %>
                                                                             <p class="text-info">Blog Description</p>
                                                                         <% } %>
-                                                                        
+
                                                                         <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                     </label>
                                                                     <!--<input type="text" class="edit-input" />-->
@@ -596,7 +598,7 @@
                                                                                             <% } else { %>
                                                                                                 <p class="text-info">Blog Title</p>
                                                                                             <% } %>
-                                                                                            
+
                                                                                             <a class="edit" href="#"><i class="fa fa-pencil pr-side-inp-fa"></i></a>
                                                                                         </label>
                                                                                         <!--<input type="text" class="edit-input" />-->
