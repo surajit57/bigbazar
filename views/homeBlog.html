@@ -257,8 +257,8 @@
         <script src="<%=mountPath %>/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             function logout(){
-              
-               $.get( "/users/logout", { })
+
+               $.get( "<%= mountPath %>/users/logout", { })
                         .done(function( data ) {
                           window.location = "<%= mountPath %>/users/login"
                         });
@@ -280,7 +280,7 @@
               var phoneNum = phone.replace(/[^\d]/g, '');
 
               if(validateURL(urlVal) && filter.test(newEmail) && name.length !=0 && phoneNum.length > 6 && phoneNum.length < 11 && city.length !=0 && age !=0 && blog_desc.length !=0 && blog_title.length !=0){
-                  $.post( "/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone, "blog_title": blog_title, "blog_desc": blog_desc })
+                  $.post( "<%= mountPath %>/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone, "blog_title": blog_title, "blog_desc": blog_desc })
                           .done(function( data ) {
                             console.log('------------------ ', data);
                             console.log('data:-- ', JSON.stringify(data));
