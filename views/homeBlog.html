@@ -90,7 +90,7 @@
                             <div class="social-icon-fav">
                                 <div class="social-fav">
                                     <!-- social Share -->
-                                    <i class="fa fa-facebook icon-fav" onclick="fbShare()" title="Facebook"></i>
+                                    <a target="_blank" href="https://www.facebook.com/fbbonline/?fref=ts"><i class="fa fa-facebook icon-fav" title="Facebook"></i></a>
                                     <a class="icon-fav" target="_blank" href="https://twitter.com/intent/tweet?text=Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! http://private.fbbblogstar.in/users/list">
                                         <i class="fa fa-twitter" title="Twitter"></i>
                                     </a>
@@ -236,10 +236,10 @@
                                                         <center>
                                                             <h1>Thank You For Submitting The Blog
                                                             </h1>
-                                                            <div class="social_links">
-                                                                <a href=""><i class="fa fa-facebook icon-facebook" title="Facebook"></i></a>
-                                                                <a href=""><i class="fa fa-twitter icon-twitter" title="Twitter"></i></a>
-                                                                <a href=""><i class="fa fa-linkedin icon-linkedin" title="LinkedIn"></i></a>
+                                                            <div class="social_links" id="social_links">
+                                                                <i class="fa fa-facebook icon-facebook" id="fb_share_dynamic" title="Facebook"></i>
+                                                                <i class="fa fa-twitter icon-twitter" id="twitter_share_dynamic" title="Twitter"></i>
+                                                                <!-- <a href=""><i class="fa fa-linkedin icon-linkedin" title="LinkedIn"></i></a> -->
                                                             </div>
                                                         </center>
                                                     </div>
@@ -267,6 +267,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="<%=mountPath %>/js/bootstrap.min.js"></script>
         <script type="text/javascript">
+        function fbDynamicShare(){
+          alert('fbDynamicShare called');
+        }
             function logout(){
 
                $.get( "<%= mountPath %>/users/logout", { })
@@ -295,22 +298,36 @@
                             console.log('------------------ ', data);
                             console.log('data:-- ', JSON.stringify(data));
                             if(data.code == 200){
-                                // var Message = data.message;
-                                // console.log('output:-------- ',JSON.stringify(data.output));
-                                // alert("succes");
+
+                              document.getElementById('fb_share_dynamic').onclick = function(){
+                                FB.ui(
+                                {
+                                    method: 'feed',
+                                    name: data.output.blog_title,
+                                    link: data.output.blog_url,
+                                    picture: "http://www.fbbindia.in/blogstar/images/blogStar.png",
+                                    caption: "fbb Blog Star Contest",
+                                    description: data.output.blog_desc,
+                                    message: ''
+                                });
+                              };
+
+                              document.getElementById('twitter_share_dynamic').onclick = function(){
+                                window.open('https://twitter.com/intent/tweet?text=Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! ' + data.output.blog_url + ' ','_blank');
+                                // <a class="icon-fav" target="_blank" href="https://twitter.com/intent/tweet?text=Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! http://private.fbbblogstar.in/users/list">
+                                //
+                                // </a>
+                              }
                                 document.getElementById('oldPop').style.display = 'none';
                                 document.getElementById('thanku_msgPop').style.display = 'block';
                                 // document.getElementById('thanku_msg').innerHTML = "<p class='succes_msg'>Your Blog is uploaded Sucessfully.<span class='colse_msg' onClick='reload();'><i class='fa fa-close f-alert'></i></span></p>";
-                                // document.getElementById("submit_popup").innerHTML =
-                                // '<p class="succe_txt">Your Blog is uploaded Sucessfully. <a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a></p>';
-                                //alert('uploaded');
-                                //pop('popDiv');
-                                // window.location = "/users/home";
+
                             }
                             else if(data.code == 100){
                                 var errorMessage = data.message;
-                                console.log('errorMessage:- ',errorMessage);
-                                // alert(" Blog is already uploaded Error Code 100");
+
+                                // document.getElementById('oldPop').style.display = 'none';
+                                // document.getElementById('thanku_msgPop').style.display = 'block';
                                 document.getElementById('thanku_msg').innerHTML = "<p class='error_msg'>Blog is already uploaded for current round.<span class='colse_msg' onClick='reload();'><i class='fa fa-close f-alert'></i></span></p>";
                                 // document.getElementById("submit_popup").innerHTML =
                                 //  '<p class="error-txt">Blog is already uploaded for current round. <a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a></p>';

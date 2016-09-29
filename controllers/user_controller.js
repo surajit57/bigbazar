@@ -422,10 +422,6 @@ UserController.postBlog = function(req,res){
   var blog_email = req.body.email;
   var blog_title = req.body.blog_title;
   var blog_desc = req.body.blog_desc;
-  // var blog_title1 = req.body.blog_title1;
-  // var blog_desc1 = req.body.blog_desc1;
-  // var blog_title2 = req.body.blog_title2;
-  // var blog_desc2 = req.body.blog_desc2;
 
   Events.findOne({
     where: {
@@ -564,8 +560,8 @@ function addRound1(UserId, url, req, res, user_age, user_city, user_phone, blog_
               });
             }
           else if(blog.isRound1BlogAdded){
-            console.log('ALready added');
-            return res.json({code: 100, message: "Blog is already uploaded."});
+            console.log('ALready added:-----------------------------------------------------------------------------', JSON.stringify(blog));
+            return res.json({code: 100, message: "Blog is already uploaded." });
           }
           else{
             console.log('Erorr111');
