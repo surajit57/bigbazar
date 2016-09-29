@@ -549,7 +549,16 @@ function addRound1(UserId, url, req, res, user_age, user_city, user_phone, blog_
                     })
                     .then(function(data){
                       console.log('sucessfully uploaded1');
-                      return res.json({code: 200, message: "sucessfully uploaded"});
+                      var output = {
+                        "blog_url": req.body.blog_url,
+                        "blogEmail": blog_email,
+                        "blogUserName": user_name,
+                        "phone": user_phone,
+                        "city": user_city,
+                        "blog_title": blog_title,
+                        "blog_desc": blog_desc
+                      }
+                      return res.json({code: 200, message: "sucessfully uploaded", data: data, output: output});
                       // return res.siteRediret('/users/home')
                     });
               });
@@ -618,13 +627,23 @@ function addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_
 
                     }).then(function(data){
                       console.log('sucessfully uploaded2');
-                      return res.json({code: 200, message: "sucessfully uploaded"});
+                      var output = {
+                        "blog_url": req.body.blog_url,
+                        "blogEmail": blog_email,
+                        "blogUserName": user_name,
+                        "phone": user_phone,
+                        "city": user_city,
+                        "blog_title": blog_title,
+                        "blog_desc": blog_desc
+                      }
+                      return res.json({code: 200, message: "sucessfully uploaded", data: data, output: output});
                       // return res.siteRediret('/users/home')
                     });
               });
             }
           else if(blog.isRound2BlogAdded){
             console.log('ALready added');
+
             return res.json({code: 100, message: "Blog is already uploaded."});
           }
           else{
@@ -685,7 +704,16 @@ function addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_
 
                     }).then(function(data){
                       console.log('coming sucessfully');
-                      return res.json({code: 200, message: "sucessfully uploaded"});
+                      var output = {
+                        "blog_url": req.body.blog_url,
+                        "blogEmail": blog_email,
+                        "blogUserName": user_name,
+                        "phone": user_phone,
+                        "city": user_city,
+                        "blog_title": blog_title,
+                        "blog_desc": blog_desc
+                      }
+                      return res.json({code: 200, message: "sucessfully uploaded", data: data, output: output});
                       // return res.siteRediret('/users/home')
                     });
               });

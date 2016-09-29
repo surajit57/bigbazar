@@ -3,7 +3,6 @@ var router = express.Router();
 var passport = require('passport');
 var  UserController = require('../controllers/user_controller');
 var Auth = require('../lib/auth');
-var router = express.Router();
 
 require('../lib/passport.js')(passport);
 

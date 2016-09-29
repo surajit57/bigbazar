@@ -94,7 +94,6 @@ router.get('/blogPost', Auth.isLoggedIn, function(req, res){
 	// res.render('homeBlog.html');
 });
 router.post('/blogPost', Auth.isLoggedIn, UserController.postBlog);
-// router.get('/blogPost1', Auth.isLoggedIn, UserController.postBlog);
 
 router.get('/list', UserController.getListOfAllUsers);
 
