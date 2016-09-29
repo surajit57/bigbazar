@@ -182,9 +182,8 @@
                                             <div class="modal-content">
                                                 <div class="modal-body">
                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                    <div class="form-section">
+                                                    <div class="form-section" id="oldPop">
                                                         <form>
-
                                                             <h3 class="txt-submit">Submit Your Blog<h3>
                                                             <div class="form-group">
                                                                 <input type="text" name="name" id="userName" class="form-control" placeholder="Name" onchange="displayNormal('userName');">
@@ -232,6 +231,17 @@
                                                             </div>
                                                         </form>
                                                     </div>
+                                                    <div id="thanku_msgPop" class="thanku_txt" style="display:none;">
+                                                        <center>
+                                                            <h1>Thank You For Submitting The Blog
+                                                            </h1>
+                                                            <div class="social_links">
+                                                                <a href=""><i class="fa fa-facebook icon-facebook" title="Facebook"></i></a>
+                                                                <a href=""><i class="fa fa-twitter icon-twitter" title="Twitter"></i></a>
+                                                                <a href=""><i class="fa fa-linkedin icon-linkedin" title="LinkedIn"></i></a>
+                                                            </div>
+                                                        </center>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -278,7 +288,6 @@
               console.log('urlVal:- ',urlVal, 'age:- ',age, 'city:- ',city, 'name',name, 'newEmail:- ',newEmail, 'phone',phone, 'blog_title',blog_title, 'blog_desc',blog_desc);
               var filter = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
               var phoneNum = phone.replace(/[^\d]/g, '');
-
               if(validateURL(urlVal) && filter.test(newEmail) && name.length !=0 && phoneNum.length > 6 && phoneNum.length < 11 && city.length !=0 && age !=0 && blog_desc.length !=0 && blog_title.length !=0){
                   $.post( "<%= mountPath %>/users/blogPost", {"blog_url": urlVal, "age": age, "city": city, "Blogusername": name, "email": newEmail, "phone": phone, "blog_title": blog_title, "blog_desc": blog_desc })
                           .done(function( data ) {
@@ -286,9 +295,11 @@
                             console.log('data:-- ', JSON.stringify(data));
                             if(data.code == 200){
                                 // var Message = data.message;
-                                console.log('output:-------- ',JSON.stringify(data.output));
-                                alert("succes");
-                                document.getElementById('thanku_msg').innerHTML = "<p class='succes_msg'>Your Blog is uploaded Sucessfully.<span class='colse_msg' onClick='reload();'><i class='fa fa-close f-alert'></i></span></p>";
+                                // console.log('output:-------- ',JSON.stringify(data.output));
+                                // alert("succes");
+                                document.getElementById('oldPop').style.display = 'none';
+                                document.getElementById('thanku_msgPop').style.display = 'block';
+                                // document.getElementById('thanku_msg').innerHTML = "<p class='succes_msg'>Your Blog is uploaded Sucessfully.<span class='colse_msg' onClick='reload();'><i class='fa fa-close f-alert'></i></span></p>";
                                 // document.getElementById("submit_popup").innerHTML =
                                 // '<p class="succe_txt">Your Blog is uploaded Sucessfully. <a href="" onClick="hide("submit_popup")"><i class="fa fa-close f-alert"></i></a></p>';
                                 //alert('uploaded');
