@@ -37,7 +37,7 @@
                   <div id="login_box">
                       <div class="login login-info" >
                           <div class="login-body">
-                              <form role="form" class="frm" id="register-form" role="form" style="display: block;" action="<%= mountPath %>/login" method="POST" onsubmit="return validateSignInForm();">
+                              <form role="form" class="frm" id="register-form" role="form" style="display: block;" action="<%= localPath %>/login" method="POST" onsubmit="return validateSignInForm();">
                                   <div style="margin-bottom: 10px" class="input-group">
                                       <span class="input-group-addon">
                                           <i class="glyphicon glyphicon-user"></i>
@@ -82,7 +82,7 @@
                                   </div>
                             </div>
                         </form>
-                        <form role="form" class="frm" id="login-form" role="form" style="display: none;" method="POST" action="<%= mountPath %>/users/signup" onsubmit="return validateForm();">
+                        <form role="form" class="frm" id="login-form" role="form" style="display: none;" method="POST" action="<%= localPath %>/users/signup" onsubmit="return validateForm();">
                             <div style="margin-bottom: 10px"  class="input-group">
                                   <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                               <!--<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username"> -->

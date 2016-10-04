@@ -54,7 +54,7 @@ router.post('/unselect-for-3', Auth.isAdminLogin, UserController.unselectFor3);
 // router.post('/events', Auth.isAdminLogin, UserController.setEventDate);
 // router.put('/events', Auth.isAdminLogin, UserController.editEventDate);
 
-
+router.get('/export', UserController.exportFullData);
 
 
 module.exports = router;

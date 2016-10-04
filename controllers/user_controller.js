@@ -10,6 +10,8 @@ var bcrypt = require('bcrypt-nodejs');
 var Promise = require('bluebird');
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
+var json2csv = require('json2csv');
+var fs = require('fs');
 
 var transporter = nodemailer.createTransport(
     smtpTransport('smtps://cheers@fbbblogstar.in:star@6204@smtp.gmail.com')
@@ -732,6 +734,64 @@ UserController.getAdminSignupPage = function(req, res){
 UserController.getAllBlogs = function(req, res){
     Blog.findAll({include:[{ model: models.user }]}).then(function(allblogs) {
     res.render('adminPanel1/index.html', {blogs: allblogs});
+  });
+}
+
+// createColumnContent function changed from original code
+var createColumnContent = function(params, str, callback) {
+  params.data.forEach(function(data_element) {
+    //if null or empty object do nothing
+    if (data_element && Object.getOwnPropertyNames(data_element).length > 0) {
+      var line = '';
+      var eol = os.EOL || '\n';
+      params.fields.forEach(function(field_element) {
+        // here, instead of direct child, getByPath support multiple subnodes levels
+        line += getByPath(data_element, field_element.split('.'), 0) + params.del;
+      });
+      //remove last delimeter
+      line = line.substring(0, line.length - 1);
+      line = line.replace(/\\"/g, '""');
+      str += eol + line;
+    }
+  });
+  callback(str);
+};
+
+var getByPath = function(data_element, path, position) {
+  if (data_element.hasOwnProperty(path[position])) {
+    if (position === path.length - 1) {
+      return JSON.stringify(data_element[path[position]]);
+    }
+    else {
+      return getByPath(data_element[path[position]], path, position + 1)
+    }
+  }
+  else {
+    return '';
+  }
+}
+
+UserController.exportFullData = function(req, res){
+    Blog.findAll({include:[{ model: models.user }]}).then(function(allblogs) {
+
+      var fields = ['id', 'url', 'url1', 'url2', 'blog_title', 'blog_desc', 'blog_title1', 'blog_desc1', 'blog_title2',
+       'blog_desc2', 'createdAt', 'updatedAt', 'userId', 'user.id', 'user.name', 'user.email', 'user.password', 'user.isBlogAdded',
+     'user.isAdmin', 'user.phone', 'user.isUnder100', 'user.isUnder15', 'user.isUnder3', 'user.imageUrl', 'user.isRound1BlogAdded', 'user.isRound2BlogAdded',
+   'user.isRound3BlogAdded', 'user.age', 'user.city', 'user.resetPasswordToken', 'user.resetPasswordExpires', 'user.blogEmail', 'user.blogUserName',
+ 'user.hobbies', 'user.bio', 'user.faceBook_url', 'user.twitter_url', 'user.instagram_url', 'user.youtube_url', 'user.snapchat_url', 'user.createdAt', 'user.updatedAt' ];
+      var csv = json2csv({ data: allblogs, fields: fields });
+
+      fs.writeFile('public/UsersFullData.csv', csv, function(err) {
+        if (err) throw err;
+        console.log('file saved');
+      });
+    // json2csv({data: JSON.stringify(allblogs[0].user), fields: ['id', 'name', 'email', 'isBlogAdded', 'phone', 'isUnder100', 'isUnder15', 'isUnder3', 'imageUrl', 'isRound1BlogAdded', 'isRound2BlogAdded', 'isRound3BlogAdded', 'age', 'city', 'blogEmail', 'blogUserName', 'hobbies', 'bio', 'faceBook_url', 'twitter_url', 'instagram_url', 'youtube_url', 'snapchat_url', 'createdAt', 'updatedAt']}, function(err, csv) {
+    //   if (err) console.log(err);
+    //   fs.writeFile('file.csv', csv, function(err) {
+    //     if (err) throw err;
+    //     console.log('file saved');
+    //   });
+    // });
   });
 }
 
