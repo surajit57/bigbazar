@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/users/login'}),function(req, res){
+	console.log('req.user.isAdmin:-- ',req.user.isAdmin);
 	if(req.user.isAdmin){
 		return res.siteRediret('/admin/home');
 	}
