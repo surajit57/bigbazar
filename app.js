@@ -109,10 +109,10 @@ app.use(function(req, res, next){
 });
 
 
-// app.locals.mountPath = '/blogstar';
-app.locals.mountPath = '../../';
-// app.locals.localPath = '/blogstar';
-app.locals.localPath = '';
+app.locals.mountPath = '/blogstar';
+// app.locals.mountPath = '../../';
+app.locals.localPath = '/blogstar';
+// app.locals.localPath = '';
 
 // module.exports.localPath = localPath;
 module.exports = app;
