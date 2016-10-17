@@ -139,7 +139,7 @@
                     <div class="row">
 		            <div class="col-md-12">
                         <div class="portlet-body">
-                          <a href="<% localPath %>/UsersFullData.csv" id="exportButton" download="UsersFullData.csv"><button onclick="exportFullNew();">Export Data</button>
+                          <a href="<% localPath %>/UsersFullData.csv" id="exportButton" download="UsersFullData.csv"><button onclick="return exportFullNew();">Export Data</button>
                              <div id="countdown"> </div>
 
                             <div class="row"  style="margin: 0px;">
@@ -780,7 +780,8 @@
        function exportFullNew() {
             $.get( "<%= localPath %>/admin/export", { })
                       .done(function( data ) {
-                        window.location = "<%= localPath %>/admin/login"
+                        window.location = "<%= localPath %>/admin/login";
+                        return true;
                    });
       }
 
