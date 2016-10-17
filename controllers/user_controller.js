@@ -780,16 +780,14 @@ UserController.exportFullData = function(req, res){
    'user.isRound3BlogAdded', 'user.age', 'user.city', 'user.resetPasswordToken', 'user.resetPasswordExpires', 'user.blogEmail', 'user.blogUserName',
  'user.hobbies', 'user.bio', 'user.faceBook_url', 'user.twitter_url', 'user.instagram_url', 'user.youtube_url', 'user.snapchat_url', 'user.createdAt', 'user.updatedAt' ];
       var csv = json2csv({ data: allblogs, fields: fields });
-      // public.forEach(function(UsersFullData) {
-      //   fs.unlink('public/UsersFullData.csv');
-      //   console.log('deleted');
-      // });
+
       fs.unlink('public/UsersFullData.csv', (err) => {
         if (err) throw err;
         console.log('successfully deleted public/UsersFullData.csv');
         fs.writeFile('public/UsersFullData.csv', csv, function(err) {
           if (err) throw err;
           console.log('file saved');
+          res.json({"code": 200, "data": "Success"});
         });
       });
 
