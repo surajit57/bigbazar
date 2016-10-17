@@ -783,7 +783,7 @@
             $.get( "<%= localPath %>/admin/export", { })
                       .done(function( data ) {
                         console.log('file is ready to exported', data);
-                        // window.location = "<%= localPath %>/admin/login";
+                        window.location = "<%= localPath %>/admin/login";
                         return true;
                    });
       }
