@@ -781,15 +781,15 @@ UserController.exportFullData = function(req, res){
  'user.hobbies', 'user.bio', 'user.faceBook_url', 'user.twitter_url', 'user.instagram_url', 'user.youtube_url', 'user.snapchat_url', 'user.createdAt', 'user.updatedAt' ];
       var csv = json2csv({ data: allblogs, fields: fields });
 
-      fs.unlink('public/UsersFullData.csv', (err) => {
-        if (err) throw err;
-        console.log('successfully deleted public/UsersFullData.csv');
-        fs.writeFile('public/UsersFullData.csv', csv, function(err) {
+      // fs.unlink('public/UsersFullData.csv', (err) => {
+      //   if (err) throw err;
+      //   console.log('successfully deleted public/UsersFullData.csv');
+        fs.writeFile('public/UsersData.csv', csv, function(err) {
           if (err) throw err;
           console.log('file saved');
           res.json({"code": 200, "data": "Success"});
         });
-      });
+      // });
 
     // json2csv({data: JSON.stringify(allblogs[0].user), fields: ['id', 'name', 'email', 'isBlogAdded', 'phone', 'isUnder100', 'isUnder15', 'isUnder3', 'imageUrl', 'isRound1BlogAdded', 'isRound2BlogAdded', 'isRound3BlogAdded', 'age', 'city', 'blogEmail', 'blogUserName', 'hobbies', 'bio', 'faceBook_url', 'twitter_url', 'instagram_url', 'youtube_url', 'snapchat_url', 'createdAt', 'updatedAt']}, function(err, csv) {
     //   if (err) console.log(err);
