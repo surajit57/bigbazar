@@ -789,7 +789,6 @@
        function exportFullNew() {
             $.get( "<%= localPath %>/admin/export", { })
                       .done(function( data ) {
-                        console.log('file is ready to exported', data);
                         convert_downloadCSV(data);
                         // window.location = "<%= localPath %>/admin/allBlogs";
                         // return true;
