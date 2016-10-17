@@ -140,7 +140,7 @@
 		            <div class="col-md-12">
                         <div class="portlet-body">
                           <!-- <button onclick="exportFullNew();">Genrate File To Download</button> -->
-                          <a href="<% localPath %>/UsersData.csv" id="exportButton" download="UsersData.csv" onclick="return exportFullNew();"><button >Export Data</button>
+                          <a href="#" id="exportButton"  onclick="return exportFullNew();"><button >Export Data</button>
 
                              <div id="countdown"> </div>
 
@@ -594,6 +594,7 @@
     <script src="<%= mountPath %>/js/app.min.js" type="text/javascript"></script>
     <script src="<%= mountPath %>/js/layout.min.js" type="text/javascript"></script>
     <script src="<%= mountPath %>/js/demo.min.js" type="text/javascript"></script>
+    <script src="<%= localPath %>/js/FileSaver.js" type="text/javascript"></script>
    <script type="text/javascript">
        $("#checkAll").change(function () {
            $(":checkbox.checkTab").prop('checked', $(this).prop("checked"));
@@ -771,10 +772,16 @@
                     window.location = "<%= localPath %>/admin/login"
                   });
        }
-
+       function convert_downloadCSV(originalData){
+         var blob = new Blob([originalData], {
+         type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+         });
+         saveAs(blob, 'User_Report_'+ new Date().toJSON().slice(0,10) + '.csv');
+       }
        function exportFull(){
          $.get( "/admin/export", { })
                    .done(function( data ) {
+
                      window.location = "<%= localPath %>/admin/login"
                 });
        }
@@ -783,8 +790,9 @@
             $.get( "<%= localPath %>/admin/export", { })
                       .done(function( data ) {
                         console.log('file is ready to exported', data);
-                        window.location = "<%= localPath %>/admin/login";
-                        return true;
+                        convert_downloadCSV(data);
+                        // window.location = "<%= localPath %>/admin/allBlogs";
+                        // return true;
                    });
       }
 

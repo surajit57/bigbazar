@@ -11,6 +11,7 @@ var Promise = require('bluebird');
 var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var json2csv = require('json2csv');
+var simpleJson2Csv = require('simple-json2csv');
 var fs = require('fs');
 
 var transporter = nodemailer.createTransport(
@@ -781,25 +782,72 @@ UserController.exportFullData = function(req, res){
  'user.hobbies', 'user.bio', 'user.faceBook_url', 'user.twitter_url', 'user.instagram_url', 'user.youtube_url', 'user.snapchat_url', 'user.createdAt', 'user.updatedAt' ];
       var csv = json2csv({ data: allblogs, fields: fields });
 
-      // fs.unlink('public/UsersFullData.csv', (err) => {
-      //   if (err) throw err;
-      //   console.log('successfully deleted public/UsersFullData.csv');
-        fs.writeFile('public/UsersData.csv', csv, function(err) {
+      var fileName ='UserData '+ (Math.floor(Date.now() / 1000)) + '.csv' ;
+      var fileNameWithPath = 'public/' + fileName;
+        fs.writeFile(fileNameWithPath, csv, function(err) {
           if (err) throw err;
           console.log('file saved');
-          res.json({"code": 200, "data": "Success"});
-        });
-      // });
+          var stat = fs.statSync(fileNameWithPath);
+          res.setHeader('Content-disposition', 'attachment; filename='+fileNameWithPath);
+          // res.end(res);
+          res.attachment('UsersData.csv');
+          var readStream = fs.createReadStream(fileNameWithPath);
+          // We replaced all the event handlers with a simple call to readStream.pipe()
+          readStream.pipe(res);
 
-    // json2csv({data: JSON.stringify(allblogs[0].user), fields: ['id', 'name', 'email', 'isBlogAdded', 'phone', 'isUnder100', 'isUnder15', 'isUnder3', 'imageUrl', 'isRound1BlogAdded', 'isRound2BlogAdded', 'isRound3BlogAdded', 'age', 'city', 'blogEmail', 'blogUserName', 'hobbies', 'bio', 'faceBook_url', 'twitter_url', 'instagram_url', 'youtube_url', 'snapchat_url', 'createdAt', 'updatedAt']}, function(err, csv) {
-    //   if (err) console.log(err);
-    //   fs.writeFile('file.csv', csv, function(err) {
-    //     if (err) throw err;
-    //     console.log('file saved');
-    //   });
-    // });
+          // res.json({"code": 200, "data": "Success"});
+        });
+
+        // var json2Csv = new simpleJson2Csv({
+        //   fields: [
+        //     { name: "id", header: "Id" },
+        //     { name: "url", header: "Url" },
+        //     { name: "url1", header: "Url 1" },
+        //     { name: "url2", header: "Url 2" },
+        //     { name: "blog_title", header: "Blog Title" },
+        //     { name: "blog_desc", header: "Blog Desc" },
+        //     { name: "blog_title1", header: "Blog Title 1" },
+        //     { name: "blog_desc1", header: "Blog Desc 1" },
+        //     { name: "blog_title2", header: "blog_title2" },
+        //     { name: "blog_desc2", header: "blog_desc2" },
+        //     { name: "createdAt", header: "createdAt" },
+        //     { name: "updatedAt", header: "updatedAt" },
+        //     { name: "userId", header: "userId" },
+        //     { name: "user['id']", header: "user.id" },
+        //     { name: "user.name", header: "user.name" },
+        //     { name: "user.email", header: "user.email" },
+        //     { name: "user.password", header: "user.password" },
+        //     { name: "user.isBlogAdded", header: "user.isBlogAdded" },
+        //     { name: "user.isAdmin", header: "user.isAdmin" },
+        //     { name: "user.phone", header: "user.phone" },
+        //     { name: "user.isUnder100", header: "user.isUnder100" }
+        //
+        //     // { name: "user.email", header: "user.email" },
+        //     // { name: "user.password", header: "user.password" },
+        //     // { name: "user.isBlogAdded", header: "user.isBlogAdded" },
+        //     // { name: "user.isAdmin", header: "user.isAdmin" },
+        //     // { name: "user.phone", header: "user.phone" },
+        //     // { name: "user.isUnder100", header: "user.isUnder100" },
+        //   ],
+        //   data: allblogs
+        // });
+
+        // var json2Csv = new simpleJson2Csv({
+        //   fields: fields,
+        //     data: allblogs
+        //   });
+          // res.setHeader('Content-Type', 'text/csv');
+          // res.attachment('User  Report -'+ (Math.floor(Date.now() / 1000)) + '.csv');
+          // json2Csv.pipe(fs.createWriteStream(res));
+          // json2Csv.pipe(res);
+
+
+
+
+
   });
 }
+
 
 UserController.postSelectFor100 = function(req, res){
 var arr = JSON.parse(req.body.userIds);
