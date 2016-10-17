@@ -784,10 +784,15 @@ UserController.exportFullData = function(req, res){
       //   fs.unlink('public/UsersFullData.csv');
       //   console.log('deleted');
       // });
-      fs.writeFile('public/UsersFullData.csv', csv, function(err) {
+      fs.unlink('public/UsersFullData.csv', (err) => {
         if (err) throw err;
-        console.log('file saved');
+        console.log('successfully deleted public/UsersFullData.csv');
+        fs.writeFile('public/UsersFullData.csv', csv, function(err) {
+          if (err) throw err;
+          console.log('file saved');
+        });
       });
+
     // json2csv({data: JSON.stringify(allblogs[0].user), fields: ['id', 'name', 'email', 'isBlogAdded', 'phone', 'isUnder100', 'isUnder15', 'isUnder3', 'imageUrl', 'isRound1BlogAdded', 'isRound2BlogAdded', 'isRound3BlogAdded', 'age', 'city', 'blogEmail', 'blogUserName', 'hobbies', 'bio', 'faceBook_url', 'twitter_url', 'instagram_url', 'youtube_url', 'snapchat_url', 'createdAt', 'updatedAt']}, function(err, csv) {
     //   if (err) console.log(err);
     //   fs.writeFile('file.csv', csv, function(err) {
