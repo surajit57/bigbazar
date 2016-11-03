@@ -241,7 +241,7 @@ button.btn.btn-default.btn-block {
 /* LOGIN CSS START*/
 .login_section {
     float: left;margin: 0px;width: 100%;
-    height: auto;min-height: 662px;padding: 150px 0px 0px;
+    height: auto;min-height: 662px;padding: 220px 0px 0px;
     background-image: url(/blogstar/images/login.png);background-repeat: no-repeat;background-size: 100% 100%;
 }
 .login_Pwd {
