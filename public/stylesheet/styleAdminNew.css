@@ -221,7 +221,7 @@ form {
 /*List Page css start*/
 
 .background {
-	background: url(/blogstar/images/bg-banner.png);
+	background: url(/blogstar/home/images/bg-banner.png);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	float: left;
@@ -515,7 +515,7 @@ font-size: 22px;
 		padding: 0px 11px;
 	}
 	.logo::before {
-		background: url(/blogstar/images/arrow.png);
+		background: url(/blogstar/home/images/arrow.png);
 		content: " ";
 		position: absolute;
 		z-index: 0;
