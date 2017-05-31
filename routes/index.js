@@ -7,7 +7,7 @@ var Auth = require('../lib/auth');
 require('../lib/passport.js')(passport);
 
 /* GET home page. */
-router.get('/home', function(req, res, next) {
+router.get('/', function(req, res, next) {
 	// console.log('user:------------ ',req.user.id);
 
 	if(req.user){
