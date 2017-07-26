@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
 // });
 console.log('env:- ', process.env.NODE_ENV);
 console.log('path:- ', router.locals);
-router.post('/login', passport.authenticate('local-login', {failureRedirect: '/users/login'}),function(req, res){
+router.post('/login', passport.authenticate('local-login', {failureRedirect: 'http://104.236.84.1/blogstar/users/login'}),function(req, res){
 	console.log('req.user.isAdmin:-- ',req.user.isAdmin);
 	if(req.user.isAdmin){
 		return res.siteRediret('/admin/home');
