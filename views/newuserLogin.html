@@ -10,6 +10,10 @@
       <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
 	    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	   <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="http://fbbblogstar.in/css/style-responsive.css">
+	<link rel="stylesheet" href="http://fbbblogstar.in/css/animate.min.css">
+	<link rel="stylesheet" href="http://fbbblogstar.in/css/vertical-rhythm.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <link rel="shortcut icon" href="../images/favicon.png" />
    </head>
@@ -26,8 +30,22 @@
                     <% } %>
                 </div>
             </div>
-            <div class="col-sm-5 col-md-4">
-              <div class="login_Pwd">
+            <div class="col-md-12">
+        <div class="login_Pwd">
+          <h2 Style="text-align:center;">fbb bring to you an opportunity to become India's next blogging star.<br>
+           Follow these simple steps and stand a chance to enter the Blogstar Academy.</h2>
+          <div class="row" style="    background-color: rgba(255, 255, 255, 0.76);border: 2px solid #ee7202;">
+            <div class="col-sm-4" style="border-right:2px solid #ee7202;padding: 11px;">
+              <div class="team-member"> <span>1.Mail us your contact details and your blog link at <a style="text-decoration: none;" href="mailto:" blogstarconnect@fbbblogstar.in" target="_top"> blogstarconnect@fbbblogstar.in
+</a></span> </div>
+            </div>
+            <div class="col-sm-4" style="border-right:2px solid #ee7202;padding: 11px;">
+              <div class="team-member"> <span>2. We will revert to you with a topic, you will have to blog about it. </span> </div>
+            </div>
+            <div class="col-sm-4" style="padding: 11px;">
+              <div class="team-member"> <span>3. Using the dialogue box below, create you Blogstar account. </span> </div>
+            </div>
+          </div>
                   <h1 class="login-title">Member Login </h1>
                   <div class="socialicon-btn">
                       <a href="<%= mountPath %>users/auth/facebook" class="bt2">
@@ -154,8 +172,32 @@
                 </div>
               </div>
             </div><!--End container -->
+		    <footer style="text-align:center;">
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"> </div>
+    <div class="col-md-4">
+    <h4>Follow Us</h4>
+      <ul class="list-inline social-buttons">
+        <li style="background: #4e71a8;"><a href="https://www.facebook.com/fbbonline" target="_blank" style="color:#fff;"><i class="fa fa-facebook"></i></a> </li>
+        <li style="background: #1cb7eb;"><a href="https://twitter.com/fbb_india" target="_blank" style="color:#fff;"><i class="fa fa-twitter"></i></a> </li>
+        <li style="background: rgba(228, 181, 255, 0.94);"><a href="https://instagram.com/fbbonline" target="_blank" style="color:#fff;"><img src="images/insta.png"style="top: -1px;
+    position: relative;"></a> </li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+     
+      </ul>
+    </div>
+  </div>
+</div>
   	    <!--<script src="../js/bootstrap.min.js"></script>-->
   	        <script src="<%= mountPath %>/js/bootstrap.min.js"></script>
+			 
+<script type="text/javascript" src="http://fbbblogstar.in/js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="http://fbbblogstar.in/js/jquery.sticky.js"></script>
+
+<script type="text/javascript" src="http://fbbblogstar.in/js/all.js"></script>
 	          <script>
 	              $(function() {
 	                $('#register-form-link').click(function(e) {
