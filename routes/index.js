@@ -11,7 +11,8 @@ router.get('/', function(req, res, next) {
 	// console.log('user:------------ ',req.user.id);
 
 	if(req.user){
-		res.siteRediret('/users/home');
+		// res.siteRediret('/users/home');
+		res.siteRediret('/users/');
 	}
 
 	res.render('newuserLogin.html');
@@ -30,7 +31,7 @@ router.post('/login', passport.authenticate('local-login', {failureRedirect: '/b
 	if(req.user.isAdmin){
 		return res.siteRediret('/admin/home');
 	}
-	return res.siteRediret('/users/home')
+	return res.siteRediret('/users/')
 });
 
 // router.post('/admin/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/home/admin/login'}),function(req, res){

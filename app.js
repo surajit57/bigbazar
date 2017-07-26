@@ -108,11 +108,14 @@ app.use(function(req, res, next){
   next();
 });
 
-
-app.locals.mountPath = '/blogstar';
-// app.locals.mountPath = '../../';
-app.locals.localPath = '/blogstar';
-// app.locals.localPath = '';
+if(process.env.NODE_ENV != "production") {
+  app.locals.mountPath = '../..';
+  app.locals.localPath = '';
+  console.log('if part==============');
+} else {
+  app.locals.localPath = '/blogstar';
+  app.locals.mountPath = '/blogstar';
+}
 
 // module.exports.localPath = localPath;
 module.exports = app;

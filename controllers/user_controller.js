@@ -521,7 +521,7 @@ function addRound1(UserId, url, req, res, user_age, user_city, user_phone, blog_
               });
               blog.save().then(function(blog){
                 console.log('Success:-- ', blog);
-                if(!blog) return res.siteRediret('/home/users/home');
+                if(!blog) return res.siteRediret('/users');
                     console.log('blog created');
                     User.update({
                       isRound1BlogAdded: 1,
@@ -601,7 +601,7 @@ function addRound2(UserId, url, req, res, user_age, user_city, user_phone, blog_
               .then(function(blog){
                 console.log('blog:------------- ',blog);
 
-                if(!blog) return res.siteRediret('/home/users/home');
+                if(!blog) return res.siteRediret('/users');
                     console.log('blog created');
                     User.update({
                       isRound2BlogAdded: 1,
@@ -681,7 +681,7 @@ function addRound3(UserId, url, req, res, user_age, user_city, user_phone, blog_
                 }
               })
               .then(function(blog){
-                if(!blog) return res.siteRediret('/home/users/home');
+                if(!blog) return res.siteRediret('/users');
                     console.log('blog created');
                     User.update({
                       isRound3BlogAdded: 1,
