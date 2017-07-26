@@ -3,16 +3,24 @@ var router = express.Router();
 var passport = require('passport');
 var  UserController = require('../controllers/user_controller');
 var Auth = require('../lib/auth');
+var config = require('../config/index');
+
+var middleWarePath = config.siteRoot;
 
 require('../lib/passport.js')(passport);
 
+if(process.env.NODE_ENV == "production") {
+	middleWarePath = config.siteRoot
+} else {
+	middleWarePath = config.localsiteRoot ? config.localsiteRoot : '/';
+}
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	// console.log('user:------------ ',req.user.id);
 
 	if(req.user){
 		// res.siteRediret('/users/home');
-		res.siteRediret('/users/');
+		res.siteRediret('/users');
 	}
 
 	res.render('newuserLogin.html');
@@ -26,7 +34,7 @@ router.get('/', function(req, res, next) {
 // 	return res.siteRediret('/users/home')
 // });
 console.log('env:- ', process.env.NODE_ENV);
-router.post('/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/users/login'}),function(req, res){
+router.post(middleWarePath + '/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/users/login'}),function(req, res){
 	console.log('req.user.isAdmin:-- ',req.user.isAdmin);
 	if(req.user.isAdmin){
 		return res.siteRediret('/admin/home');
