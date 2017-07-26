@@ -185,7 +185,7 @@ button.btn.btn-default.btn-block {
 .reset_section {
     float: left;margin: 0px;width: 100%;
     height: auto;min-height: 662px;padding: 150px 0px 0px;
-    background-image: url(/images/login.png);background-repeat: no-repeat;background-size: 100% 100%;
+    background-image: url(/blogstar/images/login.png);background-repeat: no-repeat;background-size: 100% 100%;
 }
 .reset_Pwd {
     float: left;width: 100%;height: auto;
@@ -243,7 +243,7 @@ button.btn.btn-default.btn-block {
     float: left;margin: 0px;width: 100%;
     height: auto;min-height: 662px;padding: 220px 0px 0px;
     /*background-image: url(/blogstar/home/images/login.png);background-repeat: no-repeat;background-size: 100% 100%;*/
-		background-image: url(/images/login.png);background-repeat: no-repeat;background-size: 100% 100%;
+		background-image: url(/blogstar/images/login.png);background-repeat: no-repeat;background-size: 100% 100%;
 }
 .login_Pwd {
     float: left;width: 100%;height: auto;
