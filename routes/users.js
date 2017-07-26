@@ -42,7 +42,7 @@ router.get('/login', function(req, res){
 	// res.render('userLogin.html');
 	// res.render('newuserLogin.html');
 	// console.log('mountPath:------------------',express.locals);
-	res.siteRediret('/');
+	res.siteRediret('/blogstar/');
 });
 
 router.get('/forgot', UserController.forgotPassword);
