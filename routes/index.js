@@ -37,17 +37,6 @@ router.post('/login', passport.authenticate('local-login', {failureRedirect: '/u
 	return res.siteRediret('/users/home')
 });
 
-router.get('/blogstar/test',function(req, res){
-	console.log('req.user.isAdmin:-- ',req.user.isAdmin);
-	return res.json({
-		code: 200
-	})
-	// if(req.user.isAdmin){
-	// 	return res.siteRediret('/admin/home');
-	// }
-	// return res.siteRediret('/users')
-});
-
 // router.post('/admin/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/home/admin/login'}),function(req, res){
 // 	// if(req.user.isAdmin){
 //

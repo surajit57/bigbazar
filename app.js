@@ -113,9 +113,9 @@ if(process.env.NODE_ENV != "production") {
   app.locals.localPath = '';
   console.log('if part==============');
 } else {
-  app.locals.localPath = 'blogstar';
+  app.locals.localPath = 'http://104.236.84.1/blogstar/';
   // app.locals.localPath = '';
-  app.locals.mountPath = 'blogstar';
+  app.locals.mountPath = 'http://104.236.84.1/blogstar/';
   // app.locals.mountPath = '';
 }
 
