@@ -28,12 +28,13 @@ router.get('/', function(req, res, next) {
 // 	return res.siteRediret('/users/home')
 // });
 console.log('env:- ', process.env.NODE_ENV);
-router.post('/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/users/login'}),function(req, res){
+console.log('path:- ', router.locals);
+router.post('/login', passport.authenticate('local-login', {failureRedirect: '/users/login'}),function(req, res){
 	console.log('req.user.isAdmin:-- ',req.user.isAdmin);
 	if(req.user.isAdmin){
 		return res.siteRediret('/admin/home');
 	}
-	return res.siteRediret('/users')
+	return res.siteRediret('/users/home')
 });
 
 router.get('/blogstar/test',function(req, res){

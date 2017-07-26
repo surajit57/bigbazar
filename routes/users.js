@@ -19,7 +19,7 @@ var User = models.user;
 // 	// res.render('blog.html', {data: UserData });
 // 	res.render('homeBlog.html', {data: UserData });
 // });
-router.get('/', Auth.isLoggedIn , function(req, res){
+router.get('/home', Auth.isLoggedIn , function(req, res){
 	var UserData = req.user;
 	req.flash('info', req.user.isBlogAdded)
 	// res.render('blog.html', {data: UserData });
@@ -29,13 +29,13 @@ router.get('/', Auth.isLoggedIn , function(req, res){
 
 
 router.get( '/auth/facebook', passport.authenticate('facebook', { scope: ['email', 'user_location'] }));
-router.get( '/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/blogstar/users/login' }), (req, res) => {
+router.get( '/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/users/login' }), (req, res) => {
   //  res.apiSuccess( { $redirect : '/#/do-login' }, 'Authenticated with Facebook' );
 	res.siteRediret('/users/home');
  });
 
 router.get('/signup' , UserController.getSignupPage);
-router.post('/signup', passport.authenticate('local-signup', {failureRedirect: '/blogstar/users/login' , successRedirect:'/blogstar/users/home'}));
+router.post('/signup', passport.authenticate('local-signup', {failureRedirect: '/users/login' , successRedirect:'/users/home'}));
 
 router.get('/login', function(req, res){
 	// req.flash('info', 'Welcome:------------------------------------------');
