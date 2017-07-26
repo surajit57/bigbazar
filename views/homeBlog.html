@@ -57,8 +57,8 @@
       {
           method: 'feed',
           name: "Celebrate the fbb Blog Star Contest",
-          link: 'http://www.fbbindia.in/blogstar/users/list',
-          picture: "http://www.fbbindia.in/blogstar/home/images/blogStar.png",
+          link: 'http://fbbblogstar.in/blogstar/users/list',
+          picture: "http://fbbblogstar.in/blogstar/home/images/blogStar.png",
           caption: "fbb Blog Star Contest",
           description: 'Hi Guys, I am participating in the #BlogStar contest. Click here to read my blog if you like it support me by sharing it! ',
           message: ''
@@ -70,7 +70,7 @@
     function shareContent() {
     // body...
 
-    var url = "http://www.fbbindia.in/blogstar/users/list";
+    var url = "http://fbbblogstar.in/blogstar/users/list";
     var title = "fbb Blog Star";
     var text = "Hi Guys, I am participating in the #BlogStar contest. Click here to read my blog if you like it support me by sharing it!";
     window.open('http://www.linkedin.com/shareArticle?mini=true&title=" '+title+' "&text="' +text+ '"&url='+encodeURIComponent(url), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
@@ -110,7 +110,7 @@
                                       <% if(data.imageUrl) { %>
                                         <image src="<%= data.imageUrl %>" class="profile_name" />
                                         <% }  else {%>
-                                          <image src="http://www.fbbindia.in/blogstar/home/images/profile_user.png" class="profile_name"/>
+                                          <image src="http://fbbblogstar.in/blogstar/home/images/profile_user.png" class="profile_name"/>
                                           <% } %>
                                         <b><%= data.name %> </b>
                                         </button>
@@ -143,7 +143,7 @@
                                           <img src="<%= mountPath %>/images/numone.png" alt="" />
                                           <span>Click ​5​ different looks of yourself wearing ​your
                                             favorite denims​ and blog about it. Register and submit that blog here:
-                                             <a href="" target="_blank">http://www.fbbindia.in/blogstar/</a>
+                                             <a href="" target="_blank">http://fbbblogstar.in/blogstar/</a>
                                           </span>
                                       </li>
                                       <li>
@@ -307,7 +307,7 @@
                                     method: 'feed',
                                     name: data.output.blog_title,
                                     link: data.output.blog_url,
-                                    picture: "http://www.fbbindia.in/blogstar/home/images/login.png",
+                                    picture: "http://fbbblogstar.in/blogstar/home/images/login.png",
                                     caption: "fbb Blog Star Contest",
                                     description: data.output.blog_desc,
                                     message: ''

@@ -32,7 +32,7 @@ router.post('/upload',Auth.isLoggedIn, type, function (req, res) {
               console.log('req.user:- ',req.user);
 
               var user = User.update({
-                  imageUrl: 'http://www.fbbindia.in/blogstar/profile/'+req.file.filename,
+                  imageUrl: 'http://fbbblogstar.in/blogstar/profile/'+req.file.filename,
                 },{
                   where: {
                     id: req.user.id

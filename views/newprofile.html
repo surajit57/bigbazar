@@ -97,8 +97,8 @@
         {
             method: 'feed',
             name: "Celebrate the fbb Blog Star Contest",
-            link: 'http://www.fbbindia.in/blogstar/users/list',
-            picture: "http://www.fbbindia.in/blogstar/home/images/Big-Bazaar-Stores16052015.jpg",
+            link: 'http://fbbblogstar.in/blogstar/users/list',
+            picture: "http://fbbblogstar.in/blogstar/home/images/Big-Bazaar-Stores16052015.jpg",
             caption: "fbb Blog Star Contest",
             description: 'Share a message to show your blogs posted to fbb Blog Star Contest',
             message: ''
@@ -106,7 +106,7 @@
         }
         function shareContent() {
         // body...
-        var url = "http://www.fbbindia.in/blogstar/users/list";
+        var url = "http://fbbblogstar.in/blogstar/users/list";
         var title = "fbb Blog Star";
         var text = "Hi, guys please found my blog at fbb Blog Star contest.";
         window.open('http://www.linkedin.com/shareArticle?mini=true&title=" '+title+' "&text="' +text+ '"&url='+encodeURIComponent(url), '', 'left=0,top=0,width=650,height=420,personalbar=0,toolbar=0,scrollbars=0,resizable=0');
@@ -116,7 +116,7 @@
         <div class="page-header-inner ">
             <div class="page-logo">
                 <a href="<%= mountPath %>/users/home">
-                    <img src="http://www.fbbindia.in/blogstar/home/images/Logo1.png" alt="logo" class="logo-default fkword" style="width:200px; " /></a>
+                    <img src="http://fbbblogstar.in/blogstar/home/images/Logo1.png" alt="logo" class="logo-default fkword" style="width:200px; " /></a>
             </div>
 
             <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
@@ -159,7 +159,7 @@
                                 <div class="social-fav">
                                     <!-- social Share -->
                                     <i class="fa fa-facebook icon-fav" onclick="fbShare()" title="Facebook"></i>
-                                    <a class="icon-fav" target="_blank" href="https://twitter.com/intent/tweet?text=Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! http://www.fbbindia.in/blogstar/users/list">
+                                    <a class="icon-fav" target="_blank" href="https://twitter.com/intent/tweet?text=Hi Guys, I am participating in the BlogStar contest. Click here to read my blog if you like it support me by sharing it! http://fbbblogstar.in/blogstar/users/list">
                                         <i class="fa fa-twitter" title="Twitter"></i>
                                     </a>
                                     <i class="fa fa-linkedin icon-fav" onclick="shareContent()" title="LinkedIn"></i>
@@ -178,7 +178,7 @@
                                       <% if(userInfo.userInfo.imageUrl) { %>
                                         <image src="<%= userInfo.userInfo.imageUrl %>" class="profile_name"/>
                                         <% }  else {%>
-                                          <image src="http://www.fbbindia.in/blogstar/home/images/profile_user.png" class="profile_name"/>
+                                          <image src="http://fbbblogstar.in/blogstar/home/images/profile_user.png" class="profile_name"/>
                                           <% } %>
                                         <b><%= userInfo.userInfo.name %> </b>
                                         </button>
