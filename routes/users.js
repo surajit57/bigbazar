@@ -13,7 +13,13 @@ require('../lib/passport.js')(passport);
 var models = require('../models');
 var User = models.user;
 
-router.get('/home', Auth.isLoggedIn , function(req, res){
+// router.get('/home', Auth.isLoggedIn , function(req, res){
+// 	var UserData = req.user;
+// 	req.flash('info', req.user.isBlogAdded)
+// 	// res.render('blog.html', {data: UserData });
+// 	res.render('homeBlog.html', {data: UserData });
+// });
+router.get('/', Auth.isLoggedIn , function(req, res){
 	var UserData = req.user;
 	req.flash('info', req.user.isBlogAdded)
 	// res.render('blog.html', {data: UserData });

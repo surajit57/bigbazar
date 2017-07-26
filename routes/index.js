@@ -17,7 +17,15 @@ router.get('/', function(req, res, next) {
 	res.render('newuserLogin.html');
 });
 
-router.post('/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/home/users/login'}),function(req, res){
+// router.post('/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/home/users/login'}),function(req, res){
+// 	console.log('req.user.isAdmin:-- ',req.user.isAdmin);
+// 	if(req.user.isAdmin){
+// 		return res.siteRediret('/admin/home');
+// 	}
+// 	return res.siteRediret('/users/home')
+// });
+
+router.post('/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/users/login'}),function(req, res){
 	console.log('req.user.isAdmin:-- ',req.user.isAdmin);
 	if(req.user.isAdmin){
 		return res.siteRediret('/admin/home');
@@ -25,7 +33,14 @@ router.post('/login', passport.authenticate('local-login', {failureRedirect: '/b
 	return res.siteRediret('/users/home')
 });
 
-router.post('/admin/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/home/admin/login'}),function(req, res){
+// router.post('/admin/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/home/admin/login'}),function(req, res){
+// 	// if(req.user.isAdmin){
+//
+// 		return res.siteRediret('/admin/home');
+// 	// }
+// 	// return res.redirect('/users/home')
+// });
+router.post('/admin/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/admin/login'}),function(req, res){
 	// if(req.user.isAdmin){
 
 		return res.siteRediret('/admin/home');
