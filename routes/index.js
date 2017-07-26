@@ -5,15 +5,9 @@ var  UserController = require('../controllers/user_controller');
 var Auth = require('../lib/auth');
 var config = require('../config/index');
 
-var middleWarePath = config.siteRoot;
-
 require('../lib/passport.js')(passport);
 
-if(process.env.NODE_ENV == "production") {
-	middleWarePath = config.siteRoot
-} else {
-	middleWarePath = config.localsiteRoot ? config.localsiteRoot : '/';
-}
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	// console.log('user:------------ ',req.user.id);
@@ -34,12 +28,23 @@ router.get('/', function(req, res, next) {
 // 	return res.siteRediret('/users/home')
 // });
 console.log('env:- ', process.env.NODE_ENV);
-router.post(middleWarePath + '/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/users/login'}),function(req, res){
+router.post('/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/users/login'}),function(req, res){
 	console.log('req.user.isAdmin:-- ',req.user.isAdmin);
 	if(req.user.isAdmin){
 		return res.siteRediret('/admin/home');
 	}
 	return res.siteRediret('/users')
+});
+
+router.get('/test',function(req, res){
+	console.log('req.user.isAdmin:-- ',req.user.isAdmin);
+	return res.json({
+		code: 200
+	})
+	// if(req.user.isAdmin){
+	// 	return res.siteRediret('/admin/home');
+	// }
+	// return res.siteRediret('/users')
 });
 
 // router.post('/admin/login', passport.authenticate('local-login', {failureRedirect: '/blogstar/home/admin/login'}),function(req, res){
