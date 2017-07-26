@@ -36,7 +36,7 @@ router.post('/login', passport.authenticate('local-login', {failureRedirect: '/b
 	return res.siteRediret('/users')
 });
 
-router.get('/test',function(req, res){
+router.get('/blogstar/test',function(req, res){
 	console.log('req.user.isAdmin:-- ',req.user.isAdmin);
 	return res.json({
 		code: 200
