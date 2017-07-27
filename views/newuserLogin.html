@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -47,6 +48,7 @@ ul.social-buttons li {
       </ul>
     </div>
   </div>
+</nav>
      <div class="login_section">
        <div class="container">
          <div class="row" style="margin: 0px;">
@@ -65,7 +67,7 @@ ul.social-buttons li {
            Follow these simple steps and stand a chance to enter the Blogstar Academy.</h2>
           <div class="row" style="    background-color: rgba(255, 255, 255, 0.76);border: 2px solid #ee7202;">
             <div class="col-sm-4" style="border-right:2px solid #ee7202;padding: 11px;">
-              <div class="team-member"> <span>1.Mail us your contact details and your blog link at <a style="text-decoration: none;" href="mailto:" blogstarconnect@fbbblogstar.in" target="_top"> blogstarconnect@fbbblogstar.in
+              <div class="team-member"> <span>1.Mail us your contact details and your blog link at <a style="text-decoration: none;" href="mailto: blogstarconnect@fbbblogstar.in" target="_top"> blogstarconnect@fbbblogstar.in
 </a></span> </div>
             </div>
             <div class="col-sm-4" style="border-right:2px solid #ee7202;padding: 11px;">
@@ -90,25 +92,25 @@ ul.social-buttons li {
                                           <i class="glyphicon glyphicon-user"></i>
                                       </span>
                                   <!--<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username"> -->
-                                      <input id="login-username" type="email" name="email" class="form-control" id="" placeholder="username">
+                                      <input id="login-username" type="email" name="email" class="form-control" id="" placeholder="username"/>
                                   </div>
                                   <div style="margin-bottom: 10px" class="input-group">
                                       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                   <!--<input id="login-password" type="password" class="form-control" name="password" placeholder="Password"> -->
-                                      <input id="login-password" type="password" name="password" class="form-control" id="signInPass" placeholder="Password">
+                                      <input id="login-password" type="password" name="password" class="form-control" id="signInPass" placeholder="Password"/>
                                   </div>
                                   <div class="row">
                                       <div class="col-xs-6 col-sm-6 col-md-6">
                                           <div class="checkbox">
                                               <label>
-                                                <input  type="checkbox" name="remember" value="1"> <p class="ptxt">Remember me</p>
+                                                <input  type="checkbox" name="remember" value="1"/> <p class="ptxt">Remember me</p>
                                               </label>
                                           </div>
                                       </div>
                                       <div class="col-xs-6 col-sm-6 col-md-6">
                                           <label>
                                         <!--<a href="#"><p class="ptxts">Forgot password?</p></a> -->
-                                            <a href="#" data-toggle="modal" data-target="#forgotpassword"><p class="ptxts">Forgot password?</p></a>
+                                            <a href="#" data-toggle="modal" data-target="#forgotpassword"> <p class="ptxts">Forgot password?</p> </a>
                                           </label>
                                       </div>
                                 </div>
@@ -200,7 +202,10 @@ ul.social-buttons li {
                     </div>
                 </div>
               </div>
-            </div><!--End container -->
+            </div>
+           </div>
+           </div>
+          <!--End container -->
 		    <footer style="text-align:center;">
 <div class="container">
   <div class="row">
@@ -220,6 +225,7 @@ ul.social-buttons li {
     </div>
   </div>
 </div>
+</footer>
   	    <!--<script src="../js/bootstrap.min.js"></script>-->
   	        <script src="<%= mountPath %>/js/bootstrap.min.js"></script>
 			 
@@ -283,10 +289,8 @@ ul.social-buttons li {
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
      ga('create', 'UA-85230835-1', 'auto');
      ga('send', 'pageview');
-
     </script>
 
     </body>
